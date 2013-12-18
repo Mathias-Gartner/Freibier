@@ -101,6 +101,57 @@ GO
 
 --
 - mathias
+CREATE TABLE [dbo].[beerSuppliers]
+(
+	[PK_beerSuppliers] [int] IDENTITY(1,1) NOT NULL,
+	[FK_suppliers] [int] NOT NULL,
+	[FK_beerTypes] [int] NOT NULL,
+ CONSTRAINT [PK_beerSuppliers] PRIMARY KEY CLUSTERED 
+(
+	[PK_beerSuppliers] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [dbo].[deliveredBeers]
+(
+	[PK_deliveredBeers] [int] IDENTITY(1,1) NOT NULL,
+	[FK_deliveries] [int] NOT NULL,
+	[FK_beerTypes] [int] NOT NULL,
+	[amount] [int] NOT NULL,
+ CONSTRAINT [PK_deliveredBeers] PRIMARY KEY CLUSTERED 
+(
+	[PK_deliveredBeers] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [dbo].[deliveryDriverCarriages]
+(
+	[PK_deliveryDriverCarriages] [int] IDENTITY(1,1) NOT NULL,
+	[FK_drivers] [int] NOT NULL,
+	[FK_deliveries] [int] NOT NULL,
+	[carriage] [int] NOT NULL,
+ CONSTRAINT [PK_deliveryDriverCarriages] PRIMARY KEY CLUSTERED 
+(
+	[PK_deliveryDriverCarriages] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+
+CREATE TABLE [dbo].[orderDriverCarriages]
+(
+	[PK_orderDriverCarriages] [int] IDENTITY(1,1) NOT NULL,
+	[FK_drivers] [int] NOT NULL,
+	[FK_orders] [int] NOT NULL,
+	[carriage] [int] NOT NULL,
+ CONSTRAINT [PK_orderDriverCarriages] PRIMARY KEY CLUSTERED 
+(
+	[PK_orderDriverCarriages] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
 --
 
