@@ -98,6 +98,56 @@ GO
 - sladi
 --
 - markus
+-- beerTypes
+CREATE TABLE [dbo].[beerTypes](
+	[PK_beerTypes] [int] IDENTITY(1,1) NOT NULL,
+	[price] [money] NOT NULL,
+ CONSTRAINT [PK_beerTypes] PRIMARY KEY CLUSTERED 
+(
+	[PK_beerTypes] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+-- countries
+CREATE TABLE [dbo].[countries](
+	[PK_countries] [int] IDENTITY(1,1) NOT NULL,
+	[customs] [money] NOT NULL,
+	[distance] [int] NOT NULL,
+ CONSTRAINT [PK_countries] PRIMARY KEY CLUSTERED 
+(
+	[PK_countries] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+-- drivers
+CREATE TABLE [dbo].[drivers](
+	[PK_drivers] [int] IDENTITY(1,1) NOT NULL,
+	[driver] [nvarchar](50) NOT NULL,
+	[truck] [int] NOT NULL,
+ CONSTRAINT [PK_drivers] PRIMARY KEY CLUSTERED 
+(
+	[PK_drivers] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+-- orderedBeers
+CREATE TABLE [dbo].[orderedBeers](
+	[PK_orderedBeers] [int] IDENTITY(1,1) NOT NULL,
+	[amount] [int] NOT NULL,
+	[price] [money] NOT NULL,
+ CONSTRAINT [PK_orderedBeers] PRIMARY KEY CLUSTERED 
+(
+	[PK_orderedBeers] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
 
 --
 - mathias
