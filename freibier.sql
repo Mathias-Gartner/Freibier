@@ -17,7 +17,7 @@ CREATE DATABASE freibier
         NAME       = freibier_dat,
         FILENAME   = 'C:\Databases\freibier_dat.mdf',
         SIZE       = 20MB,
-        MAXSIZE    = 100MB,
+        MAXSIZE    = 10000MB,
         FILEGROWTH = 10MB
     )
         LOG ON
@@ -25,8 +25,8 @@ CREATE DATABASE freibier
             NAME       = freibier_log,
             FILENAME   = 'C:\Databases\freibier_log.ldf',
             SIZE       = 10MB,
-            MAXSIZE    = 50MB,
-            FILEGROWTH = 5MB
+            MAXSIZE    = 100MB,
+            FILEGROWTH = 1MB
         )
 ;
 GO
@@ -95,9 +95,9 @@ ALTER ROLE admin ADD MEMBER freibier_admin;
 USE freibier;
 GO
 
-- sladi
+-- sladi
 --
-- markus
+-- markus
 -- beerTypes
 CREATE TABLE [dbo].[beerTypes](
 	[PK_beerTypes] [int] IDENTITY(1,1) NOT NULL,
@@ -150,7 +150,7 @@ CREATE TABLE [dbo].[orderedBeers](
 GO
 
 --
-- mathias
+-- mathias
 CREATE TABLE [dbo].[beerSuppliers]
 (
 	[PK_beerSuppliers] [int] IDENTITY(1,1) NOT NULL,
