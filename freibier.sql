@@ -101,14 +101,54 @@ ALTER ROLE admin ADD MEMBER freibier_admin;
 USE freibier;
 GO
 
--- sladi
---
--- markus
+CREATE TABLE [dbo].[suppliers](
+	[PK_suppliers] [int] IDENTITY(1,1) NOT NULL,
+	[FK_countries] [int] NOT NULL,
+	[name] [nvarchar](50) NOT NULL,
+	[address] [nvarchar](100) NULL,
+	[phone] [nvarchar](30) NULL,
+	[mail] [nvarchar](30) NULL,
+ CONSTRAINT [CLIX_PK_suppliers] PRIMARY KEY CLUSTERED 
+(
+	[PK_suppliers] ASC
+) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [dbo].[deliveries](
+	[PK_deliveries] [int] IDENTITY(1,1) NOT NULL,
+	[FK_beerRecipients] [int] NOT NULL,
+	[orderDate] [date] NOT NULL,
+	[deliveryDate] [date] NOT NULL,
+	[billingDate] [date] NULL,
+	[invoiceNumber] [int] NULL,
+ CONSTRAINT [CLIX_PK_deliveries] PRIMARY KEY CLUSTERED 
+(
+	[PK_deliveries] ASC
+) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [dbo].[orders](
+	[PK_orders] [int] IDENTITY(1,1) NOT NULL,
+	[FK_suppliers] [int] NOT NULL,
+	[price] [money] NOT NULL DEFAULT 0,
+	[received] [bit] NOT NULL DEFAULT 0,
+ CONSTRAINT [PK_CLIX_orders] PRIMARY KEY CLUSTERED 
+(
+	[PK_orders] ASC
+) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
 -- beerTypes
 CREATE TABLE [dbo].[beerTypes](
 	[PK_beerTypes] [int] IDENTITY(1,1) NOT NULL,
 	[price] [money] NOT NULL,
- CONSTRAINT [PK_CLIX_beerTypes] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [CLIX_PK_beerTypes] PRIMARY KEY CLUSTERED 
 (
 	[PK_beerTypes] ASC
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -121,7 +161,7 @@ CREATE TABLE [dbo].[countries](
 	[PK_countries] [int] IDENTITY(1,1) NOT NULL,
 	[customs] [money] NOT NULL,
 	[distance] [int] NOT NULL,
- CONSTRAINT [PK_CLIX_countries] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [CLIX_PK_countries] PRIMARY KEY CLUSTERED 
 (
 	[PK_countries] ASC
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -134,7 +174,7 @@ CREATE TABLE [dbo].[drivers](
 	[PK_drivers] [int] IDENTITY(1,1) NOT NULL,
 	[driver] [nvarchar](50) NOT NULL,
 	[truck] [int] NOT NULL,
- CONSTRAINT [PK_CLIX_drivers] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [CLIX_PK_drivers] PRIMARY KEY CLUSTERED 
 (
 	[PK_drivers] ASC
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -149,7 +189,7 @@ CREATE TABLE [dbo].[orderedBeers](
 	[FK_beerTypes] [int] NOT NULL,
 	[amount] [int] NOT NULL,
 	[price] [money] NOT NULL,
- CONSTRAINT [PK_CLIX_orderedBeers] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [CLIX_PK_orderedBeers] PRIMARY KEY CLUSTERED 
 (
 	[PK_orderedBeers] ASC
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -157,14 +197,12 @@ CREATE TABLE [dbo].[orderedBeers](
 
 GO
 
---
--- mathias
 CREATE TABLE [dbo].[beerSuppliers]
 (
 	[PK_beerSuppliers] [int] IDENTITY(1,1) NOT NULL,
 	[FK_suppliers] [int] NOT NULL,
 	[FK_beerTypes] [int] NOT NULL,
- CONSTRAINT [PK_CLIX_beerSuppliers] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [CLIX_PK_beerSuppliers] PRIMARY KEY CLUSTERED 
 (
 	[PK_beerSuppliers] ASC
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -178,7 +216,7 @@ CREATE TABLE [dbo].[deliveredBeers]
 	[FK_deliveries] [int] NOT NULL,
 	[FK_beerTypes] [int] NOT NULL,
 	[amount] [int] NOT NULL,
- CONSTRAINT [PK_CLIX_deliveredBeers] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [CLIX_PK_deliveredBeers] PRIMARY KEY CLUSTERED 
 (
 	[PK_deliveredBeers] ASC
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -192,7 +230,7 @@ CREATE TABLE [dbo].[deliveryDriverCarriages]
 	[FK_drivers] [int] NOT NULL,
 	[FK_deliveries] [int] NOT NULL,
 	[carriage] [int] NOT NULL,
- CONSTRAINT [PK_CLIX_deliveryDriverCarriages] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [CLIX_PK_deliveryDriverCarriages] PRIMARY KEY CLUSTERED 
 (
 	[PK_deliveryDriverCarriages] ASC
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
@@ -205,15 +243,11 @@ CREATE TABLE [dbo].[orderDriverCarriages]
 	[FK_drivers] [int] NOT NULL,
 	[FK_orders] [int] NOT NULL,
 	[carriage] [int] NOT NULL,
- CONSTRAINT [PK_CLIX_orderDriverCarriages] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [CLIX_PK_orderDriverCarriages] PRIMARY KEY CLUSTERED 
 (
 	[PK_orderDriverCarriages] ASC
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
-
---
-
-
 
 -- Ende Tabellen
 
