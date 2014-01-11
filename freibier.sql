@@ -10,7 +10,13 @@ GO
 
 
 -- Datenbank
-IF DB_ID('freibier') IS NOT NULL DROP DATABASE freibier;
+IF DB_ID('freibier') IS NOT NULL
+BEGIN
+	-- terminate existing connections
+	ALTER DATABASE freibier SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+	DROP DATABASE freibier;
+END
+
 CREATE DATABASE freibier
     ON PRIMARY
     (
