@@ -136,9 +136,24 @@ CREATE TABLE [dbo].[orders](
 	[FK_suppliers] [int] NOT NULL,
 	[price] [money] NOT NULL DEFAULT 0,
 	[received] [bit] NOT NULL DEFAULT 0,
- CONSTRAINT [PK_CLIX_orders] PRIMARY KEY CLUSTERED 
+ CONSTRAINT [CLIX_PK_orders] PRIMARY KEY CLUSTERED 
 (
 	[PK_orders] ASC
+) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [dbo].[beerRecipients](
+	[PK_beerRecipients] [int] IDENTITY(1,1) NOT NULL,
+	[FK_countries] [int] NOT NULL,
+	[name] [nvarchar](50) NOT NULL,
+	[address] [nvarchar](100) NULL,
+	[phone] [nvarchar](30) NULL,
+	[mail] [nvarchar](30) NULL,
+ CONSTRAINT [CLIX_PK_beerRecipients] PRIMARY KEY CLUSTERED
+(
+	[PK_beerRecipients] ASC
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
@@ -236,6 +251,7 @@ CREATE TABLE [dbo].[deliveryDriverCarriages]
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
+GO
 
 CREATE TABLE [dbo].[orderDriverCarriages]
 (
@@ -249,9 +265,35 @@ CREATE TABLE [dbo].[orderDriverCarriages]
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
+GO
+
 -- Ende Tabellen
 
 -- Constraints
+ALTER TABLE dbo.orders ADD CONSTRAINT
+	FK_orders_suppliers FOREIGN KEY
+	(
+	FK_suppliers
+	) REFERENCES dbo.suppliers
+	(
+	PK_suppliers
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
+GO
+
+ALTER TABLE dbo.orderedBeers ADD CONSTRAINT
+	FK_orderedBeers_orders FOREIGN KEY
+	(
+	FK_orders
+	) REFERENCES dbo.orders
+	(
+	PK_orders
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
+GO
+
 ALTER TABLE dbo.orderedBeers ADD CONSTRAINT
 	FK_orderedBeers_beerTypes FOREIGN KEY
 	(
@@ -262,6 +304,30 @@ ALTER TABLE dbo.orderedBeers ADD CONSTRAINT
 	) ON UPDATE NO ACTION 
 	  ON DELETE NO ACTION 
 	
+GO
+
+ALTER TABLE dbo.deliveries ADD CONSTRAINT
+	FK_deliveries_beerRecipients FOREIGN KEY
+	(
+	FK_beerRecipients
+	) REFERENCES dbo.beerRecipients
+	(
+	PK_beerRecipients
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
+GO
+
+ALTER TABLE dbo.deliveredBeers ADD CONSTRAINT
+	FK_deliveredBeers_deliveries FOREIGN KEY
+	(
+	FK_deliveries
+	) REFERENCES dbo.deliveries
+	(
+	PK_deliveries
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
 GO
 
 ALTER TABLE dbo.deliveredBeers ADD CONSTRAINT
@@ -288,6 +354,30 @@ ALTER TABLE dbo.beerSuppliers ADD CONSTRAINT
 	
 GO
 
+ALTER TABLE dbo.suppliers ADD CONSTRAINT
+	FK_suppliers_countries FOREIGN KEY
+	(
+	FK_countries
+	) REFERENCES dbo.countries
+	(
+	PK_countries
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
+GO
+
+ALTER TABLE dbo.beerRecipients ADD CONSTRAINT
+	FK_beerRecipients_countries FOREIGN KEY
+	(
+	FK_countries
+	) REFERENCES dbo.countries
+	(
+	PK_countries
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
+GO
+
 ALTER TABLE dbo.orderDriverCarriages ADD CONSTRAINT
 	FK_orderDriverCarriages_drivers FOREIGN KEY
 	(
@@ -300,6 +390,18 @@ ALTER TABLE dbo.orderDriverCarriages ADD CONSTRAINT
 	
 GO
 
+ALTER TABLE dbo.orderDriverCarriages ADD CONSTRAINT
+	FK_orderDriverCarriages_orders FOREIGN KEY
+	(
+	FK_orders
+	) REFERENCES dbo.orders
+	(
+	PK_orders
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
+GO
+
 ALTER TABLE dbo.deliveryDriverCarriages ADD CONSTRAINT
 	FK_deliveryDriverCarriages_drivers FOREIGN KEY
 	(
@@ -310,6 +412,18 @@ ALTER TABLE dbo.deliveryDriverCarriages ADD CONSTRAINT
 	) ON UPDATE NO ACTION 
 	  ON DELETE NO ACTION 
 	
+GO
+
+ALTER TABLE dbo.deliveryDriverCarriages ADD CONSTRAINT
+	FK_deliveryDriverCarriages_deliveries FOREIGN KEY
+	(
+	FK_deliveries
+	) REFERENCES dbo.deliveries
+	(
+	PK_deliveries
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
 GO
 
 -- Ende Constraints
