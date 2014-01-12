@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping CdmEntityContainer="freibierDBObjectContext" StorageEntityContainer="freibierDBStore">
+    <EntitySetMapping Name="beerRecipients">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.beerRecipientsItem)">
+        <MappingFragment StoreEntitySet="beerRecipients">
+          <ScalarProperty Name="PK_beerRecipients" ColumnName="PK_beerRecipients" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="FK_countries" ColumnName="FK_countries" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="beerSuppliers">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.beerSuppliersItem)">
+        <MappingFragment StoreEntitySet="beerSuppliers">
+          <ScalarProperty Name="PK_beerSuppliers" ColumnName="PK_beerSuppliers" />
+          <ScalarProperty Name="FK_beerTypes" ColumnName="FK_beerTypes" />
+          <ScalarProperty Name="FK_suppliers" ColumnName="FK_suppliers" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="beerTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.beerTypesItem)">
+        <MappingFragment StoreEntitySet="beerTypes">
+          <ScalarProperty Name="PK_beerTypes" ColumnName="PK_beerTypes" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="countries">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.countriesItem)">
+        <MappingFragment StoreEntitySet="countries">
+          <ScalarProperty Name="PK_countries" ColumnName="PK_countries" />
+          <ScalarProperty Name="customs" ColumnName="customs" />
+          <ScalarProperty Name="distance" ColumnName="distance" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="deliveredBeers">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.deliveredBeersItem)">
+        <MappingFragment StoreEntitySet="deliveredBeers">
+          <ScalarProperty Name="PK_deliveredBeers" ColumnName="PK_deliveredBeers" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="FK_beerTypes" ColumnName="FK_beerTypes" />
+          <ScalarProperty Name="FK_deliveries" ColumnName="FK_deliveries" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="deliveries">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.deliveriesItem)">
+        <MappingFragment StoreEntitySet="deliveries">
+          <ScalarProperty Name="PK_deliveries" ColumnName="PK_deliveries" />
+          <ScalarProperty Name="orderDate" ColumnName="orderDate" />
+          <ScalarProperty Name="deliveryDate" ColumnName="deliveryDate" />
+          <ScalarProperty Name="billingDate" ColumnName="billingDate" />
+          <ScalarProperty Name="invoiceNumber" ColumnName="invoiceNumber" />
+          <ScalarProperty Name="FK_beerRecipients" ColumnName="FK_beerRecipients" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="drivers">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.driversItem)">
+        <MappingFragment StoreEntitySet="drivers">
+          <ScalarProperty Name="PK_drivers" ColumnName="PK_drivers" />
+          <ScalarProperty Name="driver" ColumnName="driver" />
+          <ScalarProperty Name="truck" ColumnName="truck" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orderedBeers">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.orderedBeersItem)">
+        <MappingFragment StoreEntitySet="orderedBeers">
+          <ScalarProperty Name="PK_orderedBeers" ColumnName="PK_orderedBeers" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="FK_orders" ColumnName="FK_orders" />
+          <ScalarProperty Name="FK_beerSuppliers" ColumnName="FK_beerSuppliers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.Order)">
+        <MappingFragment StoreEntitySet="orders">
+          <ScalarProperty Name="PK_orders" ColumnName="PK_orders" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="received" ColumnName="received" />
+          <ScalarProperty Name="FK_suppliers" ColumnName="FK_suppliers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="suppliers">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.suppliersItem)">
+        <MappingFragment StoreEntitySet="suppliers">
+          <ScalarProperty Name="PK_suppliers" ColumnName="PK_suppliers" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="FK_countries" ColumnName="FK_countries" />
+          <ScalarProperty Name="volumeDiscountPercent" ColumnName="volumeDiscountPercent" />
+          <ScalarProperty Name="volumeDiscountRequiredQuantity" ColumnName="volumeDiscountRequiredQuantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

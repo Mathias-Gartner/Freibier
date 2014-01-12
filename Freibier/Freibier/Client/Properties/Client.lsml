@@ -1,0 +1,1559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModelFragment xmlns="http://schemas.microsoft.com/LightSwitch/2010/xaml/model">
+  <Application
+    DefaultNavigationItem="!module/NavigationItems[Tasks]"
+    Name="LightSwitchApplication"
+    Shell="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanShell"
+    Theme="Microsoft.LightSwitch.Cosmopolitan:CosmopolitanTheme"
+    Version="1.0.0.0">
+    <Application.Attributes>
+      <ModuleNamespace
+        Namespace="LightSwitchApplication" />
+    </Application.Attributes>
+    <Application.Methods>
+      <ApplicationMethod
+        Name="Showsuppliers">
+        <ApplicationMethod.Attributes>
+          <ShowScreenMethod
+            TargetScreen="suppliers" />
+        </ApplicationMethod.Attributes>
+      </ApplicationMethod>
+      <ApplicationMethod
+        Name="ShowbeerTypes">
+        <ApplicationMethod.Attributes>
+          <ShowScreenMethod
+            TargetScreen="beerTypes" />
+        </ApplicationMethod.Attributes>
+      </ApplicationMethod>
+      <ApplicationMethod
+        Name="Showcountries">
+        <ApplicationMethod.Attributes>
+          <ShowScreenMethod
+            TargetScreen="countries" />
+        </ApplicationMethod.Attributes>
+      </ApplicationMethod>
+      <ApplicationMethod
+        Name="ShownewOrder">
+        <ApplicationMethod.Attributes>
+          <ShowScreenMethod
+            TargetScreen="newOrder" />
+        </ApplicationMethod.Attributes>
+      </ApplicationMethod>
+    </Application.Methods>
+    <Application.NavigationItems>
+      <ApplicationNavigationGroup
+        DefaultItem="!module/NavigationItems[Tasks]/Children[suppliers]"
+        Name="Tasks">
+        <ApplicationNavigationGroup.Attributes>
+          <DisplayName
+            Value="Tasks" />
+        </ApplicationNavigationGroup.Attributes>
+        <ApplicationNavigationLink
+          Command="!module/Commands[ScreenCommandShowsuppliers]"
+          Name="suppliers" />
+        <ApplicationNavigationLink
+          Command="!module/Commands[ScreenCommandShowbeerTypes]"
+          Name="beerTypes" />
+        <ApplicationNavigationLink
+          Command="!module/Commands[ScreenCommandShowcountries]"
+          Name="countries" />
+        <ApplicationNavigationLink
+          Command="!module/Commands[ScreenCommandShownewOrder]"
+          Name="newOrder" />
+      </ApplicationNavigationGroup>
+      <ApplicationNavigationGroup
+        Name="Administration">
+        <ApplicationNavigationGroup.Attributes>
+          <DisplayName
+            Value="Administration" />
+        </ApplicationNavigationGroup.Attributes>
+        <ApplicationNavigationLink
+          Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowRolesScreen]"
+          Name="RolesScreen" />
+        <ApplicationNavigationLink
+          Command="Microsoft.LightSwitch.Security:!module/Commands[ScreenCommandShowUsersScreen]"
+          Name="UsersScreen" />
+      </ApplicationNavigationGroup>
+    </Application.NavigationItems>
+    <ApplicationCommand
+      Name="ScreenCommandShowsuppliers"
+      Target="!module/Methods[Showsuppliers]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowbeerTypes"
+      Target="!module/Methods[ShowbeerTypes]" />
+    <ApplicationCommand
+      Name="ScreenCommandShowcountries"
+      Target="!module/Methods[Showcountries]" />
+    <ApplicationCommand
+      Name="ScreenCommandShownewOrder"
+      Target="!module/Methods[ShownewOrder]" />
+  </Application>
+  <Screen
+    Name="suppliers">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="LightSwitchCommonModule:freibierDB" />
+      <DisplayName
+        Value="Suppliers" />
+    </Screen.Attributes>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="Save">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Refresh">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Close">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenCollectionProperty
+        Name="suppliers1"
+        PageSize="45"
+        PropertyType="LightSwitchCommonModule:CollectionView$suppliersItem">
+        <ScreenCollectionProperty.Attributes>
+          <DisplayName
+            Value="Suppliers" />
+        </ScreenCollectionProperty.Attributes>
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="suppliers1Query"
+            ReturnType="LightSwitchCommonModule:suppliersItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="LightSwitchCommonModule:freibierDB/Members[suppliers]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="suppliers/Properties[suppliers1]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="beerSuppliers"
+        PageSize="45"
+        PropertyType="LightSwitchCommonModule:CollectionView$beerSuppliersItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="beerSuppliersQuery"
+            ReturnType="LightSwitchCommonModule:beerSuppliersItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="suppliers/Properties[suppliers1]" />
+                  <MemberExpression
+                    Member="SelectedItem" />
+                  <MemberExpression
+                    Member="beerSuppliers" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="suppliers/Properties[beerSuppliers]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+    </Screen.Properties>
+    <Screen.RootContentItem>
+      <ContentItem
+        Kind="Screen"
+        Name="RootContentItem">
+        <ContentItem.CommandItems>
+          <ContentItem
+            Kind="Command"
+            Name="Save">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="suppliers/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Kind="Command"
+            Name="Refresh">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="suppliers/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+        <ContentItem
+          Kind="Group"
+          Name="ScreenLayout"
+          View="Microsoft.LightSwitch:ColumnsLayout">
+          <ContentItem
+            Kind="Group"
+            Name="ListColumn">
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property=":ColumnsLayout/Properties[WeightedColumnWidth]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":Double"
+                      Value="2" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+            <ContentItem
+              DataType="LightSwitchCommonModule:CollectionView$suppliersItem"
+              Kind="Collection"
+              Name="suppliersItemList"
+              View="Microsoft.LightSwitch:List">
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Kind="Command"
+                  Name="suppliers1_AddAndEditNew">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="suppliers/Properties[suppliers1]" />
+                        <CallExpression
+                          Target="AddAndEditNew" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="suppliers1_EditSelected">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="suppliers/Properties[suppliers1]" />
+                        <CallExpression
+                          Target="EditSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="suppliers1_DeleteSelected">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="suppliers/Properties[suppliers1]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="suppliers/Properties[suppliers1]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property=":RootControl/Properties[AttachedLabelPosition]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Collapsed" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+                <ControlPropertySource
+                  Property=":RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Stretch" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+              <ContentItem
+                DataType="LightSwitchCommonModule:suppliersItem"
+                Kind="Details"
+                Name="RowTemplate">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Supplier" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  DataType=":String"
+                  Kind="Value"
+                  Name="name">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:suppliersItem/Properties[name]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  DataType=":String?"
+                  Kind="Value"
+                  Name="address">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:suppliersItem/Properties[address]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?"
+                  Kind="Value"
+                  Name="phone">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:suppliersItem/Properties[phone]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  DataType="Microsoft.LightSwitch.Extensions:EmailAddress?"
+                  Kind="Value"
+                  Name="mail">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:suppliersItem/Properties[mail]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  DataType="LightSwitchCommonModule:countriesItem"
+                  Kind="Details"
+                  Name="countriesItem">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:suppliersItem/Properties[country]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    DataType="LightSwitchCommonModule:countriesItem"
+                    Kind="Details"
+                    Name="RowTemplate1">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+          <ContentItem
+            Kind="Group"
+            Name="DetailsColumn">
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property=":ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":Boolean"
+                      Value="True" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property=":ColumnsLayout/Properties[WeightedColumnWidth]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":Double"
+                      Value="3" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+            <ContentItem
+              DataType="LightSwitchCommonModule:suppliersItem"
+              Kind="Details"
+              Name="suppliersItemDetails">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Supplier Details" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="suppliers/Properties[suppliers1]" />
+                    <MemberExpression
+                      Member="SelectedItem" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem.PropertySources>
+                <ControlPropertySource
+                  Property=":RootControl/Properties[VerticalAlignment]">
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <ConstantExpression
+                        ResultType=":String"
+                        Value="Top" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ControlPropertySource>
+              </ContentItem.PropertySources>
+              <ContentItem
+                DataType=":String"
+                Kind="Value"
+                Name="name1">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Name" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:suppliersItem/Properties[name]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType=":String?"
+                Kind="Value"
+                Name="address1">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Address" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:suppliersItem/Properties[address]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType="Microsoft.LightSwitch.Extensions:PhoneNumber?"
+                Kind="Value"
+                Name="phone1">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Telephone number" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:suppliersItem/Properties[phone]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType="Microsoft.LightSwitch.Extensions:EmailAddress?"
+                Kind="Value"
+                Name="mail1">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="e-mail address" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:suppliersItem/Properties[mail]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType="LightSwitchCommonModule:countriesItem"
+                Kind="Details"
+                Name="countriesItem1">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Country" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:suppliersItem/Properties[country]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  DataType="LightSwitchCommonModule:countriesItem"
+                  Kind="Details"
+                  Name="RowTemplate2">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression />
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+              <ContentItem
+                DataType=":Int32?"
+                Kind="Value"
+                Name="volumeDiscountPercent">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Volume discount (%)" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:suppliersItem/Properties[volumeDiscountPercent]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType=":Int32?"
+                Kind="Value"
+                Name="volumeDiscountRequiredQuantity">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Required quantity for volume discount" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:suppliersItem/Properties[volumeDiscountRequiredQuantity]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+            <ContentItem
+              DataType="LightSwitchCommonModule:CollectionView$beerSuppliersItem"
+              Kind="Collection"
+              Name="beerSuppliers">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Beers" />
+              </ContentItem.Attributes>
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Kind="Command"
+                  Name="beerSuppliers_AddAndEditNew">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="suppliers/Properties[beerSuppliers]" />
+                        <CallExpression
+                          Target="AddAndEditNew" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="beerSuppliers_EditSelected">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="suppliers/Properties[beerSuppliers]" />
+                        <CallExpression
+                          Target="EditSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="beerSuppliers_DeleteSelected">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="suppliers/Properties[beerSuppliers]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="suppliers/Properties[beerSuppliers]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                DataType="LightSwitchCommonModule:beerSuppliersItem"
+                Kind="Details"
+                Name="beerSuppliersTemplate">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Beer" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  DataType="LightSwitchCommonModule:beerTypesItem"
+                  Kind="Details"
+                  Name="beerType">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Type of beer" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:beerSuppliersItem/Properties[beerType]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem
+                    DataType="LightSwitchCommonModule:beerTypesItem"
+                    Kind="Details"
+                    Name="beerTypesItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  DataType=":Decimal"
+                  Kind="Value"
+                  Name="price">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Price" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:beerSuppliersItem/Properties[price]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
+      </ContentItem>
+    </Screen.RootContentItem>
+  </Screen>
+  <Screen
+    Name="beerTypes">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="LightSwitchCommonModule:freibierDB" />
+      <DisplayName
+        Value="Types of beer" />
+    </Screen.Attributes>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="Save">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Refresh">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Close">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenCollectionProperty
+        Name="beerTypes1"
+        PageSize="45"
+        PropertyType="LightSwitchCommonModule:CollectionView$beerTypesItem">
+        <ScreenCollectionProperty.Attributes>
+          <DisplayName
+            Value="Types of beer" />
+        </ScreenCollectionProperty.Attributes>
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="beerTypes1Query"
+            ReturnType="LightSwitchCommonModule:beerTypesItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="LightSwitchCommonModule:freibierDB/Members[beerTypes]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="beerTypes/Properties[beerTypes1]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+    </Screen.Properties>
+    <Screen.RootContentItem>
+      <ContentItem
+        Kind="Screen"
+        Name="RootContentItem">
+        <ContentItem.CommandItems>
+          <ContentItem
+            Kind="Command"
+            Name="Save">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="beerTypes/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Kind="Command"
+            Name="Refresh">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="beerTypes/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+        <ContentItem
+          Kind="Group"
+          Name="ScreenLayout">
+          <ContentItem
+            DataType="LightSwitchCommonModule:CollectionView$beerTypesItem"
+            Kind="Collection"
+            Name="grid">
+            <ContentItem.CommandItems>
+              <ContentItem
+                Kind="Command"
+                Name="beerTypes1_AddAndEditNew">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="beerTypes/Properties[beerTypes1]" />
+                      <CallExpression
+                        Target="AddAndEditNew" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Kind="Command"
+                Name="beerTypes1_EditSelected">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="beerTypes/Properties[beerTypes1]" />
+                      <CallExpression
+                        Target="EditSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Kind="Command"
+                Name="beerTypes1_DeleteSelected">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="beerTypes/Properties[beerTypes1]" />
+                      <CallExpression
+                        Target="DeleteSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem.CommandItems>
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="beerTypes/Properties[beerTypes1]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property=":RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Stretch" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property=":RootControl/Properties[AttachedLabelPosition]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Collapsed" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+            <ContentItem
+              DataType="LightSwitchCommonModule:beerTypesItem"
+              Kind="Details"
+              Name="RowTemplate">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression />
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                DataType=":String"
+                Kind="Value"
+                Name="name">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:beerTypesItem/Properties[name]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
+      </ContentItem>
+    </Screen.RootContentItem>
+  </Screen>
+  <Screen
+    Name="countries">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="LightSwitchCommonModule:freibierDB" />
+      <DisplayName
+        Value="Countries" />
+    </Screen.Attributes>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="Save">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Refresh">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Close">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenCollectionProperty
+        Name="countries1"
+        PageSize="45"
+        PropertyType="LightSwitchCommonModule:CollectionView$countriesItem">
+        <ScreenCollectionProperty.Attributes>
+          <DisplayName
+            Value="Countries" />
+        </ScreenCollectionProperty.Attributes>
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="countries1Query"
+            ReturnType="LightSwitchCommonModule:countriesItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="LightSwitchCommonModule:freibierDB/Members[countries]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="countries/Properties[countries1]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+    </Screen.Properties>
+    <Screen.RootContentItem>
+      <ContentItem
+        Kind="Screen"
+        Name="RootContentItem">
+        <ContentItem.CommandItems>
+          <ContentItem
+            Kind="Command"
+            Name="Save">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="countries/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Kind="Command"
+            Name="Refresh">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="countries/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+        <ContentItem
+          Kind="Group"
+          Name="ScreenLayout">
+          <ContentItem
+            DataType="LightSwitchCommonModule:CollectionView$countriesItem"
+            Kind="Collection"
+            Name="grid">
+            <ContentItem.CommandItems>
+              <ContentItem
+                Kind="Command"
+                Name="countries1_AddAndEditNew">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="countries/Properties[countries1]" />
+                      <CallExpression
+                        Target="AddAndEditNew" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Kind="Command"
+                Name="countries1_EditSelected">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="countries/Properties[countries1]" />
+                      <CallExpression
+                        Target="EditSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                Kind="Command"
+                Name="countries1_DeleteSelected">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="countries/Properties[countries1]" />
+                      <CallExpression
+                        Target="DeleteSelected" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem.CommandItems>
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="countries/Properties[countries1]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property=":RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Stretch" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+              <ControlPropertySource
+                Property=":RootControl/Properties[AttachedLabelPosition]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Collapsed" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+            <ContentItem
+              DataType="LightSwitchCommonModule:countriesItem"
+              Kind="Details"
+              Name="RowTemplate">
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression />
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                DataType=":String"
+                Kind="Value"
+                Name="name">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Name" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:countriesItem/Properties[name]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType=":Decimal"
+                Kind="Value"
+                Name="customs">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Customs" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:countriesItem/Properties[customs]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+              <ContentItem
+                DataType=":Int32"
+                Kind="Value"
+                Name="distance">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Distance" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression>
+                      <MemberExpression
+                        Member="LightSwitchCommonModule:countriesItem/Properties[distance]" />
+                    </ChainExpression>
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
+      </ContentItem>
+    </Screen.RootContentItem>
+  </Screen>
+  <Screen
+    LaunchMode="Multiple"
+    Name="newOrder">
+    <Screen.Attributes>
+      <SaveChangesTo
+        EntityContainer="LightSwitchCommonModule:freibierDB" />
+      <DisplayName
+        Value="New Order" />
+    </Screen.Attributes>
+    <Screen.Methods>
+      <ScreenMethod
+        Name="Save">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Save.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Refresh">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+          <ImageResource
+            ResourceId="Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/Refresh.png" />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+      <ScreenMethod
+        Name="Close">
+        <ScreenMethod.Attributes>
+          <DisplayMethodByDefault
+            Display="True" />
+          <Generated />
+        </ScreenMethod.Attributes>
+      </ScreenMethod>
+    </Screen.Methods>
+    <Screen.Properties>
+      <ScreenProperty
+        Name="orderProperty"
+        PropertyType="LightSwitchCommonModule:Order" />
+      <ScreenCollectionProperty
+        Name="beerSuppliersBySupplier"
+        PageSize="45"
+        PropertyType="LightSwitchCommonModule:CollectionView$beerSuppliersItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="beerSuppliersBySupplierQuery"
+            ReturnType="LightSwitchCommonModule:beerSuppliersItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <MemberExpression
+                  Member="LightSwitchCommonModule:freibierDB/Members[beerSuppliersBySupplier]" />
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="newOrder/Properties[beerSuppliersBySupplier]/Query">
+              <ArgumentExpression
+                Parameter="supplier">
+                <ChainExpression>
+                  <MemberExpression
+                    Member="newOrder/Properties[orderProperty]" />
+                  <MemberExpression
+                    Member="supplier" />
+                  <MemberExpression
+                    Member="PK_suppliers" />
+                </ChainExpression>
+              </ArgumentExpression>
+            </CallExpression>
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+      <ScreenCollectionProperty
+        Name="orderedBeers"
+        PageSize="45"
+        PropertyType="LightSwitchCommonModule:CollectionView$orderedBeersItem">
+        <ScreenCollectionProperty.Query>
+          <ScreenQueryDefinition
+            Name="orderedBeersQuery"
+            ReturnType="LightSwitchCommonModule:orderedBeersItem*">
+            <ScreenQueryDefinition.FilterExpression>
+              <QueryFilterExpressionTree />
+            </ScreenQueryDefinition.FilterExpression>
+            <ScreenQueryDefinition.Source>
+              <QuerySourceExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="newOrder/Properties[orderProperty]" />
+                  <MemberExpression
+                    Member="orderedBeers" />
+                </ChainExpression>
+              </QuerySourceExpressionTree>
+            </ScreenQueryDefinition.Source>
+          </ScreenQueryDefinition>
+        </ScreenCollectionProperty.Query>
+        <ScreenExpressionTree>
+          <ChainExpression>
+            <CallExpression
+              Target="newOrder/Properties[orderedBeers]/Query" />
+          </ChainExpression>
+        </ScreenExpressionTree>
+      </ScreenCollectionProperty>
+    </Screen.Properties>
+    <Screen.RootContentItem>
+      <ContentItem
+        Kind="Screen"
+        Name="RootContentItem">
+        <ContentItem.CommandItems>
+          <ContentItem
+            Kind="Command"
+            Name="Save">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="newOrder/Methods[Save]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+          <ContentItem
+            Kind="Command"
+            Name="Refresh">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <CallExpression
+                    Target="newOrder/Methods[Refresh]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+          </ContentItem>
+        </ContentItem.CommandItems>
+        <ContentItem
+          Kind="Group"
+          Name="ScreenLayout">
+          <ContentItem.PropertySources>
+            <ControlPropertySource
+              Property=":ScrollableControl/Properties[IsVerticalScrollBarEnabled]">
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <ConstantExpression
+                    ResultType=":Boolean"
+                    Value="True" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ControlPropertySource>
+          </ContentItem.PropertySources>
+          <ContentItem
+            DataType="LightSwitchCommonModule:Order"
+            Kind="Details"
+            Name="details"
+            View="Microsoft.LightSwitch:ColumnsLayout">
+            <ContentItem.DataSource>
+              <ScreenExpressionTree>
+                <ChainExpression>
+                  <MemberExpression
+                    Member="newOrder/Properties[orderProperty]" />
+                </ChainExpression>
+              </ScreenExpressionTree>
+            </ContentItem.DataSource>
+            <ContentItem.PropertySources>
+              <ControlPropertySource
+                Property=":RootControl/Properties[VerticalAlignment]">
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <ConstantExpression
+                      ResultType=":String"
+                      Value="Top" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ControlPropertySource>
+            </ContentItem.PropertySources>
+            <ContentItem
+              DataType="LightSwitchCommonModule:suppliersItem"
+              Kind="Details"
+              Name="supplier1">
+              <ContentItem.Attributes>
+                <DisplayName
+                  Value="Supplier" />
+              </ContentItem.Attributes>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="LightSwitchCommonModule:Order/Properties[supplier]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                DataType="LightSwitchCommonModule:suppliersItem"
+                Kind="Details"
+                Name="suppliersItem">
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+          <ContentItem
+            Kind="Group"
+            Name="children">
+            <ContentItem
+              DataType="LightSwitchCommonModule:CollectionView$orderedBeersItem"
+              Kind="Collection"
+              Name="orderedBeers">
+              <ContentItem.CommandItems>
+                <ContentItem
+                  Kind="Command"
+                  Name="orderedBeers_AddAndEditNew">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="newOrder/Properties[orderedBeers]" />
+                        <CallExpression
+                          Target="AddAndEditNew" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="orderedBeers_EditSelected">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="newOrder/Properties[orderedBeers]" />
+                        <CallExpression
+                          Target="EditSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  Kind="Command"
+                  Name="orderedBeers_DeleteSelected">
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="newOrder/Properties[orderedBeers]" />
+                        <CallExpression
+                          Target="DeleteSelected" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+              </ContentItem.CommandItems>
+              <ContentItem.DataSource>
+                <ScreenExpressionTree>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="newOrder/Properties[orderedBeers]" />
+                  </ChainExpression>
+                </ScreenExpressionTree>
+              </ContentItem.DataSource>
+              <ContentItem
+                DataType="LightSwitchCommonModule:orderedBeersItem"
+                Kind="Details"
+                Name="orderedBeersTemplate">
+                <ContentItem.Attributes>
+                  <DisplayName
+                    Value="Beers" />
+                </ContentItem.Attributes>
+                <ContentItem.DataSource>
+                  <ScreenExpressionTree>
+                    <ChainExpression />
+                  </ScreenExpressionTree>
+                </ContentItem.DataSource>
+                <ContentItem
+                  DataType="LightSwitchCommonModule:beerSuppliersItem"
+                  Kind="Details"
+                  Name="beerSupplier">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Beer" />
+                  </ContentItem.Attributes>
+                  <ContentItem.ChoicesSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="newOrder/Properties[beerSuppliersBySupplier]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.ChoicesSource>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:orderedBeersItem/Properties[beerSupplier]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[MinWidth]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":Double"
+                            Value="100" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                  <ContentItem
+                    DataType="LightSwitchCommonModule:beerSuppliersItem"
+                    Kind="Details"
+                    Name="beerSuppliersItem">
+                    <ContentItem.DataSource>
+                      <ScreenExpressionTree>
+                        <ChainExpression />
+                      </ScreenExpressionTree>
+                    </ContentItem.DataSource>
+                  </ContentItem>
+                </ContentItem>
+                <ContentItem
+                  DataType=":Int32"
+                  Kind="Value"
+                  Name="amount">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Amount" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:orderedBeersItem/Properties[amount]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                </ContentItem>
+                <ContentItem
+                  DataType=":Decimal"
+                  Kind="Value"
+                  Name="price">
+                  <ContentItem.Attributes>
+                    <DisplayName
+                      Value="Price (per piece, without quantity discount)" />
+                  </ContentItem.Attributes>
+                  <ContentItem.DataSource>
+                    <ScreenExpressionTree>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="LightSwitchCommonModule:orderedBeersItem/Properties[price]" />
+                      </ChainExpression>
+                    </ScreenExpressionTree>
+                  </ContentItem.DataSource>
+                  <ContentItem.PropertySources>
+                    <ControlPropertySource
+                      Property="Microsoft.LightSwitch:RootControl/Properties[MinWidth]">
+                      <ScreenExpressionTree>
+                        <ChainExpression>
+                          <ConstantExpression
+                            ResultType=":Double"
+                            Value="100" />
+                        </ChainExpression>
+                      </ScreenExpressionTree>
+                    </ControlPropertySource>
+                  </ContentItem.PropertySources>
+                </ContentItem>
+              </ContentItem>
+            </ContentItem>
+          </ContentItem>
+        </ContentItem>
+      </ContentItem>
+    </Screen.RootContentItem>
+  </Screen>
+</ModelFragment>
