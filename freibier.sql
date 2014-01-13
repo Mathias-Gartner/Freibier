@@ -351,7 +351,7 @@ CREATE TABLE [dbo].[supplierStorage]
 (
 	[id]				[int] IDENTITY(1,1)	NOT NULL,
 	[FK_suppliers]		[int]				NOT NULL	REFERENCES [dbo].[suppliers] ([id]),
-	[FK_beerRecipients]	[int]				NULL		REFERENCES [dbo].[beerRecipients] ([id]),
+	[FK_beerSuppliers]	[int]				NULL		REFERENCES [dbo].[beerSuppliers] ([id]),
 	[amount]			[int]				NOT NULL,
 		CONSTRAINT [CLIX_PK_supplierStorage_id] PRIMARY KEY CLUSTERED ([id]),
 )
@@ -384,7 +384,7 @@ GO
 CREATE VIEW view_driver_nextDeliveries
 AS
 SELECT TOP 5 dbo.deliveries.deliveryDate, dbo.deliveries.invoiceNumber, dbo.deliveryDriverCarriages.carriage, dbo.deliveryDriverCarriages.amount, dbo.drivers.driver, 
-dbo.drivers.truck
+dbo.drivers.truckCapacity
 FROM dbo.deliveries 
 INNER JOIN dbo.deliveryDriverCarriages 
 ON dbo.deliveries.id = dbo.deliveryDriverCarriages.FK_deliveries 
