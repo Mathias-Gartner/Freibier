@@ -116,120 +116,159 @@ ALTER ROLE admin_role ADD MEMBER admin;
 
 IF DATABASE_PRINCIPAL_ID('office_role') IS NOT NULL DROP ROLE office_role;
 CREATE ROLE office_role;
---GRANT SELECT TO office;
+GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE TO office;
 ALTER ROLE office_role ADD MEMBER office;
 -- End Roles
 
 IF DATABASE_PRINCIPAL_ID('driver_role') IS NOT NULL DROP ROLE driver_role;
 CREATE ROLE driver_role;
---GRANT SELECT TO driver;
 ALTER ROLE driver_role ADD MEMBER driver;
 -- End Roles
 
-
-
--- Tables
+-- Tabellen
 USE freibier;
 GO
-CREATE TABLE [dbo].[suppliers](
-	[PK_suppliers] [int] IDENTITY(1,1) NOT NULL,
-	[FK_countries] [int] NOT NULL,
-	[name] [nvarchar](50) NOT NULL,
-	[address] [nvarchar](100) NULL,
-	[phone] [nvarchar](30) NULL,
-	[mail] [nvarchar](30) NULL,
-	[volumeDiscountPercent] [int] NULL,
-	[volumeDiscountRequiredQuantity] [int] NULL
- CONSTRAINT [CLIX_PK_suppliers] PRIMARY KEY CLUSTERED 
-(
-	[PK_suppliers] ASC
-) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
 
-GO
 
-CREATE TABLE [dbo].[deliveries](
-	[PK_deliveries] [int] IDENTITY(1,1) NOT NULL,
-	[FK_beerRecipients] [int] NOT NULL,
-	[orderDate] [date] NOT NULL,
-	[deliveryDate] [date] NOT NULL,
-	[billingDate] [date] NULL,
-	[invoiceNumber] [int] NULL,
- CONSTRAINT [CLIX_PK_deliveries] PRIMARY KEY CLUSTERED 
-(
-	[PK_deliveries] ASC
-) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
-CREATE TABLE [dbo].[orders](
-	[PK_orders] [int] IDENTITY(1,1) NOT NULL,
-	[FK_suppliers] [int] NOT NULL,
-	[price] [money] NOT NULL DEFAULT 0,
-	[received] [bit] NOT NULL DEFAULT 0,
- CONSTRAINT [CLIX_PK_orders] PRIMARY KEY CLUSTERED 
-(
-	[PK_orders] ASC
-) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
-CREATE TABLE [dbo].[beerRecipients](
-	[PK_beerRecipients] [int] IDENTITY(1,1) NOT NULL,
-	[FK_countries] [int] NOT NULL,
-	[name] [nvarchar](50) NOT NULL,
-	[address] [nvarchar](100) NULL,
-	[phone] [nvarchar](30) NULL,
-	[mail] [nvarchar](30) NULL,
- CONSTRAINT [CLIX_PK_beerRecipients] PRIMARY KEY CLUSTERED
-(
-	[PK_beerRecipients] ASC
-) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
--- beerTypes
-CREATE TABLE [dbo].[beerTypes](
-	[PK_beerTypes] [int] IDENTITY(1,1) NOT NULL,
-	[name] [nvarchar](50) NOT NULL,
- CONSTRAINT [CLIX_PK_beerTypes] PRIMARY KEY CLUSTERED 
-(
-	[PK_beerTypes] ASC
-) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
 
 -- countries
-CREATE TABLE [dbo].[countries](
-	[PK_countries] [int] IDENTITY(1,1) NOT NULL,
-	[name] [nvarchar](60) NOT NULL,
-	[customs] [money] NOT NULL,
-	[distance] [int] NOT NULL,
- CONSTRAINT [CLIX_PK_countries] PRIMARY KEY CLUSTERED 
+CREATE TABLE [dbo].[countries]
 (
-	[PK_countries] ASC
-) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
+	[id]		[int] IDENTITY(1,1)	NOT NULL,
+	[name]		[nvarchar](60)		NOT NULL,
+	[customs]	[money]				NOT NULL,
+	[distance]	[int]				NOT NULL,
+		CONSTRAINT [CLIX_PK_countries_id] PRIMARY KEY CLUSTERED ([id]),
+)
+;
 GO
 
--- drivers
-CREATE TABLE [dbo].[drivers](
-	[PK_drivers] [int] IDENTITY(1,1) NOT NULL,
-	[driver] [nvarchar](50) NOT NULL,
-	[truck] [int] NOT NULL,
- CONSTRAINT [CLIX_PK_drivers] PRIMARY KEY CLUSTERED 
-(
-	[PK_drivers] ASC
-) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
 
+
+-- n:n suppliers:beerTypes
+CREATE TABLE [dbo].[beerTypes]
+(
+	[id]		[int] IDENTITY(1,1)	NOT NULL,
+	[name]		[nvarchar](60)		NOT NULL,
+		CONSTRAINT [CLIX_PK_beerTypes_id] PRIMARY KEY CLUSTERED ([id]),
+)
+;
 GO
 
+
+
+-- suppliers
+CREATE TABLE [dbo].[suppliers]
+(
+	[id]								[int] IDENTITY(1,1)	NOT NULL,
+	[companyName]						[nvarchar](15)		NOT NULL,
+	[volumeDiscountPercent]				[int]				NOT NULL	DEFAULT 0,
+	[volumeDiscountRequiredQuantity]	[int]				NOT NULL	DEFAULT 0,
+	[FK_countries]						[int]				NOT NULL	REFERENCES [dbo].[countries] ([id]),
+		CONSTRAINT [CLIX_PK_suppliers_id] PRIMARY KEY CLUSTERED ([id])
+)
+;
+GO
+
+
+
+-- create an index on name, don't use a natural composite PK,
+-- index-size on disk is not important here
+--CREATE INDEX IX_suppliers_companyName ON [dbo].[suppliers] ([companyName])
+--;
+--GO
+
+
+
+-- beer-price-history
+CREATE TABLE [dbo].[beerPrices]
+(
+	[id]		[int] IDENTITY(1,1)	NOT NULL,
+	[priceDate]	[date]				NOT NULL,
+	[price]		[money]				NOT NULL,
+		CONSTRAINT [CLIX_PK_beerPrices_id] PRIMARY KEY CLUSTERED ([id], [priceDate]),
+)
+;
+GO
+
+CREATE TABLE [dbo].[suppliedBeers]
+(
+	[FK_suppliers]				[int]	NOT NULL	REFERENCES [dbo].[suppliers] ([id]),
+	[FK_beerTypes]				[int]	NOT NULL	REFERENCES [dbo].[beerTypes] ([id]),
+	[amount]					[int]	NOT NULL	DEFAULT 0,
+	[FK_beerPrices_id]			[int]	NOT	NULL,
+	[FK_beerPrices_priceDate]	[date]	NOT	NULL,
+		CONSTRAINT [CLIX_PK_suppliedBeers_id] PRIMARY KEY CLUSTERED ([FK_suppliers], [FK_beerTypes]),
+		CONSTRAINT [FK_beerPrices_id_priceDate] FOREIGN KEY ([FK_beerPrices_id], [FK_beerPrices_priceDate])
+			REFERENCES [dbo].[beerPrices] ([id], [priceDate]),
+)
+;
+GO
+
+CREATE INDEX IX_suppliedBeers_beerTypes ON [dbo].[suppliedBeers] ([FK_beerTypes])
+;
+GO
+
+
+
+-- central storage
+CREATE TABLE [dbo].[storage]
+(
+	[id]			[int] IDENTITY(1,1)	NOT NULL,
+	[FK_beerTypes]	[int]				NOT NULL	REFERENCES [dbo].[beerTypes] ([id]),
+	[amount]		[int]				NOT NULL	DEFAULT 0,
+		CONSTRAINT [CLIX_PK_storage] PRIMARY KEY CLUSTERED ([id])
+)
+;
+GO
+
+
+
+-- recipients
+CREATE TABLE [dbo].[beerRecipients]
+(
+	[id]				[int] IDENTITY(1,1)	NOT NULL,
+	[lastName]			[nvarchar](30)		NOT NULL,
+	[firstName]			[nvarchar](30)		NOT NULL,
+	[FK_countries]		[int]				NOT NULL	REFERENCES [dbo].[countries] ([id]),
+		CONSTRAINT [CLIX_PK_beerRecipients_id] PRIMARY KEY CLUSTERED ([id])
+)
+;
+GO
+
+
+
+-- contact details
+CREATE TABLE [dbo].[contactDetails]
+(
+	[id]				[int] IDENTITY(1,1)	NOT NULL,
+	[FK_suppliers]		[int]				NULL		REFERENCES [dbo].[suppliers] ([id]),
+	[FK_beerRecipients]	[int]				NULL		REFERENCES [dbo].[beerRecipients] ([id]),
+	[street]			[nvarchar](30)		NOT NULL,
+	[number]			[nvarchar](10)		NOT NULL,
+	[ZIP]				[nvarchar](10)		NOT NULL,
+	[city]				[nvarchar](30)		NOT NULL,
+	[state]				[nvarchar](30)		NOT NULL,
+	[phone]				[nvarchar](30)		NULL,
+	[email]				[nvarchar](30)		NULL,
+		CONSTRAINT [CLIX_PK_contactDetails_id] PRIMARY KEY CLUSTERED ([id]),
+)
+;
+GO
+
+
+
+-- ordering
+CREATE TABLE [dbo].[orders]
+(
+	[id]			[int] IDENTITY(1,1)	NOT NULL,
+	[FK_suppliers]	[int]				NOT NULL	REFERENCES [dbo].[suppliers] ([id]),
+	[
+	[received]		[bit]				NOT NULL	DEFAULT 0,
+ CONSTRAINT [CLIX_PK_orders] PRIMARY KEY CLUSTERED ([id]),
+)
+;
+GO
 -- orderedBeers
 CREATE TABLE [dbo].[orderedBeers](
 	[PK_orderedBeers] [int] IDENTITY(1,1) NOT NULL,
@@ -245,19 +284,59 @@ CREATE TABLE [dbo].[orderedBeers](
 
 GO
 
-CREATE TABLE [dbo].[beerSuppliers]
-(
-	[PK_beerSuppliers] [int] IDENTITY(1,1) NOT NULL,
-	[FK_suppliers] [int] NOT NULL,
-	[FK_beerTypes] [int] NOT NULL,
-	[price] [money] NOT NULL,
- CONSTRAINT [CLIX_PK_beerSuppliers] PRIMARY KEY CLUSTERED 
-(
-	[PK_beerSuppliers] ASC
-) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
 
+
+
+
+CREATE TABLE [dbo].[deliveries]
+(
+	[id]				[int] IDENTITY(1,1)	NOT NULL,
+	[FK_beerRecipients]	[int]				NULL		REFERENCES [dbo].[beerRecipients] ([id]),
+	[orderDate]			[date]				NOT NULL,
+	[deliveryDate]		[date]				NOT NULL,
+	[billingDate]		[date]				NULL,
+	[invoiceNumber]		[int]				NULL,
+	[delivered]			[bit]				NOT NULL	DEFAULT 0,
+		CONSTRAINT [CLIX_PK_deliveries] PRIMARY KEY CLUSTERED ([id]),
+)
+;
 GO
+
+
+
+
+
+-- trucks and drivers
+CREATE TABLE [dbo].[trucks]
+(
+	[id]		[int] IDENTITY(1,1)	NOT NULL,
+	[capacity]	[int]				NOT NULL 	DEFAULT 100,
+		CONSTRAINT [CLIX_PK_trucks_id] PRIMARY KEY CLUSTERED ([id]),
+)
+;
+GO
+
+CREATE TABLE [dbo].[drivers]
+(
+	[id]			[int] IDENTITY(1,1)	NOT NULL,
+	[name]			[nvarchar](60)		NOT NULL,
+	[FK_trucks]		[int]				NOT NULL	REFERENCES [dbo].[trucks] ([id]),
+	[travelTime]	[int]				NOT NULL	DEFAULT 0,
+		CONSTRAINT [CLIX_PK_drivers_id] PRIMARY KEY CLUSTERED ([id]),
+)
+;
+GO
+
+
+
+
+
+
+
+
+
+
+
 
 CREATE TABLE [dbo].[deliveredBeers]
 (
@@ -279,6 +358,7 @@ CREATE TABLE [dbo].[deliveryDriverCarriages]
 	[FK_drivers] [int] NOT NULL,
 	[FK_deliveries] [int] NOT NULL,
 	[carriage] [int] NOT NULL,
+	[amount] [int] NOT NULL,
  CONSTRAINT [CLIX_PK_deliveryDriverCarriages] PRIMARY KEY CLUSTERED 
 (
 	[PK_deliveryDriverCarriages] ASC
@@ -293,6 +373,7 @@ CREATE TABLE [dbo].[orderDriverCarriages]
 	[FK_drivers] [int] NOT NULL,
 	[FK_orders] [int] NOT NULL,
 	[carriage] [int] NOT NULL,
+	[amount] [int] NOT NULL,
  CONSTRAINT [CLIX_PK_orderDriverCarriages] PRIMARY KEY CLUSTERED 
 (
 	[PK_orderDriverCarriages] ASC
@@ -301,7 +382,21 @@ CREATE TABLE [dbo].[orderDriverCarriages]
 
 GO
 
--- End Tables
+CREATE TABLE [dbo].[supplierStorage]
+(
+	[PK_supplierStorage] [int] IDENTITY(1,1) NOT NULL,
+	[FK_suppliers] [int] NOT NULL,
+	[FK_beerSuppliers] [int] NOT NULL,
+	[amount] [int] NOT NULL,
+ CONSTRAINT [CLIX_PK_supplierStorage] PRIMARY KEY CLUSTERED
+(
+	[PK_supplierStorage]
+) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+-- End Tabellen
 
 -- Constraints
 ALTER TABLE dbo.orders ADD CONSTRAINT
@@ -465,6 +560,42 @@ ALTER TABLE dbo.deliveryDriverCarriages ADD CONSTRAINT
 	) REFERENCES dbo.deliveries
 	(
 	PK_deliveries
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
+GO
+
+ALTER TABLE dbo.storage ADD CONSTRAINT
+	FK_storage_beerTypes FOREIGN KEY
+	(
+	FK_beerTypes
+	) REFERENCES dbo.beerTypes
+	(
+	PK_beerTypes
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
+GO
+
+ALTER TABLE dbo.supplierStorage ADD CONSTRAINT
+	FK_supplierStorage_suppliers FOREIGN KEY
+	(
+	FK_suppliers
+	) REFERENCES dbo.suppliers
+	(
+	PK_suppliers
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
+GO
+
+ALTER TABLE dbo.supplierStorage ADD CONSTRAINT
+	FK_supplierStorage_beerSuppliers FOREIGN KEY
+	(
+	FK_beerSuppliers
+	) REFERENCES dbo.beerSuppliers
+	(
+	PK_beerSuppliers
 	) ON UPDATE NO ACTION
 	  ON DELETE NO ACTION
 
