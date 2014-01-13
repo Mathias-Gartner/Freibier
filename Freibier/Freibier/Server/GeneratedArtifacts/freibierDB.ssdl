@@ -5,12 +5,14 @@
     <EntitySet Name="beerSuppliers" EntityType="freibierDBStore.beerSuppliersItem" store:Type="Tables" Schema="dbo" Table="beerSuppliers" />
     <EntitySet Name="beerTypes" EntityType="freibierDBStore.beerTypesItem" store:Type="Tables" Schema="dbo" Table="beerTypes" />
     <EntitySet Name="countries" EntityType="freibierDBStore.countriesItem" store:Type="Tables" Schema="dbo" Table="countries" />
-    <EntitySet Name="deliveredBeers" EntityType="freibierDBStore.deliveredBeersItem" store:Type="Tables" Schema="dbo" Table="deliveredBeers" />
-    <EntitySet Name="deliveries" EntityType="freibierDBStore.deliveriesItem" store:Type="Tables" Schema="dbo" Table="deliveries" />
+    <EntitySet Name="deliveredBeers" EntityType="freibierDBStore.deliveredBeer" store:Type="Tables" Schema="dbo" Table="deliveredBeers" />
+    <EntitySet Name="deliveries" EntityType="freibierDBStore.delivery" store:Type="Tables" Schema="dbo" Table="deliveries" />
     <EntitySet Name="drivers" EntityType="freibierDBStore.driversItem" store:Type="Tables" Schema="dbo" Table="drivers" />
     <EntitySet Name="orderedBeers" EntityType="freibierDBStore.orderedBeersItem" store:Type="Tables" Schema="dbo" Table="orderedBeers" />
     <EntitySet Name="orders" EntityType="freibierDBStore.Order" store:Type="Tables" Schema="dbo" Table="orders" />
     <EntitySet Name="suppliers" EntityType="freibierDBStore.suppliersItem" store:Type="Tables" Schema="dbo" Table="suppliers" />
+    <EntitySet Name="storage" EntityType="freibierDBStore.storageItem" store:Type="Tables" Schema="dbo" Table="storage" />
+    <EntitySet Name="supplierStorage" EntityType="freibierDBStore.supplierStorageItem" store:Type="Tables" Schema="dbo" Table="supplierStorage" />
     <AssociationSet Name="FK_beerRecipients_countries" Association="freibierDBStore.FK_beerRecipients_countries">
       <End Role="countries" EntitySet="countries" />
       <End Role="beerRecipients" EntitySet="beerRecipients" />
@@ -19,17 +21,17 @@
       <End Role="beerTypes" EntitySet="beerTypes" />
       <End Role="beerSuppliers" EntitySet="beerSuppliers" />
     </AssociationSet>
-    <AssociationSet Name="FK_deliveredBeers_beerTypes" Association="freibierDBStore.FK_deliveredBeers_beerTypes">
+    <AssociationSet Name="beerTypesItem_deliveredBeer" Association="freibierDBStore.beerTypesItem_deliveredBeer">
       <End Role="beerTypes" EntitySet="beerTypes" />
-      <End Role="deliveredBeers" EntitySet="deliveredBeers" />
+      <End Role="deliveredBeer" EntitySet="deliveredBeers" />
     </AssociationSet>
-    <AssociationSet Name="FK_deliveredBeers_deliveries" Association="freibierDBStore.FK_deliveredBeers_deliveries">
-      <End Role="deliveries" EntitySet="deliveries" />
-      <End Role="deliveredBeers" EntitySet="deliveredBeers" />
+    <AssociationSet Name="delivery_deliveredBeer" Association="freibierDBStore.delivery_deliveredBeer">
+      <End Role="delivery" EntitySet="deliveries" />
+      <End Role="deliveredBeer" EntitySet="deliveredBeers" />
     </AssociationSet>
-    <AssociationSet Name="FK_deliveries_beerRecipients" Association="freibierDBStore.FK_deliveries_beerRecipients">
+    <AssociationSet Name="beerRecipientsItem_delivery" Association="freibierDBStore.beerRecipientsItem_delivery">
       <End Role="beerRecipients" EntitySet="beerRecipients" />
-      <End Role="deliveries" EntitySet="deliveries" />
+      <End Role="delivery" EntitySet="deliveries" />
     </AssociationSet>
     <AssociationSet Name="Order_orderedBeersItem1" Association="freibierDBStore.Order_orderedBeersItem1">
       <End Role="Order" EntitySet="orders" />
@@ -50,6 +52,18 @@
     <AssociationSet Name="FK_orderedBeers_beerSuppliers" Association="freibierDBStore.FK_orderedBeers_beerSuppliers">
       <End Role="beerSuppliers" EntitySet="beerSuppliers" />
       <End Role="orderedBeers" EntitySet="orderedBeers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_storage_beerTypes" Association="freibierDBStore.FK_storage_beerTypes">
+      <End Role="beerTypes" EntitySet="beerTypes" />
+      <End Role="storage" EntitySet="storage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_supplierStorage_beerSuppliers" Association="freibierDBStore.FK_supplierStorage_beerSuppliers">
+      <End Role="beerSuppliers" EntitySet="beerSuppliers" />
+      <End Role="supplierStorage" EntitySet="supplierStorage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_supplierStorage_suppliers" Association="freibierDBStore.FK_supplierStorage_suppliers">
+      <End Role="suppliers" EntitySet="suppliers" />
+      <End Role="supplierStorage" EntitySet="supplierStorage" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="beerRecipientsItem">
@@ -88,7 +102,7 @@
     <Property Name="distance" Type="int" Nullable="false" />
     <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="60" />
   </EntityType>
-  <EntityType Name="deliveredBeersItem">
+  <EntityType Name="deliveredBeer">
     <Key>
       <PropertyRef Name="PK_deliveredBeers" />
     </Key>
@@ -97,15 +111,16 @@
     <Property Name="FK_beerTypes" Type="int" Nullable="false" />
     <Property Name="FK_deliveries" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="deliveriesItem">
+  <EntityType Name="delivery">
     <Key>
       <PropertyRef Name="PK_deliveries" />
     </Key>
     <Property Name="PK_deliveries" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="orderDate" Type="date" Nullable="false" />
-    <Property Name="deliveryDate" Type="date" Nullable="false" />
+    <Property Name="deliveryDate" Type="date" />
     <Property Name="billingDate" Type="date" />
     <Property Name="invoiceNumber" Type="int" />
+    <Property Name="delivered" Type="bit" Nullable="false" />
     <Property Name="FK_beerRecipients" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="driversItem">
@@ -148,6 +163,23 @@
     <Property Name="volumeDiscountRequiredQuantity" Type="int" />
     <Property Name="FK_countries" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="storageItem">
+    <Key>
+      <PropertyRef Name="PK_storage" />
+    </Key>
+    <Property Name="PK_storage" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="amount" Type="int" Nullable="false" />
+    <Property Name="FK_beerTypes" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="supplierStorageItem">
+    <Key>
+      <PropertyRef Name="PK_supplierStorage" />
+    </Key>
+    <Property Name="PK_supplierStorage" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="amount" Type="int" Nullable="false" />
+    <Property Name="FK_beerSuppliers" Type="int" Nullable="false" />
+    <Property Name="FK_suppliers" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="FK_beerRecipients_countries">
     <End Role="countries" Type="freibierDBStore.countriesItem" Multiplicity="1" />
     <End Role="beerRecipients" Type="freibierDBStore.beerRecipientsItem" Multiplicity="*" />
@@ -172,38 +204,38 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_deliveredBeers_beerTypes">
+  <Association Name="beerTypesItem_deliveredBeer">
     <End Role="beerTypes" Type="freibierDBStore.beerTypesItem" Multiplicity="1" />
-    <End Role="deliveredBeers" Type="freibierDBStore.deliveredBeersItem" Multiplicity="*" />
+    <End Role="deliveredBeer" Type="freibierDBStore.deliveredBeer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="beerTypes">
         <PropertyRef Name="PK_beerTypes" />
       </Principal>
-      <Dependent Role="deliveredBeers">
+      <Dependent Role="deliveredBeer">
         <PropertyRef Name="FK_beerTypes" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_deliveredBeers_deliveries">
-    <End Role="deliveries" Type="freibierDBStore.deliveriesItem" Multiplicity="1" />
-    <End Role="deliveredBeers" Type="freibierDBStore.deliveredBeersItem" Multiplicity="*" />
+  <Association Name="delivery_deliveredBeer">
+    <End Role="delivery" Type="freibierDBStore.delivery" Multiplicity="1" />
+    <End Role="deliveredBeer" Type="freibierDBStore.deliveredBeer" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="deliveries">
+      <Principal Role="delivery">
         <PropertyRef Name="PK_deliveries" />
       </Principal>
-      <Dependent Role="deliveredBeers">
+      <Dependent Role="deliveredBeer">
         <PropertyRef Name="FK_deliveries" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_deliveries_beerRecipients">
+  <Association Name="beerRecipientsItem_delivery">
     <End Role="beerRecipients" Type="freibierDBStore.beerRecipientsItem" Multiplicity="1" />
-    <End Role="deliveries" Type="freibierDBStore.deliveriesItem" Multiplicity="*" />
+    <End Role="delivery" Type="freibierDBStore.delivery" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="beerRecipients">
         <PropertyRef Name="PK_beerRecipients" />
       </Principal>
-      <Dependent Role="deliveries">
+      <Dependent Role="delivery">
         <PropertyRef Name="FK_beerRecipients" />
       </Dependent>
     </ReferentialConstraint>
@@ -265,6 +297,42 @@
       </Principal>
       <Dependent Role="orderedBeers">
         <PropertyRef Name="FK_beerSuppliers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_storage_beerTypes">
+    <End Role="beerTypes" Type="freibierDBStore.beerTypesItem" Multiplicity="1" />
+    <End Role="storage" Type="freibierDBStore.storageItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="beerTypes">
+        <PropertyRef Name="PK_beerTypes" />
+      </Principal>
+      <Dependent Role="storage">
+        <PropertyRef Name="FK_beerTypes" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_supplierStorage_beerSuppliers">
+    <End Role="beerSuppliers" Type="freibierDBStore.beerSuppliersItem" Multiplicity="1" />
+    <End Role="supplierStorage" Type="freibierDBStore.supplierStorageItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="beerSuppliers">
+        <PropertyRef Name="PK_beerSuppliers" />
+      </Principal>
+      <Dependent Role="supplierStorage">
+        <PropertyRef Name="FK_beerSuppliers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_supplierStorage_suppliers">
+    <End Role="suppliers" Type="freibierDBStore.suppliersItem" Multiplicity="1" />
+    <End Role="supplierStorage" Type="freibierDBStore.supplierStorageItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers">
+        <PropertyRef Name="PK_suppliers" />
+      </Principal>
+      <Dependent Role="supplierStorage">
+        <PropertyRef Name="FK_suppliers" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -11,7 +11,7 @@
     <Property Name="mail" Type="Edm.String" MaxLength="30" ConcurrencyMode="Fixed" />
     <Property Name="FK_countries" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
     <NavigationProperty Name="country" Relationship="LightSwitchApplication.FK_beerRecipients_countries" ToRole="countries" FromRole="beerRecipients" />
-    <NavigationProperty Name="deliveries" Relationship="LightSwitchApplication.FK_deliveries_beerRecipients" ToRole="deliveries" FromRole="beerRecipients" />
+    <NavigationProperty Name="deliveries" Relationship="LightSwitchApplication.beerRecipientsItem_delivery" ToRole="delivery" FromRole="beerRecipients" />
   </EntityType>
   <EntityType Name="beerSuppliersItem">
     <Key>
@@ -24,6 +24,7 @@
     <NavigationProperty Name="beerType" Relationship="LightSwitchApplication.FK_beerSuppliers_beerTypes" ToRole="beerTypes" FromRole="beerSuppliers" />
     <NavigationProperty Name="supplier" Relationship="LightSwitchApplication.FK_beerSuppliers_suppliers" ToRole="suppliers" FromRole="beerSuppliers" />
     <NavigationProperty Name="orderedBeers" Relationship="LightSwitchApplication.FK_orderedBeers_beerSuppliers" ToRole="orderedBeers" FromRole="beerSuppliers" />
+    <NavigationProperty Name="supplierStorage" Relationship="LightSwitchApplication.FK_supplierStorage_beerSuppliers" ToRole="supplierStorage" FromRole="beerSuppliers" />
   </EntityType>
   <EntityType Name="beerTypesItem">
     <Key>
@@ -32,7 +33,8 @@
     <Property Name="PK_beerTypes" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="50" ConcurrencyMode="Fixed" />
     <NavigationProperty Name="beerSuppliers" Relationship="LightSwitchApplication.FK_beerSuppliers_beerTypes" ToRole="beerSuppliers" FromRole="beerTypes" />
-    <NavigationProperty Name="deliveredBeers" Relationship="LightSwitchApplication.FK_deliveredBeers_beerTypes" ToRole="deliveredBeers" FromRole="beerTypes" />
+    <NavigationProperty Name="deliveredBeers" Relationship="LightSwitchApplication.beerTypesItem_deliveredBeer" ToRole="deliveredBeer" FromRole="beerTypes" />
+    <NavigationProperty Name="storage" Relationship="LightSwitchApplication.FK_storage_beerTypes" ToRole="storage" FromRole="beerTypes" />
   </EntityType>
   <EntityType Name="countriesItem">
     <Key>
@@ -45,7 +47,7 @@
     <NavigationProperty Name="beerRecipients" Relationship="LightSwitchApplication.FK_beerRecipients_countries" ToRole="beerRecipients" FromRole="countries" />
     <NavigationProperty Name="suppliers" Relationship="LightSwitchApplication.FK_suppliers_countries" ToRole="suppliers" FromRole="countries" />
   </EntityType>
-  <EntityType Name="deliveredBeersItem">
+  <EntityType Name="deliveredBeer">
     <Key>
       <PropertyRef Name="PK_deliveredBeers" />
     </Key>
@@ -53,21 +55,22 @@
     <Property Name="amount" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
     <Property Name="FK_beerTypes" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
     <Property Name="FK_deliveries" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
-    <NavigationProperty Name="beerType" Relationship="LightSwitchApplication.FK_deliveredBeers_beerTypes" ToRole="beerTypes" FromRole="deliveredBeers" />
-    <NavigationProperty Name="delivery" Relationship="LightSwitchApplication.FK_deliveredBeers_deliveries" ToRole="deliveries" FromRole="deliveredBeers" />
+    <NavigationProperty Name="beerType" Relationship="LightSwitchApplication.beerTypesItem_deliveredBeer" ToRole="beerTypes" FromRole="deliveredBeer" />
+    <NavigationProperty Name="delivery" Relationship="LightSwitchApplication.delivery_deliveredBeer" ToRole="delivery" FromRole="deliveredBeer" />
   </EntityType>
-  <EntityType Name="deliveriesItem">
+  <EntityType Name="delivery">
     <Key>
       <PropertyRef Name="PK_deliveries" />
     </Key>
     <Property Name="PK_deliveries" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="orderDate" Type="Edm.DateTime" Nullable="false" Precision="0" ConcurrencyMode="Fixed" />
-    <Property Name="deliveryDate" Type="Edm.DateTime" Nullable="false" Precision="0" ConcurrencyMode="Fixed" />
+    <Property Name="deliveryDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
     <Property Name="billingDate" Type="Edm.DateTime" Precision="0" ConcurrencyMode="Fixed" />
     <Property Name="invoiceNumber" Type="Edm.Int32" ConcurrencyMode="Fixed" />
+    <Property Name="delivered" Type="Edm.Boolean" Nullable="false" ConcurrencyMode="Fixed" />
     <Property Name="FK_beerRecipients" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
-    <NavigationProperty Name="deliveredBeers" Relationship="LightSwitchApplication.FK_deliveredBeers_deliveries" ToRole="deliveredBeers" FromRole="deliveries" />
-    <NavigationProperty Name="beerRecipient" Relationship="LightSwitchApplication.FK_deliveries_beerRecipients" ToRole="beerRecipients" FromRole="deliveries" />
+    <NavigationProperty Name="deliveredBeers" Relationship="LightSwitchApplication.delivery_deliveredBeer" ToRole="deliveredBeer" FromRole="delivery" />
+    <NavigationProperty Name="beerRecipient" Relationship="LightSwitchApplication.beerRecipientsItem_delivery" ToRole="beerRecipients" FromRole="delivery" />
   </EntityType>
   <EntityType Name="driversItem">
     <Key>
@@ -115,6 +118,27 @@
     <NavigationProperty Name="orders" Relationship="LightSwitchApplication.suppliersItem_Order1" ToRole="Order" FromRole="suppliers" />
     <NavigationProperty Name="country" Relationship="LightSwitchApplication.FK_suppliers_countries" ToRole="countries" FromRole="suppliers" />
     <NavigationProperty Name="beerSuppliers" Relationship="LightSwitchApplication.FK_beerSuppliers_suppliers" ToRole="beerSuppliers" FromRole="suppliers" />
+    <NavigationProperty Name="supplierStorage" Relationship="LightSwitchApplication.FK_supplierStorage_suppliers" ToRole="supplierStorage" FromRole="suppliers" />
+  </EntityType>
+  <EntityType Name="storageItem">
+    <Key>
+      <PropertyRef Name="PK_storage" />
+    </Key>
+    <Property Name="PK_storage" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="amount" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="FK_beerTypes" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="beerTypesItem1" Relationship="LightSwitchApplication.FK_storage_beerTypes" ToRole="beerTypes" FromRole="storage" />
+  </EntityType>
+  <EntityType Name="supplierStorageItem">
+    <Key>
+      <PropertyRef Name="PK_supplierStorage" />
+    </Key>
+    <Property Name="PK_supplierStorage" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="amount" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="FK_beerSuppliers" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <Property Name="FK_suppliers" Type="Edm.Int32" Nullable="false" ConcurrencyMode="Fixed" />
+    <NavigationProperty Name="beerSuppliersItem1" Relationship="LightSwitchApplication.FK_supplierStorage_beerSuppliers" ToRole="beerSuppliers" FromRole="supplierStorage" />
+    <NavigationProperty Name="suppliersItem1" Relationship="LightSwitchApplication.FK_supplierStorage_suppliers" ToRole="suppliers" FromRole="supplierStorage" />
   </EntityType>
   <Association Name="FK_beerRecipients_countries">
     <End Role="countries" Type="LightSwitchApplication.countriesItem" Multiplicity="1" />
@@ -140,38 +164,38 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_deliveredBeers_beerTypes">
+  <Association Name="beerTypesItem_deliveredBeer">
     <End Role="beerTypes" Type="LightSwitchApplication.beerTypesItem" Multiplicity="1" />
-    <End Role="deliveredBeers" Type="LightSwitchApplication.deliveredBeersItem" Multiplicity="*" />
+    <End Role="deliveredBeer" Type="LightSwitchApplication.deliveredBeer" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="beerTypes">
         <PropertyRef Name="PK_beerTypes" />
       </Principal>
-      <Dependent Role="deliveredBeers">
+      <Dependent Role="deliveredBeer">
         <PropertyRef Name="FK_beerTypes" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_deliveredBeers_deliveries">
-    <End Role="deliveries" Type="LightSwitchApplication.deliveriesItem" Multiplicity="1" />
-    <End Role="deliveredBeers" Type="LightSwitchApplication.deliveredBeersItem" Multiplicity="*" />
+  <Association Name="delivery_deliveredBeer">
+    <End Role="delivery" Type="LightSwitchApplication.delivery" Multiplicity="1" />
+    <End Role="deliveredBeer" Type="LightSwitchApplication.deliveredBeer" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="deliveries">
+      <Principal Role="delivery">
         <PropertyRef Name="PK_deliveries" />
       </Principal>
-      <Dependent Role="deliveredBeers">
+      <Dependent Role="deliveredBeer">
         <PropertyRef Name="FK_deliveries" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_deliveries_beerRecipients">
+  <Association Name="beerRecipientsItem_delivery">
     <End Role="beerRecipients" Type="LightSwitchApplication.beerRecipientsItem" Multiplicity="1" />
-    <End Role="deliveries" Type="LightSwitchApplication.deliveriesItem" Multiplicity="*" />
+    <End Role="delivery" Type="LightSwitchApplication.delivery" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="beerRecipients">
         <PropertyRef Name="PK_beerRecipients" />
       </Principal>
-      <Dependent Role="deliveries">
+      <Dependent Role="delivery">
         <PropertyRef Name="FK_beerRecipients" />
       </Dependent>
     </ReferentialConstraint>
@@ -236,17 +260,55 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_storage_beerTypes">
+    <End Role="beerTypes" Type="LightSwitchApplication.beerTypesItem" Multiplicity="1" />
+    <End Role="storage" Type="LightSwitchApplication.storageItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="beerTypes">
+        <PropertyRef Name="PK_beerTypes" />
+      </Principal>
+      <Dependent Role="storage">
+        <PropertyRef Name="FK_beerTypes" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_supplierStorage_beerSuppliers">
+    <End Role="beerSuppliers" Type="LightSwitchApplication.beerSuppliersItem" Multiplicity="1" />
+    <End Role="supplierStorage" Type="LightSwitchApplication.supplierStorageItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="beerSuppliers">
+        <PropertyRef Name="PK_beerSuppliers" />
+      </Principal>
+      <Dependent Role="supplierStorage">
+        <PropertyRef Name="FK_beerSuppliers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_supplierStorage_suppliers">
+    <End Role="suppliers" Type="LightSwitchApplication.suppliersItem" Multiplicity="1" />
+    <End Role="supplierStorage" Type="LightSwitchApplication.supplierStorageItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers">
+        <PropertyRef Name="PK_suppliers" />
+      </Principal>
+      <Dependent Role="supplierStorage">
+        <PropertyRef Name="FK_suppliers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="freibierDBObjectContext" m:IsDefaultEntityContainer="true">
     <EntitySet Name="beerRecipients" EntityType="LightSwitchApplication.beerRecipientsItem" />
     <EntitySet Name="beerSuppliers" EntityType="LightSwitchApplication.beerSuppliersItem" />
     <EntitySet Name="beerTypes" EntityType="LightSwitchApplication.beerTypesItem" />
     <EntitySet Name="countries" EntityType="LightSwitchApplication.countriesItem" />
-    <EntitySet Name="deliveredBeers" EntityType="LightSwitchApplication.deliveredBeersItem" />
-    <EntitySet Name="deliveries" EntityType="LightSwitchApplication.deliveriesItem" />
+    <EntitySet Name="deliveredBeers" EntityType="LightSwitchApplication.deliveredBeer" />
+    <EntitySet Name="deliveries" EntityType="LightSwitchApplication.delivery" />
     <EntitySet Name="drivers" EntityType="LightSwitchApplication.driversItem" />
     <EntitySet Name="orderedBeers" EntityType="LightSwitchApplication.orderedBeersItem" />
     <EntitySet Name="orders" EntityType="LightSwitchApplication.Order" />
     <EntitySet Name="suppliers" EntityType="LightSwitchApplication.suppliersItem" />
+    <EntitySet Name="storage" EntityType="LightSwitchApplication.storageItem" />
+    <EntitySet Name="supplierStorage" EntityType="LightSwitchApplication.supplierStorageItem" />
     <AssociationSet Name="FK_beerRecipients_countries" Association="LightSwitchApplication.FK_beerRecipients_countries">
       <End Role="countries" EntitySet="countries" />
       <End Role="beerRecipients" EntitySet="beerRecipients" />
@@ -255,17 +317,17 @@
       <End Role="beerTypes" EntitySet="beerTypes" />
       <End Role="beerSuppliers" EntitySet="beerSuppliers" />
     </AssociationSet>
-    <AssociationSet Name="FK_deliveredBeers_beerTypes" Association="LightSwitchApplication.FK_deliveredBeers_beerTypes">
+    <AssociationSet Name="beerTypesItem_deliveredBeer" Association="LightSwitchApplication.beerTypesItem_deliveredBeer">
       <End Role="beerTypes" EntitySet="beerTypes" />
-      <End Role="deliveredBeers" EntitySet="deliveredBeers" />
+      <End Role="deliveredBeer" EntitySet="deliveredBeers" />
     </AssociationSet>
-    <AssociationSet Name="FK_deliveredBeers_deliveries" Association="LightSwitchApplication.FK_deliveredBeers_deliveries">
-      <End Role="deliveries" EntitySet="deliveries" />
-      <End Role="deliveredBeers" EntitySet="deliveredBeers" />
+    <AssociationSet Name="delivery_deliveredBeer" Association="LightSwitchApplication.delivery_deliveredBeer">
+      <End Role="delivery" EntitySet="deliveries" />
+      <End Role="deliveredBeer" EntitySet="deliveredBeers" />
     </AssociationSet>
-    <AssociationSet Name="FK_deliveries_beerRecipients" Association="LightSwitchApplication.FK_deliveries_beerRecipients">
+    <AssociationSet Name="beerRecipientsItem_delivery" Association="LightSwitchApplication.beerRecipientsItem_delivery">
       <End Role="beerRecipients" EntitySet="beerRecipients" />
-      <End Role="deliveries" EntitySet="deliveries" />
+      <End Role="delivery" EntitySet="deliveries" />
     </AssociationSet>
     <AssociationSet Name="Order_orderedBeersItem1" Association="LightSwitchApplication.Order_orderedBeersItem1">
       <End Role="Order" EntitySet="orders" />
@@ -286,6 +348,18 @@
     <AssociationSet Name="FK_orderedBeers_beerSuppliers" Association="LightSwitchApplication.FK_orderedBeers_beerSuppliers">
       <End Role="beerSuppliers" EntitySet="beerSuppliers" />
       <End Role="orderedBeers" EntitySet="orderedBeers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_storage_beerTypes" Association="LightSwitchApplication.FK_storage_beerTypes">
+      <End Role="beerTypes" EntitySet="beerTypes" />
+      <End Role="storage" EntitySet="storage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_supplierStorage_beerSuppliers" Association="LightSwitchApplication.FK_supplierStorage_beerSuppliers">
+      <End Role="beerSuppliers" EntitySet="beerSuppliers" />
+      <End Role="supplierStorage" EntitySet="supplierStorage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_supplierStorage_suppliers" Association="LightSwitchApplication.FK_supplierStorage_suppliers">
+      <End Role="suppliers" EntitySet="suppliers" />
+      <End Role="supplierStorage" EntitySet="supplierStorage" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

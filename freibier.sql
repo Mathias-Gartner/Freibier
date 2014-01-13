@@ -16,7 +16,7 @@ CREATE DATABASE freibier
         FILENAME   = 'C:\Databases\freibier_dat.mdf',
         SIZE       = 100MB,
         MAXSIZE    = 10000MB,
-        FILEGROWTH = 10MB
+        FILEGROWTH = 10%
     )
         LOG ON
         (
@@ -24,7 +24,7 @@ CREATE DATABASE freibier
             FILENAME   = 'C:\Databases\freibier_log.ldf',
             SIZE       = 10MB,
             MAXSIZE    = 1000MB,
-            FILEGROWTH = 1MB
+            FILEGROWTH = 10%
         )
 ;
 GO
@@ -330,6 +330,7 @@ CREATE TABLE [dbo].[deliveryDriverCarriages]
 		CONSTRAINT [CLIX_PK_deliveryDriverCarriages_id] PRIMARY KEY CLUSTERED ([id]),
 )
 ;
+
 GO
 
 

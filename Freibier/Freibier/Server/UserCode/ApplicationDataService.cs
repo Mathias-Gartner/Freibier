@@ -11,18 +11,36 @@ namespace LightSwitchApplication
 {
     public partial class ApplicationDataService
     {
-        partial void OrderBuySuppliesOperations_Inserting(DeliveryConfirmOperation entity)
+        partial void DeliveryConfirmOperations_Inserting(DeliveryConfirmOperation entity)
         {
+            string errorMessage;
+            entity.ExecutionError = executeStoredProcedure("usp_delivery_confirm", new[] { new SqlParameter("@deliveryId", entity.DeliveryId) }, out errorMessage);
+            if (entity.ExecutionError)
+                entity.ErrorMessage = errorMessage;
+        }
+
+        partial void OrderReceivedOperations_Inserting(OrderReceivedOperation entity)
+        {
+            string errorMessage;
+            entity.ExecutionError = executeStoredProcedure("usp_order_received", new[] { new SqlParameter("@orderId", entity.OrderId) }, out errorMessage);
+            if (entity.ExecutionError)
+                entity.ErrorMessage = errorMessage;
+        }
+
+        private bool executeStoredProcedure(string procedureName, SqlParameter[] parameters, out string errorMessage)
+        {
+            var error = false;
+            errorMessage = null;
+
             using (SqlConnection connection = new SqlConnection())
             {
                 var connectionStringName = this.DataWorkspace.freibierDB.Details.Name;
                 connection.ConnectionString = ConfigurationManager.ConnectionStrings[connectionStringName].ConnectionString;
 
-                var procedure = "usp_delivery_confirm";
-                using (SqlCommand command = new SqlCommand(procedure, connection))
+                using (SqlCommand command = new SqlCommand(procedureName, connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.Add(new SqlParameter("@deliveryId", entity.DeliveryId));
+                    command.Parameters.AddRange(parameters);
 
                     connection.Open();
                     try
@@ -31,14 +49,16 @@ namespace LightSwitchApplication
                     }
                     catch (SqlException e)
                     {
-                        entity.ExecutionError = true;
-                        entity.ErrorMessage = e.Message;
+                        error = true;
+                        errorMessage = e.Message;
                     }
                 }
             }
 
-            if (!entity.ExecutionError)
+            if (!error)
                 this.Details.DiscardChanges();
+
+            return error;
         }
     }
 }

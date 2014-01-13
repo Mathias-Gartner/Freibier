@@ -1,12 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping CdmEntityContainer="ApplicationDataObjectContext" StorageEntityContainer="ApplicationDataStore">
-    <EntitySetMapping Name="OrderBuySuppliesOperations">
+    <EntitySetMapping Name="DeliveryConfirmOperations">
       <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.DeliveryConfirmOperation)">
-        <MappingFragment StoreEntitySet="OrderBuySuppliesOperations">
+        <MappingFragment StoreEntitySet="DeliveryConfirmOperations">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
           <ScalarProperty Name="DeliveryId" ColumnName="DeliveryId" />
+          <ScalarProperty Name="ExecutionError" ColumnName="ExecutionError" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderReceivedOperations">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.OrderReceivedOperation)">
+        <MappingFragment StoreEntitySet="OrderReceivedOperations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
           <ScalarProperty Name="ExecutionError" ColumnName="ExecutionError" />
           <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
         </MappingFragment>

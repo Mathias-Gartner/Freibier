@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 
 // Ursprünglicher Dateiname:
-// Erstellungsdatum: 12.01.2014 03:06:04
+// Erstellungsdatum: 13.01.2014 00:44:37
 namespace LightSwitchApplication.Implementation
 {
     
@@ -61,29 +61,54 @@ namespace LightSwitchApplication.Implementation
             return null;
         }
         /// <summary>
-        /// Im Schema sind keine Kommentare für "OrderBuySuppliesOperations" vorhanden.
+        /// Im Schema sind keine Kommentare für "DeliveryConfirmOperations" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public global::System.Data.Services.Client.DataServiceQuery<DeliveryConfirmOperation> OrderBuySuppliesOperations
+        public global::System.Data.Services.Client.DataServiceQuery<DeliveryConfirmOperation> DeliveryConfirmOperations
         {
             get
             {
-                if ((this._OrderBuySuppliesOperations == null))
+                if ((this._DeliveryConfirmOperations == null))
                 {
-                    this._OrderBuySuppliesOperations = base.CreateQuery<DeliveryConfirmOperation>("OrderBuySuppliesOperations");
+                    this._DeliveryConfirmOperations = base.CreateQuery<DeliveryConfirmOperation>("DeliveryConfirmOperations");
                 }
-                return this._OrderBuySuppliesOperations;
+                return this._DeliveryConfirmOperations;
             }
         }
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        private global::System.Data.Services.Client.DataServiceQuery<DeliveryConfirmOperation> _OrderBuySuppliesOperations;
+        private global::System.Data.Services.Client.DataServiceQuery<DeliveryConfirmOperation> _DeliveryConfirmOperations;
         /// <summary>
-        /// Im Schema sind keine Kommentare für "OrderBuySuppliesOperations" vorhanden.
+        /// Im Schema sind keine Kommentare für "OrderReceivedOperations" vorhanden.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
-        public void AddToOrderBuySuppliesOperations(DeliveryConfirmOperation deliveryConfirmOperation)
+        public global::System.Data.Services.Client.DataServiceQuery<OrderReceivedOperation> OrderReceivedOperations
         {
-            base.AddObject("OrderBuySuppliesOperations", deliveryConfirmOperation);
+            get
+            {
+                if ((this._OrderReceivedOperations == null))
+                {
+                    this._OrderReceivedOperations = base.CreateQuery<OrderReceivedOperation>("OrderReceivedOperations");
+                }
+                return this._OrderReceivedOperations;
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private global::System.Data.Services.Client.DataServiceQuery<OrderReceivedOperation> _OrderReceivedOperations;
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "DeliveryConfirmOperations" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToDeliveryConfirmOperations(DeliveryConfirmOperation deliveryConfirmOperation)
+        {
+            base.AddObject("DeliveryConfirmOperations", deliveryConfirmOperation);
+        }
+        /// <summary>
+        /// Im Schema sind keine Kommentare für "OrderReceivedOperations" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public void AddToOrderReceivedOperations(OrderReceivedOperation orderReceivedOperation)
+        {
+            base.AddObject("OrderReceivedOperations", orderReceivedOperation);
         }
     }
     /// <summary>
@@ -92,7 +117,7 @@ namespace LightSwitchApplication.Implementation
     /// <KeyProperties>
     /// Id
     /// </KeyProperties>
-    [global::System.Data.Services.Common.EntitySetAttribute("OrderBuySuppliesOperations")]
+    [global::System.Data.Services.Common.EntitySetAttribute("DeliveryConfirmOperations")]
     [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
     public partial class DeliveryConfirmOperation : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
     {
@@ -198,6 +223,181 @@ namespace LightSwitchApplication.Implementation
         private int _DeliveryId;
         partial void OnDeliveryIdChanging(int value);
         partial void OnDeliveryIdChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "ExecutionError" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public bool ExecutionError
+        {
+            get
+            {
+                return this._ExecutionError;
+            }
+            set
+            {
+                this.OnExecutionErrorChanging(value);
+                if (object.Equals(this.ExecutionError, value))
+                {
+                    return;
+                }
+                this._ExecutionError = value;
+                this.OnExecutionErrorChanged();
+                this.OnPropertyChanged("ExecutionError");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private bool _ExecutionError;
+        partial void OnExecutionErrorChanging(bool value);
+        partial void OnExecutionErrorChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "ErrorMessage" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public string ErrorMessage
+        {
+            get
+            {
+                return this._ErrorMessage;
+            }
+            set
+            {
+                this.OnErrorMessageChanging(value);
+                if (object.Equals(this.ErrorMessage, value))
+                {
+                    return;
+                }
+                this._ErrorMessage = value;
+                this.OnErrorMessageChanged();
+                this.OnPropertyChanged("ErrorMessage");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private string _ErrorMessage;
+        partial void OnErrorMessageChanging(string value);
+        partial void OnErrorMessageChanged();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public event global::System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        protected virtual void OnPropertyChanged(string property)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new global::System.ComponentModel.PropertyChangedEventArgs(property));
+            }
+        }
+    }
+    /// <summary>
+    /// Im Schema sind keine Kommentare für "LightSwitchApplication.OrderReceivedOperation" vorhanden.
+    /// </summary>
+    /// <KeyProperties>
+    /// Id
+    /// </KeyProperties>
+    [global::System.Data.Services.Common.EntitySetAttribute("OrderReceivedOperations")]
+    [global::System.Data.Services.Common.DataServiceKeyAttribute("Id")]
+    public partial class OrderReceivedOperation : global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityBase, global::System.ComponentModel.INotifyPropertyChanged
+    {
+        /// <summary>
+        /// Erstellt ein neues OrderReceivedOperation-Objekt.
+        /// </summary>
+        /// <param name="ID">Anfangswert von Id.</param>
+        /// <param name="rowVersion">Anfangswert von RowVersion.</param>
+        /// <param name="orderId">Anfangswert von OrderId.</param>
+        /// <param name="executionError">Anfangswert von ExecutionError.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public static OrderReceivedOperation CreateOrderReceivedOperation(int ID, byte[] rowVersion, int orderId, bool executionError)
+        {
+            OrderReceivedOperation orderReceivedOperation = new OrderReceivedOperation();
+            orderReceivedOperation.Id = ID;
+            orderReceivedOperation.RowVersion = rowVersion;
+            orderReceivedOperation.OrderId = orderId;
+            orderReceivedOperation.ExecutionError = executionError;
+            return orderReceivedOperation;
+        }
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "Id" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int Id
+        {
+            get
+            {
+                return this._Id;
+            }
+            set
+            {
+                this.OnIdChanging(value);
+                if (object.Equals(this.Id, value))
+                {
+                    return;
+                }
+                this._Id = value;
+                this.OnIdChanged();
+                this.OnPropertyChanged("Id");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _Id;
+        partial void OnIdChanging(int value);
+        partial void OnIdChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "RowVersion" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public byte[] RowVersion
+        {
+            get
+            {
+                if ((this._RowVersion != null))
+                {
+                    return ((byte[])(this._RowVersion.Clone()));
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                this.OnRowVersionChanging(value);
+                if (object.Equals(this.RowVersion, value))
+                {
+                    return;
+                }
+                this._RowVersion = value;
+                this.OnRowVersionChanged();
+                this.OnPropertyChanged("RowVersion");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private byte[] _RowVersion;
+        partial void OnRowVersionChanging(byte[] value);
+        partial void OnRowVersionChanged();
+        /// <summary>
+        /// Im Schema sind keine Kommentare für die Eigenschaft "OrderId" vorhanden.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        public int OrderId
+        {
+            get
+            {
+                return this._OrderId;
+            }
+            set
+            {
+                this.OnOrderIdChanging(value);
+                if (object.Equals(this.OrderId, value))
+                {
+                    return;
+                }
+                this._OrderId = value;
+                this.OnOrderIdChanged();
+                this.OnPropertyChanged("OrderId");
+            }
+        }
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Services.Design", "1.0.0")]
+        private int _OrderId;
+        partial void OnOrderIdChanging(int value);
+        partial void OnOrderIdChanged();
         /// <summary>
         /// Im Schema sind keine Kommentare für die Eigenschaft "ExecutionError" vorhanden.
         /// </summary>
