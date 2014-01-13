@@ -1,15 +1,7 @@
 ﻿-- Freibier Datenbank
--- bla
-
-
----------
--- Server
----------
+-- Create DB
 USE master;
 GO
-
-
--- Datenbank
 IF DB_ID('freibier') IS NOT NULL
 BEGIN
 	-- terminate existing connections
@@ -22,7 +14,7 @@ CREATE DATABASE freibier
     (
         NAME       = freibier_dat,
         FILENAME   = 'C:\Databases\freibier_dat.mdf',
-        SIZE       = 20MB,
+        SIZE       = 100MB,
         MAXSIZE    = 10000MB,
         FILEGROWTH = 10MB
     )
@@ -31,16 +23,16 @@ CREATE DATABASE freibier
             NAME       = freibier_log,
             FILENAME   = 'C:\Databases\freibier_log.ldf',
             SIZE       = 10MB,
-            MAXSIZE    = 100MB,
+            MAXSIZE    = 1000MB,
             FILEGROWTH = 1MB
         )
 ;
 GO
--- End Datenbank
+-- End Create DB
 
-
-
-
+---------
+-- Server
+---------
 -- Logins
 IF EXISTS
     (
@@ -66,68 +58,79 @@ CREATE LOGIN freibier_office
 ;
 GO
 
+IF EXISTS
+    (
+        SELECT name FROM sys.server_principals 
+            WHERE name = 'freibier_driver'
+    )
+    DROP LOGIN freibier_driver
+;
+CREATE LOGIN freibier_driver
+    WITH PASSWORD = 'pass', DEFAULT_DATABASE = freibier
+;
+GO
 -- End Logins
 --------------
 -- End Server
---------------
 
 
-
-
------------
 -- Database
 -----------
 USE freibier;
 GO
-
-
 -- Users
 IF EXISTS
     (
         SELECT principal_id FROM sys.database_principals
-            WHERE name = 'freibier_admin'
+            WHERE name = 'admin'
     )
-    DROP USER freibier_admin
+    DROP USER admin
 ;
-CREATE USER freibier_admin;
+CREATE USER admin FOR LOGIN freibier_admin;
 
 IF EXISTS
     (
         SELECT principal_id FROM sys.database_principals
-            WHERE name = 'freibier_office'
+            WHERE name = 'office'
     )
-    DROP USER freibier_office
+    DROP USER office
 ;
-CREATE USER freibier_office;
+CREATE USER office FOR LOGIN freibier_office;
 -- End Users
 
+IF EXISTS
+    (
+        SELECT principal_id FROM sys.database_principals
+            WHERE name = 'driver'
+    )
+    DROP USER driver
+;
+CREATE USER driver FOR LOGIN freibier_driver;
+-- End Users
 
+-- Roles
+-- 'admin' won't work, so append '_role', Sladi
+IF DATABASE_PRINCIPAL_ID('admin_role') IS NOT NULL DROP ROLE admin_role;
+CREATE ROLE admin_role AUTHORIZATION db_owner;
+ALTER ROLE admin_role ADD MEMBER admin;
 
+IF DATABASE_PRINCIPAL_ID('office_role') IS NOT NULL DROP ROLE office_role;
+CREATE ROLE office_role;
+--GRANT SELECT TO office;
+ALTER ROLE office_role ADD MEMBER office;
+-- End Roles
 
-
-
--- Database Roles
-IF DATABASE_PRINCIPAL_ID('admin') IS NOT NULL DROP ROLE admin;
-CREATE ROLE admin AUTHORIZATION db_owner;
-ALTER ROLE admin ADD MEMBER freibier_admin;
-
-IF DATABASE_PRINCIPAL_ID('office') IS NOT NULL DROP ROLE office;
-CREATE ROLE office;
-GRANT SELECT, INSERT, UPDATE, DELETE, EXECUTE TO office;
-ALTER ROLE office ADD MEMBER freibier_office;
+IF DATABASE_PRINCIPAL_ID('driver_role') IS NOT NULL DROP ROLE driver_role;
+CREATE ROLE driver_role;
+--GRANT SELECT TO driver;
+ALTER ROLE driver_role ADD MEMBER driver;
 -- End Roles
 
 
 
-
-
-
-
-
--- Tabellen
+-- Tables
 USE freibier;
 GO
-
 CREATE TABLE [dbo].[suppliers](
 	[PK_suppliers] [int] IDENTITY(1,1) NOT NULL,
 	[FK_countries] [int] NOT NULL,
@@ -298,7 +301,7 @@ CREATE TABLE [dbo].[orderDriverCarriages]
 
 GO
 
--- End Tabellen
+-- End Tables
 
 -- Constraints
 ALTER TABLE dbo.orders ADD CONSTRAINT
