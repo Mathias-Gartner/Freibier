@@ -23,16 +23,16 @@ CREATE DATABASE freibier
         NAME       = freibier_dat,
         FILENAME   = 'C:\Databases\freibier_dat.mdf',
         SIZE       = 20MB,
-        MAXSIZE    = 10000MB,
-        FILEGROWTH = 10MB
+        MAXSIZE    = 10TB,
+        FILEGROWTH = 10%
     )
         LOG ON
         (
             NAME       = freibier_log,
             FILENAME   = 'C:\Databases\freibier_log.ldf',
             SIZE       = 10MB,
-            MAXSIZE    = 100MB,
-            FILEGROWTH = 1MB
+            MAXSIZE    = 1TB,
+            FILEGROWTH = 10%
         )
 ;
 GO
@@ -152,6 +152,7 @@ CREATE TABLE [dbo].[deliveries](
 	[deliveryDate] [date] NOT NULL,
 	[billingDate] [date] NULL,
 	[invoiceNumber] [int] NULL,
+	[delivered] [bit] NOT NULL DEFAULT 0,
  CONSTRAINT [CLIX_PK_deliveries] PRIMARY KEY CLUSTERED 
 (
 	[PK_deliveries] ASC
@@ -276,6 +277,7 @@ CREATE TABLE [dbo].[deliveryDriverCarriages]
 	[FK_drivers] [int] NOT NULL,
 	[FK_deliveries] [int] NOT NULL,
 	[carriage] [int] NOT NULL,
+	[amount] [int] NOT NULL,
  CONSTRAINT [CLIX_PK_deliveryDriverCarriages] PRIMARY KEY CLUSTERED 
 (
 	[PK_deliveryDriverCarriages] ASC
@@ -290,9 +292,37 @@ CREATE TABLE [dbo].[orderDriverCarriages]
 	[FK_drivers] [int] NOT NULL,
 	[FK_orders] [int] NOT NULL,
 	[carriage] [int] NOT NULL,
+	[amount] [int] NOT NULL,
  CONSTRAINT [CLIX_PK_orderDriverCarriages] PRIMARY KEY CLUSTERED 
 (
 	[PK_orderDriverCarriages] ASC
+) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [dbo].[storage]
+(
+	[PK_storage] [int] IDENTITY(1,1) NOT NULL,
+	[FK_beerTypes] [int] NOT NULL,
+	[amount] [int] NOT NULL,
+ CONSTRAINT [CLIX_PK_storage] PRIMARY KEY CLUSTERED
+(
+	[PK_storage] ASC
+) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+CREATE TABLE [dbo].[supplierStorage]
+(
+	[PK_supplierStorage] [int] IDENTITY(1,1) NOT NULL,
+	[FK_suppliers] [int] NOT NULL,
+	[FK_beerSuppliers] [int] NOT NULL,
+	[amount] [int] NOT NULL,
+ CONSTRAINT [CLIX_PK_supplierStorage] PRIMARY KEY CLUSTERED
+(
+	[PK_supplierStorage]
 ) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
@@ -462,6 +492,42 @@ ALTER TABLE dbo.deliveryDriverCarriages ADD CONSTRAINT
 	) REFERENCES dbo.deliveries
 	(
 	PK_deliveries
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
+GO
+
+ALTER TABLE dbo.storage ADD CONSTRAINT
+	FK_storage_beerTypes FOREIGN KEY
+	(
+	FK_beerTypes
+	) REFERENCES dbo.beerTypes
+	(
+	PK_beerTypes
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
+GO
+
+ALTER TABLE dbo.supplierStorage ADD CONSTRAINT
+	FK_supplierStorage_suppliers FOREIGN KEY
+	(
+	FK_suppliers
+	) REFERENCES dbo.suppliers
+	(
+	PK_suppliers
+	) ON UPDATE NO ACTION
+	  ON DELETE NO ACTION
+
+GO
+
+ALTER TABLE dbo.supplierStorage ADD CONSTRAINT
+	FK_supplierStorage_beerSuppliers FOREIGN KEY
+	(
+	FK_beerSuppliers
+	) REFERENCES dbo.beerSuppliers
+	(
+	PK_beerSuppliers
 	) ON UPDATE NO ACTION
 	  ON DELETE NO ACTION
 

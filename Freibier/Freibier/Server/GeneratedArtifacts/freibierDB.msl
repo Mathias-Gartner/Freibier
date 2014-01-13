@@ -42,7 +42,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="deliveredBeers">
-      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.deliveredBeersItem)">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.deliveredBeer)">
         <MappingFragment StoreEntitySet="deliveredBeers">
           <ScalarProperty Name="PK_deliveredBeers" ColumnName="PK_deliveredBeers" />
           <ScalarProperty Name="amount" ColumnName="amount" />
@@ -52,7 +52,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="deliveries">
-      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.deliveriesItem)">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.delivery)">
         <MappingFragment StoreEntitySet="deliveries">
           <ScalarProperty Name="PK_deliveries" ColumnName="PK_deliveries" />
           <ScalarProperty Name="orderDate" ColumnName="orderDate" />
@@ -60,6 +60,7 @@
           <ScalarProperty Name="billingDate" ColumnName="billingDate" />
           <ScalarProperty Name="invoiceNumber" ColumnName="invoiceNumber" />
           <ScalarProperty Name="FK_beerRecipients" ColumnName="FK_beerRecipients" />
+          <ScalarProperty Name="delivered" ColumnName="delivered" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -104,6 +105,25 @@
           <ScalarProperty Name="FK_countries" ColumnName="FK_countries" />
           <ScalarProperty Name="volumeDiscountPercent" ColumnName="volumeDiscountPercent" />
           <ScalarProperty Name="volumeDiscountRequiredQuantity" ColumnName="volumeDiscountRequiredQuantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="storage">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.storageItem)">
+        <MappingFragment StoreEntitySet="storage">
+          <ScalarProperty Name="PK_storage" ColumnName="PK_storage" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="FK_beerTypes" ColumnName="FK_beerTypes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="supplierStorage">
+      <EntityTypeMapping TypeName="IsTypeOf(LightSwitchApplication.supplierStorageItem)">
+        <MappingFragment StoreEntitySet="supplierStorage">
+          <ScalarProperty Name="PK_supplierStorage" ColumnName="PK_supplierStorage" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="FK_beerSuppliers" ColumnName="FK_beerSuppliers" />
+          <ScalarProperty Name="FK_suppliers" ColumnName="FK_suppliers" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

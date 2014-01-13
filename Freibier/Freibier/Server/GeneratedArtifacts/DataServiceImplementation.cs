@@ -55,6 +55,24 @@ namespace LightSwitchApplication.Implementation
             return query;
         }
     
+        public global::System.Linq.IQueryable<global::freibierDB.Implementation.supplierStorageItem> supplierStorageBySupplier(global::System.Nullable<int> supplierId)
+        {
+            global::System.Linq.IQueryable<global::freibierDB.Implementation.supplierStorageItem> query;
+            query = global::System.Linq.Queryable.Where(
+                this.GetQuery<global::freibierDB.Implementation.supplierStorageItem>("supplierStorage"),
+                (s) => (supplierId.HasValue && (s.beerSuppliersItem1.supplier.PK_suppliers == supplierId)));
+            return query;
+        }
+    
+        public global::System.Linq.IQueryable<global::freibierDB.Implementation.deliveredBeer> deliveredBeersByDelivery(global::System.Nullable<int> deliveryId)
+        {
+            global::System.Linq.IQueryable<global::freibierDB.Implementation.deliveredBeer> query;
+            query = global::System.Linq.Queryable.Where(
+                this.GetQuery<global::freibierDB.Implementation.deliveredBeer>("deliveredBeers"),
+                (d) => (deliveryId.HasValue && (d.delivery.PK_deliveries == deliveryId)));
+            return query;
+        }
+    
     #endregion
 
     #region Protected Methods
@@ -76,13 +94,13 @@ namespace LightSwitchApplication.Implementation
             {
                 return new global::freibierDB.Implementation.countriesItem();
             }
-            if (type == typeof(global::freibierDB.Implementation.deliveredBeersItem))
+            if (type == typeof(global::freibierDB.Implementation.deliveredBeer))
             {
-                return new global::freibierDB.Implementation.deliveredBeersItem();
+                return new global::freibierDB.Implementation.deliveredBeer();
             }
-            if (type == typeof(global::freibierDB.Implementation.deliveriesItem))
+            if (type == typeof(global::freibierDB.Implementation.delivery))
             {
-                return new global::freibierDB.Implementation.deliveriesItem();
+                return new global::freibierDB.Implementation.delivery();
             }
             if (type == typeof(global::freibierDB.Implementation.driversItem))
             {
@@ -99,6 +117,14 @@ namespace LightSwitchApplication.Implementation
             if (type == typeof(global::freibierDB.Implementation.suppliersItem))
             {
                 return new global::freibierDB.Implementation.suppliersItem();
+            }
+            if (type == typeof(global::freibierDB.Implementation.storageItem))
+            {
+                return new global::freibierDB.Implementation.storageItem();
+            }
+            if (type == typeof(global::freibierDB.Implementation.supplierStorageItem))
+            {
+                return new global::freibierDB.Implementation.supplierStorageItem();
             }
     
             return base.CreateObject(type);
@@ -131,13 +157,13 @@ namespace LightSwitchApplication.Implementation
             {
                 return new global::freibierDB.Implementation.countriesItem();
             }
-            if (typeof(T) == typeof(global::LightSwitchApplication.deliveredBeersItem))
+            if (typeof(T) == typeof(global::LightSwitchApplication.deliveredBeer))
             {
-                return new global::freibierDB.Implementation.deliveredBeersItem();
+                return new global::freibierDB.Implementation.deliveredBeer();
             }
-            if (typeof(T) == typeof(global::LightSwitchApplication.deliveriesItem))
+            if (typeof(T) == typeof(global::LightSwitchApplication.delivery))
             {
-                return new global::freibierDB.Implementation.deliveriesItem();
+                return new global::freibierDB.Implementation.delivery();
             }
             if (typeof(T) == typeof(global::LightSwitchApplication.driversItem))
             {
@@ -154,6 +180,14 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.suppliersItem))
             {
                 return new global::freibierDB.Implementation.suppliersItem();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.storageItem))
+            {
+                return new global::freibierDB.Implementation.storageItem();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.supplierStorageItem))
+            {
+                return new global::freibierDB.Implementation.supplierStorageItem();
             }
             return null;
         }
@@ -196,6 +230,10 @@ namespace LightSwitchApplication.Implementation
             {
                 return new global::ApplicationData.Implementation.DeliveryConfirmOperation();
             }
+            if (type == typeof(global::ApplicationData.Implementation.OrderReceivedOperation))
+            {
+                return new global::ApplicationData.Implementation.OrderReceivedOperation();
+            }
     
             return base.CreateObject(type);
         }
@@ -214,6 +252,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.DeliveryConfirmOperation))
             {
                 return new global::ApplicationData.Implementation.DeliveryConfirmOperation();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.OrderReceivedOperation))
+            {
+                return new global::ApplicationData.Implementation.OrderReceivedOperation();
             }
             return null;
         }
@@ -284,13 +326,13 @@ namespace LightSwitchApplication.Implementation
             {
                 return typeof(global::freibierDB.Implementation.countriesItem);
             }
-            if (typeof(global::LightSwitchApplication.deliveredBeersItem) == definitionType)
+            if (typeof(global::LightSwitchApplication.deliveredBeer) == definitionType)
             {
-                return typeof(global::freibierDB.Implementation.deliveredBeersItem);
+                return typeof(global::freibierDB.Implementation.deliveredBeer);
             }
-            if (typeof(global::LightSwitchApplication.deliveriesItem) == definitionType)
+            if (typeof(global::LightSwitchApplication.delivery) == definitionType)
             {
-                return typeof(global::freibierDB.Implementation.deliveriesItem);
+                return typeof(global::freibierDB.Implementation.delivery);
             }
             if (typeof(global::LightSwitchApplication.driversItem) == definitionType)
             {
@@ -308,9 +350,21 @@ namespace LightSwitchApplication.Implementation
             {
                 return typeof(global::freibierDB.Implementation.suppliersItem);
             }
+            if (typeof(global::LightSwitchApplication.storageItem) == definitionType)
+            {
+                return typeof(global::freibierDB.Implementation.storageItem);
+            }
+            if (typeof(global::LightSwitchApplication.supplierStorageItem) == definitionType)
+            {
+                return typeof(global::freibierDB.Implementation.supplierStorageItem);
+            }
             if (typeof(global::LightSwitchApplication.DeliveryConfirmOperation) == definitionType)
             {
                 return typeof(global::ApplicationData.Implementation.DeliveryConfirmOperation);
+            }
+            if (typeof(global::LightSwitchApplication.OrderReceivedOperation) == definitionType)
+            {
+                return typeof(global::ApplicationData.Implementation.OrderReceivedOperation);
             }
             return null;
         }
@@ -431,6 +485,14 @@ namespace freibierDB.Implementation
             }
         }
         
+        global::System.Collections.IEnumerable global::LightSwitchApplication.beerSuppliersItem.DetailsClass.IImplementation.supplierStorage
+        {
+            get
+            {
+                return this.supplierStorage;
+            }
+        }
+        
         partial void OnFK_beerTypesChanged()
         {
             if (this.__host != null)
@@ -493,6 +555,14 @@ namespace freibierDB.Implementation
             get
             {
                 return this.deliveredBeers;
+            }
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.beerTypesItem.DetailsClass.IImplementation.storage
+        {
+            get
+            {
+                return this.storage;
             }
         }
         
@@ -574,11 +644,11 @@ namespace freibierDB.Implementation
     
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class deliveredBeersItem :
-        global::LightSwitchApplication.deliveredBeersItem.DetailsClass.IImplementation
+    public partial class deliveredBeer :
+        global::LightSwitchApplication.deliveredBeer.DetailsClass.IImplementation
     {
     
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.deliveredBeersItem.DetailsClass.IImplementation.beerType
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.deliveredBeer.DetailsClass.IImplementation.beerType
         {
             get
             {
@@ -594,7 +664,7 @@ namespace freibierDB.Implementation
             }
         }
         
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.deliveredBeersItem.DetailsClass.IImplementation.delivery
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.deliveredBeer.DetailsClass.IImplementation.delivery
         {
             get
             {
@@ -602,7 +672,7 @@ namespace freibierDB.Implementation
             }
             set
             {
-                this.delivery = (global::freibierDB.Implementation.deliveriesItem)value;
+                this.delivery = (global::freibierDB.Implementation.delivery)value;
                 if (this.__host != null)
                 {
                     this.__host.RaisePropertyChanged("delivery");
@@ -655,11 +725,11 @@ namespace freibierDB.Implementation
     
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class deliveriesItem :
-        global::LightSwitchApplication.deliveriesItem.DetailsClass.IImplementation
+    public partial class delivery :
+        global::LightSwitchApplication.delivery.DetailsClass.IImplementation
     {
     
-        global::System.Collections.IEnumerable global::LightSwitchApplication.deliveriesItem.DetailsClass.IImplementation.deliveredBeers
+        global::System.Collections.IEnumerable global::LightSwitchApplication.delivery.DetailsClass.IImplementation.deliveredBeers
         {
             get
             {
@@ -667,7 +737,7 @@ namespace freibierDB.Implementation
             }
         }
         
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.deliveriesItem.DetailsClass.IImplementation.beerRecipient
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.delivery.DetailsClass.IImplementation.beerRecipient
         {
             get
             {
@@ -935,11 +1005,157 @@ namespace freibierDB.Implementation
             }
         }
         
+        global::System.Collections.IEnumerable global::LightSwitchApplication.suppliersItem.DetailsClass.IImplementation.supplierStorage
+        {
+            get
+            {
+                return this.supplierStorage;
+            }
+        }
+        
         partial void OnFK_countriesChanged()
         {
             if (this.__host != null)
             {
                 this.__host.RaisePropertyChanged("country");
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class storageItem :
+        global::LightSwitchApplication.storageItem.DetailsClass.IImplementation
+    {
+    
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.storageItem.DetailsClass.IImplementation.beerTypesItem1
+        {
+            get
+            {
+                return this.beerTypesItem1;
+            }
+            set
+            {
+                this.beerTypesItem1 = (global::freibierDB.Implementation.beerTypesItem)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("beerTypesItem1");
+                }
+            }
+        }
+        
+        partial void OnFK_beerTypesChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("beerTypesItem1");
+            }
+        }
+        
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class supplierStorageItem :
+        global::LightSwitchApplication.supplierStorageItem.DetailsClass.IImplementation
+    {
+    
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.supplierStorageItem.DetailsClass.IImplementation.beerSuppliersItem1
+        {
+            get
+            {
+                return this.beerSuppliersItem1;
+            }
+            set
+            {
+                this.beerSuppliersItem1 = (global::freibierDB.Implementation.beerSuppliersItem)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("beerSuppliersItem1");
+                }
+            }
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.supplierStorageItem.DetailsClass.IImplementation.suppliersItem1
+        {
+            get
+            {
+                return this.suppliersItem1;
+            }
+            set
+            {
+                this.suppliersItem1 = (global::freibierDB.Implementation.suppliersItem)value;
+                if (this.__host != null)
+                {
+                    this.__host.RaisePropertyChanged("suppliersItem1");
+                }
+            }
+        }
+        
+        partial void OnFK_beerSuppliersChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("beerSuppliersItem1");
+            }
+        }
+        
+        partial void OnFK_suppliersChanged()
+        {
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged("suppliersItem1");
             }
         }
         
@@ -979,6 +1195,39 @@ namespace ApplicationData.Implementation
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public partial class DeliveryConfirmOperation :
         global::LightSwitchApplication.DeliveryConfirmOperation.DetailsClass.IImplementation
+    {
+    
+        #region IEntityImplementation Members
+        private global::Microsoft.LightSwitch.Internal.IEntityImplementationHost __host;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementationHost global::Microsoft.LightSwitch.Internal.IEntityImplementation.Host
+        {
+            get
+            {
+                return this.__host;
+            }
+        }
+        
+        void global::Microsoft.LightSwitch.Internal.IEntityImplementation.Initialize(global::Microsoft.LightSwitch.Internal.IEntityImplementationHost host)
+        {
+            this.__host = host;
+        }
+        
+        protected override void OnPropertyChanged(string propertyName)
+        {
+            base.OnPropertyChanged(propertyName);
+            if (this.__host != null)
+            {
+                this.__host.RaisePropertyChanged(propertyName);
+            }
+        }
+        #endregion
+    }
+    
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class OrderReceivedOperation :
+        global::LightSwitchApplication.OrderReceivedOperation.DetailsClass.IImplementation
     {
     
         #region IEntityImplementation Members

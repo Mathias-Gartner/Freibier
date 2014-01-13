@@ -65,29 +65,53 @@ namespace ApplicationData.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        public ObjectSet<DeliveryConfirmOperation> OrderBuySuppliesOperations
+        public ObjectSet<DeliveryConfirmOperation> DeliveryConfirmOperations
         {
             get
             {
-                if ((_OrderBuySuppliesOperations == null))
+                if ((_DeliveryConfirmOperations == null))
                 {
-                    _OrderBuySuppliesOperations = base.CreateObjectSet<DeliveryConfirmOperation>("OrderBuySuppliesOperations");
+                    _DeliveryConfirmOperations = base.CreateObjectSet<DeliveryConfirmOperation>("DeliveryConfirmOperations");
                 }
-                return _OrderBuySuppliesOperations;
+                return _DeliveryConfirmOperations;
             }
         }
-        private ObjectSet<DeliveryConfirmOperation> _OrderBuySuppliesOperations;
+        private ObjectSet<DeliveryConfirmOperation> _DeliveryConfirmOperations;
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        public ObjectSet<OrderReceivedOperation> OrderReceivedOperations
+        {
+            get
+            {
+                if ((_OrderReceivedOperations == null))
+                {
+                    _OrderReceivedOperations = base.CreateObjectSet<OrderReceivedOperation>("OrderReceivedOperations");
+                }
+                return _OrderReceivedOperations;
+            }
+        }
+        private ObjectSet<OrderReceivedOperation> _OrderReceivedOperations;
 
         #endregion
 
         #region AddTo-Methoden
     
         /// <summary>
-        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'OrderBuySuppliesOperations'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'DeliveryConfirmOperations'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
         /// </summary>
-        public void AddToOrderBuySuppliesOperations(DeliveryConfirmOperation deliveryConfirmOperation)
+        public void AddToDeliveryConfirmOperations(DeliveryConfirmOperation deliveryConfirmOperation)
         {
-            base.AddObject("OrderBuySuppliesOperations", deliveryConfirmOperation);
+            base.AddObject("DeliveryConfirmOperations", deliveryConfirmOperation);
+        }
+    
+        /// <summary>
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'OrderReceivedOperations'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// </summary>
+        public void AddToOrderReceivedOperations(OrderReceivedOperation orderReceivedOperation)
+        {
+            base.AddObject("OrderReceivedOperations", orderReceivedOperation);
         }
 
         #endregion
@@ -203,6 +227,165 @@ namespace ApplicationData.Implementation
         private global::System.Int32 _DeliveryId;
         partial void OnDeliveryIdChanging(global::System.Int32 value);
         partial void OnDeliveryIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean ExecutionError
+        {
+            get
+            {
+                return _ExecutionError;
+            }
+            set
+            {
+                OnExecutionErrorChanging(value);
+                ReportPropertyChanging("ExecutionError");
+                _ExecutionError = value;
+                ReportPropertyChanged("ExecutionError");
+                OnExecutionErrorChanged();
+            }
+        }
+        private global::System.Boolean _ExecutionError;
+        partial void OnExecutionErrorChanging(global::System.Boolean value);
+        partial void OnExecutionErrorChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ErrorMessage
+        {
+            get
+            {
+                return _ErrorMessage;
+            }
+            set
+            {
+                OnErrorMessageChanging(value);
+                ReportPropertyChanging("ErrorMessage");
+                _ErrorMessage = value;
+                ReportPropertyChanged("ErrorMessage");
+                OnErrorMessageChanged();
+            }
+        }
+        private global::System.String _ErrorMessage;
+        partial void OnErrorMessageChanging(global::System.String value);
+        partial void OnErrorMessageChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// Keine Dokumentation für Metadaten verfügbar.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="OrderReceivedOperation")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class OrderReceivedOperation : EntityObject
+    {
+        #region Factory-Methode
+    
+        /// <summary>
+        /// Erstellt ein neues OrderReceivedOperation-Objekt.
+        /// </summary>
+        /// <param name="id">Anfangswert der Eigenschaft Id.</param>
+        /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
+        /// <param name="orderId">Anfangswert der Eigenschaft OrderId.</param>
+        /// <param name="executionError">Anfangswert der Eigenschaft ExecutionError.</param>
+        public static OrderReceivedOperation CreateOrderReceivedOperation(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 orderId, global::System.Boolean executionError)
+        {
+            OrderReceivedOperation orderReceivedOperation = new OrderReceivedOperation();
+            orderReceivedOperation.Id = id;
+            orderReceivedOperation.RowVersion = rowVersion;
+            orderReceivedOperation.OrderId = orderId;
+            orderReceivedOperation.ExecutionError = executionError;
+            return orderReceivedOperation;
+        }
+
+        #endregion
+
+        #region Primitive Eigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 OrderId
+        {
+            get
+            {
+                return _OrderId;
+            }
+            set
+            {
+                OnOrderIdChanging(value);
+                ReportPropertyChanging("OrderId");
+                _OrderId = value;
+                ReportPropertyChanged("OrderId");
+                OnOrderIdChanged();
+            }
+        }
+        private global::System.Int32 _OrderId;
+        partial void OnOrderIdChanging(global::System.Int32 value);
+        partial void OnOrderIdChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.

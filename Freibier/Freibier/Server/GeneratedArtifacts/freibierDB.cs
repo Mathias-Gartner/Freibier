@@ -21,14 +21,17 @@ using System.Xml.Serialization;
 
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_beerRecipients_countries", "countries", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.countriesItem), "beerRecipients", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.beerRecipientsItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_beerSuppliers_beerTypes", "beerTypes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.beerTypesItem), "beerSuppliers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.beerSuppliersItem), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_deliveredBeers_beerTypes", "beerTypes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.beerTypesItem), "deliveredBeers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.deliveredBeersItem), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_deliveredBeers_deliveries", "deliveries", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.deliveriesItem), "deliveredBeers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.deliveredBeersItem), true)]
-[assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_deliveries_beerRecipients", "beerRecipients", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.beerRecipientsItem), "deliveries", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.deliveriesItem), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "beerTypesItem_deliveredBeer", "beerTypes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.beerTypesItem), "deliveredBeer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.deliveredBeer), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "delivery_deliveredBeer", "delivery", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.delivery), "deliveredBeer", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.deliveredBeer), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "beerRecipientsItem_delivery", "beerRecipients", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.beerRecipientsItem), "delivery", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.delivery), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "Order_orderedBeersItem1", "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.Order), "orderedBeers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.orderedBeersItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "suppliersItem_Order1", "suppliers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.suppliersItem), "Order", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.Order), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_suppliers_countries", "countries", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.countriesItem), "suppliers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.suppliersItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_beerSuppliers_suppliers", "suppliers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.suppliersItem), "beerSuppliers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.beerSuppliersItem), true)]
 [assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_orderedBeers_beerSuppliers", "beerSuppliers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.beerSuppliersItem), "orderedBeers", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.orderedBeersItem), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_storage_beerTypes", "beerTypes", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.beerTypesItem), "storage", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.storageItem), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_supplierStorage_beerSuppliers", "beerSuppliers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.beerSuppliersItem), "supplierStorage", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.supplierStorageItem), true)]
+[assembly: EdmRelationshipAttribute("LightSwitchApplication", "FK_supplierStorage_suppliers", "suppliers", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(freibierDB.Implementation.suppliersItem), "supplierStorage", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(freibierDB.Implementation.supplierStorageItem), true)]
 
 #endregion
 
@@ -144,34 +147,34 @@ namespace freibierDB.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        public ObjectSet<deliveredBeersItem> deliveredBeers
+        public ObjectSet<deliveredBeer> deliveredBeers
         {
             get
             {
                 if ((_deliveredBeers == null))
                 {
-                    _deliveredBeers = base.CreateObjectSet<deliveredBeersItem>("deliveredBeers");
+                    _deliveredBeers = base.CreateObjectSet<deliveredBeer>("deliveredBeers");
                 }
                 return _deliveredBeers;
             }
         }
-        private ObjectSet<deliveredBeersItem> _deliveredBeers;
+        private ObjectSet<deliveredBeer> _deliveredBeers;
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        public ObjectSet<deliveriesItem> deliveries
+        public ObjectSet<delivery> deliveries
         {
             get
             {
                 if ((_deliveries == null))
                 {
-                    _deliveries = base.CreateObjectSet<deliveriesItem>("deliveries");
+                    _deliveries = base.CreateObjectSet<delivery>("deliveries");
                 }
                 return _deliveries;
             }
         }
-        private ObjectSet<deliveriesItem> _deliveries;
+        private ObjectSet<delivery> _deliveries;
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
@@ -236,6 +239,38 @@ namespace freibierDB.Implementation
             }
         }
         private ObjectSet<suppliersItem> _suppliers;
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        public ObjectSet<storageItem> storage
+        {
+            get
+            {
+                if ((_storage == null))
+                {
+                    _storage = base.CreateObjectSet<storageItem>("storage");
+                }
+                return _storage;
+            }
+        }
+        private ObjectSet<storageItem> _storage;
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        public ObjectSet<supplierStorageItem> supplierStorage
+        {
+            get
+            {
+                if ((_supplierStorage == null))
+                {
+                    _supplierStorage = base.CreateObjectSet<supplierStorageItem>("supplierStorage");
+                }
+                return _supplierStorage;
+            }
+        }
+        private ObjectSet<supplierStorageItem> _supplierStorage;
 
         #endregion
 
@@ -276,17 +311,17 @@ namespace freibierDB.Implementation
         /// <summary>
         /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'deliveredBeers'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
         /// </summary>
-        public void AddTodeliveredBeers(deliveredBeersItem deliveredBeersItem)
+        public void AddTodeliveredBeers(deliveredBeer deliveredBeer)
         {
-            base.AddObject("deliveredBeers", deliveredBeersItem);
+            base.AddObject("deliveredBeers", deliveredBeer);
         }
     
         /// <summary>
         /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'deliveries'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
         /// </summary>
-        public void AddTodeliveries(deliveriesItem deliveriesItem)
+        public void AddTodeliveries(delivery delivery)
         {
-            base.AddObject("deliveries", deliveriesItem);
+            base.AddObject("deliveries", delivery);
         }
     
         /// <summary>
@@ -319,6 +354,22 @@ namespace freibierDB.Implementation
         public void AddTosuppliers(suppliersItem suppliersItem)
         {
             base.AddObject("suppliers", suppliersItem);
+        }
+    
+        /// <summary>
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'storage'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// </summary>
+        public void AddTostorage(storageItem storageItem)
+        {
+            base.AddObject("storage", storageItem);
+        }
+    
+        /// <summary>
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'supplierStorage'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// </summary>
+        public void AddTosupplierStorage(supplierStorageItem supplierStorageItem)
+        {
+            base.AddObject("supplierStorage", supplierStorageItem);
         }
 
         #endregion
@@ -554,18 +605,18 @@ namespace freibierDB.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_deliveries_beerRecipients", "deliveries")]
-        public EntityCollection<deliveriesItem> deliveries
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "beerRecipientsItem_delivery", "delivery")]
+        public EntityCollection<delivery> deliveries
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<deliveriesItem>("LightSwitchApplication.FK_deliveries_beerRecipients", "deliveries");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<delivery>("LightSwitchApplication.beerRecipientsItem_delivery", "delivery");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<deliveriesItem>("LightSwitchApplication.FK_deliveries_beerRecipients", "deliveries", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<delivery>("LightSwitchApplication.beerRecipientsItem_delivery", "delivery", value);
                 }
             }
         }
@@ -806,6 +857,28 @@ namespace freibierDB.Implementation
                 }
             }
         }
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_supplierStorage_beerSuppliers", "supplierStorage")]
+        public EntityCollection<supplierStorageItem> supplierStorage
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<supplierStorageItem>("LightSwitchApplication.FK_supplierStorage_beerSuppliers", "supplierStorage");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<supplierStorageItem>("LightSwitchApplication.FK_supplierStorage_beerSuppliers", "supplierStorage", value);
+                }
+            }
+        }
 
         #endregion
 
@@ -922,18 +995,40 @@ namespace freibierDB.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_deliveredBeers_beerTypes", "deliveredBeers")]
-        public EntityCollection<deliveredBeersItem> deliveredBeers
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "beerTypesItem_deliveredBeer", "deliveredBeer")]
+        public EntityCollection<deliveredBeer> deliveredBeers
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<deliveredBeersItem>("LightSwitchApplication.FK_deliveredBeers_beerTypes", "deliveredBeers");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<deliveredBeer>("LightSwitchApplication.beerTypesItem_deliveredBeer", "deliveredBeer");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<deliveredBeersItem>("LightSwitchApplication.FK_deliveredBeers_beerTypes", "deliveredBeers", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<deliveredBeer>("LightSwitchApplication.beerTypesItem_deliveredBeer", "deliveredBeer", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_storage_beerTypes", "storage")]
+        public EntityCollection<storageItem> storage
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<storageItem>("LightSwitchApplication.FK_storage_beerTypes", "storage");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<storageItem>("LightSwitchApplication.FK_storage_beerTypes", "storage", value);
                 }
             }
         }
@@ -1128,28 +1223,28 @@ namespace freibierDB.Implementation
     /// <summary>
     /// Keine Dokumentation für Metadaten verfügbar.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="deliveredBeersItem")]
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="deliveredBeer")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class deliveredBeersItem : EntityObject
+    public partial class deliveredBeer : EntityObject
     {
         #region Factory-Methode
     
         /// <summary>
-        /// Erstellt ein neues deliveredBeersItem-Objekt.
+        /// Erstellt ein neues deliveredBeer-Objekt.
         /// </summary>
         /// <param name="pK_deliveredBeers">Anfangswert der Eigenschaft PK_deliveredBeers.</param>
         /// <param name="amount">Anfangswert der Eigenschaft amount.</param>
         /// <param name="fK_beerTypes">Anfangswert der Eigenschaft FK_beerTypes.</param>
         /// <param name="fK_deliveries">Anfangswert der Eigenschaft FK_deliveries.</param>
-        public static deliveredBeersItem CreatedeliveredBeersItem(global::System.Int32 pK_deliveredBeers, global::System.Int32 amount, global::System.Int32 fK_beerTypes, global::System.Int32 fK_deliveries)
+        public static deliveredBeer CreatedeliveredBeer(global::System.Int32 pK_deliveredBeers, global::System.Int32 amount, global::System.Int32 fK_beerTypes, global::System.Int32 fK_deliveries)
         {
-            deliveredBeersItem deliveredBeersItem = new deliveredBeersItem();
-            deliveredBeersItem.PK_deliveredBeers = pK_deliveredBeers;
-            deliveredBeersItem.amount = amount;
-            deliveredBeersItem.FK_beerTypes = fK_beerTypes;
-            deliveredBeersItem.FK_deliveries = fK_deliveries;
-            return deliveredBeersItem;
+            deliveredBeer deliveredBeer = new deliveredBeer();
+            deliveredBeer.PK_deliveredBeers = pK_deliveredBeers;
+            deliveredBeer.amount = amount;
+            deliveredBeer.FK_beerTypes = fK_beerTypes;
+            deliveredBeer.FK_deliveries = fK_deliveries;
+            return deliveredBeer;
         }
 
         #endregion
@@ -1266,16 +1361,16 @@ namespace freibierDB.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_deliveredBeers_beerTypes", "beerTypes")]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "beerTypesItem_deliveredBeer", "beerTypes")]
         public beerTypesItem beerType
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerTypesItem>("LightSwitchApplication.FK_deliveredBeers_beerTypes", "beerTypes").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerTypesItem>("LightSwitchApplication.beerTypesItem_deliveredBeer", "beerTypes").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerTypesItem>("LightSwitchApplication.FK_deliveredBeers_beerTypes", "beerTypes").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerTypesItem>("LightSwitchApplication.beerTypesItem_deliveredBeer", "beerTypes").Value = value;
             }
         }
         /// <summary>
@@ -1287,13 +1382,13 @@ namespace freibierDB.Implementation
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerTypesItem>("LightSwitchApplication.FK_deliveredBeers_beerTypes", "beerTypes");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerTypesItem>("LightSwitchApplication.beerTypesItem_deliveredBeer", "beerTypes");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<beerTypesItem>("LightSwitchApplication.FK_deliveredBeers_beerTypes", "beerTypes", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<beerTypesItem>("LightSwitchApplication.beerTypesItem_deliveredBeer", "beerTypes", value);
                 }
             }
         }
@@ -1304,16 +1399,16 @@ namespace freibierDB.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_deliveredBeers_deliveries", "deliveries")]
-        public deliveriesItem delivery
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "delivery_deliveredBeer", "delivery")]
+        public delivery delivery
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<deliveriesItem>("LightSwitchApplication.FK_deliveredBeers_deliveries", "deliveries").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<delivery>("LightSwitchApplication.delivery_deliveredBeer", "delivery").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<deliveriesItem>("LightSwitchApplication.FK_deliveredBeers_deliveries", "deliveries").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<delivery>("LightSwitchApplication.delivery_deliveredBeer", "delivery").Value = value;
             }
         }
         /// <summary>
@@ -1321,17 +1416,17 @@ namespace freibierDB.Implementation
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<deliveriesItem> deliveryReference
+        public EntityReference<delivery> deliveryReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<deliveriesItem>("LightSwitchApplication.FK_deliveredBeers_deliveries", "deliveries");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<delivery>("LightSwitchApplication.delivery_deliveredBeer", "delivery");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<deliveriesItem>("LightSwitchApplication.FK_deliveredBeers_deliveries", "deliveries", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<delivery>("LightSwitchApplication.delivery_deliveredBeer", "delivery", value);
                 }
             }
         }
@@ -1343,28 +1438,28 @@ namespace freibierDB.Implementation
     /// <summary>
     /// Keine Dokumentation für Metadaten verfügbar.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="deliveriesItem")]
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="delivery")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class deliveriesItem : EntityObject
+    public partial class delivery : EntityObject
     {
         #region Factory-Methode
     
         /// <summary>
-        /// Erstellt ein neues deliveriesItem-Objekt.
+        /// Erstellt ein neues delivery-Objekt.
         /// </summary>
         /// <param name="pK_deliveries">Anfangswert der Eigenschaft PK_deliveries.</param>
         /// <param name="orderDate">Anfangswert der Eigenschaft orderDate.</param>
-        /// <param name="deliveryDate">Anfangswert der Eigenschaft deliveryDate.</param>
+        /// <param name="delivered">Anfangswert der Eigenschaft delivered.</param>
         /// <param name="fK_beerRecipients">Anfangswert der Eigenschaft FK_beerRecipients.</param>
-        public static deliveriesItem CreatedeliveriesItem(global::System.Int32 pK_deliveries, global::System.DateTime orderDate, global::System.DateTime deliveryDate, global::System.Int32 fK_beerRecipients)
+        public static delivery Createdelivery(global::System.Int32 pK_deliveries, global::System.DateTime orderDate, global::System.Boolean delivered, global::System.Int32 fK_beerRecipients)
         {
-            deliveriesItem deliveriesItem = new deliveriesItem();
-            deliveriesItem.PK_deliveries = pK_deliveries;
-            deliveriesItem.orderDate = orderDate;
-            deliveriesItem.deliveryDate = deliveryDate;
-            deliveriesItem.FK_beerRecipients = fK_beerRecipients;
-            return deliveriesItem;
+            delivery delivery = new delivery();
+            delivery.PK_deliveries = pK_deliveries;
+            delivery.orderDate = orderDate;
+            delivery.delivered = delivered;
+            delivery.FK_beerRecipients = fK_beerRecipients;
+            return delivery;
         }
 
         #endregion
@@ -1425,9 +1520,9 @@ namespace freibierDB.Implementation
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.DateTime deliveryDate
+        public Nullable<global::System.DateTime> deliveryDate
         {
             get
             {
@@ -1442,8 +1537,8 @@ namespace freibierDB.Implementation
                 OndeliveryDateChanged();
             }
         }
-        private global::System.DateTime _deliveryDate;
-        partial void OndeliveryDateChanging(global::System.DateTime value);
+        private Nullable<global::System.DateTime> _deliveryDate;
+        partial void OndeliveryDateChanging(Nullable<global::System.DateTime> value);
         partial void OndeliveryDateChanged();
     
         /// <summary>
@@ -1499,6 +1594,30 @@ namespace freibierDB.Implementation
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
+        public global::System.Boolean delivered
+        {
+            get
+            {
+                return _delivered;
+            }
+            set
+            {
+                OndeliveredChanging(value);
+                ReportPropertyChanging("delivered");
+                _delivered = value;
+                ReportPropertyChanged("delivered");
+                OndeliveredChanged();
+            }
+        }
+        private global::System.Boolean _delivered;
+        partial void OndeliveredChanging(global::System.Boolean value);
+        partial void OndeliveredChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
         public global::System.Int32 FK_beerRecipients
         {
             get
@@ -1529,18 +1648,18 @@ namespace freibierDB.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_deliveredBeers_deliveries", "deliveredBeers")]
-        public EntityCollection<deliveredBeersItem> deliveredBeers
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "delivery_deliveredBeer", "deliveredBeer")]
+        public EntityCollection<deliveredBeer> deliveredBeers
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<deliveredBeersItem>("LightSwitchApplication.FK_deliveredBeers_deliveries", "deliveredBeers");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<deliveredBeer>("LightSwitchApplication.delivery_deliveredBeer", "deliveredBeer");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<deliveredBeersItem>("LightSwitchApplication.FK_deliveredBeers_deliveries", "deliveredBeers", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<deliveredBeer>("LightSwitchApplication.delivery_deliveredBeer", "deliveredBeer", value);
                 }
             }
         }
@@ -1551,16 +1670,16 @@ namespace freibierDB.Implementation
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_deliveries_beerRecipients", "beerRecipients")]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "beerRecipientsItem_delivery", "beerRecipients")]
         public beerRecipientsItem beerRecipient
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerRecipientsItem>("LightSwitchApplication.FK_deliveries_beerRecipients", "beerRecipients").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerRecipientsItem>("LightSwitchApplication.beerRecipientsItem_delivery", "beerRecipients").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerRecipientsItem>("LightSwitchApplication.FK_deliveries_beerRecipients", "beerRecipients").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerRecipientsItem>("LightSwitchApplication.beerRecipientsItem_delivery", "beerRecipients").Value = value;
             }
         }
         /// <summary>
@@ -1572,13 +1691,13 @@ namespace freibierDB.Implementation
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerRecipientsItem>("LightSwitchApplication.FK_deliveries_beerRecipients", "beerRecipients");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerRecipientsItem>("LightSwitchApplication.beerRecipientsItem_delivery", "beerRecipients");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<beerRecipientsItem>("LightSwitchApplication.FK_deliveries_beerRecipients", "beerRecipients", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<beerRecipientsItem>("LightSwitchApplication.beerRecipientsItem_delivery", "beerRecipients", value);
                 }
             }
         }
@@ -2139,6 +2258,157 @@ namespace freibierDB.Implementation
     /// <summary>
     /// Keine Dokumentation für Metadaten verfügbar.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="storageItem")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class storageItem : EntityObject
+    {
+        #region Factory-Methode
+    
+        /// <summary>
+        /// Erstellt ein neues storageItem-Objekt.
+        /// </summary>
+        /// <param name="pK_storage">Anfangswert der Eigenschaft PK_storage.</param>
+        /// <param name="amount">Anfangswert der Eigenschaft amount.</param>
+        /// <param name="fK_beerTypes">Anfangswert der Eigenschaft FK_beerTypes.</param>
+        public static storageItem CreatestorageItem(global::System.Int32 pK_storage, global::System.Int32 amount, global::System.Int32 fK_beerTypes)
+        {
+            storageItem storageItem = new storageItem();
+            storageItem.PK_storage = pK_storage;
+            storageItem.amount = amount;
+            storageItem.FK_beerTypes = fK_beerTypes;
+            return storageItem;
+        }
+
+        #endregion
+
+        #region Primitive Eigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 PK_storage
+        {
+            get
+            {
+                return _PK_storage;
+            }
+            set
+            {
+                if (_PK_storage != value)
+                {
+                    OnPK_storageChanging(value);
+                    ReportPropertyChanging("PK_storage");
+                    _PK_storage = value;
+                    ReportPropertyChanged("PK_storage");
+                    OnPK_storageChanged();
+                }
+            }
+        }
+        private global::System.Int32 _PK_storage;
+        partial void OnPK_storageChanging(global::System.Int32 value);
+        partial void OnPK_storageChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 amount
+        {
+            get
+            {
+                return _amount;
+            }
+            set
+            {
+                OnamountChanging(value);
+                ReportPropertyChanging("amount");
+                _amount = value;
+                ReportPropertyChanged("amount");
+                OnamountChanged();
+            }
+        }
+        private global::System.Int32 _amount;
+        partial void OnamountChanging(global::System.Int32 value);
+        partial void OnamountChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 FK_beerTypes
+        {
+            get
+            {
+                return _FK_beerTypes;
+            }
+            set
+            {
+                OnFK_beerTypesChanging(value);
+                ReportPropertyChanging("FK_beerTypes");
+                _FK_beerTypes = value;
+                ReportPropertyChanged("FK_beerTypes");
+                OnFK_beerTypesChanged();
+            }
+        }
+        private global::System.Int32 _FK_beerTypes;
+        partial void OnFK_beerTypesChanging(global::System.Int32 value);
+        partial void OnFK_beerTypesChanged();
+
+        #endregion
+
+    
+        #region Navigationseigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_storage_beerTypes", "beerTypes")]
+        public beerTypesItem beerTypesItem1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerTypesItem>("LightSwitchApplication.FK_storage_beerTypes", "beerTypes").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerTypesItem>("LightSwitchApplication.FK_storage_beerTypes", "beerTypes").Value = value;
+            }
+        }
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<beerTypesItem> beerTypesItem1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerTypesItem>("LightSwitchApplication.FK_storage_beerTypes", "beerTypes");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<beerTypesItem>("LightSwitchApplication.FK_storage_beerTypes", "beerTypes", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// Keine Dokumentation für Metadaten verfügbar.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="suppliersItem")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -2443,6 +2713,243 @@ namespace freibierDB.Implementation
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<beerSuppliersItem>("LightSwitchApplication.FK_beerSuppliers_suppliers", "beerSuppliers", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_supplierStorage_suppliers", "supplierStorage")]
+        public EntityCollection<supplierStorageItem> supplierStorage
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<supplierStorageItem>("LightSwitchApplication.FK_supplierStorage_suppliers", "supplierStorage");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<supplierStorageItem>("LightSwitchApplication.FK_supplierStorage_suppliers", "supplierStorage", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// Keine Dokumentation für Metadaten verfügbar.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="supplierStorageItem")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class supplierStorageItem : EntityObject
+    {
+        #region Factory-Methode
+    
+        /// <summary>
+        /// Erstellt ein neues supplierStorageItem-Objekt.
+        /// </summary>
+        /// <param name="pK_supplierStorage">Anfangswert der Eigenschaft PK_supplierStorage.</param>
+        /// <param name="amount">Anfangswert der Eigenschaft amount.</param>
+        /// <param name="fK_beerSuppliers">Anfangswert der Eigenschaft FK_beerSuppliers.</param>
+        /// <param name="fK_suppliers">Anfangswert der Eigenschaft FK_suppliers.</param>
+        public static supplierStorageItem CreatesupplierStorageItem(global::System.Int32 pK_supplierStorage, global::System.Int32 amount, global::System.Int32 fK_beerSuppliers, global::System.Int32 fK_suppliers)
+        {
+            supplierStorageItem supplierStorageItem = new supplierStorageItem();
+            supplierStorageItem.PK_supplierStorage = pK_supplierStorage;
+            supplierStorageItem.amount = amount;
+            supplierStorageItem.FK_beerSuppliers = fK_beerSuppliers;
+            supplierStorageItem.FK_suppliers = fK_suppliers;
+            return supplierStorageItem;
+        }
+
+        #endregion
+
+        #region Primitive Eigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 PK_supplierStorage
+        {
+            get
+            {
+                return _PK_supplierStorage;
+            }
+            set
+            {
+                if (_PK_supplierStorage != value)
+                {
+                    OnPK_supplierStorageChanging(value);
+                    ReportPropertyChanging("PK_supplierStorage");
+                    _PK_supplierStorage = value;
+                    ReportPropertyChanged("PK_supplierStorage");
+                    OnPK_supplierStorageChanged();
+                }
+            }
+        }
+        private global::System.Int32 _PK_supplierStorage;
+        partial void OnPK_supplierStorageChanging(global::System.Int32 value);
+        partial void OnPK_supplierStorageChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 amount
+        {
+            get
+            {
+                return _amount;
+            }
+            set
+            {
+                OnamountChanging(value);
+                ReportPropertyChanging("amount");
+                _amount = value;
+                ReportPropertyChanged("amount");
+                OnamountChanged();
+            }
+        }
+        private global::System.Int32 _amount;
+        partial void OnamountChanging(global::System.Int32 value);
+        partial void OnamountChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 FK_beerSuppliers
+        {
+            get
+            {
+                return _FK_beerSuppliers;
+            }
+            set
+            {
+                OnFK_beerSuppliersChanging(value);
+                ReportPropertyChanging("FK_beerSuppliers");
+                _FK_beerSuppliers = value;
+                ReportPropertyChanged("FK_beerSuppliers");
+                OnFK_beerSuppliersChanged();
+            }
+        }
+        private global::System.Int32 _FK_beerSuppliers;
+        partial void OnFK_beerSuppliersChanging(global::System.Int32 value);
+        partial void OnFK_beerSuppliersChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 FK_suppliers
+        {
+            get
+            {
+                return _FK_suppliers;
+            }
+            set
+            {
+                OnFK_suppliersChanging(value);
+                ReportPropertyChanging("FK_suppliers");
+                _FK_suppliers = value;
+                ReportPropertyChanged("FK_suppliers");
+                OnFK_suppliersChanged();
+            }
+        }
+        private global::System.Int32 _FK_suppliers;
+        partial void OnFK_suppliersChanging(global::System.Int32 value);
+        partial void OnFK_suppliersChanged();
+
+        #endregion
+
+    
+        #region Navigationseigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_supplierStorage_beerSuppliers", "beerSuppliers")]
+        public beerSuppliersItem beerSuppliersItem1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerSuppliersItem>("LightSwitchApplication.FK_supplierStorage_beerSuppliers", "beerSuppliers").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerSuppliersItem>("LightSwitchApplication.FK_supplierStorage_beerSuppliers", "beerSuppliers").Value = value;
+            }
+        }
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<beerSuppliersItem> beerSuppliersItem1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<beerSuppliersItem>("LightSwitchApplication.FK_supplierStorage_beerSuppliers", "beerSuppliers");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<beerSuppliersItem>("LightSwitchApplication.FK_supplierStorage_beerSuppliers", "beerSuppliers", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LightSwitchApplication", "FK_supplierStorage_suppliers", "suppliers")]
+        public suppliersItem suppliersItem1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<suppliersItem>("LightSwitchApplication.FK_supplierStorage_suppliers", "suppliers").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<suppliersItem>("LightSwitchApplication.FK_supplierStorage_suppliers", "suppliers").Value = value;
+            }
+        }
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<suppliersItem> suppliersItem1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<suppliersItem>("LightSwitchApplication.FK_supplierStorage_suppliers", "suppliers");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<suppliersItem>("LightSwitchApplication.FK_supplierStorage_suppliers", "suppliers", value);
                 }
             }
         }

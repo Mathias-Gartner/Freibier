@@ -312,6 +312,29 @@ namespace LightSwitchApplication
             }
         }
 
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.supplierStorageItem> supplierStorage
+        {
+            get
+            {
+                return global::LightSwitchApplication.suppliersItem.DetailsClass.GetValue(this, global::LightSwitchApplication.suppliersItem.DetailsClass.PropertySetProperties.supplierStorage);
+            }
+        }
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.supplierStorageItem> supplierStorageQuery
+        {
+            get
+            {
+                return global::LightSwitchApplication.suppliersItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.suppliersItem.DetailsClass.PropertySetProperties.supplierStorage);
+            }
+        }
+
         #endregion
     
         #region Details Class
@@ -474,6 +497,14 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.suppliersItem, global::LightSwitchApplication.suppliersItem.DetailsClass, global::LightSwitchApplication.supplierStorageItem> supplierStorage
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.suppliersItem.DetailsClass.PropertySetProperties.supplierStorage) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.suppliersItem, global::LightSwitchApplication.suppliersItem.DetailsClass, global::LightSwitchApplication.supplierStorageItem>;
+                    }
+                }
+                
             }
     
             #pragma warning disable 109
@@ -490,6 +521,7 @@ namespace LightSwitchApplication
                 new global::System.Collections.IEnumerable orders { get; }
                 new global::Microsoft.LightSwitch.Internal.IEntityImplementation country { get; set; }
                 new global::System.Collections.IEnumerable beerSuppliers { get; }
+                new global::System.Collections.IEnumerable supplierStorage { get; }
             }
             #pragma warning restore 109
     
@@ -841,6 +873,26 @@ namespace LightSwitchApplication
                     return d.ImplementationEntity.beerSuppliers;
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.suppliersItem, global::LightSwitchApplication.suppliersItem.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Entry
+                    supplierStorage = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.suppliersItem, global::LightSwitchApplication.suppliersItem.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Entry(
+                        "supplierStorage",
+                        global::LightSwitchApplication.suppliersItem.DetailsClass.PropertySetProperties._supplierStorage_Stub,
+                        global::LightSwitchApplication.suppliersItem.DetailsClass.PropertySetProperties._supplierStorage_GetReferencedEntities,
+                        global::LightSwitchApplication.suppliersItem.DetailsClass.PropertySetProperties._supplierStorage_GetEntityCollection);
+                private static void _supplierStorage_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.suppliersItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.suppliersItem, global::LightSwitchApplication.suppliersItem.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Data> c, global::LightSwitchApplication.suppliersItem.DetailsClass d, object sf)
+                {
+                    c(d, ref d._supplierStorage, sf);
+                }
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.supplierStorageItem> _supplierStorage_GetReferencedEntities(global::LightSwitchApplication.suppliersItem.DetailsClass d)
+                {
+                    return d.GetReferencedEntities<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass>(global::LightSwitchApplication.suppliersItem.DetailsClass.PropertySetProperties.supplierStorage, ref d._supplierStorage);
+                }
+                private static global::System.Collections.IEnumerable _supplierStorage_GetEntityCollection(global::LightSwitchApplication.suppliersItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.supplierStorage;
+                }
+    
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -872,6 +924,9 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.suppliersItem, global::LightSwitchApplication.suppliersItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Data _beerSuppliers;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.suppliersItem, global::LightSwitchApplication.suppliersItem.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Data _supplierStorage;
             
         }
     

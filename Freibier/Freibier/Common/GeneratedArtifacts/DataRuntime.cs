@@ -233,7 +233,7 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.deliveredBeersItem> deliveredBeers
+        public global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.deliveredBeer> deliveredBeers
         {
             get
             {
@@ -246,7 +246,7 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.deliveriesItem> deliveries
+        public global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.delivery> deliveries
         {
             get
             {
@@ -303,6 +303,32 @@ namespace LightSwitchApplication
             get
             {
                 return global::LightSwitchApplication.freibierDB.DetailsClass.GetValue(this, global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties.suppliers);
+            }
+        }
+        
+        /// <summary>
+        /// Ruft die Entitätenmenge storage ab. Die Entitätenmenge stellt Member für den Zugriff auf Entitäten eines bestimmten Typs bereit.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.storageItem> storage
+        {
+            get
+            {
+                return global::LightSwitchApplication.freibierDB.DetailsClass.GetValue(this, global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties.storage);
+            }
+        }
+        
+        /// <summary>
+        /// Ruft die Entitätenmenge supplierStorage ab. Die Entitätenmenge stellt Member für den Zugriff auf Entitäten eines bestimmten Typs bereit.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.supplierStorageItem> supplierStorage
+        {
+            get
+            {
+                return global::LightSwitchApplication.freibierDB.DetailsClass.GetValue(this, global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties.supplierStorage);
             }
         }
         
@@ -404,7 +430,7 @@ namespace LightSwitchApplication
         /// <param name="PK_deliveredBeers">
         /// Der Wert der PK_deliveredBeers-Schlüsseleigenschaft der abzurufenden Entität.
         /// </param>
-        public global::LightSwitchApplication.deliveredBeersItem deliveredBeers_Single(global::System.Nullable<int> PK_deliveredBeers)
+        public global::LightSwitchApplication.deliveredBeer deliveredBeers_Single(global::System.Nullable<int> PK_deliveredBeers)
         {
             return this.Details.Methods.deliveredBeers_Single.CreateInvocation(PK_deliveredBeers).Execute();
         }
@@ -415,7 +441,7 @@ namespace LightSwitchApplication
         /// <param name="PK_deliveredBeers">
         /// Der Wert der PK_deliveredBeers-Schlüsseleigenschaft der abzurufenden Entität.
         /// </param>
-        public global::LightSwitchApplication.deliveredBeersItem deliveredBeers_SingleOrDefault(global::System.Nullable<int> PK_deliveredBeers)
+        public global::LightSwitchApplication.deliveredBeer deliveredBeers_SingleOrDefault(global::System.Nullable<int> PK_deliveredBeers)
         {
             return this.Details.Methods.deliveredBeers_SingleOrDefault.CreateInvocation(PK_deliveredBeers).Execute();
         }
@@ -426,7 +452,7 @@ namespace LightSwitchApplication
         /// <param name="PK_deliveries">
         /// Der Wert der PK_deliveries-Schlüsseleigenschaft der abzurufenden Entität.
         /// </param>
-        public global::LightSwitchApplication.deliveriesItem deliveries_Single(global::System.Nullable<int> PK_deliveries)
+        public global::LightSwitchApplication.delivery deliveries_Single(global::System.Nullable<int> PK_deliveries)
         {
             return this.Details.Methods.deliveries_Single.CreateInvocation(PK_deliveries).Execute();
         }
@@ -437,7 +463,7 @@ namespace LightSwitchApplication
         /// <param name="PK_deliveries">
         /// Der Wert der PK_deliveries-Schlüsseleigenschaft der abzurufenden Entität.
         /// </param>
-        public global::LightSwitchApplication.deliveriesItem deliveries_SingleOrDefault(global::System.Nullable<int> PK_deliveries)
+        public global::LightSwitchApplication.delivery deliveries_SingleOrDefault(global::System.Nullable<int> PK_deliveries)
         {
             return this.Details.Methods.deliveries_SingleOrDefault.CreateInvocation(PK_deliveries).Execute();
         }
@@ -552,6 +578,72 @@ namespace LightSwitchApplication
             return this.Details.Methods.orderedBeersByOrder.CreateInvocation(order).Execute();
         }
         
+        /// <summary>
+        /// Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird.
+        /// </summary>
+        /// <param name="PK_storage">
+        /// Der Wert der PK_storage-Schlüsseleigenschaft der abzurufenden Entität.
+        /// </param>
+        public global::LightSwitchApplication.storageItem storage_Single(global::System.Nullable<int> PK_storage)
+        {
+            return this.Details.Methods.storage_Single.CreateInvocation(PK_storage).Execute();
+        }
+        
+        /// <summary>
+        /// Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist.
+        /// </summary>
+        /// <param name="PK_storage">
+        /// Der Wert der PK_storage-Schlüsseleigenschaft der abzurufenden Entität.
+        /// </param>
+        public global::LightSwitchApplication.storageItem storage_SingleOrDefault(global::System.Nullable<int> PK_storage)
+        {
+            return this.Details.Methods.storage_SingleOrDefault.CreateInvocation(PK_storage).Execute();
+        }
+        
+        /// <summary>
+        /// Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird.
+        /// </summary>
+        /// <param name="PK_supplierStorage">
+        /// Der Wert der PK_supplierStorage-Schlüsseleigenschaft der abzurufenden Entität.
+        /// </param>
+        public global::LightSwitchApplication.supplierStorageItem supplierStorage_Single(global::System.Nullable<int> PK_supplierStorage)
+        {
+            return this.Details.Methods.supplierStorage_Single.CreateInvocation(PK_supplierStorage).Execute();
+        }
+        
+        /// <summary>
+        /// Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist.
+        /// </summary>
+        /// <param name="PK_supplierStorage">
+        /// Der Wert der PK_supplierStorage-Schlüsseleigenschaft der abzurufenden Entität.
+        /// </param>
+        public global::LightSwitchApplication.supplierStorageItem supplierStorage_SingleOrDefault(global::System.Nullable<int> PK_supplierStorage)
+        {
+            return this.Details.Methods.supplierStorage_SingleOrDefault.CreateInvocation(PK_supplierStorage).Execute();
+        }
+        
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        /// <param name="supplierId">
+        /// Keine modellierte Beschreibung verfügbar
+        /// </param>
+        public global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.supplierStorageItem> supplierStorageBySupplier(global::System.Nullable<int> supplierId)
+        {
+            return this.Details.Methods.supplierStorageBySupplier.CreateInvocation(supplierId).Execute();
+        }
+        
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        /// <param name="deliveryId">
+        /// Keine modellierte Beschreibung verfügbar
+        /// </param>
+        public global::Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.deliveredBeer> deliveredBeersByDelivery(global::System.Nullable<int> deliveryId)
+        {
+            return this.Details.Methods.deliveredBeersByDelivery.CreateInvocation(deliveryId).Execute();
+        }
+        
         #endregion
     
         #region Details Class
@@ -664,35 +756,35 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem> deliveredBeers_Single
+                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer> deliveredBeers_Single
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.deliveredBeers_Single) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>;
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.deliveredBeers_Single) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem> deliveredBeers_SingleOrDefault
+                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer> deliveredBeers_SingleOrDefault
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.deliveredBeers_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>;
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.deliveredBeers_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem> deliveries_Single
+                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery> deliveries_Single
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.deliveries_Single) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>;
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.deliveries_Single) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem> deliveries_SingleOrDefault
+                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery> deliveries_SingleOrDefault
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.deliveries_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>;
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.deliveries_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>;
                     }
                 }
                 
@@ -776,6 +868,54 @@ namespace LightSwitchApplication
                     }
                 }
                 
+                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem> storage_Single
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.storage_Single) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem> storage_SingleOrDefault
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.storage_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem> supplierStorage_Single
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.supplierStorage_Single) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem> supplierStorage_SingleOrDefault
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.supplierStorage_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem> supplierStorageBySupplier
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.supplierStorageBySupplier) as global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer> deliveredBeersByDelivery
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties.deliveredBeersByDelivery) as global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>;
+                    }
+                }
+                
             }
     
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -821,19 +961,19 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem> deliveredBeers
+                public global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer> deliveredBeers
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties.deliveredBeers) as global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>;
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties.deliveredBeers) as global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem> deliveries
+                public global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery> deliveries
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties.deliveries) as global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>;
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties.deliveries) as global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>;
                     }
                 }
                 
@@ -866,6 +1006,22 @@ namespace LightSwitchApplication
                     get
                     {
                         return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties.suppliers) as global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.suppliersItem>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem> storage
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties.storage) as global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem> supplierStorage
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties.supplierStorage) as global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>;
                     }
                 }
                 
@@ -958,41 +1114,41 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Entry
-                    deliveredBeers_Single = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Entry
+                    deliveredBeers_Single = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Entry(
                         "deliveredBeers_Single",
                         global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties._deliveredBeers_Single_Stub);
-                private static void _deliveredBeers_Single_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                private static void _deliveredBeers_Single_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
                 {
                     c(d, ref d._deliveredBeers_Single, sf);
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Entry
-                    deliveredBeers_SingleOrDefault = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Entry
+                    deliveredBeers_SingleOrDefault = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Entry(
                         "deliveredBeers_SingleOrDefault",
                         global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties._deliveredBeers_SingleOrDefault_Stub);
-                private static void _deliveredBeers_SingleOrDefault_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                private static void _deliveredBeers_SingleOrDefault_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
                 {
                     c(d, ref d._deliveredBeers_SingleOrDefault, sf);
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>.Entry
-                    deliveries_Single = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>.Entry
+                    deliveries_Single = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>.Entry(
                         "deliveries_Single",
                         global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties._deliveries_Single_Stub);
-                private static void _deliveries_Single_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                private static void _deliveries_Single_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
                 {
                     c(d, ref d._deliveries_Single, sf);
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>.Entry
-                    deliveries_SingleOrDefault = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>.Entry
+                    deliveries_SingleOrDefault = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>.Entry(
                         "deliveries_SingleOrDefault",
                         global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties._deliveries_SingleOrDefault_Stub);
-                private static void _deliveries_SingleOrDefault_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                private static void _deliveries_SingleOrDefault_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
                 {
                     c(d, ref d._deliveries_SingleOrDefault, sf);
                 }
@@ -1097,6 +1253,66 @@ namespace LightSwitchApplication
                     c(d, ref d._orderedBeersByOrder, sf);
                 }
     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>.Entry
+                    storage_Single = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>.Entry(
+                        "storage_Single",
+                        global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties._storage_Single_Stub);
+                private static void _storage_Single_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                {
+                    c(d, ref d._storage_Single, sf);
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>.Entry
+                    storage_SingleOrDefault = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>.Entry(
+                        "storage_SingleOrDefault",
+                        global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties._storage_SingleOrDefault_Stub);
+                private static void _storage_SingleOrDefault_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                {
+                    c(d, ref d._storage_SingleOrDefault, sf);
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Entry
+                    supplierStorage_Single = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Entry(
+                        "supplierStorage_Single",
+                        global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties._supplierStorage_Single_Stub);
+                private static void _supplierStorage_Single_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                {
+                    c(d, ref d._supplierStorage_Single, sf);
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Entry
+                    supplierStorage_SingleOrDefault = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Entry(
+                        "supplierStorage_SingleOrDefault",
+                        global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties._supplierStorage_SingleOrDefault_Stub);
+                private static void _supplierStorage_SingleOrDefault_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                {
+                    c(d, ref d._supplierStorage_SingleOrDefault, sf);
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Entry
+                    supplierStorageBySupplier = new global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Entry(
+                        "supplierStorageBySupplier",
+                        global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties._supplierStorageBySupplier_Stub);
+                private static void _supplierStorageBySupplier_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                {
+                    c(d, ref d._supplierStorageBySupplier, sf);
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Entry
+                    deliveredBeersByDelivery = new global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Entry(
+                        "deliveredBeersByDelivery",
+                        global::LightSwitchApplication.freibierDB.DetailsClass.MethodSetProperties._deliveredBeersByDelivery_Stub);
+                private static void _deliveredBeersByDelivery_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                {
+                    c(d, ref d._deliveredBeersByDelivery, sf);
+                }
+    
             }
     
             [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
@@ -1146,21 +1362,21 @@ namespace LightSwitchApplication
                 }
      
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Entry
-                    deliveredBeers = new global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Entry
+                    deliveredBeers = new global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Entry(
                         "deliveredBeers",
                         global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties._deliveredBeers_Stub);
-                private static void _deliveredBeers_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                private static void _deliveredBeers_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
                 {
                     c(d, ref d._deliveredBeers, sf);
                 }
      
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>.Entry
-                    deliveries = new global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>.Entry
+                    deliveries = new global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>.Entry(
                         "deliveries",
                         global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties._deliveries_Stub);
-                private static void _deliveries_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                private static void _deliveries_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
                 {
                     c(d, ref d._deliveries, sf);
                 }
@@ -1205,6 +1421,26 @@ namespace LightSwitchApplication
                     c(d, ref d._suppliers, sf);
                 }
      
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>.Entry
+                    storage = new global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>.Entry(
+                        "storage",
+                        global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties._storage_Stub);
+                private static void _storage_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                {
+                    c(d, ref d._storage, sf);
+                }
+     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Entry
+                    supplierStorage = new global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Entry(
+                        "supplierStorage",
+                        global::LightSwitchApplication.freibierDB.DetailsClass.PropertySetProperties._supplierStorage_Stub);
+                private static void _supplierStorage_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.freibierDB.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Data> c, global::LightSwitchApplication.freibierDB.DetailsClass d, object sf)
+                {
+                    c(d, ref d._supplierStorage, sf);
+                }
+     
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
@@ -1220,10 +1456,10 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.countriesItem>.Data _countries;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Data _deliveredBeers;
+            private global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Data _deliveredBeers;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>.Data _deliveries;
+            private global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>.Data _deliveries;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.driversItem>.Data _drivers;
@@ -1236,6 +1472,12 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.suppliersItem>.Data _suppliers;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>.Data _storage;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Data _supplierStorage;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.beerRecipientsItem>.Data _beerRecipients_Single;
@@ -1262,16 +1504,16 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.countriesItem>.Data _countries_SingleOrDefault;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Data _deliveredBeers_Single;
+            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Data _deliveredBeers_Single;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Data _deliveredBeers_SingleOrDefault;
+            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Data _deliveredBeers_SingleOrDefault;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>.Data _deliveries_Single;
+            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>.Data _deliveries_Single;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveriesItem>.Data _deliveries_SingleOrDefault;
+            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.delivery>.Data _deliveries_SingleOrDefault;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.driversItem>.Data _drivers_Single;
@@ -1303,6 +1545,24 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.orderedBeersItem>.Data _orderedBeersByOrder;
             
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>.Data _storage_Single;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.storageItem>.Data _storage_SingleOrDefault;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Data _supplierStorage_Single;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Data _supplierStorage_SingleOrDefault;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.supplierStorageItem>.Data _supplierStorageBySupplier;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateQueryMethod<global::LightSwitchApplication.freibierDB, global::LightSwitchApplication.freibierDB.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Data _deliveredBeersByDelivery;
+            
         }
     
         #endregion
@@ -1330,15 +1590,28 @@ namespace LightSwitchApplication
         #region Public Properties
     
         /// <summary>
-        /// Ruft die Entitätenmenge OrderBuySuppliesOperations ab. Die Entitätenmenge stellt Member für den Zugriff auf Entitäten eines bestimmten Typs bereit.
+        /// Ruft die Entitätenmenge DeliveryConfirmOperations ab. Die Entitätenmenge stellt Member für den Zugriff auf Entitäten eines bestimmten Typs bereit.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.DeliveryConfirmOperation> OrderBuySuppliesOperations
+        public global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.DeliveryConfirmOperation> DeliveryConfirmOperations
         {
             get
             {
-                return global::LightSwitchApplication.ApplicationData.DetailsClass.GetValue(this, global::LightSwitchApplication.ApplicationData.DetailsClass.PropertySetProperties.OrderBuySuppliesOperations);
+                return global::LightSwitchApplication.ApplicationData.DetailsClass.GetValue(this, global::LightSwitchApplication.ApplicationData.DetailsClass.PropertySetProperties.DeliveryConfirmOperations);
+            }
+        }
+        
+        /// <summary>
+        /// Ruft die Entitätenmenge OrderReceivedOperations ab. Die Entitätenmenge stellt Member für den Zugriff auf Entitäten eines bestimmten Typs bereit.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.OrderReceivedOperation> OrderReceivedOperations
+        {
+            get
+            {
+                return global::LightSwitchApplication.ApplicationData.DetailsClass.GetValue(this, global::LightSwitchApplication.ApplicationData.DetailsClass.PropertySetProperties.OrderReceivedOperations);
             }
         }
         
@@ -1352,9 +1625,9 @@ namespace LightSwitchApplication
         /// <param name="Id">
         /// Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität.
         /// </param>
-        public global::LightSwitchApplication.DeliveryConfirmOperation OrderBuySuppliesOperations_Single(global::System.Nullable<int> Id)
+        public global::LightSwitchApplication.DeliveryConfirmOperation DeliveryConfirmOperations_Single(global::System.Nullable<int> Id)
         {
-            return this.Details.Methods.OrderBuySuppliesOperations_Single.CreateInvocation(Id).Execute();
+            return this.Details.Methods.DeliveryConfirmOperations_Single.CreateInvocation(Id).Execute();
         }
         
         /// <summary>
@@ -1363,9 +1636,31 @@ namespace LightSwitchApplication
         /// <param name="Id">
         /// Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität.
         /// </param>
-        public global::LightSwitchApplication.DeliveryConfirmOperation OrderBuySuppliesOperations_SingleOrDefault(global::System.Nullable<int> Id)
+        public global::LightSwitchApplication.DeliveryConfirmOperation DeliveryConfirmOperations_SingleOrDefault(global::System.Nullable<int> Id)
         {
-            return this.Details.Methods.OrderBuySuppliesOperations_SingleOrDefault.CreateInvocation(Id).Execute();
+            return this.Details.Methods.DeliveryConfirmOperations_SingleOrDefault.CreateInvocation(Id).Execute();
+        }
+        
+        /// <summary>
+        /// Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird.
+        /// </summary>
+        /// <param name="Id">
+        /// Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität.
+        /// </param>
+        public global::LightSwitchApplication.OrderReceivedOperation OrderReceivedOperations_Single(global::System.Nullable<int> Id)
+        {
+            return this.Details.Methods.OrderReceivedOperations_Single.CreateInvocation(Id).Execute();
+        }
+        
+        /// <summary>
+        /// Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist.
+        /// </summary>
+        /// <param name="Id">
+        /// Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität.
+        /// </param>
+        public global::LightSwitchApplication.OrderReceivedOperation OrderReceivedOperations_SingleOrDefault(global::System.Nullable<int> Id)
+        {
+            return this.Details.Methods.OrderReceivedOperations_SingleOrDefault.CreateInvocation(Id).Execute();
         }
         
         #endregion
@@ -1381,8 +1676,8 @@ namespace LightSwitchApplication
     
             static DetailsClass()
             {
-                var initializeMethodEntry = global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.OrderBuySuppliesOperations_Single;
-                var initializePropertyEntry = global::LightSwitchApplication.ApplicationData.DetailsClass.PropertySetProperties.OrderBuySuppliesOperations;
+                var initializeMethodEntry = global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.DeliveryConfirmOperations_Single;
+                var initializePropertyEntry = global::LightSwitchApplication.ApplicationData.DetailsClass.PropertySetProperties.DeliveryConfirmOperations;
             }
     
             public DetailsClass() : base()
@@ -1416,19 +1711,35 @@ namespace LightSwitchApplication
                 {
                 }
     
-                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation> OrderBuySuppliesOperations_Single
+                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation> DeliveryConfirmOperations_Single
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.OrderBuySuppliesOperations_Single) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>;
+                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.DeliveryConfirmOperations_Single) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation> OrderBuySuppliesOperations_SingleOrDefault
+                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation> DeliveryConfirmOperations_SingleOrDefault
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.OrderBuySuppliesOperations_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>;
+                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.DeliveryConfirmOperations_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation> OrderReceivedOperations_Single
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.OrderReceivedOperations_Single) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation> OrderReceivedOperations_SingleOrDefault
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties.OrderReceivedOperations_SingleOrDefault) as global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>;
                     }
                 }
                 
@@ -1445,11 +1756,19 @@ namespace LightSwitchApplication
                 {
                 }
     
-                public global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation> OrderBuySuppliesOperations
+                public global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation> DeliveryConfirmOperations
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.PropertySetProperties.OrderBuySuppliesOperations) as global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>;
+                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.PropertySetProperties.DeliveryConfirmOperations) as global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation> OrderReceivedOperations
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.ApplicationData.DetailsClass.PropertySetProperties.OrderReceivedOperations) as global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>;
                     }
                 }
                 
@@ -1463,22 +1782,42 @@ namespace LightSwitchApplication
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Entry
-                    OrderBuySuppliesOperations_Single = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Entry(
-                        "OrderBuySuppliesOperations_Single",
-                        global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties._OrderBuySuppliesOperations_Single_Stub);
-                private static void _OrderBuySuppliesOperations_Single_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
+                    DeliveryConfirmOperations_Single = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Entry(
+                        "DeliveryConfirmOperations_Single",
+                        global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties._DeliveryConfirmOperations_Single_Stub);
+                private static void _DeliveryConfirmOperations_Single_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
                 {
-                    c(d, ref d._OrderBuySuppliesOperations_Single, sf);
+                    c(d, ref d._DeliveryConfirmOperations_Single, sf);
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Entry
-                    OrderBuySuppliesOperations_SingleOrDefault = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Entry(
-                        "OrderBuySuppliesOperations_SingleOrDefault",
-                        global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties._OrderBuySuppliesOperations_SingleOrDefault_Stub);
-                private static void _OrderBuySuppliesOperations_SingleOrDefault_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
+                    DeliveryConfirmOperations_SingleOrDefault = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Entry(
+                        "DeliveryConfirmOperations_SingleOrDefault",
+                        global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties._DeliveryConfirmOperations_SingleOrDefault_Stub);
+                private static void _DeliveryConfirmOperations_SingleOrDefault_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
                 {
-                    c(d, ref d._OrderBuySuppliesOperations_SingleOrDefault, sf);
+                    c(d, ref d._DeliveryConfirmOperations_SingleOrDefault, sf);
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>.Entry
+                    OrderReceivedOperations_Single = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>.Entry(
+                        "OrderReceivedOperations_Single",
+                        global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties._OrderReceivedOperations_Single_Stub);
+                private static void _OrderReceivedOperations_Single_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
+                {
+                    c(d, ref d._OrderReceivedOperations_Single, sf);
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>.Entry
+                    OrderReceivedOperations_SingleOrDefault = new global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>.Entry(
+                        "OrderReceivedOperations_SingleOrDefault",
+                        global::LightSwitchApplication.ApplicationData.DetailsClass.MethodSetProperties._OrderReceivedOperations_SingleOrDefault_Stub);
+                private static void _OrderReceivedOperations_SingleOrDefault_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
+                {
+                    c(d, ref d._OrderReceivedOperations_SingleOrDefault, sf);
                 }
     
             }
@@ -1491,24 +1830,43 @@ namespace LightSwitchApplication
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
                 public static readonly global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Entry
-                    OrderBuySuppliesOperations = new global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Entry(
-                        "OrderBuySuppliesOperations",
-                        global::LightSwitchApplication.ApplicationData.DetailsClass.PropertySetProperties._OrderBuySuppliesOperations_Stub);
-                private static void _OrderBuySuppliesOperations_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
+                    DeliveryConfirmOperations = new global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Entry(
+                        "DeliveryConfirmOperations",
+                        global::LightSwitchApplication.ApplicationData.DetailsClass.PropertySetProperties._DeliveryConfirmOperations_Stub);
+                private static void _DeliveryConfirmOperations_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
                 {
-                    c(d, ref d._OrderBuySuppliesOperations, sf);
+                    c(d, ref d._DeliveryConfirmOperations, sf);
+                }
+     
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>.Entry
+                    OrderReceivedOperations = new global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>.Entry(
+                        "OrderReceivedOperations",
+                        global::LightSwitchApplication.ApplicationData.DetailsClass.PropertySetProperties._OrderReceivedOperations_Stub);
+                private static void _OrderReceivedOperations_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.ApplicationData.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>.Data> c, global::LightSwitchApplication.ApplicationData.DetailsClass d, object sf)
+                {
+                    c(d, ref d._OrderReceivedOperations, sf);
                 }
      
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Data _OrderBuySuppliesOperations;
+            private global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Data _DeliveryConfirmOperations;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Data _OrderBuySuppliesOperations_Single;
+            private global::Microsoft.LightSwitch.Details.Framework.DataServiceEntitySetProperty<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>.Data _OrderReceivedOperations;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Data _OrderBuySuppliesOperations_SingleOrDefault;
+            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Data _DeliveryConfirmOperations_Single;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.DeliveryConfirmOperation>.Data _DeliveryConfirmOperations_SingleOrDefault;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>.Data _OrderReceivedOperations_Single;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.CreateScalarQueryMethod<global::LightSwitchApplication.ApplicationData, global::LightSwitchApplication.ApplicationData.DetailsClass, global::LightSwitchApplication.OrderReceivedOperation>.Data _OrderReceivedOperations_SingleOrDefault;
             
         }
     

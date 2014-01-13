@@ -150,7 +150,7 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.deliveredBeersItem> deliveredBeers
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.deliveredBeer> deliveredBeers
         {
             get
             {
@@ -160,11 +160,34 @@ namespace LightSwitchApplication
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.deliveredBeersItem> deliveredBeersQuery
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.deliveredBeer> deliveredBeersQuery
         {
             get
             {
                 return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.deliveredBeers);
+            }
+        }
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.storageItem> storage
+        {
+            get
+            {
+                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.storage);
+            }
+        }
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.storageItem> storageQuery
+        {
+            get
+            {
+                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.storage);
             }
         }
 
@@ -274,11 +297,19 @@ namespace LightSwitchApplication
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeersItem> deliveredBeers
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeer> deliveredBeers
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.deliveredBeers) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>;
+                        return base.GetItem(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.deliveredBeers) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeer>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem> storage
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.storage) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>;
                     }
                 }
                 
@@ -292,6 +323,7 @@ namespace LightSwitchApplication
                 new string name { get; set; }
                 new global::System.Collections.IEnumerable beerSuppliers { get; }
                 new global::System.Collections.IEnumerable deliveredBeers { get; }
+                new global::System.Collections.IEnumerable storage { get; }
             }
             #pragma warning restore 109
     
@@ -392,23 +424,43 @@ namespace LightSwitchApplication
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Entry
-                    deliveredBeers = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Entry(
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Entry
+                    deliveredBeers = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Entry(
                         "deliveredBeers",
                         global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._deliveredBeers_Stub,
                         global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._deliveredBeers_GetReferencedEntities,
                         global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._deliveredBeers_GetEntityCollection);
-                private static void _deliveredBeers_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.beerTypesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Data> c, global::LightSwitchApplication.beerTypesItem.DetailsClass d, object sf)
+                private static void _deliveredBeers_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.beerTypesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Data> c, global::LightSwitchApplication.beerTypesItem.DetailsClass d, object sf)
                 {
                     c(d, ref d._deliveredBeers, sf);
                 }
-                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.deliveredBeersItem> _deliveredBeers_GetReferencedEntities(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.deliveredBeer> _deliveredBeers_GetReferencedEntities(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
                 {
-                    return d.GetReferencedEntities<global::LightSwitchApplication.deliveredBeersItem, global::LightSwitchApplication.deliveredBeersItem.DetailsClass>(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.deliveredBeers, ref d._deliveredBeers);
+                    return d.GetReferencedEntities<global::LightSwitchApplication.deliveredBeer, global::LightSwitchApplication.deliveredBeer.DetailsClass>(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.deliveredBeers, ref d._deliveredBeers);
                 }
                 private static global::System.Collections.IEnumerable _deliveredBeers_GetEntityCollection(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
                 {
                     return d.ImplementationEntity.deliveredBeers;
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>.Entry
+                    storage = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>.Entry(
+                        "storage",
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._storage_Stub,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._storage_GetReferencedEntities,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._storage_GetEntityCollection);
+                private static void _storage_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.beerTypesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>.Data> c, global::LightSwitchApplication.beerTypesItem.DetailsClass d, object sf)
+                {
+                    c(d, ref d._storage, sf);
+                }
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.storageItem> _storage_GetReferencedEntities(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
+                {
+                    return d.GetReferencedEntities<global::LightSwitchApplication.storageItem, global::LightSwitchApplication.storageItem.DetailsClass>(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.storage, ref d._storage);
+                }
+                private static global::System.Collections.IEnumerable _storage_GetEntityCollection(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.storage;
                 }
     
             }
@@ -423,7 +475,10 @@ namespace LightSwitchApplication
             private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Data _beerSuppliers;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Data _deliveredBeers;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Data _deliveredBeers;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>.Data _storage;
             
         }
     

@@ -216,28 +216,28 @@ namespace LightSwitchApplication
         partial void deliveredBeers_CanRead(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveredBeers_Inserting(global::LightSwitchApplication.deliveredBeersItem entity);
+        partial void deliveredBeers_Inserting(global::LightSwitchApplication.deliveredBeer entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveredBeers_Inserted(global::LightSwitchApplication.deliveredBeersItem entity);
+        partial void deliveredBeers_Inserted(global::LightSwitchApplication.deliveredBeer entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveredBeers_Updating(global::LightSwitchApplication.deliveredBeersItem entity);
+        partial void deliveredBeers_Updating(global::LightSwitchApplication.deliveredBeer entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveredBeers_Updated(global::LightSwitchApplication.deliveredBeersItem entity);
+        partial void deliveredBeers_Updated(global::LightSwitchApplication.deliveredBeer entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveredBeers_Deleting(global::LightSwitchApplication.deliveredBeersItem entity);
+        partial void deliveredBeers_Deleting(global::LightSwitchApplication.deliveredBeer entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveredBeers_Deleted(global::LightSwitchApplication.deliveredBeersItem entity);
+        partial void deliveredBeers_Deleted(global::LightSwitchApplication.deliveredBeer entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveredBeers_Validate(global::LightSwitchApplication.deliveredBeersItem entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+        partial void deliveredBeers_Validate(global::LightSwitchApplication.deliveredBeer entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveredBeers_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.deliveredBeersItem, bool>> filter);
+        partial void deliveredBeers_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.deliveredBeer, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void deliveries_CanInsert(ref bool result);
@@ -252,28 +252,28 @@ namespace LightSwitchApplication
         partial void deliveries_CanRead(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveries_Inserting(global::LightSwitchApplication.deliveriesItem entity);
+        partial void deliveries_Inserting(global::LightSwitchApplication.delivery entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveries_Inserted(global::LightSwitchApplication.deliveriesItem entity);
+        partial void deliveries_Inserted(global::LightSwitchApplication.delivery entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveries_Updating(global::LightSwitchApplication.deliveriesItem entity);
+        partial void deliveries_Updating(global::LightSwitchApplication.delivery entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveries_Updated(global::LightSwitchApplication.deliveriesItem entity);
+        partial void deliveries_Updated(global::LightSwitchApplication.delivery entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveries_Deleting(global::LightSwitchApplication.deliveriesItem entity);
+        partial void deliveries_Deleting(global::LightSwitchApplication.delivery entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveries_Deleted(global::LightSwitchApplication.deliveriesItem entity);
+        partial void deliveries_Deleted(global::LightSwitchApplication.delivery entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveries_Validate(global::LightSwitchApplication.deliveriesItem entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+        partial void deliveries_Validate(global::LightSwitchApplication.delivery entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void deliveries_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.deliveriesItem, bool>> filter);
+        partial void deliveries_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.delivery, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void drivers_CanInsert(ref bool result);
@@ -420,6 +420,78 @@ namespace LightSwitchApplication
         partial void suppliers_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.suppliersItem, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void storage_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void storage_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void storage_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void storage_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void storage_Inserting(global::LightSwitchApplication.storageItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void storage_Inserted(global::LightSwitchApplication.storageItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void storage_Updating(global::LightSwitchApplication.storageItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void storage_Updated(global::LightSwitchApplication.storageItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void storage_Deleting(global::LightSwitchApplication.storageItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void storage_Deleted(global::LightSwitchApplication.storageItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void storage_Validate(global::LightSwitchApplication.storageItem entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void storage_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.storageItem, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorage_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorage_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorage_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorage_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorage_Inserting(global::LightSwitchApplication.supplierStorageItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorage_Inserted(global::LightSwitchApplication.supplierStorageItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorage_Updating(global::LightSwitchApplication.supplierStorageItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorage_Updated(global::LightSwitchApplication.supplierStorageItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorage_Deleting(global::LightSwitchApplication.supplierStorageItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorage_Deleted(global::LightSwitchApplication.supplierStorageItem entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorage_Validate(global::LightSwitchApplication.supplierStorageItem entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorage_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.supplierStorageItem, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void SaveChanges_CanExecute(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -460,6 +532,36 @@ namespace LightSwitchApplication
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         partial void orderedBeersByOrder_ExecuteFailed(global::System.Nullable<int> order, global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorageBySupplier_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void supplierStorageBySupplier_Executing(global::System.Nullable<int> supplierId);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void supplierStorageBySupplier_PreprocessQuery(global::System.Nullable<int> supplierId, ref global::System.Linq.IQueryable<global::LightSwitchApplication.supplierStorageItem> query);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void supplierStorageBySupplier_Executed(global::System.Nullable<int> supplierId, global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.supplierStorageItem> result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void supplierStorageBySupplier_ExecuteFailed(global::System.Nullable<int> supplierId, global::System.Exception exception);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void deliveredBeersByDelivery_CanExecute(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void deliveredBeersByDelivery_Executing(global::System.Nullable<int> deliveryId);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void deliveredBeersByDelivery_PreprocessQuery(global::System.Nullable<int> deliveryId, ref global::System.Linq.IQueryable<global::LightSwitchApplication.deliveredBeer> query);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void deliveredBeersByDelivery_Executed(global::System.Nullable<int> deliveryId, global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.deliveredBeer> result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        partial void deliveredBeersByDelivery_ExecuteFailed(global::System.Nullable<int> deliveryId, global::System.Exception exception);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void Query_Executing(global::Microsoft.LightSwitch.QueryExecutingDescriptor queryDescriptor);
@@ -785,8 +887,8 @@ namespace LightSwitchApplication
             }
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.deliveredBeersItem>
-                __deliveredBeersEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.deliveredBeersItem>(
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.deliveredBeer>
+                __deliveredBeersEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.deliveredBeer>(
                     "deliveredBeers",
                     global::LightSwitchApplication.freibierDBService.DetailsClass.__deliveredBeers_CanInsert,
                     global::LightSwitchApplication.freibierDBService.DetailsClass.__deliveredBeers_CanUpdate,
@@ -824,44 +926,44 @@ namespace LightSwitchApplication
                 d.deliveredBeers_CanRead(ref result);
                 return result;
             }
-            private static void __deliveredBeers_Inserting(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeersItem e)
+            private static void __deliveredBeers_Inserting(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeer e)
             {
                 d.deliveredBeers_Inserting(e);
             }
-            private static void __deliveredBeers_Inserted(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeersItem e)
+            private static void __deliveredBeers_Inserted(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeer e)
             {
                 d.deliveredBeers_Inserted(e);
             }
-            private static void __deliveredBeers_Updating(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeersItem e)
+            private static void __deliveredBeers_Updating(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeer e)
             {
                 d.deliveredBeers_Updating(e);
             }
-            private static void __deliveredBeers_Updated(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeersItem e)
+            private static void __deliveredBeers_Updated(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeer e)
             {
                 d.deliveredBeers_Updated(e);
             }
-            private static void __deliveredBeers_Deleting(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeersItem e)
+            private static void __deliveredBeers_Deleting(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeer e)
             {
                 d.deliveredBeers_Deleting(e);
             }
-            private static void __deliveredBeers_Deleted(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeersItem e)
+            private static void __deliveredBeers_Deleted(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeer e)
             {
                 d.deliveredBeers_Deleted(e);
             }
-            private static void __deliveredBeers_Validate(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeersItem e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            private static void __deliveredBeers_Validate(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveredBeer e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
             {
                 d.deliveredBeers_Validate(e, r);
             }
-            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.deliveredBeersItem, bool>> __deliveredBeers_Filter(global::LightSwitchApplication.freibierDBService d)
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.deliveredBeer, bool>> __deliveredBeers_Filter(global::LightSwitchApplication.freibierDBService d)
             {
-                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.deliveredBeersItem, bool>> filter = null;
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.deliveredBeer, bool>> filter = null;
                 d.deliveredBeers_Filter(ref filter);
                 return filter;
             }
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.deliveriesItem>
-                __deliveriesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.deliveriesItem>(
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.delivery>
+                __deliveriesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.delivery>(
                     "deliveries",
                     global::LightSwitchApplication.freibierDBService.DetailsClass.__deliveries_CanInsert,
                     global::LightSwitchApplication.freibierDBService.DetailsClass.__deliveries_CanUpdate,
@@ -899,37 +1001,37 @@ namespace LightSwitchApplication
                 d.deliveries_CanRead(ref result);
                 return result;
             }
-            private static void __deliveries_Inserting(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveriesItem e)
+            private static void __deliveries_Inserting(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.delivery e)
             {
                 d.deliveries_Inserting(e);
             }
-            private static void __deliveries_Inserted(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveriesItem e)
+            private static void __deliveries_Inserted(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.delivery e)
             {
                 d.deliveries_Inserted(e);
             }
-            private static void __deliveries_Updating(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveriesItem e)
+            private static void __deliveries_Updating(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.delivery e)
             {
                 d.deliveries_Updating(e);
             }
-            private static void __deliveries_Updated(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveriesItem e)
+            private static void __deliveries_Updated(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.delivery e)
             {
                 d.deliveries_Updated(e);
             }
-            private static void __deliveries_Deleting(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveriesItem e)
+            private static void __deliveries_Deleting(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.delivery e)
             {
                 d.deliveries_Deleting(e);
             }
-            private static void __deliveries_Deleted(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveriesItem e)
+            private static void __deliveries_Deleted(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.delivery e)
             {
                 d.deliveries_Deleted(e);
             }
-            private static void __deliveries_Validate(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.deliveriesItem e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            private static void __deliveries_Validate(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.delivery e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
             {
                 d.deliveries_Validate(e, r);
             }
-            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.deliveriesItem, bool>> __deliveries_Filter(global::LightSwitchApplication.freibierDBService d)
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.delivery, bool>> __deliveries_Filter(global::LightSwitchApplication.freibierDBService d)
             {
-                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.deliveriesItem, bool>> filter = null;
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.delivery, bool>> filter = null;
                 d.deliveries_Filter(ref filter);
                 return filter;
             }
@@ -1235,6 +1337,156 @@ namespace LightSwitchApplication
             }
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.storageItem>
+                __storageEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.storageItem>(
+                    "storage",
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__storage_CanInsert,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__storage_CanUpdate,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__storage_CanDelete,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__storage_CanRead,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__storage_Inserting,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__storage_Inserted,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__storage_Updating,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__storage_Updated,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__storage_Deleting,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__storage_Deleted,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__storage_Validate,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__storage_Filter);
+            private static bool __storage_CanInsert(global::LightSwitchApplication.freibierDBService d)
+            {
+                bool result = true;
+                d.storage_CanInsert(ref result);
+                return result;
+            }
+            private static bool __storage_CanUpdate(global::LightSwitchApplication.freibierDBService d)
+            {
+                bool result = true;
+                d.storage_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __storage_CanDelete(global::LightSwitchApplication.freibierDBService d)
+            {
+                bool result = true;
+                d.storage_CanDelete(ref result);
+                return result;
+            }
+            private static bool __storage_CanRead(global::LightSwitchApplication.freibierDBService d)
+            {
+                bool result = true;
+                d.storage_CanRead(ref result);
+                return result;
+            }
+            private static void __storage_Inserting(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.storageItem e)
+            {
+                d.storage_Inserting(e);
+            }
+            private static void __storage_Inserted(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.storageItem e)
+            {
+                d.storage_Inserted(e);
+            }
+            private static void __storage_Updating(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.storageItem e)
+            {
+                d.storage_Updating(e);
+            }
+            private static void __storage_Updated(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.storageItem e)
+            {
+                d.storage_Updated(e);
+            }
+            private static void __storage_Deleting(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.storageItem e)
+            {
+                d.storage_Deleting(e);
+            }
+            private static void __storage_Deleted(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.storageItem e)
+            {
+                d.storage_Deleted(e);
+            }
+            private static void __storage_Validate(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.storageItem e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.storage_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.storageItem, bool>> __storage_Filter(global::LightSwitchApplication.freibierDBService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.storageItem, bool>> filter = null;
+                d.storage_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.supplierStorageItem>
+                __supplierStorageEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.supplierStorageItem>(
+                    "supplierStorage",
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorage_CanInsert,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorage_CanUpdate,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorage_CanDelete,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorage_CanRead,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorage_Inserting,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorage_Inserted,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorage_Updating,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorage_Updated,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorage_Deleting,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorage_Deleted,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorage_Validate,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorage_Filter);
+            private static bool __supplierStorage_CanInsert(global::LightSwitchApplication.freibierDBService d)
+            {
+                bool result = true;
+                d.supplierStorage_CanInsert(ref result);
+                return result;
+            }
+            private static bool __supplierStorage_CanUpdate(global::LightSwitchApplication.freibierDBService d)
+            {
+                bool result = true;
+                d.supplierStorage_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __supplierStorage_CanDelete(global::LightSwitchApplication.freibierDBService d)
+            {
+                bool result = true;
+                d.supplierStorage_CanDelete(ref result);
+                return result;
+            }
+            private static bool __supplierStorage_CanRead(global::LightSwitchApplication.freibierDBService d)
+            {
+                bool result = true;
+                d.supplierStorage_CanRead(ref result);
+                return result;
+            }
+            private static void __supplierStorage_Inserting(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.supplierStorageItem e)
+            {
+                d.supplierStorage_Inserting(e);
+            }
+            private static void __supplierStorage_Inserted(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.supplierStorageItem e)
+            {
+                d.supplierStorage_Inserted(e);
+            }
+            private static void __supplierStorage_Updating(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.supplierStorageItem e)
+            {
+                d.supplierStorage_Updating(e);
+            }
+            private static void __supplierStorage_Updated(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.supplierStorageItem e)
+            {
+                d.supplierStorage_Updated(e);
+            }
+            private static void __supplierStorage_Deleting(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.supplierStorageItem e)
+            {
+                d.supplierStorage_Deleting(e);
+            }
+            private static void __supplierStorage_Deleted(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.supplierStorageItem e)
+            {
+                d.supplierStorage_Deleted(e);
+            }
+            private static void __supplierStorage_Validate(global::LightSwitchApplication.freibierDBService d, global::LightSwitchApplication.supplierStorageItem e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.supplierStorage_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.supplierStorageItem, bool>> __supplierStorage_Filter(global::LightSwitchApplication.freibierDBService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.supplierStorageItem, bool>> filter = null;
+                d.supplierStorage_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.OperationEntry<global::LightSwitchApplication.freibierDBService>
                 __SaveChangesEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.OperationEntry<global::LightSwitchApplication.freibierDBService>(
                     "SaveChanges",
@@ -1325,6 +1577,72 @@ namespace LightSwitchApplication
                 d.orderedBeersByOrder_PreprocessQuery((global::System.Nullable<int>)args[0], ref query);
                 return query;
             }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.supplierStorageItem>
+                __supplierStorageBySupplierEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.supplierStorageItem>(
+                    "supplierStorageBySupplier",
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorageBySupplier_CanExecute,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorageBySupplier_Executing,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorageBySupplier_Executed,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorageBySupplier_Failed,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__supplierStorageBySupplier_PreprocessQuery);
+            private static bool __supplierStorageBySupplier_CanExecute(global::LightSwitchApplication.freibierDBService d, bool r)
+            {
+                d.supplierStorageBySupplier_CanExecute(ref r);
+                return r;
+            }
+            private static void __supplierStorageBySupplier_Executing(global::LightSwitchApplication.freibierDBService d, object[] args)
+            {
+                d.supplierStorageBySupplier_Executing((global::System.Nullable<int>)args[0]);
+            }
+            private static void __supplierStorageBySupplier_Executed(global::LightSwitchApplication.freibierDBService d, object[] args)
+            {
+                d.supplierStorageBySupplier_Executed((global::System.Nullable<int>)args[0], (global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.supplierStorageItem>)args[1]);
+            }
+            private static void __supplierStorageBySupplier_Failed(global::LightSwitchApplication.freibierDBService d, object[] args, global::System.Exception ex)
+            {
+                d.supplierStorageBySupplier_ExecuteFailed((global::System.Nullable<int>)args[0], ex);
+            }
+            private static global::System.Linq.IQueryable __supplierStorageBySupplier_PreprocessQuery(global::LightSwitchApplication.freibierDBService d, object[] args)
+            {
+                global::System.Linq.IQueryable<global::LightSwitchApplication.supplierStorageItem> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.supplierStorageItem>)args[1];
+                d.supplierStorageBySupplier_PreprocessQuery((global::System.Nullable<int>)args[0], ref query);
+                return query;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.deliveredBeer>
+                __deliveredBeersByDeliveryEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.QueryOperationEntry<global::LightSwitchApplication.freibierDBService, global::LightSwitchApplication.deliveredBeer>(
+                    "deliveredBeersByDelivery",
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__deliveredBeersByDelivery_CanExecute,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__deliveredBeersByDelivery_Executing,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__deliveredBeersByDelivery_Executed,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__deliveredBeersByDelivery_Failed,
+                    global::LightSwitchApplication.freibierDBService.DetailsClass.__deliveredBeersByDelivery_PreprocessQuery);
+            private static bool __deliveredBeersByDelivery_CanExecute(global::LightSwitchApplication.freibierDBService d, bool r)
+            {
+                d.deliveredBeersByDelivery_CanExecute(ref r);
+                return r;
+            }
+            private static void __deliveredBeersByDelivery_Executing(global::LightSwitchApplication.freibierDBService d, object[] args)
+            {
+                d.deliveredBeersByDelivery_Executing((global::System.Nullable<int>)args[0]);
+            }
+            private static void __deliveredBeersByDelivery_Executed(global::LightSwitchApplication.freibierDBService d, object[] args)
+            {
+                d.deliveredBeersByDelivery_Executed((global::System.Nullable<int>)args[0], (global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.deliveredBeer>)args[1]);
+            }
+            private static void __deliveredBeersByDelivery_Failed(global::LightSwitchApplication.freibierDBService d, object[] args, global::System.Exception ex)
+            {
+                d.deliveredBeersByDelivery_ExecuteFailed((global::System.Nullable<int>)args[0], ex);
+            }
+            private static global::System.Linq.IQueryable __deliveredBeersByDelivery_PreprocessQuery(global::LightSwitchApplication.freibierDBService d, object[] args)
+            {
+                global::System.Linq.IQueryable<global::LightSwitchApplication.deliveredBeer> query = (global::System.Linq.IQueryable<global::LightSwitchApplication.deliveredBeer>)args[1];
+                d.deliveredBeersByDelivery_PreprocessQuery((global::System.Nullable<int>)args[0], ref query);
+                return query;
+            }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.QueryEntry<global::LightSwitchApplication.freibierDBService>
@@ -1398,40 +1716,76 @@ namespace LightSwitchApplication
         #region Server Interceptions Points
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void OrderBuySuppliesOperations_CanInsert(ref bool result);
+        partial void DeliveryConfirmOperations_CanInsert(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void OrderBuySuppliesOperations_CanUpdate(ref bool result);
+        partial void DeliveryConfirmOperations_CanUpdate(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void OrderBuySuppliesOperations_CanDelete(ref bool result);
+        partial void DeliveryConfirmOperations_CanDelete(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void OrderBuySuppliesOperations_CanRead(ref bool result);
+        partial void DeliveryConfirmOperations_CanRead(ref bool result);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void OrderBuySuppliesOperations_Inserting(global::LightSwitchApplication.DeliveryConfirmOperation entity);
+        partial void DeliveryConfirmOperations_Inserting(global::LightSwitchApplication.DeliveryConfirmOperation entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void OrderBuySuppliesOperations_Inserted(global::LightSwitchApplication.DeliveryConfirmOperation entity);
+        partial void DeliveryConfirmOperations_Inserted(global::LightSwitchApplication.DeliveryConfirmOperation entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void OrderBuySuppliesOperations_Updating(global::LightSwitchApplication.DeliveryConfirmOperation entity);
+        partial void DeliveryConfirmOperations_Updating(global::LightSwitchApplication.DeliveryConfirmOperation entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void OrderBuySuppliesOperations_Updated(global::LightSwitchApplication.DeliveryConfirmOperation entity);
+        partial void DeliveryConfirmOperations_Updated(global::LightSwitchApplication.DeliveryConfirmOperation entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void OrderBuySuppliesOperations_Deleting(global::LightSwitchApplication.DeliveryConfirmOperation entity);
+        partial void DeliveryConfirmOperations_Deleting(global::LightSwitchApplication.DeliveryConfirmOperation entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void OrderBuySuppliesOperations_Deleted(global::LightSwitchApplication.DeliveryConfirmOperation entity);
+        partial void DeliveryConfirmOperations_Deleted(global::LightSwitchApplication.DeliveryConfirmOperation entity);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void OrderBuySuppliesOperations_Validate(global::LightSwitchApplication.DeliveryConfirmOperation entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+        partial void DeliveryConfirmOperations_Validate(global::LightSwitchApplication.DeliveryConfirmOperation entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void OrderBuySuppliesOperations_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.DeliveryConfirmOperation, bool>> filter);
+        partial void DeliveryConfirmOperations_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.DeliveryConfirmOperation, bool>> filter);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderReceivedOperations_CanInsert(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderReceivedOperations_CanUpdate(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderReceivedOperations_CanDelete(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderReceivedOperations_CanRead(ref bool result);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderReceivedOperations_Inserting(global::LightSwitchApplication.OrderReceivedOperation entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderReceivedOperations_Inserted(global::LightSwitchApplication.OrderReceivedOperation entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderReceivedOperations_Updating(global::LightSwitchApplication.OrderReceivedOperation entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderReceivedOperations_Updated(global::LightSwitchApplication.OrderReceivedOperation entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderReceivedOperations_Deleting(global::LightSwitchApplication.OrderReceivedOperation entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderReceivedOperations_Deleted(global::LightSwitchApplication.OrderReceivedOperation entity);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderReceivedOperations_Validate(global::LightSwitchApplication.OrderReceivedOperation entity, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder results);
+    
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderReceivedOperations_Filter(ref global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.OrderReceivedOperation, bool>> filter);
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         partial void SaveChanges_CanExecute(ref bool result);
@@ -1470,76 +1824,151 @@ namespace LightSwitchApplication
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
             private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.DeliveryConfirmOperation>
-                __OrderBuySuppliesOperationsEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.DeliveryConfirmOperation>(
-                    "OrderBuySuppliesOperations",
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderBuySuppliesOperations_CanInsert,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderBuySuppliesOperations_CanUpdate,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderBuySuppliesOperations_CanDelete,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderBuySuppliesOperations_CanRead,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderBuySuppliesOperations_Inserting,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderBuySuppliesOperations_Inserted,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderBuySuppliesOperations_Updating,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderBuySuppliesOperations_Updated,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderBuySuppliesOperations_Deleting,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderBuySuppliesOperations_Deleted,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderBuySuppliesOperations_Validate,
-                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderBuySuppliesOperations_Filter);
-            private static bool __OrderBuySuppliesOperations_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+                __DeliveryConfirmOperationsEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.DeliveryConfirmOperation>(
+                    "DeliveryConfirmOperations",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DeliveryConfirmOperations_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DeliveryConfirmOperations_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DeliveryConfirmOperations_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DeliveryConfirmOperations_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DeliveryConfirmOperations_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DeliveryConfirmOperations_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DeliveryConfirmOperations_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DeliveryConfirmOperations_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DeliveryConfirmOperations_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DeliveryConfirmOperations_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DeliveryConfirmOperations_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__DeliveryConfirmOperations_Filter);
+            private static bool __DeliveryConfirmOperations_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
             {
                 bool result = true;
-                d.OrderBuySuppliesOperations_CanInsert(ref result);
+                d.DeliveryConfirmOperations_CanInsert(ref result);
                 return result;
             }
-            private static bool __OrderBuySuppliesOperations_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            private static bool __DeliveryConfirmOperations_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
             {
                 bool result = true;
-                d.OrderBuySuppliesOperations_CanUpdate(ref result);
+                d.DeliveryConfirmOperations_CanUpdate(ref result);
                 return result;
             }
-            private static bool __OrderBuySuppliesOperations_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            private static bool __DeliveryConfirmOperations_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
             {
                 bool result = true;
-                d.OrderBuySuppliesOperations_CanDelete(ref result);
+                d.DeliveryConfirmOperations_CanDelete(ref result);
                 return result;
             }
-            private static bool __OrderBuySuppliesOperations_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            private static bool __DeliveryConfirmOperations_CanRead(global::LightSwitchApplication.ApplicationDataService d)
             {
                 bool result = true;
-                d.OrderBuySuppliesOperations_CanRead(ref result);
+                d.DeliveryConfirmOperations_CanRead(ref result);
                 return result;
             }
-            private static void __OrderBuySuppliesOperations_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e)
+            private static void __DeliveryConfirmOperations_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e)
             {
-                d.OrderBuySuppliesOperations_Inserting(e);
+                d.DeliveryConfirmOperations_Inserting(e);
             }
-            private static void __OrderBuySuppliesOperations_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e)
+            private static void __DeliveryConfirmOperations_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e)
             {
-                d.OrderBuySuppliesOperations_Inserted(e);
+                d.DeliveryConfirmOperations_Inserted(e);
             }
-            private static void __OrderBuySuppliesOperations_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e)
+            private static void __DeliveryConfirmOperations_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e)
             {
-                d.OrderBuySuppliesOperations_Updating(e);
+                d.DeliveryConfirmOperations_Updating(e);
             }
-            private static void __OrderBuySuppliesOperations_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e)
+            private static void __DeliveryConfirmOperations_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e)
             {
-                d.OrderBuySuppliesOperations_Updated(e);
+                d.DeliveryConfirmOperations_Updated(e);
             }
-            private static void __OrderBuySuppliesOperations_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e)
+            private static void __DeliveryConfirmOperations_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e)
             {
-                d.OrderBuySuppliesOperations_Deleting(e);
+                d.DeliveryConfirmOperations_Deleting(e);
             }
-            private static void __OrderBuySuppliesOperations_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e)
+            private static void __DeliveryConfirmOperations_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e)
             {
-                d.OrderBuySuppliesOperations_Deleted(e);
+                d.DeliveryConfirmOperations_Deleted(e);
             }
-            private static void __OrderBuySuppliesOperations_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            private static void __DeliveryConfirmOperations_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.DeliveryConfirmOperation e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
             {
-                d.OrderBuySuppliesOperations_Validate(e, r);
+                d.DeliveryConfirmOperations_Validate(e, r);
             }
-            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.DeliveryConfirmOperation, bool>> __OrderBuySuppliesOperations_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.DeliveryConfirmOperation, bool>> __DeliveryConfirmOperations_Filter(global::LightSwitchApplication.ApplicationDataService d)
             {
                 global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.DeliveryConfirmOperation, bool>> filter = null;
-                d.OrderBuySuppliesOperations_Filter(ref filter);
+                d.DeliveryConfirmOperations_Filter(ref filter);
+                return filter;
+            }
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.OrderReceivedOperation>
+                __OrderReceivedOperationsEntry = new global::Microsoft.LightSwitch.Details.Framework.Server.EntitySetEntry<global::LightSwitchApplication.ApplicationDataService, global::LightSwitchApplication.OrderReceivedOperation>(
+                    "OrderReceivedOperations",
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderReceivedOperations_CanInsert,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderReceivedOperations_CanUpdate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderReceivedOperations_CanDelete,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderReceivedOperations_CanRead,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderReceivedOperations_Inserting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderReceivedOperations_Inserted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderReceivedOperations_Updating,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderReceivedOperations_Updated,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderReceivedOperations_Deleting,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderReceivedOperations_Deleted,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderReceivedOperations_Validate,
+                    global::LightSwitchApplication.ApplicationDataService.DetailsClass.__OrderReceivedOperations_Filter);
+            private static bool __OrderReceivedOperations_CanInsert(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.OrderReceivedOperations_CanInsert(ref result);
+                return result;
+            }
+            private static bool __OrderReceivedOperations_CanUpdate(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.OrderReceivedOperations_CanUpdate(ref result);
+                return result;
+            }
+            private static bool __OrderReceivedOperations_CanDelete(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.OrderReceivedOperations_CanDelete(ref result);
+                return result;
+            }
+            private static bool __OrderReceivedOperations_CanRead(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                bool result = true;
+                d.OrderReceivedOperations_CanRead(ref result);
+                return result;
+            }
+            private static void __OrderReceivedOperations_Inserting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OrderReceivedOperation e)
+            {
+                d.OrderReceivedOperations_Inserting(e);
+            }
+            private static void __OrderReceivedOperations_Inserted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OrderReceivedOperation e)
+            {
+                d.OrderReceivedOperations_Inserted(e);
+            }
+            private static void __OrderReceivedOperations_Updating(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OrderReceivedOperation e)
+            {
+                d.OrderReceivedOperations_Updating(e);
+            }
+            private static void __OrderReceivedOperations_Updated(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OrderReceivedOperation e)
+            {
+                d.OrderReceivedOperations_Updated(e);
+            }
+            private static void __OrderReceivedOperations_Deleting(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OrderReceivedOperation e)
+            {
+                d.OrderReceivedOperations_Deleting(e);
+            }
+            private static void __OrderReceivedOperations_Deleted(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OrderReceivedOperation e)
+            {
+                d.OrderReceivedOperations_Deleted(e);
+            }
+            private static void __OrderReceivedOperations_Validate(global::LightSwitchApplication.ApplicationDataService d, global::LightSwitchApplication.OrderReceivedOperation e, global::Microsoft.LightSwitch.EntitySetValidationResultsBuilder r)
+            {
+                d.OrderReceivedOperations_Validate(e, r);
+            }
+            private static global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.OrderReceivedOperation, bool>> __OrderReceivedOperations_Filter(global::LightSwitchApplication.ApplicationDataService d)
+            {
+                global::System.Linq.Expressions.Expression<global::System.Func<global::LightSwitchApplication.OrderReceivedOperation, bool>> filter = null;
+                d.OrderReceivedOperations_Filter(ref filter);
                 return filter;
             }
             

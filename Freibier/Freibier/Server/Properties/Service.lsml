@@ -10,6 +10,10 @@
   </ServiceApplication>
   <DataService
     DataProvider="EntityFrameworkDataProvider"
+    EntityContainer="LightSwitchCommonModule:ApplicationData"
+    Name="ApplicationDataMapping" />
+  <DataService
+    DataProvider="EntityFrameworkDataProvider"
     EntityContainer="LightSwitchCommonModule:freibierDB"
     Name="freibierDBDataService">
     <DataService.ConnectionProperties>
@@ -163,13 +167,13 @@
         <SsdlProperty
           Name="PK_deliveredBeers"
           Nullable="False"
-          Property="LightSwitchCommonModule:deliveredBeersItem/Properties[PK_deliveredBeers]"
+          Property="LightSwitchCommonModule:deliveredBeer/Properties[PK_deliveredBeers]"
           StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           Name="amount"
           Nullable="False"
-          Property="LightSwitchCommonModule:deliveredBeersItem/Properties[amount]"
+          Property="LightSwitchCommonModule:deliveredBeer/Properties[amount]"
           Type="int" />
         <SsdlForeignKeyProperty
           Name="FK_beerTypes"
@@ -192,29 +196,34 @@
         <SsdlProperty
           Name="PK_deliveries"
           Nullable="False"
-          Property="LightSwitchCommonModule:deliveriesItem/Properties[PK_deliveries]"
+          Property="LightSwitchCommonModule:delivery/Properties[PK_deliveries]"
           StoreGeneratedPattern="Identity"
           Type="int" />
         <SsdlProperty
           Name="orderDate"
           Nullable="False"
-          Property="LightSwitchCommonModule:deliveriesItem/Properties[orderDate]"
+          Property="LightSwitchCommonModule:delivery/Properties[orderDate]"
           Type="date" />
         <SsdlProperty
           Name="deliveryDate"
-          Nullable="False"
-          Property="LightSwitchCommonModule:deliveriesItem/Properties[deliveryDate]"
+          Nullable="True"
+          Property="LightSwitchCommonModule:delivery/Properties[deliveryDate]"
           Type="date" />
         <SsdlProperty
           Name="billingDate"
           Nullable="True"
-          Property="LightSwitchCommonModule:deliveriesItem/Properties[billingDate]"
+          Property="LightSwitchCommonModule:delivery/Properties[billingDate]"
           Type="date" />
         <SsdlProperty
           Name="invoiceNumber"
           Nullable="True"
-          Property="LightSwitchCommonModule:deliveriesItem/Properties[invoiceNumber]"
+          Property="LightSwitchCommonModule:delivery/Properties[invoiceNumber]"
           Type="int" />
+        <SsdlProperty
+          Name="delivered"
+          Nullable="False"
+          Property="LightSwitchCommonModule:delivery/Properties[delivered]"
+          Type="bit" />
         <SsdlForeignKeyProperty
           Name="FK_beerRecipients"
           Nullable="False"
@@ -311,6 +320,30 @@
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
     <EntitySetMapping
+      EntitySet="storage">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="storage" />
+        <SsdlProperty
+          Name="PK_storage"
+          Nullable="False"
+          Property="LightSwitchCommonModule:storageItem/Properties[PK_storage]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          Name="amount"
+          Nullable="False"
+          Property="LightSwitchCommonModule:storageItem/Properties[amount]"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="FK_beerTypes"
+          Nullable="False"
+          PropertyName="FK_beerTypes"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
       EntitySet="suppliers">
       <EntitySetMapping.Attributes>
         <SsdlEntitySet
@@ -360,6 +393,35 @@
           Name="FK_countries"
           Nullable="False"
           PropertyName="FK_countries"
+          Type="int" />
+      </EntitySetMapping.Attributes>
+    </EntitySetMapping>
+    <EntitySetMapping
+      EntitySet="supplierStorage">
+      <EntitySetMapping.Attributes>
+        <SsdlEntitySet
+          Schema="dbo"
+          Table="supplierStorage" />
+        <SsdlProperty
+          Name="PK_supplierStorage"
+          Nullable="False"
+          Property="LightSwitchCommonModule:supplierStorageItem/Properties[PK_supplierStorage]"
+          StoreGeneratedPattern="Identity"
+          Type="int" />
+        <SsdlProperty
+          Name="amount"
+          Nullable="False"
+          Property="LightSwitchCommonModule:supplierStorageItem/Properties[amount]"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="FK_beerSuppliers"
+          Nullable="False"
+          PropertyName="FK_beerSuppliers"
+          Type="int" />
+        <SsdlForeignKeyProperty
+          Name="FK_suppliers"
+          Nullable="False"
+          PropertyName="FK_suppliers"
           Type="int" />
       </EntitySetMapping.Attributes>
     </EntitySetMapping>
@@ -439,7 +501,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:freibierDB/Members[FK_deliveredBeers_beerTypes]/Members[deliveredBeers]">
+          End="LightSwitchCommonModule:freibierDB/Members[FK_deliveredBeers_beerTypes]/Members[deliveredBeer]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="FK_beerTypes" />
@@ -453,14 +515,14 @@
         <SsdlAssociationSet
           Name="FK_deliveredBeers_deliveries" />
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:freibierDB/Members[FK_deliveredBeers_deliveries]/Members[deliveries]">
+          End="LightSwitchCommonModule:freibierDB/Members[FK_deliveredBeers_deliveries]/Members[delivery]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="PK_deliveries" />
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:freibierDB/Members[FK_deliveredBeers_deliveries]/Members[deliveredBeers]">
+          End="LightSwitchCommonModule:freibierDB/Members[FK_deliveredBeers_deliveries]/Members[deliveredBeer]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="FK_deliveries" />
@@ -481,7 +543,7 @@
           </SsdlAssociationSetEnd.Attributes>
         </SsdlAssociationSetEnd>
         <SsdlAssociationSetEnd
-          End="LightSwitchCommonModule:freibierDB/Members[FK_deliveries_beerRecipients]/Members[deliveries]">
+          End="LightSwitchCommonModule:freibierDB/Members[FK_deliveries_beerRecipients]/Members[delivery]">
           <SsdlAssociationSetEnd.Attributes>
             <SsdlPropertyRef
               Name="FK_beerRecipients" />
@@ -553,6 +615,27 @@
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
     <AssociationSetMapping
+      AssociationSet="FK_storage_beerTypes">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_storage_beerTypes" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:freibierDB/Members[FK_storage_beerTypes]/Members[beerTypes]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PK_beerTypes" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:freibierDB/Members[FK_storage_beerTypes]/Members[storage]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="FK_beerTypes" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
       AssociationSet="FK_suppliers_countries">
       <AssociationSetMapping.Attributes>
         <SsdlAssociationSet
@@ -573,9 +656,47 @@
         </SsdlAssociationSetEnd>
       </AssociationSetMapping.Attributes>
     </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_supplierStorage_beerSuppliers">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_supplierStorage_beerSuppliers" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:freibierDB/Members[FK_supplierStorage_beerSuppliers]/Members[beerSuppliers]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PK_beerSuppliers" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:freibierDB/Members[FK_supplierStorage_beerSuppliers]/Members[supplierStorage]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="FK_beerSuppliers" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
+    <AssociationSetMapping
+      AssociationSet="FK_supplierStorage_suppliers">
+      <AssociationSetMapping.Attributes>
+        <SsdlAssociationSet
+          Name="FK_supplierStorage_suppliers" />
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:freibierDB/Members[FK_supplierStorage_suppliers]/Members[suppliers]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="PK_suppliers" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+        <SsdlAssociationSetEnd
+          End="LightSwitchCommonModule:freibierDB/Members[FK_supplierStorage_suppliers]/Members[supplierStorage]">
+          <SsdlAssociationSetEnd.Attributes>
+            <SsdlPropertyRef
+              Name="FK_suppliers" />
+          </SsdlAssociationSetEnd.Attributes>
+        </SsdlAssociationSetEnd>
+      </AssociationSetMapping.Attributes>
+    </AssociationSetMapping>
   </DataService>
-  <DataService
-    DataProvider="EntityFrameworkDataProvider"
-    EntityContainer="LightSwitchCommonModule:ApplicationData"
-    Name="ApplicationDataMapping" />
 </ModelFragment>
