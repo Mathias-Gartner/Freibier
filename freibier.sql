@@ -1,4 +1,4 @@
-ï»¿-- Freibier Datenbank
+-- Freibier Datenbank
 -- Create DB
 USE master;
 GO
@@ -145,7 +145,7 @@ GO
 
 
 
--- n:n suppliers:beerTypes
+-- beerTypes
 CREATE TABLE [dbo].[beerTypes]
 (
 	[id]		[int] IDENTITY(1,1)	NOT NULL,
@@ -161,7 +161,7 @@ GO
 CREATE TABLE [dbo].[suppliers]
 (
 	[id]								[int] IDENTITY(1,1)	NOT NULL,
-	[companyName]						[nvarchar](15)		NOT NULL,
+	[name]								[nvarchar](15)		NOT NULL,
 	[volumeDiscountPercent]				[int]				NOT NULL	DEFAULT 0,
 	[volumeDiscountRequiredQuantity]	[int]				NOT NULL	DEFAULT 0,
 	[FK_countries]						[int]				NOT NULL	REFERENCES [dbo].[countries] ([id]),
@@ -180,32 +180,18 @@ GO
 
 
 
--- beer-price-history
-CREATE TABLE [dbo].[beerPrices]
+CREATE TABLE [dbo].[beerSuppliers]
 (
-	[id]		[int] IDENTITY(1,1)	NOT NULL,
-	[priceDate]	[date]				NOT NULL,
-	[price]		[money]				NOT NULL,
-		CONSTRAINT [CLIX_PK_beerPrices_id] PRIMARY KEY CLUSTERED ([id], [priceDate]),
+	[id]						[int] IDENTITY(1,1)	NOT NULL,
+	[FK_suppliers]				[int]				NOT NULL	REFERENCES [dbo].[suppliers] ([id]),
+	[FK_beerTypes]				[int]				NOT NULL	REFERENCES [dbo].[beerTypes] ([id]),
+	[price]						[int]				NOT	NULL,
+		CONSTRAINT [CLIX_PK_beerSuppliers_id] PRIMARY KEY CLUSTERED ([id]),
 )
 ;
 GO
 
-CREATE TABLE [dbo].[suppliedBeers]
-(
-	[FK_suppliers]				[int]	NOT NULL	REFERENCES [dbo].[suppliers] ([id]),
-	[FK_beerTypes]				[int]	NOT NULL	REFERENCES [dbo].[beerTypes] ([id]),
-	[amount]					[int]	NOT NULL	DEFAULT 0,
-	[FK_beerPrices_id]			[int]	NOT	NULL,
-	[FK_beerPrices_priceDate]	[date]	NOT	NULL,
-		CONSTRAINT [CLIX_PK_suppliedBeers_id] PRIMARY KEY CLUSTERED ([FK_suppliers], [FK_beerTypes]),
-		CONSTRAINT [FK_beerPrices_id_priceDate] FOREIGN KEY ([FK_beerPrices_id], [FK_beerPrices_priceDate])
-			REFERENCES [dbo].[beerPrices] ([id], [priceDate]),
-)
-;
-GO
-
-CREATE INDEX IX_suppliedBeers_beerTypes ON [dbo].[suppliedBeers] ([FK_beerTypes])
+CREATE INDEX IX_beerSuppliers_beerTypes ON [dbo].[beerSuppliers] ([FK_beerTypes])
 ;
 GO
 
@@ -217,7 +203,7 @@ CREATE TABLE [dbo].[storage]
 	[id]			[int] IDENTITY(1,1)	NOT NULL,
 	[FK_beerTypes]	[int]				NOT NULL	REFERENCES [dbo].[beerTypes] ([id]),
 	[amount]		[int]				NOT NULL	DEFAULT 0,
-		CONSTRAINT [CLIX_PK_storage] PRIMARY KEY CLUSTERED ([id])
+		CONSTRAINT [CLIX_PK_storage_id] PRIMARY KEY CLUSTERED ([id])
 )
 ;
 GO
@@ -228,8 +214,7 @@ GO
 CREATE TABLE [dbo].[beerRecipients]
 (
 	[id]				[int] IDENTITY(1,1)	NOT NULL,
-	[lastName]			[nvarchar](30)		NOT NULL,
-	[firstName]			[nvarchar](30)		NOT NULL,
+	[name]				[nvarchar](30)		NOT NULL,
 	[FK_countries]		[int]				NOT NULL	REFERENCES [dbo].[countries] ([id]),
 		CONSTRAINT [CLIX_PK_beerRecipients_id] PRIMARY KEY CLUSTERED ([id])
 )
@@ -263,28 +248,12 @@ CREATE TABLE [dbo].[orders]
 (
 	[id]			[int] IDENTITY(1,1)	NOT NULL,
 	[FK_suppliers]	[int]				NOT NULL	REFERENCES [dbo].[suppliers] ([id]),
-	[
+	[price]			[money]				NOT NULL	DEFAULT 0,
 	[received]		[bit]				NOT NULL	DEFAULT 0,
- CONSTRAINT [CLIX_PK_orders] PRIMARY KEY CLUSTERED ([id]),
+		CONSTRAINT [CLIX_PK_orders_id] PRIMARY KEY CLUSTERED ([id]),
 )
 ;
 GO
--- orderedBeers
-CREATE TABLE [dbo].[orderedBeers](
-	[PK_orderedBeers] [int] IDENTITY(1,1) NOT NULL,
-	[FK_orders] [int] NOT NULL,
-	[FK_beerSuppliers] [int] NOT NULL,
-	[amount] [int] NOT NULL,
-	[price] [money] NOT NULL,
- CONSTRAINT [CLIX_PK_orderedBeers] PRIMARY KEY CLUSTERED 
-(
-	[PK_orderedBeers] ASC
-) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
-
 
 
 
@@ -297,31 +266,19 @@ CREATE TABLE [dbo].[deliveries]
 	[billingDate]		[date]				NULL,
 	[invoiceNumber]		[int]				NULL,
 	[delivered]			[bit]				NOT NULL	DEFAULT 0,
-		CONSTRAINT [CLIX_PK_deliveries] PRIMARY KEY CLUSTERED ([id]),
+		CONSTRAINT [CLIX_PK_deliveries_id] PRIMARY KEY CLUSTERED ([id]),
 )
 ;
 GO
 
 
 
-
-
--- trucks and drivers
-CREATE TABLE [dbo].[trucks]
-(
-	[id]		[int] IDENTITY(1,1)	NOT NULL,
-	[capacity]	[int]				NOT NULL 	DEFAULT 100,
-		CONSTRAINT [CLIX_PK_trucks_id] PRIMARY KEY CLUSTERED ([id]),
-)
-;
-GO
-
+-- drivers
 CREATE TABLE [dbo].[drivers]
 (
 	[id]			[int] IDENTITY(1,1)	NOT NULL,
-	[name]			[nvarchar](60)		NOT NULL,
-	[FK_trucks]		[int]				NOT NULL	REFERENCES [dbo].[trucks] ([id]),
-	[travelTime]	[int]				NOT NULL	DEFAULT 0,
+	[driver]		[nvarchar](50)		NOT NULL,
+	[truck]			[int]				NOT NULL,
 		CONSTRAINT [CLIX_PK_drivers_id] PRIMARY KEY CLUSTERED ([id]),
 )
 ;
@@ -329,279 +286,76 @@ GO
 
 
 
+-- ordered beers
+CREATE TABLE [dbo].[orderedBeers]
+(
+	[id]				[int] IDENTITY(1,1)	NOT NULL,
+	[FK_orders]			[int]				NOT NULL	REFERENCES [dbo].[orders] ([id]),
+	[FK_beerSuppliers]	[int]				NOT NULL	REFERENCES [dbo].[beerSuppliers] ([id]),
+	[amount]			[int]				NOT NULL	DEFAULT 0,
+	[price]				[money]				NOT NULL	DEFAULT 0,
+		CONSTRAINT [CLIX_PK_orderedBeers_id] PRIMARY KEY CLUSTERED ([id]),
+)
+;
+GO
 
 
 
-
-
-
-
-
-
+-- delivered beers
 CREATE TABLE [dbo].[deliveredBeers]
 (
-	[PK_deliveredBeers] [int] IDENTITY(1,1) NOT NULL,
-	[FK_deliveries] [int] NOT NULL,
-	[FK_beerTypes] [int] NOT NULL,
-	[amount] [int] NOT NULL,
- CONSTRAINT [CLIX_PK_deliveredBeers] PRIMARY KEY CLUSTERED 
-(
-	[PK_deliveredBeers] ASC
-) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
+	[id]			[int] IDENTITY(1,1)	NOT NULL,
+	[FK_deliveries]	[int]				NOT NULL	REFERENCES [dbo].[deliveries] ([id]),
+	[FK_beerTypes]	[int]				NOT NULL	REFERENCES [dbo].[beerTypes] ([id]),
+	[amount]		[int]				NOT NULL,
+		CONSTRAINT [CLIX_PK_deliveredBeers_id] PRIMARY KEY CLUSTERED ([id]),
+)
+;
 GO
 
+
+
+-- delivery driver carriages
 CREATE TABLE [dbo].[deliveryDriverCarriages]
 (
-	[PK_deliveryDriverCarriages] [int] IDENTITY(1,1) NOT NULL,
-	[FK_drivers] [int] NOT NULL,
-	[FK_deliveries] [int] NOT NULL,
-	[carriage] [int] NOT NULL,
-	[amount] [int] NOT NULL,
- CONSTRAINT [CLIX_PK_deliveryDriverCarriages] PRIMARY KEY CLUSTERED 
-(
-	[PK_deliveryDriverCarriages] ASC
-) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
+	[id]			[int] IDENTITY(1,1)	NOT NULL,
+	[FK_drivers]	[int]				NOT NULL	REFERENCES [dbo].[drivers] ([id]),
+	[FK_deliveries]	[int]				NOT NULL	REFERENCES [dbo].[deliveries] ([id]),
+	[carriage]		[int]				NOT NULL,
+	[amount]		[int]				NOT NULL,
+		CONSTRAINT [CLIX_PK_deliveryDriverCarriages_id] PRIMARY KEY CLUSTERED ([id]),
+)
+;
 GO
+
+
 
 CREATE TABLE [dbo].[orderDriverCarriages]
 (
-	[PK_orderDriverCarriages] [int] IDENTITY(1,1) NOT NULL,
-	[FK_drivers] [int] NOT NULL,
-	[FK_orders] [int] NOT NULL,
-	[carriage] [int] NOT NULL,
-	[amount] [int] NOT NULL,
- CONSTRAINT [CLIX_PK_orderDriverCarriages] PRIMARY KEY CLUSTERED 
-(
-	[PK_orderDriverCarriages] ASC
-) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
+	[id]			[int] IDENTITY(1,1)	NOT NULL,
+	[FK_drivers]	[int]				NOT NULL	REFERENCES [dbo].[drivers] ([id]),
+	[FK_orders]		[int]				NOT NULL	REFERENCES [dbo].[orders] ([id]),
+	[carriage]		[int]				NOT NULL,
+	[amount]		[int]				NOT NULL,
+		CONSTRAINT [CLIX_PK_orderDriverCarriages_id] PRIMARY KEY CLUSTERED ([id]),
+)
+;
 GO
+
 
 CREATE TABLE [dbo].[supplierStorage]
 (
-	[PK_supplierStorage] [int] IDENTITY(1,1) NOT NULL,
-	[FK_suppliers] [int] NOT NULL,
-	[FK_beerSuppliers] [int] NOT NULL,
-	[amount] [int] NOT NULL,
- CONSTRAINT [CLIX_PK_supplierStorage] PRIMARY KEY CLUSTERED
-(
-	[PK_supplierStorage]
-) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
+	[id]				[int] IDENTITY(1,1)	NOT NULL,
+	[FK_suppliers]		[int]				NOT NULL	REFERENCES [dbo].[suppliers] ([id]),
+	[FK_beerRecipients]	[int]				NULL		REFERENCES [dbo].[beerRecipients] ([id]),
+	[amount]			[int]				NOT NULL,
+		CONSTRAINT [CLIX_PK_supplierStorage_id] PRIMARY KEY CLUSTERED ([id]),
+)
+;
 GO
+-- End Tables
 
--- End Tabellen
 
--- Constraints
-ALTER TABLE dbo.orders ADD CONSTRAINT
-	FK_orders_suppliers FOREIGN KEY
-	(
-	FK_suppliers
-	) REFERENCES dbo.suppliers
-	(
-	PK_suppliers
-	) ON UPDATE NO ACTION
-	  ON DELETE NO ACTION
-
-GO
-
-ALTER TABLE dbo.orderedBeers ADD CONSTRAINT
-	FK_orderedBeers_orders FOREIGN KEY
-	(
-	FK_orders
-	) REFERENCES dbo.orders
-	(
-	PK_orders
-	) ON UPDATE NO ACTION
-	  ON DELETE NO ACTION
-
-GO
-
-ALTER TABLE dbo.orderedBeers ADD CONSTRAINT
-	FK_orderedBeers_beerSuppliers FOREIGN KEY
-	(
-	FK_beerSuppliers
-	) REFERENCES dbo.beerSuppliers
-	(
-	PK_beerSuppliers
-	) ON UPDATE NO ACTION 
-	  ON DELETE NO ACTION 
-	
-GO
-
-ALTER TABLE dbo.deliveries ADD CONSTRAINT
-	FK_deliveries_beerRecipients FOREIGN KEY
-	(
-	FK_beerRecipients
-	) REFERENCES dbo.beerRecipients
-	(
-	PK_beerRecipients
-	) ON UPDATE NO ACTION
-	  ON DELETE NO ACTION
-
-GO
-
-ALTER TABLE dbo.deliveredBeers ADD CONSTRAINT
-	FK_deliveredBeers_deliveries FOREIGN KEY
-	(
-	FK_deliveries
-	) REFERENCES dbo.deliveries
-	(
-	PK_deliveries
-	) ON UPDATE NO ACTION
-	  ON DELETE NO ACTION
-
-GO
-
-ALTER TABLE dbo.deliveredBeers ADD CONSTRAINT
-	FK_deliveredBeers_beerTypes FOREIGN KEY
-	(
-	FK_beerTypes
-	) REFERENCES dbo.beerTypes
-	(
-	PK_beerTypes
-	) ON UPDATE NO ACTION 
-	  ON DELETE NO ACTION 
-	
-GO
-
-ALTER TABLE dbo.beerSuppliers ADD CONSTRAINT
-	FK_beerSuppliers_beerTypes FOREIGN KEY
-	(
-	FK_beerTypes
-	) REFERENCES dbo.beerTypes
-	(
-	PK_beerTypes
-	) ON UPDATE NO ACTION 
-	  ON DELETE NO ACTION 
-	
-GO
-
-ALTER TABLE dbo.beerSuppliers ADD CONSTRAINT
-	FK_beerSuppliers_suppliers FOREIGN KEY
-	(
-	FK_suppliers
-	) REFERENCES dbo.suppliers
-	(
-	PK_suppliers
-	) ON UPDATE NO ACTION
-	  ON DELETE NO ACTION
-
-ALTER TABLE dbo.suppliers ADD CONSTRAINT
-	FK_suppliers_countries FOREIGN KEY
-	(
-	FK_countries
-	) REFERENCES dbo.countries
-	(
-	PK_countries
-	) ON UPDATE NO ACTION
-	  ON DELETE NO ACTION
-
-GO
-
-ALTER TABLE dbo.beerRecipients ADD CONSTRAINT
-	FK_beerRecipients_countries FOREIGN KEY
-	(
-	FK_countries
-	) REFERENCES dbo.countries
-	(
-	PK_countries
-	) ON UPDATE NO ACTION
-	  ON DELETE NO ACTION
-
-GO
-
-ALTER TABLE dbo.orderDriverCarriages ADD CONSTRAINT
-	FK_orderDriverCarriages_drivers FOREIGN KEY
-	(
-	FK_drivers
-	) REFERENCES dbo.drivers
-	(
-	PK_drivers
-	) ON UPDATE NO ACTION 
-	  ON DELETE NO ACTION 
-	
-GO
-
-ALTER TABLE dbo.orderDriverCarriages ADD CONSTRAINT
-	FK_orderDriverCarriages_orders FOREIGN KEY
-	(
-	FK_orders
-	) REFERENCES dbo.orders
-	(
-	PK_orders
-	) ON UPDATE NO ACTION
-	  ON DELETE NO ACTION
-
-GO
-
-ALTER TABLE dbo.deliveryDriverCarriages ADD CONSTRAINT
-	FK_deliveryDriverCarriages_drivers FOREIGN KEY
-	(
-	FK_drivers
-	) REFERENCES dbo.drivers
-	(
-	PK_drivers
-	) ON UPDATE NO ACTION 
-	  ON DELETE NO ACTION 
-	
-GO
-
-ALTER TABLE dbo.deliveryDriverCarriages ADD CONSTRAINT
-	FK_deliveryDriverCarriages_deliveries FOREIGN KEY
-	(
-	FK_deliveries
-	) REFERENCES dbo.deliveries
-	(
-	PK_deliveries
-	) ON UPDATE NO ACTION
-	  ON DELETE NO ACTION
-
-GO
-
-ALTER TABLE dbo.storage ADD CONSTRAINT
-	FK_storage_beerTypes FOREIGN KEY
-	(
-	FK_beerTypes
-	) REFERENCES dbo.beerTypes
-	(
-	PK_beerTypes
-	) ON UPDATE NO ACTION
-	  ON DELETE NO ACTION
-
-GO
-
-ALTER TABLE dbo.supplierStorage ADD CONSTRAINT
-	FK_supplierStorage_suppliers FOREIGN KEY
-	(
-	FK_suppliers
-	) REFERENCES dbo.suppliers
-	(
-	PK_suppliers
-	) ON UPDATE NO ACTION
-	  ON DELETE NO ACTION
-
-GO
-
-ALTER TABLE dbo.supplierStorage ADD CONSTRAINT
-	FK_supplierStorage_beerSuppliers FOREIGN KEY
-	(
-	FK_beerSuppliers
-	) REFERENCES dbo.beerSuppliers
-	(
-	PK_beerSuppliers
-	) ON UPDATE NO ACTION
-	  ON DELETE NO ACTION
-
-GO
-
--- End Constraints
 
 -- Procedures
 CREATE PROCEDURE [usp_delivery_confirm] (@deliveryId int) AS
@@ -634,7 +388,7 @@ GO
 INSERT INTO countries (name, customs, distance)
 VALUES 
 (N'Afghanistan', 1000, 1000),
-(N'Ã„gypten', 1000, 1000),
+(N'Ägypten', 1000, 1000),
 (N'Aland', 1000, 1000),
 (N'Albanien', 1000, 1000),
 (N'Algerien', 1000, 1000),
@@ -645,13 +399,13 @@ VALUES
 (N'Anguilla', 1000, 1000),
 (N'Antarktis', 1000, 1000),
 (N'Antigua und Barbuda', 1000, 1000),
-(N'Ã„quatorialguinea, Republik', 1000, 1000),
+(N'Äquatorialguinea, Republik', 1000, 1000),
 (N'Argentinien', 1000, 1000),
 (N'Armenien', 1000, 1000),
 (N'Aruba', 1000, 1000),
 (N'Ascension', 1000, 1000),
 (N'Aserbaidschan', 1000, 1000),
-(N'Ã„thiopien', 1000, 1000),
+(N'Äthiopien', 1000, 1000),
 (N'Australien', 1000, 1000),
 (N'Bahamas', 1000, 1000),
 (N'Bahrain', 1000, 1000),
@@ -678,7 +432,7 @@ VALUES
 (N'Cookinseln', 1000, 1000),
 (N'Costa Rica', 1000, 1000),
 (N'Cote dIvoire', 1000, 1000),
-(N'DÃ¤nemark', 1000, 1000),
+(N'Dänemark', 1000, 1000),
 (N'Deutschland', 1000, 1000),
 (N'Die Kronkolonie St. Helena und Nebengebiete', 1000, 1000),
 (N'Diego Garcia', 1000, 1000),
@@ -689,15 +443,15 @@ VALUES
 (N'El Salvador', 1000, 1000),
 (N'Eritrea', 1000, 1000),
 (N'Estland', 1000, 1000),
-(N'EuropÃ¤ische Union', 1000, 1000),
+(N'Europäische Union', 1000, 1000),
 (N'Falklandinseln', 1000, 1000),
-(N'FÃ¤rÃ¶er', 1000, 1000),
+(N'Färöer', 1000, 1000),
 (N'Fidschi', 1000, 1000),
 (N'Finnland', 1000, 1000),
 (N'Frankreich', 1000, 1000),
-(N'FranzÃ¶sisch-Guayana', 1000, 1000),
-(N'FranzÃ¶sisch-Polynesien', 1000, 1000),
-(N'FranzÃ¶sische SÃ¼d- und Antarktisgebiete', 1000, 1000),
+(N'Französisch-Guayana', 1000, 1000),
+(N'Französisch-Polynesien', 1000, 1000),
+(N'Französische Süd- und Antarktisgebiete', 1000, 1000),
 (N'Gabun', 1000, 1000),
 (N'Gambia', 1000, 1000),
 (N'Georgien', 1000, 1000),
@@ -705,7 +459,7 @@ VALUES
 (N'Gibraltar', 1000, 1000),
 (N'Grenada', 1000, 1000),
 (N'Griechenland', 1000, 1000),
-(N'GrÃ¶nland', 1000, 1000),
+(N'Grönland', 1000, 1000),
 (N'Guadeloupe', 1000, 1000),
 (N'Guam', 1000, 1000),
 (N'Guatemala', 1000, 1000),
@@ -758,7 +512,7 @@ VALUES
 (N'Libanon', 1000, 1000),
 (N'Liberia, Republik', 1000, 1000),
 (N'Libyen', 1000, 1000),
-(N'Liechtenstein, FÃ¼rstentum', 1000, 1000),
+(N'Liechtenstein, Fürstentum', 1000, 1000),
 (N'Litauen', 1000, 1000),
 (N'Luxemburg', 1000, 1000),
 (N'Macao', 1000, 1000),
@@ -776,7 +530,7 @@ VALUES
 (N'Mayotte', 1000, 1000),
 (N'Mazedonien', 1000, 1000),
 (N'Mexiko', 1000, 1000),
-(N'Mikronesien, FÃ¶derierte Staaten von', 1000, 1000),
+(N'Mikronesien, Föderierte Staaten von', 1000, 1000),
 (N'Moldawien', 1000, 1000),
 (N'Monaco', 1000, 1000),
 (N'Mongolei', 1000, 1000),
@@ -791,17 +545,17 @@ VALUES
 (N'Neutrale Zone', 1000, 1000),
 (N'Nicaragua', 1000, 1000),
 (N'Niederlande', 1000, 1000),
-(N'NiederlÃ¤ndische Antillen', 1000, 1000),
+(N'Niederländische Antillen', 1000, 1000),
 (N'Niger', 1000, 1000),
 (N'Nigeria', 1000, 1000),
 (N'Niue', 1000, 1000),
-(N'NÃ¶rdliche Marianen', 1000, 1000),
+(N'Nördliche Marianen', 1000, 1000),
 (N'Norfolkinsel', 1000, 1000),
 (N'Norwegen', 1000, 1000),
 (N'Oman', 1000, 1000),
-(N'Ã–sterreich', 1000, 1000),
+(N'Österreich', 1000, 1000),
 (N'Pakistan', 1000, 1000),
-(N'PalÃ¤stinensische Autonomiegebiete', 1000, 1000),
+(N'Palästinensische Autonomiegebiete', 1000, 1000),
 (N'Palau', 1000, 1000),
 (N'Panama', 1000, 1000),
 (N'Papua-Neuguinea', 1000, 1000),
@@ -812,16 +566,16 @@ VALUES
 (N'Polen', 1000, 1000),
 (N'Portugal', 1000, 1000),
 (N'Puerto Rico', 1000, 1000),
-(N'RÃ©union', 1000, 1000),
+(N'Réunion', 1000, 1000),
 (N'Ruanda, Republik', 1000, 1000),
-(N'RumÃ¤nien', 1000, 1000),
-(N'Russische FÃ¶deration', 1000, 1000),
+(N'Rumänien', 1000, 1000),
+(N'Russische Föderation', 1000, 1000),
 (N'Salomonen', 1000, 1000),
 (N'Sambia, Republik', 1000, 1000),
 (N'Samoa', 1000, 1000),
 (N'San Marino', 1000, 1000),
-(N'SÃ£o TomÃ© und PrÃ­ncipe', 1000, 1000),
-(N'Saudi-Arabien, KÃ¶nigreich', 1000, 1000),
+(N'São Tomé und Príncipe', 1000, 1000),
+(N'Saudi-Arabien, Königreich', 1000, 1000),
 (N'Schweden', 1000, 1000),
 (N'Schweiz', 1000, 1000),
 (N'Senegal', 1000, 1000),
@@ -839,9 +593,9 @@ VALUES
 (N'St. Lucia', 1000, 1000),
 (N'St. Pierre und Miquelon', 1000, 1000),
 (N'St. Vincent und die Grenadinen SELECT GB)', 1000, 1000),
-(N'SÃ¼dafrika, Republik', 1000, 1000),
+(N'Südafrika, Republik', 1000, 1000),
 (N'Sudan', 1000, 1000),
-(N'SÃ¼dgeorgien und die SÃ¼dlichen Sandwichinseln', 1000, 1000),
+(N'Südgeorgien und die Südlichen Sandwichinseln', 1000, 1000),
 (N'Suriname', 1000, 1000),
 (N'Svalbard und Jan Mayen', 1000, 1000),
 (N'Swasiland', 1000, 1000),
@@ -859,7 +613,7 @@ VALUES
 (N'Tschad, Republik', 1000, 1000),
 (N'Tschechische Republik', 1000, 1000),
 (N'Tunesien', 1000, 1000),
-(N'TÃ¼rkei', 1000, 1000),
+(N'Türkei', 1000, 1000),
 (N'Turkmenistan', 1000, 1000),
 (N'Turks- und Caicosinseln', 1000, 1000),
 (N'Tuvalu', 1000, 1000),
@@ -873,11 +627,11 @@ VALUES
 (N'Venezuela', 1000, 1000),
 (N'Vereinigte Arabische Emirate', 1000, 1000),
 (N'Vereinigte Staaten von Amerika', 1000, 1000),
-(N'Vereinigtes KÃ¶nigreich von GroÃŸbritannien und Nordirland', 1000, 1000),
+(N'Vereinigtes Königreich von Großbritannien und Nordirland', 1000, 1000),
 (N'Vietnam', 1000, 1000),
 (N'Wallis und Futuna', 1000, 1000),
 (N'Weihnachtsinsel', 1000, 1000),
-(N'WeiÃŸrussland', 1000, 1000),
+(N'Weißrussland', 1000, 1000),
 (N'Westsahara', 1000, 1000),
 (N'Zentralafrikanische Republik', 1000, 1000),
 (N'Zypern, Republik', 1000, 1000),
