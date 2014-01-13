@@ -643,3 +643,96 @@ VALUES
 (N'Montenegro', 1000, 1000)
 
 GO
+
+-- Insert Beer Recipients
+INSERT INTO beerRecipients
+VALUES 
+(N'Königsklasse', 167),
+(N'Kolarik & Leeb GmbH', 167),
+(N'Eggenberger GmbH', 167),
+(N'Brauerei Grieskirchen GmbH', 167),
+(N'Abi Handelsgesellschaft m.b.H.', 167)
+
+GO
+
+-- Insert Beer Suppliers
+INSERT INTO beerSuppliers
+VALUES 
+(2,3,50),
+(1,3,60),
+(3,3,45),
+(1,2,55)
+
+GO
+
+-- Insert Beer Types
+INSERT INTO beerTypes
+VALUES 
+(N'Ale'),
+(N'Bouza'),
+(N'Boza'),
+(N'Bozo'),
+(N'Cask ale'),
+(N'Cauim'),
+(N'Chhaang'),
+(N'Chicha'),
+(N'Fruit and vegetable beer'),
+(N'Gruit'),
+(N'Herb and spiced beer'),
+(N'Kellerbier'),
+(N'Kvass'),
+(N'Lager'),
+(N'Oshikundu'),
+(N'Pulque'),
+(N'Purl'),
+(N'Sahti'),
+(N'Smoked beer'),
+(N'Strong ale'),
+(N'Sour ale'),
+(N'Sulima'),
+(N'Wheat beer'),
+(N'Zwickelbier')
+
+GO
+
+-- Insert Contact Details
+INSERT INTO contactDetails
+VALUES 
+(1,10,N'Wallstreet',N'10',N'1220',N'Wien',N'Österreich',N'015300120',N'info@beer.com'),
+(1,12,N'Wallstreet',N'10',N'1220',N'Wien',N'Österreich',N'015300120',N'info@beer.com'),
+(1,7,N'Wallstreet',N'10',N'1220',N'Wien',N'Österreich',N'015300120',N'info@beer.com'),
+(1,8,N'Wallstreet',N'10',N'1220',N'Wien',N'Österreich',N'015300120',N'info@beer.com'),
+(1,9,N'Wallstreet',N'10',N'1220',N'Wien',N'Österreich',N'015300120',N'info@beer.com')
+
+GO
+
+-- Insert Drivers
+INSERT INTO drivers
+VALUES 
+(N'Mark',1),
+(N'Flo',1),
+(N'Sam',1),
+(N'Tom',1)
+
+GO
+
+-- Insert Storage
+INSERT INTO storage
+VALUES 
+(1,50),
+(1,70),
+(1,80),
+(1,20),
+(1,90)
+
+GO
+
+-- Insert Suppliers
+INSERT INTO suppliers
+VALUES 
+(N'Beer Drive',15,100,167),
+(N'Speed Beer',15,100,167),
+(N'Beer 2 Go',15,100,167),
+(N'Beererer',15,100,167)
+
+GO
