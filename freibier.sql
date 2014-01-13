@@ -362,6 +362,11 @@ GO
 
 
 -- Procedures
+/*
+das gui speichert die Daten selbst, aber nur die reine Benutzereingabe. Die Arbeit muss dann ein Trigger
+machen. Und dann hab ich im GUI noch Listen mit existierenden Datensätzen. Aus denen kann sich der
+Benutzer einen aussuchen und eine StoredProcedure mit der ID dieses Datensatzes als Parameter aufrufen.
+*/
 CREATE PROCEDURE [usp_delivery_confirm] (@deliveryId int) AS
 
 	SET NOCOUNT ON 
