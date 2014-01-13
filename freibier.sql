@@ -381,6 +381,19 @@ GO
 
 -- Views
 
+CREATE VIEW view_driver_nextDeliveries
+AS
+SELECT TOP 5 dbo.deliveries.deliveryDate, dbo.deliveries.invoiceNumber, dbo.deliveryDriverCarriages.carriage, dbo.deliveryDriverCarriages.amount, dbo.drivers.driver, 
+dbo.drivers.truck
+FROM dbo.deliveries 
+INNER JOIN dbo.deliveryDriverCarriages 
+ON dbo.deliveries.id = dbo.deliveryDriverCarriages.FK_deliveries 
+INNER JOIN  dbo.drivers 
+ON dbo.deliveryDriverCarriages.FK_drivers = dbo.drivers.id
+WHERE dbo.deliveries.deliveryDate >= GETDATE()
+ORDER BY dbo.deliveries.deliveryDate DESC
+
+GO
 
 -- End Views
 
@@ -649,6 +662,16 @@ VALUES
 
 GO
 
+-- Insert Suppliers
+INSERT INTO suppliers
+VALUES 
+(N'Beer Drive',15,100,167),
+(N'Speed Beer',15,100,167),
+(N'Beer 2 Go',15,100,167),
+(N'Beererer',15,100,167)
+
+GO
+
 -- Insert Beer Recipients
 INSERT INTO beerRecipients
 VALUES 
@@ -732,12 +755,22 @@ VALUES
 
 GO
 
--- Insert Suppliers
-INSERT INTO suppliers
+-- Insert Deliveries
+INSERT INTO deliveries
 VALUES 
-(N'Beer Drive',15,100,167),
-(N'Speed Beer',15,100,167),
-(N'Beer 2 Go',15,100,167),
-(N'Beererer',15,100,167)
+(9,'20140101','20140110','20140101',125,0),
+(8,'20140101','20140127','20140101',125,0),
+(10,'20140101','20140115','20140101',125,0),
+(11,'20140101','20140123','20140101',125,0)
+
+GO
+
+-- Insert Delivery Driver Carriages
+INSERT INTO deliveryDriverCarriages
+VALUES 
+(1,1,125,100),
+(2,2,125,100),
+(3,3,125,100),
+(4,4,125,100)
 
 GO
