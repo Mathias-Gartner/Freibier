@@ -282,7 +282,7 @@ CREATE TABLE [dbo].[drivers]
 (
 	[id]			[int] IDENTITY(1,1)	NOT NULL,
 	[driver]		[nvarchar](50)		NOT NULL,
-	[truck]			[int]				NOT NULL,
+	[truckCapacity]	[int]				NOT NULL	DEFAULT 100,
 		CONSTRAINT [CLIX_PK_drivers_id] PRIMARY KEY CLUSTERED ([id]),
 )
 ;
