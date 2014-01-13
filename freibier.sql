@@ -65,9 +65,11 @@ IF EXISTS
     )
     DROP LOGIN freibier_driver
 ;
+/*
 CREATE LOGIN freibier_driver
     WITH PASSWORD = 'pass', DEFAULT_DATABASE = freibier
 ;
+*/
 GO
 -- End Logins
 --------------
@@ -105,7 +107,7 @@ IF EXISTS
     )
     DROP USER driver
 ;
-CREATE USER driver FOR LOGIN freibier_driver;
+--CREATE USER driver FOR LOGIN freibier_driver;
 -- End Users
 
 -- Roles
@@ -121,8 +123,10 @@ ALTER ROLE office_role ADD MEMBER office;
 -- End Roles
 
 IF DATABASE_PRINCIPAL_ID('driver_role') IS NOT NULL DROP ROLE driver_role;
+/*
 CREATE ROLE driver_role;
 ALTER ROLE driver_role ADD MEMBER driver;
+*/
 -- End Roles
 
 -- Tabellen
