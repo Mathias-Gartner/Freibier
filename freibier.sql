@@ -1077,4 +1077,14 @@ VALUES
 ;
 GO
 
+-- Insert Supplier Storage
+INSERT INTO supplierStorage
+VALUES 
+	(1,1,512),
+	(2,2,1245),
+	(3,3,1325),
+	(4,4,1225)
+;
+GO
+
 
