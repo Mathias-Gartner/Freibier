@@ -558,11 +558,90 @@ CREATE PROCEDURE [usp_delivery_confirm] (@deliveryId int) AS
 	SET NOCOUNT ON 
 	BEGIN TRANSACTION READ_COMMITED
 
-	-- This procedure is a stub. Help by expanding it.
+	DECLARE @count int
+	SET @count = (SELECT COUNT(id) FROM deliveries WHERE id = @deliveryId)
+	IF (@count != 1)
+	BEGIN
+		RAISERROR ('deliveryId invalid', 15, 1)
+		ROLLBACK
+		RETURN
+	END
+
+	DECLARE @delivered int
+	SET @delivered = (SELECT delivered FROM deliveries WHERE id = @deliveryId)
+	IF (@delivered = 1)
+	BEGIN
+		RAISERROR ('delivery already delivered', 15, 2)
+		ROLLBACK
+		RETURN
+	END
+
+	UPDATE deliveries
+	SET	delivered = 1,
+		deliveryDate = getdate(),
+		billingDate = getdate(),
+		invoiceNumber = (SELECT MAX(invoiceNumber) FROM deliveries) + 1
+	WHERE id = @deliveryId
 
 	COMMIT
 GO
 
+CREATE PROCEDURE [usp_order_received] (@orderId int) AS
+
+	SET NOCOUNT ON 
+	BEGIN TRANSACTION READ_COMMITED
+
+	DECLARE @count int
+	SET @count = (SELECT COUNT(id) FROM orders WHERE id = @orderId)
+	IF (@count != 1)
+	BEGIN
+		RAISERROR ('orderId invalid', 15, 1)
+		ROLLBACK
+		RETURN
+	END
+
+	DECLARE @received int
+	SET @received = (SELECT received FROM orders WHERE id = @orderId)
+	IF (@received = 1)
+	BEGIN
+		RAISERROR ('order already received', 15, 2)
+		ROLLBACK
+		RETURN
+	END
+
+	DECLARE @beerTypeId int
+	DECLARE @amount int
+	DECLARE @getOrderedBeers CURSOR
+	SET @getOrderedBeers = CURSOR FAST_FORWARD
+		FOR	SELECT FK_beerTypes, amount FROM orderedBeers
+		JOIN beerSuppliers ON beerSuppliers.id = FK_beerSuppliers
+		WHERE FK_orders = @orderId
+
+	OPEN @getOrderedBeers
+	FETCH NEXT FROM @getOrderedBeers
+	INTO @beerTypeId, @amount
+
+	WHILE @@FETCH_STATUS = 0
+	BEGIN
+		SET @count = (SELECT COUNT(*) FROM storage WHERE FK_beerTypes = @beerTypeId)
+		IF @count = 1
+			UPDATE storage SET amount = amount + @amount WHERE FK_beerTypes = @beerTypeId
+		ELSE
+			INSERT INTO storage (FK_beerTypes, amount) VALUES (@beerTypeId, @amount)
+
+		FETCH NEXT FROM @getOrderedBeers
+		INTO @beerTypeId, @amount
+	END
+
+	CLOSE @getOrderedBeers
+	DEALLOCATE @getOrderedBeers
+
+	UPDATE orders
+	SET	received = 1
+	WHERE id = @orderId
+
+	COMMIT
+GO
 
 -- End Procedures
 
