@@ -17,32 +17,32 @@ namespace LightSwitchApplication
     /// Keine modellierte Beschreibung verfügbar
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    public sealed partial class beerTypesItem : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass>
+    public sealed partial class OrderGetFreightOperation : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass>
     {
         #region Constructors
     
         /// <summary>
-        /// Initialisiert eine neue Instanz der Entität beerTypesItem.
+        /// Initialisiert eine neue Instanz der Entität OrderGetFreightOperation.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public beerTypesItem()
+        public OrderGetFreightOperation()
             : this(null)
         {
         }
     
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public beerTypesItem(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.beerTypesItem> entitySet)
+        public OrderGetFreightOperation(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.OrderGetFreightOperation> entitySet)
             : base(entitySet)
         {
-            global::LightSwitchApplication.beerTypesItem.DetailsClass.Initialize(this);
+            global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.Initialize(this);
         }
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void beerTypesItem_Created();
+        partial void OrderGetFreightOperation_Created();
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void beerTypesItem_AllowSaveWithErrors(ref bool result);
+        partial void OrderGetFreightOperation_AllowSaveWithErrors(ref bool result);
     
         #endregion
     
@@ -83,113 +83,145 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int PK_beerTypes
+        public int Id
         {
             get
             {
-                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.PK_beerTypes);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_beerTypes_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_beerTypes_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_beerTypes_Changed();
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string name
-        {
-            get
-            {
-                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.name);
+                return global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.GetValue(this, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.Id);
             }
             set
             {
-                global::LightSwitchApplication.beerTypesItem.DetailsClass.SetValue(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.name, value);
+                global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.SetValue(this, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.Id, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void name_IsReadOnly(ref bool result);
+        partial void Id_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void name_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void Id_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void name_Changed();
+        partial void Id_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public byte[] RowVersion
+        {
+            get
+            {
+                return global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.GetValue(this, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.RowVersion);
+            }
+            set
+            {
+                global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.SetValue(this, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.RowVersion, value);
+            }
+        }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RowVersion_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RowVersion_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void RowVersion_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.beerSuppliersItem> beerSuppliers
+        public int OrderId
         {
             get
             {
-                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.beerSuppliers);
+                return global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.GetValue(this, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.OrderId);
+            }
+            set
+            {
+                global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.SetValue(this, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.OrderId, value);
             }
         }
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.beerSuppliersItem> beerSuppliersQuery
-        {
-            get
-            {
-                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.beerSuppliers);
-            }
-        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderId_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderId_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void OrderId_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.deliveredBeer> deliveredBeers
+        public int DriverId
         {
             get
             {
-                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.deliveredBeers);
+                return global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.GetValue(this, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.DriverId);
+            }
+            set
+            {
+                global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.SetValue(this, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.DriverId, value);
             }
         }
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.deliveredBeer> deliveredBeersQuery
-        {
-            get
-            {
-                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.deliveredBeers);
-            }
-        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DriverId_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DriverId_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DriverId_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.storageItem> storage
+        public bool ExecutionError
         {
             get
             {
-                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.storage);
+                return global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.GetValue(this, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.ExecutionError);
+            }
+            set
+            {
+                global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.SetValue(this, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.ExecutionError, value);
             }
         }
         
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ExecutionError_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ExecutionError_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ExecutionError_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.storageItem> storageQuery
+        public string ErrorMessage
         {
             get
             {
-                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.storage);
+                return global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.GetValue(this, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.ErrorMessage);
+            }
+            set
+            {
+                global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.SetValue(this, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.ErrorMessage, value);
             }
         }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ErrorMessage_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ErrorMessage_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ErrorMessage_Changed();
 
         #endregion
     
@@ -200,37 +232,37 @@ namespace LightSwitchApplication
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public sealed class DetailsClass : global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<
-                global::LightSwitchApplication.beerTypesItem,
-                global::LightSwitchApplication.beerTypesItem.DetailsClass,
-                global::LightSwitchApplication.beerTypesItem.DetailsClass.IImplementation,
-                global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySet,
-                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass>,
-                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass>>
+                global::LightSwitchApplication.OrderGetFreightOperation,
+                global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass,
+                global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.IImplementation,
+                global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySet,
+                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass>,
+                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass>>
         {
     
             static DetailsClass()
             {
-                var initializeEntry = global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.PK_beerTypes;
+                var initializeEntry = global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.Id;
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass>.Entry
-                __beerTypesItemEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass>.Entry(
-                    global::LightSwitchApplication.beerTypesItem.DetailsClass.__beerTypesItem_CreateNew,
-                    global::LightSwitchApplication.beerTypesItem.DetailsClass.__beerTypesItem_Created,
-                    global::LightSwitchApplication.beerTypesItem.DetailsClass.__beerTypesItem_AllowSaveWithErrors);
-            private static global::LightSwitchApplication.beerTypesItem __beerTypesItem_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.beerTypesItem> es)
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass>.Entry
+                __OrderGetFreightOperationEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass>.Entry(
+                    global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.__OrderGetFreightOperation_CreateNew,
+                    global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.__OrderGetFreightOperation_Created,
+                    global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.__OrderGetFreightOperation_AllowSaveWithErrors);
+            private static global::LightSwitchApplication.OrderGetFreightOperation __OrderGetFreightOperation_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.OrderGetFreightOperation> es)
             {
-                return new global::LightSwitchApplication.beerTypesItem(es);
+                return new global::LightSwitchApplication.OrderGetFreightOperation(es);
             }
-            private static void __beerTypesItem_Created(global::LightSwitchApplication.beerTypesItem e)
+            private static void __OrderGetFreightOperation_Created(global::LightSwitchApplication.OrderGetFreightOperation e)
             {
-                e.beerTypesItem_Created();
+                e.OrderGetFreightOperation_Created();
             }
-            private static bool __beerTypesItem_AllowSaveWithErrors(global::LightSwitchApplication.beerTypesItem e)
+            private static bool __OrderGetFreightOperation_AllowSaveWithErrors(global::LightSwitchApplication.OrderGetFreightOperation e)
             {
                 bool result = false;
-                e.beerTypesItem_AllowSaveWithErrors(ref result);
+                e.OrderGetFreightOperation_AllowSaveWithErrors(ref result);
                 return result;
             }
     
@@ -238,7 +270,7 @@ namespace LightSwitchApplication
             {
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass> Commands
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass> Commands
             {
                 get
                 {
@@ -246,7 +278,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass> Methods
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass> Methods
             {
                 get
                 {
@@ -254,7 +286,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySet Properties
+            public new global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySet Properties
             {
                 get
                 {
@@ -266,50 +298,58 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass>
+            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass>
             {
     
                 public PropertySet() : base()
                 {
                 }
     
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, int> PK_beerTypes
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int> Id
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.PK_beerTypes) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, int>;
+                        return base.GetItem(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.Id) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, string> name
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, byte[]> RowVersion
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.name) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, string>;
+                        return base.GetItem(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.RowVersion) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, byte[]>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem> beerSuppliers
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int> OrderId
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.beerSuppliers) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>;
+                        return base.GetItem(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.OrderId) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeer> deliveredBeers
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int> DriverId
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.deliveredBeers) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeer>;
+                        return base.GetItem(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.DriverId) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem> storage
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, bool> ExecutionError
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.storage) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>;
+                        return base.GetItem(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.ExecutionError) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, bool>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, string> ErrorMessage
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties.ErrorMessage) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, string>;
                     }
                 }
                 
@@ -319,11 +359,12 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
             public interface IImplementation : global::Microsoft.LightSwitch.Internal.IEntityImplementation
             {
-                new int PK_beerTypes { get; }
-                new string name { get; set; }
-                new global::System.Collections.IEnumerable beerSuppliers { get; }
-                new global::System.Collections.IEnumerable deliveredBeers { get; }
-                new global::System.Collections.IEnumerable storage { get; }
+                new int Id { get; set; }
+                new byte[] RowVersion { get; set; }
+                new int OrderId { get; set; }
+                new int DriverId { get; set; }
+                new bool ExecutionError { get; set; }
+                new string ErrorMessage { get; set; }
             }
             #pragma warning restore 109
     
@@ -334,151 +375,246 @@ namespace LightSwitchApplication
             {
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, int>.Entry
-                    PK_beerTypes = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, int>.Entry(
-                        "PK_beerTypes",
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._PK_beerTypes_Stub,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._PK_beerTypes_ComputeIsReadOnly,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._PK_beerTypes_Validate,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._PK_beerTypes_GetImplementationValue,
-                        null,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._PK_beerTypes_OnValueChanged);
-                private static void _PK_beerTypes_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.beerTypesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.beerTypesItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>.Entry
+                    Id = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>.Entry(
+                        "Id",
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._Id_Stub,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._Id_ComputeIsReadOnly,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._Id_Validate,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._Id_GetImplementationValue,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._Id_SetImplementationValue,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._Id_OnValueChanged);
+                private static void _Id_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>.Data> c, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d, object sf)
                 {
-                    c(d, ref d._PK_beerTypes, sf);
+                    c(d, ref d._Id, sf);
                 }
-                private static bool _PK_beerTypes_ComputeIsReadOnly(global::LightSwitchApplication.beerTypesItem e)
+                private static bool _Id_ComputeIsReadOnly(global::LightSwitchApplication.OrderGetFreightOperation e)
                 {
                     bool result = false;
-                    e.PK_beerTypes_IsReadOnly(ref result);
+                    e.Id_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _PK_beerTypes_Validate(global::LightSwitchApplication.beerTypesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _Id_Validate(global::LightSwitchApplication.OrderGetFreightOperation e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.PK_beerTypes_Validate(r);
+                    e.Id_Validate(r);
                 }
-                private static int _PK_beerTypes_GetImplementationValue(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
+                private static int _Id_GetImplementationValue(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d)
                 {
-                    return d.ImplementationEntity.PK_beerTypes;
+                    return d.ImplementationEntity.Id;
                 }
-                private static void _PK_beerTypes_OnValueChanged(global::LightSwitchApplication.beerTypesItem e)
+                private static void _Id_SetImplementationValue(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d, int v)
                 {
-                    e.PK_beerTypes_Changed();
+                    d.ImplementationEntity.Id = v;
+                }
+                private static void _Id_OnValueChanged(global::LightSwitchApplication.OrderGetFreightOperation e)
+                {
+                    e.Id_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, string>.Entry
-                    name = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, string>.Entry(
-                        "name",
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._name_Stub,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._name_ComputeIsReadOnly,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._name_Validate,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._name_GetImplementationValue,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._name_SetImplementationValue,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._name_OnValueChanged);
-                private static void _name_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.beerTypesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.beerTypesItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, byte[]>.Entry
+                    RowVersion = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, byte[]>.Entry(
+                        "RowVersion",
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._RowVersion_Stub,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._RowVersion_ComputeIsReadOnly,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._RowVersion_Validate,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._RowVersion_GetImplementationValue,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._RowVersion_SetImplementationValue,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._RowVersion_OnValueChanged);
+                private static void _RowVersion_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, byte[]>.Data> c, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d, object sf)
                 {
-                    c(d, ref d._name, sf);
+                    c(d, ref d._RowVersion, sf);
                 }
-                private static bool _name_ComputeIsReadOnly(global::LightSwitchApplication.beerTypesItem e)
+                private static bool _RowVersion_ComputeIsReadOnly(global::LightSwitchApplication.OrderGetFreightOperation e)
                 {
                     bool result = false;
-                    e.name_IsReadOnly(ref result);
+                    e.RowVersion_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _name_Validate(global::LightSwitchApplication.beerTypesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _RowVersion_Validate(global::LightSwitchApplication.OrderGetFreightOperation e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.name_Validate(r);
+                    e.RowVersion_Validate(r);
                 }
-                private static string _name_GetImplementationValue(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
+                private static byte[] _RowVersion_GetImplementationValue(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d)
                 {
-                    return d.ImplementationEntity.name;
+                    return d.ImplementationEntity.RowVersion;
                 }
-                private static void _name_SetImplementationValue(global::LightSwitchApplication.beerTypesItem.DetailsClass d, string v)
+                private static void _RowVersion_SetImplementationValue(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d, byte[] v)
                 {
-                    d.ImplementationEntity.name = v;
+                    d.ImplementationEntity.RowVersion = v;
                 }
-                private static void _name_OnValueChanged(global::LightSwitchApplication.beerTypesItem e)
+                private static void _RowVersion_OnValueChanged(global::LightSwitchApplication.OrderGetFreightOperation e)
                 {
-                    e.name_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Entry
-                    beerSuppliers = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Entry(
-                        "beerSuppliers",
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._beerSuppliers_Stub,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._beerSuppliers_GetReferencedEntities,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._beerSuppliers_GetEntityCollection);
-                private static void _beerSuppliers_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.beerTypesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Data> c, global::LightSwitchApplication.beerTypesItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._beerSuppliers, sf);
-                }
-                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.beerSuppliersItem> _beerSuppliers_GetReferencedEntities(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
-                {
-                    return d.GetReferencedEntities<global::LightSwitchApplication.beerSuppliersItem, global::LightSwitchApplication.beerSuppliersItem.DetailsClass>(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.beerSuppliers, ref d._beerSuppliers);
-                }
-                private static global::System.Collections.IEnumerable _beerSuppliers_GetEntityCollection(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.beerSuppliers;
+                    e.RowVersion_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Entry
-                    deliveredBeers = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Entry(
-                        "deliveredBeers",
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._deliveredBeers_Stub,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._deliveredBeers_GetReferencedEntities,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._deliveredBeers_GetEntityCollection);
-                private static void _deliveredBeers_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.beerTypesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Data> c, global::LightSwitchApplication.beerTypesItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>.Entry
+                    OrderId = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>.Entry(
+                        "OrderId",
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._OrderId_Stub,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._OrderId_ComputeIsReadOnly,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._OrderId_Validate,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._OrderId_GetImplementationValue,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._OrderId_SetImplementationValue,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._OrderId_OnValueChanged);
+                private static void _OrderId_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>.Data> c, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d, object sf)
                 {
-                    c(d, ref d._deliveredBeers, sf);
+                    c(d, ref d._OrderId, sf);
                 }
-                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.deliveredBeer> _deliveredBeers_GetReferencedEntities(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
+                private static bool _OrderId_ComputeIsReadOnly(global::LightSwitchApplication.OrderGetFreightOperation e)
                 {
-                    return d.GetReferencedEntities<global::LightSwitchApplication.deliveredBeer, global::LightSwitchApplication.deliveredBeer.DetailsClass>(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.deliveredBeers, ref d._deliveredBeers);
+                    bool result = false;
+                    e.OrderId_IsReadOnly(ref result);
+                    return result;
                 }
-                private static global::System.Collections.IEnumerable _deliveredBeers_GetEntityCollection(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
+                private static void _OrderId_Validate(global::LightSwitchApplication.OrderGetFreightOperation e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    return d.ImplementationEntity.deliveredBeers;
+                    e.OrderId_Validate(r);
+                }
+                private static int _OrderId_GetImplementationValue(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d)
+                {
+                    return d.ImplementationEntity.OrderId;
+                }
+                private static void _OrderId_SetImplementationValue(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d, int v)
+                {
+                    d.ImplementationEntity.OrderId = v;
+                }
+                private static void _OrderId_OnValueChanged(global::LightSwitchApplication.OrderGetFreightOperation e)
+                {
+                    e.OrderId_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>.Entry
-                    storage = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>.Entry(
-                        "storage",
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._storage_Stub,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._storage_GetReferencedEntities,
-                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._storage_GetEntityCollection);
-                private static void _storage_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.beerTypesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>.Data> c, global::LightSwitchApplication.beerTypesItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>.Entry
+                    DriverId = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>.Entry(
+                        "DriverId",
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._DriverId_Stub,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._DriverId_ComputeIsReadOnly,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._DriverId_Validate,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._DriverId_GetImplementationValue,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._DriverId_SetImplementationValue,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._DriverId_OnValueChanged);
+                private static void _DriverId_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>.Data> c, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d, object sf)
                 {
-                    c(d, ref d._storage, sf);
+                    c(d, ref d._DriverId, sf);
                 }
-                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.storageItem> _storage_GetReferencedEntities(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
+                private static bool _DriverId_ComputeIsReadOnly(global::LightSwitchApplication.OrderGetFreightOperation e)
                 {
-                    return d.GetReferencedEntities<global::LightSwitchApplication.storageItem, global::LightSwitchApplication.storageItem.DetailsClass>(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.storage, ref d._storage);
+                    bool result = false;
+                    e.DriverId_IsReadOnly(ref result);
+                    return result;
                 }
-                private static global::System.Collections.IEnumerable _storage_GetEntityCollection(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
+                private static void _DriverId_Validate(global::LightSwitchApplication.OrderGetFreightOperation e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    return d.ImplementationEntity.storage;
+                    e.DriverId_Validate(r);
+                }
+                private static int _DriverId_GetImplementationValue(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d)
+                {
+                    return d.ImplementationEntity.DriverId;
+                }
+                private static void _DriverId_SetImplementationValue(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d, int v)
+                {
+                    d.ImplementationEntity.DriverId = v;
+                }
+                private static void _DriverId_OnValueChanged(global::LightSwitchApplication.OrderGetFreightOperation e)
+                {
+                    e.DriverId_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, bool>.Entry
+                    ExecutionError = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, bool>.Entry(
+                        "ExecutionError",
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._ExecutionError_Stub,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._ExecutionError_ComputeIsReadOnly,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._ExecutionError_Validate,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._ExecutionError_GetImplementationValue,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._ExecutionError_SetImplementationValue,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._ExecutionError_OnValueChanged);
+                private static void _ExecutionError_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, bool>.Data> c, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ExecutionError, sf);
+                }
+                private static bool _ExecutionError_ComputeIsReadOnly(global::LightSwitchApplication.OrderGetFreightOperation e)
+                {
+                    bool result = false;
+                    e.ExecutionError_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _ExecutionError_Validate(global::LightSwitchApplication.OrderGetFreightOperation e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.ExecutionError_Validate(r);
+                }
+                private static bool _ExecutionError_GetImplementationValue(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d)
+                {
+                    return d.ImplementationEntity.ExecutionError;
+                }
+                private static void _ExecutionError_SetImplementationValue(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d, bool v)
+                {
+                    d.ImplementationEntity.ExecutionError = v;
+                }
+                private static void _ExecutionError_OnValueChanged(global::LightSwitchApplication.OrderGetFreightOperation e)
+                {
+                    e.ExecutionError_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, string>.Entry
+                    ErrorMessage = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, string>.Entry(
+                        "ErrorMessage",
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._ErrorMessage_Stub,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._ErrorMessage_ComputeIsReadOnly,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._ErrorMessage_Validate,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._ErrorMessage_GetImplementationValue,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._ErrorMessage_SetImplementationValue,
+                        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.PropertySetProperties._ErrorMessage_OnValueChanged);
+                private static void _ErrorMessage_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, string>.Data> c, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ErrorMessage, sf);
+                }
+                private static bool _ErrorMessage_ComputeIsReadOnly(global::LightSwitchApplication.OrderGetFreightOperation e)
+                {
+                    bool result = false;
+                    e.ErrorMessage_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _ErrorMessage_Validate(global::LightSwitchApplication.OrderGetFreightOperation e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.ErrorMessage_Validate(r);
+                }
+                private static string _ErrorMessage_GetImplementationValue(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d)
+                {
+                    return d.ImplementationEntity.ErrorMessage;
+                }
+                private static void _ErrorMessage_SetImplementationValue(global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.ErrorMessage = v;
+                }
+                private static void _ErrorMessage_OnValueChanged(global::LightSwitchApplication.OrderGetFreightOperation e)
+                {
+                    e.ErrorMessage_Changed();
                 }
     
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, int>.Data _PK_beerTypes;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>.Data _Id;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, string>.Data _name;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, byte[]>.Data _RowVersion;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Data _beerSuppliers;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>.Data _OrderId;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeer>.Data _deliveredBeers;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, int>.Data _DriverId;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>.Data _storage;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, bool>.Data _ExecutionError;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.OrderGetFreightOperation, global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass, string>.Data _ErrorMessage;
             
         }
     

@@ -25,7 +25,7 @@ namespace LightSwitchApplication
             var order = this.orders.SelectedItem;
 
             var operation = dataWorkspace.ApplicationData.OrderReceivedOperations.AddNew();
-            operation.OrderId = order.PK_orders;
+            operation.OrderId = order.id;
 
             dataWorkspace.ApplicationData.SaveChanges();
             if (operation.ExecutionError)

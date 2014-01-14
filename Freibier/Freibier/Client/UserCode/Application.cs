@@ -11,7 +11,7 @@ namespace LightSwitchApplication
 {
     public partial class Application
     {
-        partial void beerRecipients_CanRun(ref bool result)
+        /*partial void beerRecipients_CanRun(ref bool result)
         {
             result = Current.User.HasPermission("LightSwitchApplication:Office");
         }
@@ -49,6 +49,6 @@ namespace LightSwitchApplication
         partial void supplierStorage_CanRun(ref bool result)
         {
             result = Current.User.HasPermission("LightSwitchApplication:Office");
-        }
+        }*/
     }
 }

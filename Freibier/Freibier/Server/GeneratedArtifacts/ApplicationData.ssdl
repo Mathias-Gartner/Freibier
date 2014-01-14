@@ -3,6 +3,8 @@
   <EntityContainer Name="ApplicationDataStore">
     <EntitySet Name="DeliveryConfirmOperations" EntityType="ApplicationDataStore.DeliveryConfirmOperation" store:Type="Tables" Schema="dbo" Table="DeliveryConfirmOperations" />
     <EntitySet Name="OrderReceivedOperations" EntityType="ApplicationDataStore.OrderReceivedOperation" store:Type="Tables" Schema="dbo" Table="OrderReceivedOperations" />
+    <EntitySet Name="OrderGetFreightOperations" EntityType="ApplicationDataStore.OrderGetFreightOperation" store:Type="Tables" Schema="dbo" Table="OrderGetFreightOperations" />
+    <EntitySet Name="DeliveryGetFreightOperations" EntityType="ApplicationDataStore.DeliveryGetFreightOperation" store:Type="Tables" Schema="dbo" Table="DeliveryGetFreightOperations" />
   </EntityContainer>
   <EntityType Name="DeliveryConfirmOperation">
     <Key>
@@ -21,6 +23,28 @@
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
     <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="ExecutionError" Type="bit" Nullable="false" />
+    <Property Name="ErrorMessage" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="OrderGetFreightOperation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="DriverId" Type="int" Nullable="false" />
+    <Property Name="ExecutionError" Type="bit" Nullable="false" />
+    <Property Name="ErrorMessage" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="DeliveryGetFreightOperation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="DeliveryId" Type="int" Nullable="false" />
+    <Property Name="DriverId" Type="int" Nullable="false" />
     <Property Name="ExecutionError" Type="bit" Nullable="false" />
     <Property Name="ErrorMessage" Type="nvarchar" MaxLength="255" />
   </EntityType>

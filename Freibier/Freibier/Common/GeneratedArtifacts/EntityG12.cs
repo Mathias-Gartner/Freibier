@@ -17,32 +17,32 @@ namespace LightSwitchApplication
     /// Keine modellierte Beschreibung verfügbar
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    public sealed partial class supplierStorageItem : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass>
+    public sealed partial class driversItem : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass>
     {
         #region Constructors
     
         /// <summary>
-        /// Initialisiert eine neue Instanz der Entität supplierStorageItem.
+        /// Initialisiert eine neue Instanz der Entität driversItem.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public supplierStorageItem()
+        public driversItem()
             : this(null)
         {
         }
     
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public supplierStorageItem(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.supplierStorageItem> entitySet)
+        public driversItem(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.driversItem> entitySet)
             : base(entitySet)
         {
-            global::LightSwitchApplication.supplierStorageItem.DetailsClass.Initialize(this);
+            global::LightSwitchApplication.driversItem.DetailsClass.Initialize(this);
         }
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void supplierStorageItem_Created();
+        partial void driversItem_Created();
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void supplierStorageItem_AllowSaveWithErrors(ref bool result);
+        partial void driversItem_AllowSaveWithErrors(ref bool result);
     
         #endregion
     
@@ -83,92 +83,68 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int PK_supplierStorage
+        public int id
         {
             get
             {
-                return global::LightSwitchApplication.supplierStorageItem.DetailsClass.GetValue(this, global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.PK_supplierStorage);
+                return global::LightSwitchApplication.driversItem.DetailsClass.GetValue(this, global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.id);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_supplierStorage_IsReadOnly(ref bool result);
+        partial void id_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_supplierStorage_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void id_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_supplierStorage_Changed();
+        partial void id_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int amount
+        public string driver
         {
             get
             {
-                return global::LightSwitchApplication.supplierStorageItem.DetailsClass.GetValue(this, global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.amount);
+                return global::LightSwitchApplication.driversItem.DetailsClass.GetValue(this, global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.driver);
             }
             set
             {
-                global::LightSwitchApplication.supplierStorageItem.DetailsClass.SetValue(this, global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.amount, value);
+                global::LightSwitchApplication.driversItem.DetailsClass.SetValue(this, global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.driver, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void amount_IsReadOnly(ref bool result);
+        partial void driver_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void amount_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void driver_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void amount_Changed();
+        partial void driver_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::LightSwitchApplication.beerSuppliersItem beerSuppliersItem1
+        public int truckCapacity
         {
             get
             {
-                return global::LightSwitchApplication.supplierStorageItem.DetailsClass.GetValue(this, global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.beerSuppliersItem1);
+                return global::LightSwitchApplication.driversItem.DetailsClass.GetValue(this, global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.truckCapacity);
             }
             set
             {
-                global::LightSwitchApplication.supplierStorageItem.DetailsClass.SetValue(this, global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.beerSuppliersItem1, value);
+                global::LightSwitchApplication.driversItem.DetailsClass.SetValue(this, global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.truckCapacity, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void beerSuppliersItem1_IsReadOnly(ref bool result);
+        partial void truckCapacity_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void beerSuppliersItem1_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void truckCapacity_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void beerSuppliersItem1_Changed();
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::LightSwitchApplication.suppliersItem suppliersItem1
-        {
-            get
-            {
-                return global::LightSwitchApplication.supplierStorageItem.DetailsClass.GetValue(this, global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.suppliersItem1);
-            }
-            set
-            {
-                global::LightSwitchApplication.supplierStorageItem.DetailsClass.SetValue(this, global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.suppliersItem1, value);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void suppliersItem1_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void suppliersItem1_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void suppliersItem1_Changed();
+        partial void truckCapacity_Changed();
 
         #endregion
     
@@ -179,37 +155,37 @@ namespace LightSwitchApplication
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public sealed class DetailsClass : global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<
-                global::LightSwitchApplication.supplierStorageItem,
-                global::LightSwitchApplication.supplierStorageItem.DetailsClass,
-                global::LightSwitchApplication.supplierStorageItem.DetailsClass.IImplementation,
-                global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySet,
-                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass>,
-                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass>>
+                global::LightSwitchApplication.driversItem,
+                global::LightSwitchApplication.driversItem.DetailsClass,
+                global::LightSwitchApplication.driversItem.DetailsClass.IImplementation,
+                global::LightSwitchApplication.driversItem.DetailsClass.PropertySet,
+                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass>,
+                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass>>
         {
     
             static DetailsClass()
             {
-                var initializeEntry = global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.PK_supplierStorage;
+                var initializeEntry = global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.id;
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass>.Entry
-                __supplierStorageItemEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass>.Entry(
-                    global::LightSwitchApplication.supplierStorageItem.DetailsClass.__supplierStorageItem_CreateNew,
-                    global::LightSwitchApplication.supplierStorageItem.DetailsClass.__supplierStorageItem_Created,
-                    global::LightSwitchApplication.supplierStorageItem.DetailsClass.__supplierStorageItem_AllowSaveWithErrors);
-            private static global::LightSwitchApplication.supplierStorageItem __supplierStorageItem_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.supplierStorageItem> es)
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass>.Entry
+                __driversItemEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass>.Entry(
+                    global::LightSwitchApplication.driversItem.DetailsClass.__driversItem_CreateNew,
+                    global::LightSwitchApplication.driversItem.DetailsClass.__driversItem_Created,
+                    global::LightSwitchApplication.driversItem.DetailsClass.__driversItem_AllowSaveWithErrors);
+            private static global::LightSwitchApplication.driversItem __driversItem_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.driversItem> es)
             {
-                return new global::LightSwitchApplication.supplierStorageItem(es);
+                return new global::LightSwitchApplication.driversItem(es);
             }
-            private static void __supplierStorageItem_Created(global::LightSwitchApplication.supplierStorageItem e)
+            private static void __driversItem_Created(global::LightSwitchApplication.driversItem e)
             {
-                e.supplierStorageItem_Created();
+                e.driversItem_Created();
             }
-            private static bool __supplierStorageItem_AllowSaveWithErrors(global::LightSwitchApplication.supplierStorageItem e)
+            private static bool __driversItem_AllowSaveWithErrors(global::LightSwitchApplication.driversItem e)
             {
                 bool result = false;
-                e.supplierStorageItem_AllowSaveWithErrors(ref result);
+                e.driversItem_AllowSaveWithErrors(ref result);
                 return result;
             }
     
@@ -217,7 +193,7 @@ namespace LightSwitchApplication
             {
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass> Commands
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass> Commands
             {
                 get
                 {
@@ -225,7 +201,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass> Methods
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass> Methods
             {
                 get
                 {
@@ -233,7 +209,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySet Properties
+            public new global::LightSwitchApplication.driversItem.DetailsClass.PropertySet Properties
             {
                 get
                 {
@@ -245,42 +221,34 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass>
+            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass>
             {
     
                 public PropertySet() : base()
                 {
                 }
     
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, int> PK_supplierStorage
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int> id
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.PK_supplierStorage) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, int>;
+                        return base.GetItem(global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.id) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, int> amount
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, string> driver
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.amount) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, int>;
+                        return base.GetItem(global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.driver) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, string>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem> beerSuppliersItem1
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int> truckCapacity
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.beerSuppliersItem1) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>;
-                    }
-                }
-                
-                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::LightSwitchApplication.suppliersItem> suppliersItem1
-                {
-                    get
-                    {
-                        return base.GetItem(global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.suppliersItem1) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::LightSwitchApplication.suppliersItem>;
+                        return base.GetItem(global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.truckCapacity) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>;
                     }
                 }
                 
@@ -290,10 +258,9 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
             public interface IImplementation : global::Microsoft.LightSwitch.Internal.IEntityImplementation
             {
-                new int PK_supplierStorage { get; }
-                new int amount { get; set; }
-                new global::Microsoft.LightSwitch.Internal.IEntityImplementation beerSuppliersItem1 { get; set; }
-                new global::Microsoft.LightSwitch.Internal.IEntityImplementation suppliersItem1 { get; set; }
+                new int id { get; }
+                new string driver { get; set; }
+                new int truckCapacity { get; set; }
             }
             #pragma warning restore 109
     
@@ -304,182 +271,122 @@ namespace LightSwitchApplication
             {
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, int>.Entry
-                    PK_supplierStorage = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, int>.Entry(
-                        "PK_supplierStorage",
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._PK_supplierStorage_Stub,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._PK_supplierStorage_ComputeIsReadOnly,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._PK_supplierStorage_Validate,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._PK_supplierStorage_GetImplementationValue,
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Entry
+                    id = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Entry(
+                        "id",
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._id_Stub,
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._id_ComputeIsReadOnly,
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._id_Validate,
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._id_GetImplementationValue,
                         null,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._PK_supplierStorage_OnValueChanged);
-                private static void _PK_supplierStorage_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.supplierStorageItem.DetailsClass d, object sf)
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._id_OnValueChanged);
+                private static void _id_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.driversItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.driversItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._PK_supplierStorage, sf);
+                    c(d, ref d._id, sf);
                 }
-                private static bool _PK_supplierStorage_ComputeIsReadOnly(global::LightSwitchApplication.supplierStorageItem e)
+                private static bool _id_ComputeIsReadOnly(global::LightSwitchApplication.driversItem e)
                 {
                     bool result = false;
-                    e.PK_supplierStorage_IsReadOnly(ref result);
+                    e.id_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _PK_supplierStorage_Validate(global::LightSwitchApplication.supplierStorageItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _id_Validate(global::LightSwitchApplication.driversItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.PK_supplierStorage_Validate(r);
+                    e.id_Validate(r);
                 }
-                private static int _PK_supplierStorage_GetImplementationValue(global::LightSwitchApplication.supplierStorageItem.DetailsClass d)
+                private static int _id_GetImplementationValue(global::LightSwitchApplication.driversItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.PK_supplierStorage;
+                    return d.ImplementationEntity.id;
                 }
-                private static void _PK_supplierStorage_OnValueChanged(global::LightSwitchApplication.supplierStorageItem e)
+                private static void _id_OnValueChanged(global::LightSwitchApplication.driversItem e)
                 {
-                    e.PK_supplierStorage_Changed();
+                    e.id_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, int>.Entry
-                    amount = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, int>.Entry(
-                        "amount",
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._amount_Stub,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._amount_ComputeIsReadOnly,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._amount_Validate,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._amount_GetImplementationValue,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._amount_SetImplementationValue,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._amount_OnValueChanged);
-                private static void _amount_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.supplierStorageItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, string>.Entry
+                    driver = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, string>.Entry(
+                        "driver",
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._driver_Stub,
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._driver_ComputeIsReadOnly,
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._driver_Validate,
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._driver_GetImplementationValue,
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._driver_SetImplementationValue,
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._driver_OnValueChanged);
+                private static void _driver_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.driversItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.driversItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._amount, sf);
+                    c(d, ref d._driver, sf);
                 }
-                private static bool _amount_ComputeIsReadOnly(global::LightSwitchApplication.supplierStorageItem e)
+                private static bool _driver_ComputeIsReadOnly(global::LightSwitchApplication.driversItem e)
                 {
                     bool result = false;
-                    e.amount_IsReadOnly(ref result);
+                    e.driver_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _amount_Validate(global::LightSwitchApplication.supplierStorageItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _driver_Validate(global::LightSwitchApplication.driversItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.amount_Validate(r);
+                    e.driver_Validate(r);
                 }
-                private static int _amount_GetImplementationValue(global::LightSwitchApplication.supplierStorageItem.DetailsClass d)
+                private static string _driver_GetImplementationValue(global::LightSwitchApplication.driversItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.amount;
+                    return d.ImplementationEntity.driver;
                 }
-                private static void _amount_SetImplementationValue(global::LightSwitchApplication.supplierStorageItem.DetailsClass d, int v)
+                private static void _driver_SetImplementationValue(global::LightSwitchApplication.driversItem.DetailsClass d, string v)
                 {
-                    d.ImplementationEntity.amount = v;
+                    d.ImplementationEntity.driver = v;
                 }
-                private static void _amount_OnValueChanged(global::LightSwitchApplication.supplierStorageItem e)
+                private static void _driver_OnValueChanged(global::LightSwitchApplication.driversItem e)
                 {
-                    e.amount_Changed();
+                    e.driver_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Entry
-                    beerSuppliersItem1 = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Entry(
-                        "beerSuppliersItem1",
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._beerSuppliersItem1_Stub,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._beerSuppliersItem1_ComputeIsReadOnly,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._beerSuppliersItem1_Validate,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._beerSuppliersItem1_GetCoreImplementationValue,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._beerSuppliersItem1_GetImplementationValue,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._beerSuppliersItem1_SetImplementationValue,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._beerSuppliersItem1_Refresh,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._beerSuppliersItem1_OnValueChanged);
-                private static void _beerSuppliersItem1_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Data> c, global::LightSwitchApplication.supplierStorageItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Entry
+                    truckCapacity = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Entry(
+                        "truckCapacity",
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._truckCapacity_Stub,
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._truckCapacity_ComputeIsReadOnly,
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._truckCapacity_Validate,
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._truckCapacity_GetImplementationValue,
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._truckCapacity_SetImplementationValue,
+                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._truckCapacity_OnValueChanged);
+                private static void _truckCapacity_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.driversItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.driversItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._beerSuppliersItem1, sf);
+                    c(d, ref d._truckCapacity, sf);
                 }
-                private static bool _beerSuppliersItem1_ComputeIsReadOnly(global::LightSwitchApplication.supplierStorageItem e)
+                private static bool _truckCapacity_ComputeIsReadOnly(global::LightSwitchApplication.driversItem e)
                 {
                     bool result = false;
-                    e.beerSuppliersItem1_IsReadOnly(ref result);
+                    e.truckCapacity_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _beerSuppliersItem1_Validate(global::LightSwitchApplication.supplierStorageItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _truckCapacity_Validate(global::LightSwitchApplication.driversItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.beerSuppliersItem1_Validate(r);
+                    e.truckCapacity_Validate(r);
                 }
-                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _beerSuppliersItem1_GetCoreImplementationValue(global::LightSwitchApplication.supplierStorageItem.DetailsClass d)
+                private static int _truckCapacity_GetImplementationValue(global::LightSwitchApplication.driversItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.beerSuppliersItem1;
+                    return d.ImplementationEntity.truckCapacity;
                 }
-                private static global::LightSwitchApplication.beerSuppliersItem _beerSuppliersItem1_GetImplementationValue(global::LightSwitchApplication.supplierStorageItem.DetailsClass d)
+                private static void _truckCapacity_SetImplementationValue(global::LightSwitchApplication.driversItem.DetailsClass d, int v)
                 {
-                    return d.GetImplementationValue<global::LightSwitchApplication.beerSuppliersItem, global::LightSwitchApplication.beerSuppliersItem.DetailsClass>(global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.beerSuppliersItem1, ref d._beerSuppliersItem1);
+                    d.ImplementationEntity.truckCapacity = v;
                 }
-                private static void _beerSuppliersItem1_SetImplementationValue(global::LightSwitchApplication.supplierStorageItem.DetailsClass d, global::LightSwitchApplication.beerSuppliersItem v)
+                private static void _truckCapacity_OnValueChanged(global::LightSwitchApplication.driversItem e)
                 {
-                    d.SetImplementationValue(global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.beerSuppliersItem1, ref d._beerSuppliersItem1, (i, ev) => i.beerSuppliersItem1 = ev, v);
-                }
-                private static void _beerSuppliersItem1_Refresh(global::LightSwitchApplication.supplierStorageItem.DetailsClass d)
-                {
-                    d.RefreshNavigationProperty(global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.beerSuppliersItem1, ref d._beerSuppliersItem1);
-                }
-                private static void _beerSuppliersItem1_OnValueChanged(global::LightSwitchApplication.supplierStorageItem e)
-                {
-                    e.beerSuppliersItem1_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::LightSwitchApplication.suppliersItem>.Entry
-                    suppliersItem1 = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::LightSwitchApplication.suppliersItem>.Entry(
-                        "suppliersItem1",
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._suppliersItem1_Stub,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._suppliersItem1_ComputeIsReadOnly,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._suppliersItem1_Validate,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._suppliersItem1_GetCoreImplementationValue,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._suppliersItem1_GetImplementationValue,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._suppliersItem1_SetImplementationValue,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._suppliersItem1_Refresh,
-                        global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties._suppliersItem1_OnValueChanged);
-                private static void _suppliersItem1_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::LightSwitchApplication.suppliersItem>.Data> c, global::LightSwitchApplication.supplierStorageItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._suppliersItem1, sf);
-                }
-                private static bool _suppliersItem1_ComputeIsReadOnly(global::LightSwitchApplication.supplierStorageItem e)
-                {
-                    bool result = false;
-                    e.suppliersItem1_IsReadOnly(ref result);
-                    return result;
-                }
-                private static void _suppliersItem1_Validate(global::LightSwitchApplication.supplierStorageItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
-                {
-                    e.suppliersItem1_Validate(r);
-                }
-                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _suppliersItem1_GetCoreImplementationValue(global::LightSwitchApplication.supplierStorageItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.suppliersItem1;
-                }
-                private static global::LightSwitchApplication.suppliersItem _suppliersItem1_GetImplementationValue(global::LightSwitchApplication.supplierStorageItem.DetailsClass d)
-                {
-                    return d.GetImplementationValue<global::LightSwitchApplication.suppliersItem, global::LightSwitchApplication.suppliersItem.DetailsClass>(global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.suppliersItem1, ref d._suppliersItem1);
-                }
-                private static void _suppliersItem1_SetImplementationValue(global::LightSwitchApplication.supplierStorageItem.DetailsClass d, global::LightSwitchApplication.suppliersItem v)
-                {
-                    d.SetImplementationValue(global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.suppliersItem1, ref d._suppliersItem1, (i, ev) => i.suppliersItem1 = ev, v);
-                }
-                private static void _suppliersItem1_Refresh(global::LightSwitchApplication.supplierStorageItem.DetailsClass d)
-                {
-                    d.RefreshNavigationProperty(global::LightSwitchApplication.supplierStorageItem.DetailsClass.PropertySetProperties.suppliersItem1, ref d._suppliersItem1);
-                }
-                private static void _suppliersItem1_OnValueChanged(global::LightSwitchApplication.supplierStorageItem e)
-                {
-                    e.suppliersItem1_Changed();
+                    e.truckCapacity_Changed();
                 }
     
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, int>.Data _PK_supplierStorage;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Data _id;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, int>.Data _amount;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, string>.Data _driver;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Data _beerSuppliersItem1;
-            
-            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.supplierStorageItem, global::LightSwitchApplication.supplierStorageItem.DetailsClass, global::LightSwitchApplication.suppliersItem>.Data _suppliersItem1;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Data _truckCapacity;
             
         }
     

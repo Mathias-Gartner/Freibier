@@ -20,8 +20,32 @@
     <Property Name="ExecutionError" Type="Edm.Boolean" Nullable="false" />
     <Property Name="ErrorMessage" Type="Edm.String" MaxLength="255" />
   </EntityType>
+  <EntityType Name="OrderGetFreightOperation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="OrderId" Type="Edm.Int32" Nullable="false" />
+    <Property Name="DriverId" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ExecutionError" Type="Edm.Boolean" Nullable="false" />
+    <Property Name="ErrorMessage" Type="Edm.String" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="DeliveryGetFreightOperation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Edm.Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="Edm.Binary" Nullable="false" ConcurrencyMode="Fixed" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="DeliveryId" Type="Edm.Int32" Nullable="false" />
+    <Property Name="DriverId" Type="Edm.Int32" Nullable="false" />
+    <Property Name="ExecutionError" Type="Edm.Boolean" Nullable="false" />
+    <Property Name="ErrorMessage" Type="Edm.String" MaxLength="255" />
+  </EntityType>
   <EntityContainer Name="ApplicationDataObjectContext" m:IsDefaultEntityContainer="true">
     <EntitySet Name="DeliveryConfirmOperations" EntityType="LightSwitchApplication.DeliveryConfirmOperation" />
     <EntitySet Name="OrderReceivedOperations" EntityType="LightSwitchApplication.OrderReceivedOperation" />
+    <EntitySet Name="OrderGetFreightOperations" EntityType="LightSwitchApplication.OrderGetFreightOperation" />
+    <EntitySet Name="DeliveryGetFreightOperations" EntityType="LightSwitchApplication.DeliveryGetFreightOperation" />
   </EntityContainer>
 </Schema>

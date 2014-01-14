@@ -25,7 +25,7 @@ namespace LightSwitchApplication
             var delivery = this.deliveries.SelectedItem;
 
             var operation = dataWorkspace.ApplicationData.DeliveryConfirmOperations.AddNew();
-            operation.DeliveryId = delivery.PK_deliveries;
+            operation.DeliveryId = delivery.id;
 
             dataWorkspace.ApplicationData.SaveChanges();
             if (operation.ExecutionError)

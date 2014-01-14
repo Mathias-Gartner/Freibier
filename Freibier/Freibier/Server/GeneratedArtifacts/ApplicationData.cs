@@ -93,6 +93,38 @@ namespace ApplicationData.Implementation
             }
         }
         private ObjectSet<OrderReceivedOperation> _OrderReceivedOperations;
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        public ObjectSet<OrderGetFreightOperation> OrderGetFreightOperations
+        {
+            get
+            {
+                if ((_OrderGetFreightOperations == null))
+                {
+                    _OrderGetFreightOperations = base.CreateObjectSet<OrderGetFreightOperation>("OrderGetFreightOperations");
+                }
+                return _OrderGetFreightOperations;
+            }
+        }
+        private ObjectSet<OrderGetFreightOperation> _OrderGetFreightOperations;
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        public ObjectSet<DeliveryGetFreightOperation> DeliveryGetFreightOperations
+        {
+            get
+            {
+                if ((_DeliveryGetFreightOperations == null))
+                {
+                    _DeliveryGetFreightOperations = base.CreateObjectSet<DeliveryGetFreightOperation>("DeliveryGetFreightOperations");
+                }
+                return _DeliveryGetFreightOperations;
+            }
+        }
+        private ObjectSet<DeliveryGetFreightOperation> _DeliveryGetFreightOperations;
 
         #endregion
 
@@ -112,6 +144,22 @@ namespace ApplicationData.Implementation
         public void AddToOrderReceivedOperations(OrderReceivedOperation orderReceivedOperation)
         {
             base.AddObject("OrderReceivedOperations", orderReceivedOperation);
+        }
+    
+        /// <summary>
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'OrderGetFreightOperations'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// </summary>
+        public void AddToOrderGetFreightOperations(OrderGetFreightOperation orderGetFreightOperation)
+        {
+            base.AddObject("OrderGetFreightOperations", orderGetFreightOperation);
+        }
+    
+        /// <summary>
+        /// Veraltete Methode zum Hinzufügen eines neuen Objekts zum EntitySet 'DeliveryGetFreightOperations'. Verwenden Sie stattdessen die Methode '.Add' der zugeordneten Eigenschaft 'ObjectSet&lt;T&gt;'.
+        /// </summary>
+        public void AddToDeliveryGetFreightOperations(DeliveryGetFreightOperation deliveryGetFreightOperation)
+        {
+            base.AddObject("DeliveryGetFreightOperations", deliveryGetFreightOperation);
         }
 
         #endregion
@@ -227,6 +275,376 @@ namespace ApplicationData.Implementation
         private global::System.Int32 _DeliveryId;
         partial void OnDeliveryIdChanging(global::System.Int32 value);
         partial void OnDeliveryIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean ExecutionError
+        {
+            get
+            {
+                return _ExecutionError;
+            }
+            set
+            {
+                OnExecutionErrorChanging(value);
+                ReportPropertyChanging("ExecutionError");
+                _ExecutionError = value;
+                ReportPropertyChanged("ExecutionError");
+                OnExecutionErrorChanged();
+            }
+        }
+        private global::System.Boolean _ExecutionError;
+        partial void OnExecutionErrorChanging(global::System.Boolean value);
+        partial void OnExecutionErrorChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ErrorMessage
+        {
+            get
+            {
+                return _ErrorMessage;
+            }
+            set
+            {
+                OnErrorMessageChanging(value);
+                ReportPropertyChanging("ErrorMessage");
+                _ErrorMessage = value;
+                ReportPropertyChanged("ErrorMessage");
+                OnErrorMessageChanged();
+            }
+        }
+        private global::System.String _ErrorMessage;
+        partial void OnErrorMessageChanging(global::System.String value);
+        partial void OnErrorMessageChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// Keine Dokumentation für Metadaten verfügbar.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="DeliveryGetFreightOperation")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class DeliveryGetFreightOperation : EntityObject
+    {
+        #region Factory-Methode
+    
+        /// <summary>
+        /// Erstellt ein neues DeliveryGetFreightOperation-Objekt.
+        /// </summary>
+        /// <param name="id">Anfangswert der Eigenschaft Id.</param>
+        /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
+        /// <param name="deliveryId">Anfangswert der Eigenschaft DeliveryId.</param>
+        /// <param name="driverId">Anfangswert der Eigenschaft DriverId.</param>
+        /// <param name="executionError">Anfangswert der Eigenschaft ExecutionError.</param>
+        public static DeliveryGetFreightOperation CreateDeliveryGetFreightOperation(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 deliveryId, global::System.Int32 driverId, global::System.Boolean executionError)
+        {
+            DeliveryGetFreightOperation deliveryGetFreightOperation = new DeliveryGetFreightOperation();
+            deliveryGetFreightOperation.Id = id;
+            deliveryGetFreightOperation.RowVersion = rowVersion;
+            deliveryGetFreightOperation.DeliveryId = deliveryId;
+            deliveryGetFreightOperation.DriverId = driverId;
+            deliveryGetFreightOperation.ExecutionError = executionError;
+            return deliveryGetFreightOperation;
+        }
+
+        #endregion
+
+        #region Primitive Eigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 DeliveryId
+        {
+            get
+            {
+                return _DeliveryId;
+            }
+            set
+            {
+                OnDeliveryIdChanging(value);
+                ReportPropertyChanging("DeliveryId");
+                _DeliveryId = value;
+                ReportPropertyChanged("DeliveryId");
+                OnDeliveryIdChanged();
+            }
+        }
+        private global::System.Int32 _DeliveryId;
+        partial void OnDeliveryIdChanging(global::System.Int32 value);
+        partial void OnDeliveryIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 DriverId
+        {
+            get
+            {
+                return _DriverId;
+            }
+            set
+            {
+                OnDriverIdChanging(value);
+                ReportPropertyChanging("DriverId");
+                _DriverId = value;
+                ReportPropertyChanged("DriverId");
+                OnDriverIdChanged();
+            }
+        }
+        private global::System.Int32 _DriverId;
+        partial void OnDriverIdChanging(global::System.Int32 value);
+        partial void OnDriverIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean ExecutionError
+        {
+            get
+            {
+                return _ExecutionError;
+            }
+            set
+            {
+                OnExecutionErrorChanging(value);
+                ReportPropertyChanging("ExecutionError");
+                _ExecutionError = value;
+                ReportPropertyChanged("ExecutionError");
+                OnExecutionErrorChanged();
+            }
+        }
+        private global::System.Boolean _ExecutionError;
+        partial void OnExecutionErrorChanging(global::System.Boolean value);
+        partial void OnExecutionErrorChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ErrorMessage
+        {
+            get
+            {
+                return _ErrorMessage;
+            }
+            set
+            {
+                OnErrorMessageChanging(value);
+                ReportPropertyChanging("ErrorMessage");
+                _ErrorMessage = value;
+                ReportPropertyChanged("ErrorMessage");
+                OnErrorMessageChanged();
+            }
+        }
+        private global::System.String _ErrorMessage;
+        partial void OnErrorMessageChanging(global::System.String value);
+        partial void OnErrorMessageChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// Keine Dokumentation für Metadaten verfügbar.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LightSwitchApplication", Name="OrderGetFreightOperation")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class OrderGetFreightOperation : EntityObject
+    {
+        #region Factory-Methode
+    
+        /// <summary>
+        /// Erstellt ein neues OrderGetFreightOperation-Objekt.
+        /// </summary>
+        /// <param name="id">Anfangswert der Eigenschaft Id.</param>
+        /// <param name="rowVersion">Anfangswert der Eigenschaft RowVersion.</param>
+        /// <param name="orderId">Anfangswert der Eigenschaft OrderId.</param>
+        /// <param name="driverId">Anfangswert der Eigenschaft DriverId.</param>
+        /// <param name="executionError">Anfangswert der Eigenschaft ExecutionError.</param>
+        public static OrderGetFreightOperation CreateOrderGetFreightOperation(global::System.Int32 id, global::System.Byte[] rowVersion, global::System.Int32 orderId, global::System.Int32 driverId, global::System.Boolean executionError)
+        {
+            OrderGetFreightOperation orderGetFreightOperation = new OrderGetFreightOperation();
+            orderGetFreightOperation.Id = id;
+            orderGetFreightOperation.RowVersion = rowVersion;
+            orderGetFreightOperation.OrderId = orderId;
+            orderGetFreightOperation.DriverId = driverId;
+            orderGetFreightOperation.ExecutionError = executionError;
+            return orderGetFreightOperation;
+        }
+
+        #endregion
+
+        #region Primitive Eigenschaften
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = value;
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] RowVersion
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_RowVersion);
+            }
+            set
+            {
+                OnRowVersionChanging(value);
+                ReportPropertyChanging("RowVersion");
+                _RowVersion = value;
+                ReportPropertyChanged("RowVersion");
+                OnRowVersionChanged();
+            }
+        }
+        private global::System.Byte[] _RowVersion;
+        partial void OnRowVersionChanging(global::System.Byte[] value);
+        partial void OnRowVersionChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 OrderId
+        {
+            get
+            {
+                return _OrderId;
+            }
+            set
+            {
+                OnOrderIdChanging(value);
+                ReportPropertyChanging("OrderId");
+                _OrderId = value;
+                ReportPropertyChanged("OrderId");
+                OnOrderIdChanged();
+            }
+        }
+        private global::System.Int32 _OrderId;
+        partial void OnOrderIdChanging(global::System.Int32 value);
+        partial void OnOrderIdChanged();
+    
+        /// <summary>
+        /// Keine Dokumentation für Metadaten verfügbar.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 DriverId
+        {
+            get
+            {
+                return _DriverId;
+            }
+            set
+            {
+                OnDriverIdChanging(value);
+                ReportPropertyChanging("DriverId");
+                _DriverId = value;
+                ReportPropertyChanged("DriverId");
+                OnDriverIdChanged();
+            }
+        }
+        private global::System.Int32 _DriverId;
+        partial void OnDriverIdChanging(global::System.Int32 value);
+        partial void OnDriverIdChanged();
     
         /// <summary>
         /// Keine Dokumentation für Metadaten verfügbar.

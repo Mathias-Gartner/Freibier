@@ -17,32 +17,32 @@ namespace LightSwitchApplication
     /// Keine modellierte Beschreibung verfügbar
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    public sealed partial class driversItem : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass>
+    public sealed partial class beerTypesItem : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass>
     {
         #region Constructors
     
         /// <summary>
-        /// Initialisiert eine neue Instanz der Entität driversItem.
+        /// Initialisiert eine neue Instanz der Entität beerTypesItem.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public driversItem()
+        public beerTypesItem()
             : this(null)
         {
         }
     
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public driversItem(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.driversItem> entitySet)
+        public beerTypesItem(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.beerTypesItem> entitySet)
             : base(entitySet)
         {
-            global::LightSwitchApplication.driversItem.DetailsClass.Initialize(this);
+            global::LightSwitchApplication.beerTypesItem.DetailsClass.Initialize(this);
         }
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void driversItem_Created();
+        partial void beerTypesItem_Created();
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void driversItem_AllowSaveWithErrors(ref bool result);
+        partial void beerTypesItem_AllowSaveWithErrors(ref bool result);
     
         #endregion
     
@@ -83,68 +83,113 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int PK_drivers
+        public int id
         {
             get
             {
-                return global::LightSwitchApplication.driversItem.DetailsClass.GetValue(this, global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.PK_drivers);
+                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.id);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_drivers_IsReadOnly(ref bool result);
+        partial void id_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_drivers_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void id_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_drivers_Changed();
+        partial void id_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string driver
+        public string name
         {
             get
             {
-                return global::LightSwitchApplication.driversItem.DetailsClass.GetValue(this, global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.driver);
+                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.name);
             }
             set
             {
-                global::LightSwitchApplication.driversItem.DetailsClass.SetValue(this, global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.driver, value);
+                global::LightSwitchApplication.beerTypesItem.DetailsClass.SetValue(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.name, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void driver_IsReadOnly(ref bool result);
+        partial void name_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void driver_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void name_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void driver_Changed();
+        partial void name_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int truck
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.beerSuppliersItem> beerSuppliers
         {
             get
             {
-                return global::LightSwitchApplication.driversItem.DetailsClass.GetValue(this, global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.truck);
-            }
-            set
-            {
-                global::LightSwitchApplication.driversItem.DetailsClass.SetValue(this, global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.truck, value);
+                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.beerSuppliers);
             }
         }
         
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void truck_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void truck_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void truck_Changed();
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.beerSuppliersItem> beerSuppliersQuery
+        {
+            get
+            {
+                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.beerSuppliers);
+            }
+        }
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.deliveredBeersItem> deliveredBeers
+        {
+            get
+            {
+                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.deliveredBeers);
+            }
+        }
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.deliveredBeersItem> deliveredBeersQuery
+        {
+            get
+            {
+                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.deliveredBeers);
+            }
+        }
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.storageItem> storage
+        {
+            get
+            {
+                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.storage);
+            }
+        }
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.storageItem> storageQuery
+        {
+            get
+            {
+                return global::LightSwitchApplication.beerTypesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.storage);
+            }
+        }
 
         #endregion
     
@@ -155,37 +200,37 @@ namespace LightSwitchApplication
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public sealed class DetailsClass : global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<
-                global::LightSwitchApplication.driversItem,
-                global::LightSwitchApplication.driversItem.DetailsClass,
-                global::LightSwitchApplication.driversItem.DetailsClass.IImplementation,
-                global::LightSwitchApplication.driversItem.DetailsClass.PropertySet,
-                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass>,
-                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass>>
+                global::LightSwitchApplication.beerTypesItem,
+                global::LightSwitchApplication.beerTypesItem.DetailsClass,
+                global::LightSwitchApplication.beerTypesItem.DetailsClass.IImplementation,
+                global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySet,
+                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass>,
+                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass>>
         {
     
             static DetailsClass()
             {
-                var initializeEntry = global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.PK_drivers;
+                var initializeEntry = global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.id;
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass>.Entry
-                __driversItemEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass>.Entry(
-                    global::LightSwitchApplication.driversItem.DetailsClass.__driversItem_CreateNew,
-                    global::LightSwitchApplication.driversItem.DetailsClass.__driversItem_Created,
-                    global::LightSwitchApplication.driversItem.DetailsClass.__driversItem_AllowSaveWithErrors);
-            private static global::LightSwitchApplication.driversItem __driversItem_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.driversItem> es)
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass>.Entry
+                __beerTypesItemEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass>.Entry(
+                    global::LightSwitchApplication.beerTypesItem.DetailsClass.__beerTypesItem_CreateNew,
+                    global::LightSwitchApplication.beerTypesItem.DetailsClass.__beerTypesItem_Created,
+                    global::LightSwitchApplication.beerTypesItem.DetailsClass.__beerTypesItem_AllowSaveWithErrors);
+            private static global::LightSwitchApplication.beerTypesItem __beerTypesItem_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.beerTypesItem> es)
             {
-                return new global::LightSwitchApplication.driversItem(es);
+                return new global::LightSwitchApplication.beerTypesItem(es);
             }
-            private static void __driversItem_Created(global::LightSwitchApplication.driversItem e)
+            private static void __beerTypesItem_Created(global::LightSwitchApplication.beerTypesItem e)
             {
-                e.driversItem_Created();
+                e.beerTypesItem_Created();
             }
-            private static bool __driversItem_AllowSaveWithErrors(global::LightSwitchApplication.driversItem e)
+            private static bool __beerTypesItem_AllowSaveWithErrors(global::LightSwitchApplication.beerTypesItem e)
             {
                 bool result = false;
-                e.driversItem_AllowSaveWithErrors(ref result);
+                e.beerTypesItem_AllowSaveWithErrors(ref result);
                 return result;
             }
     
@@ -193,7 +238,7 @@ namespace LightSwitchApplication
             {
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass> Commands
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass> Commands
             {
                 get
                 {
@@ -201,7 +246,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass> Methods
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass> Methods
             {
                 get
                 {
@@ -209,7 +254,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::LightSwitchApplication.driversItem.DetailsClass.PropertySet Properties
+            public new global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySet Properties
             {
                 get
                 {
@@ -221,34 +266,50 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass>
+            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass>
             {
     
                 public PropertySet() : base()
                 {
                 }
     
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int> PK_drivers
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, int> id
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.PK_drivers) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>;
+                        return base.GetItem(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.id) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, int>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, string> driver
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, string> name
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.driver) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, string>;
+                        return base.GetItem(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.name) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, string>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int> truck
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem> beerSuppliers
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties.truck) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>;
+                        return base.GetItem(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.beerSuppliers) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeersItem> deliveredBeers
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.deliveredBeers) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem> storage
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.storage) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>;
                     }
                 }
                 
@@ -258,9 +319,11 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
             public interface IImplementation : global::Microsoft.LightSwitch.Internal.IEntityImplementation
             {
-                new int PK_drivers { get; }
-                new string driver { get; set; }
-                new int truck { get; set; }
+                new int id { get; }
+                new string name { get; set; }
+                new global::System.Collections.IEnumerable beerSuppliers { get; }
+                new global::System.Collections.IEnumerable deliveredBeers { get; }
+                new global::System.Collections.IEnumerable storage { get; }
             }
             #pragma warning restore 109
     
@@ -271,122 +334,151 @@ namespace LightSwitchApplication
             {
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Entry
-                    PK_drivers = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Entry(
-                        "PK_drivers",
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._PK_drivers_Stub,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._PK_drivers_ComputeIsReadOnly,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._PK_drivers_Validate,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._PK_drivers_GetImplementationValue,
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, int>.Entry
+                    id = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, int>.Entry(
+                        "id",
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._id_Stub,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._id_ComputeIsReadOnly,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._id_Validate,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._id_GetImplementationValue,
                         null,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._PK_drivers_OnValueChanged);
-                private static void _PK_drivers_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.driversItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.driversItem.DetailsClass d, object sf)
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._id_OnValueChanged);
+                private static void _id_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.beerTypesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.beerTypesItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._PK_drivers, sf);
+                    c(d, ref d._id, sf);
                 }
-                private static bool _PK_drivers_ComputeIsReadOnly(global::LightSwitchApplication.driversItem e)
+                private static bool _id_ComputeIsReadOnly(global::LightSwitchApplication.beerTypesItem e)
                 {
                     bool result = false;
-                    e.PK_drivers_IsReadOnly(ref result);
+                    e.id_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _PK_drivers_Validate(global::LightSwitchApplication.driversItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _id_Validate(global::LightSwitchApplication.beerTypesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.PK_drivers_Validate(r);
+                    e.id_Validate(r);
                 }
-                private static int _PK_drivers_GetImplementationValue(global::LightSwitchApplication.driversItem.DetailsClass d)
+                private static int _id_GetImplementationValue(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.PK_drivers;
+                    return d.ImplementationEntity.id;
                 }
-                private static void _PK_drivers_OnValueChanged(global::LightSwitchApplication.driversItem e)
+                private static void _id_OnValueChanged(global::LightSwitchApplication.beerTypesItem e)
                 {
-                    e.PK_drivers_Changed();
+                    e.id_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, string>.Entry
-                    driver = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, string>.Entry(
-                        "driver",
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._driver_Stub,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._driver_ComputeIsReadOnly,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._driver_Validate,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._driver_GetImplementationValue,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._driver_SetImplementationValue,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._driver_OnValueChanged);
-                private static void _driver_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.driversItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.driversItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, string>.Entry
+                    name = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, string>.Entry(
+                        "name",
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._name_Stub,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._name_ComputeIsReadOnly,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._name_Validate,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._name_GetImplementationValue,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._name_SetImplementationValue,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._name_OnValueChanged);
+                private static void _name_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.beerTypesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.beerTypesItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._driver, sf);
+                    c(d, ref d._name, sf);
                 }
-                private static bool _driver_ComputeIsReadOnly(global::LightSwitchApplication.driversItem e)
+                private static bool _name_ComputeIsReadOnly(global::LightSwitchApplication.beerTypesItem e)
                 {
                     bool result = false;
-                    e.driver_IsReadOnly(ref result);
+                    e.name_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _driver_Validate(global::LightSwitchApplication.driversItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _name_Validate(global::LightSwitchApplication.beerTypesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.driver_Validate(r);
+                    e.name_Validate(r);
                 }
-                private static string _driver_GetImplementationValue(global::LightSwitchApplication.driversItem.DetailsClass d)
+                private static string _name_GetImplementationValue(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.driver;
+                    return d.ImplementationEntity.name;
                 }
-                private static void _driver_SetImplementationValue(global::LightSwitchApplication.driversItem.DetailsClass d, string v)
+                private static void _name_SetImplementationValue(global::LightSwitchApplication.beerTypesItem.DetailsClass d, string v)
                 {
-                    d.ImplementationEntity.driver = v;
+                    d.ImplementationEntity.name = v;
                 }
-                private static void _driver_OnValueChanged(global::LightSwitchApplication.driversItem e)
+                private static void _name_OnValueChanged(global::LightSwitchApplication.beerTypesItem e)
                 {
-                    e.driver_Changed();
+                    e.name_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Entry
-                    truck = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Entry(
-                        "truck",
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._truck_Stub,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._truck_ComputeIsReadOnly,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._truck_Validate,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._truck_GetImplementationValue,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._truck_SetImplementationValue,
-                        global::LightSwitchApplication.driversItem.DetailsClass.PropertySetProperties._truck_OnValueChanged);
-                private static void _truck_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.driversItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.driversItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Entry
+                    beerSuppliers = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Entry(
+                        "beerSuppliers",
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._beerSuppliers_Stub,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._beerSuppliers_GetReferencedEntities,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._beerSuppliers_GetEntityCollection);
+                private static void _beerSuppliers_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.beerTypesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Data> c, global::LightSwitchApplication.beerTypesItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._truck, sf);
+                    c(d, ref d._beerSuppliers, sf);
                 }
-                private static bool _truck_ComputeIsReadOnly(global::LightSwitchApplication.driversItem e)
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.beerSuppliersItem> _beerSuppliers_GetReferencedEntities(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
                 {
-                    bool result = false;
-                    e.truck_IsReadOnly(ref result);
-                    return result;
+                    return d.GetReferencedEntities<global::LightSwitchApplication.beerSuppliersItem, global::LightSwitchApplication.beerSuppliersItem.DetailsClass>(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.beerSuppliers, ref d._beerSuppliers);
                 }
-                private static void _truck_Validate(global::LightSwitchApplication.driversItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static global::System.Collections.IEnumerable _beerSuppliers_GetEntityCollection(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
                 {
-                    e.truck_Validate(r);
+                    return d.ImplementationEntity.beerSuppliers;
                 }
-                private static int _truck_GetImplementationValue(global::LightSwitchApplication.driversItem.DetailsClass d)
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Entry
+                    deliveredBeers = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Entry(
+                        "deliveredBeers",
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._deliveredBeers_Stub,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._deliveredBeers_GetReferencedEntities,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._deliveredBeers_GetEntityCollection);
+                private static void _deliveredBeers_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.beerTypesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Data> c, global::LightSwitchApplication.beerTypesItem.DetailsClass d, object sf)
                 {
-                    return d.ImplementationEntity.truck;
+                    c(d, ref d._deliveredBeers, sf);
                 }
-                private static void _truck_SetImplementationValue(global::LightSwitchApplication.driversItem.DetailsClass d, int v)
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.deliveredBeersItem> _deliveredBeers_GetReferencedEntities(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
                 {
-                    d.ImplementationEntity.truck = v;
+                    return d.GetReferencedEntities<global::LightSwitchApplication.deliveredBeersItem, global::LightSwitchApplication.deliveredBeersItem.DetailsClass>(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.deliveredBeers, ref d._deliveredBeers);
                 }
-                private static void _truck_OnValueChanged(global::LightSwitchApplication.driversItem e)
+                private static global::System.Collections.IEnumerable _deliveredBeers_GetEntityCollection(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
                 {
-                    e.truck_Changed();
+                    return d.ImplementationEntity.deliveredBeers;
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>.Entry
+                    storage = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>.Entry(
+                        "storage",
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._storage_Stub,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._storage_GetReferencedEntities,
+                        global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties._storage_GetEntityCollection);
+                private static void _storage_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.beerTypesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>.Data> c, global::LightSwitchApplication.beerTypesItem.DetailsClass d, object sf)
+                {
+                    c(d, ref d._storage, sf);
+                }
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.storageItem> _storage_GetReferencedEntities(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
+                {
+                    return d.GetReferencedEntities<global::LightSwitchApplication.storageItem, global::LightSwitchApplication.storageItem.DetailsClass>(global::LightSwitchApplication.beerTypesItem.DetailsClass.PropertySetProperties.storage, ref d._storage);
+                }
+                private static global::System.Collections.IEnumerable _storage_GetEntityCollection(global::LightSwitchApplication.beerTypesItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.storage;
                 }
     
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Data _PK_drivers;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, int>.Data _id;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, string>.Data _driver;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, string>.Data _name;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.driversItem, global::LightSwitchApplication.driversItem.DetailsClass, int>.Data _truck;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.beerSuppliersItem>.Data _beerSuppliers;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.deliveredBeersItem>.Data _deliveredBeers;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.beerTypesItem, global::LightSwitchApplication.beerTypesItem.DetailsClass, global::LightSwitchApplication.storageItem>.Data _storage;
             
         }
     

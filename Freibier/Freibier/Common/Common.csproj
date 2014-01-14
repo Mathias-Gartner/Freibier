@@ -58,8 +58,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserCode\beerSuppliersItem.cs" />
-    <Compile Include="UserCode\orderedBeersItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\Common.lsml">
@@ -70,6 +68,9 @@
     <ServiceMetadataReference Include="..\Server\Server.csproj">
       <Visible>false</Visible>
     </ServiceMetadataReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserCode\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\LightSwitch\$(LightSwitchVersion)\Microsoft.LightSwitch.Build.Tasks.targets" />

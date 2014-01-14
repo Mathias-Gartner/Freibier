@@ -14,7 +14,7 @@ namespace LightSwitchApplication
     {
         partial void newDelivery_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
         {
-            this.deliveriesItemProperty = new delivery();
+            this.deliveriesItemProperty = new deliveriesItem();
         }
 
         partial void newDelivery_Saved()
