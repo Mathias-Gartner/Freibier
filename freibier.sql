@@ -384,7 +384,8 @@ BEGIN TRANSACTION READ_COMMITED
 COMMIT
 GO
 */
-DROP TRIGGER trig_orderedBeers_updateOrderPrice;
+IF OBJECT_ID (' trig_orderedBeers_updateOrderPrice', 'TR') IS NOT NULL
+	DROP TRIGGER trig_orderedBeers_updateOrderPrice;
 GO
 
 CREATE TRIGGER trig_orderedBeers_updateOrderPrice
@@ -409,7 +410,8 @@ BEGIN TRANSACTION SERIALIZABLE
 COMMIT
 GO
 
-DROP TRIGGER trig_orderedBeers_checkStorage;
+IF OBJECT_ID (' trig_orderedBeers_checkStorage', 'TR') IS NOT NULL
+	DROP TRIGGER trig_orderedBeers_checkStorage;
 GO
 
 CREATE TRIGGER trig_orderedBeers_checkStorage
@@ -439,8 +441,8 @@ BEGIN TRANSACTION SERIALIZABLE
 COMMIT
 GO
 
-
-DROP TRIGGER trig_orderedBeers_checkStorage;
+IF OBJECT_ID (' trig_orderedBeers_checkStorage', 'TR') IS NOT NULL
+	DROP TRIGGER trig_orderedBeers_checkStorage;
 GO
 
 CREATE TRIGGER trig_orderedBeers
@@ -565,21 +567,26 @@ GO
 -- End Procedures
 
 -- Views
-
+IF OBJECT_ID ('view_driver_nextDeliveries') IS NOT NULL
+	DROP VIEW view_driver_nextDeliveries;
+GO
 CREATE VIEW view_driver_nextDeliveries
 AS
 SELECT TOP 5 dbo.deliveries.deliveryDate, dbo.deliveries.invoiceNumber, dbo.deliveryDriverCarriages.carriage, dbo.deliveryDriverCarriages.amount, dbo.drivers.driver, 
 dbo.drivers.truckCapacity
 FROM dbo.deliveries 
-INNER JOIN dbo.deliveryDriverCarriages 
+JOIN dbo.deliveryDriverCarriages 
 ON dbo.deliveries.id = dbo.deliveryDriverCarriages.FK_deliveries 
-INNER JOIN  dbo.drivers 
+JOIN  dbo.drivers 
 ON dbo.deliveryDriverCarriages.FK_drivers = dbo.drivers.id
 WHERE dbo.deliveries.deliveryDate >= GETDATE()
-ORDER BY dbo.deliveries.deliveryDate DESC
+ORDER BY dbo.deliveries.deliveryDate ASC
 
 GO
 
+select * from deliveries
+
+select * from deliveryDriverCarriages
 -- End Views
 
 
@@ -980,7 +987,7 @@ VALUES
 	(4,'20140101','20140123','20140101',125,0)
 ;
 GO
-/*
+
 -- Insert Delivery Driver Carriages
 INSERT INTO deliveryDriverCarriages
 VALUES 
@@ -991,5 +998,4 @@ VALUES
 ;
 GO
 
-*/
 
