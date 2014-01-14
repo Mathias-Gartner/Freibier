@@ -361,12 +361,46 @@ GO
 
 
 
+-- Triggers
+DROP TRIGGER trig_order_orderBeer;
+GO
+
+CREATE TRIGGER trig_order_orderBeer
+ON [dbo].[orderedBeers]
+INSTEAD OF INSERT AS
+
+DECLARE @amount INT
+
+	SELECT @amount = storage.amount 
+	FROM [dbo].[storage] S INNER JOIN INSERTED I
+	ON S.[FK_beerTypes] = I.[FK_beerTypes]
+	;
+BEGIN TRANSACTION READ_COMMITED
+
+	SELECT @amount
+	;
+
+COMMIT
+GO
+
+-- End Triggers
+
+INSERT INTO [dbo].[orderedBeers] ([FK_beerTypes]) VALUES (1);
+
 -- Procedures
 /*
-das gui speichert die Daten selbst, aber nur die reine Benutzereingabe. Die Arbeit muss dann ein Trigger
-machen. Und dann hab ich im GUI noch Listen mit existierenden Datensätzen. Aus denen kann sich der
-Benutzer einen aussuchen und eine StoredProcedure mit der ID dieses Datensatzes als Parameter aufrufen.
+office würde dann zuerst orders absetzen um das lager zu füllen. Dann erfasst
+office eine Bestellung. Später holt sie ein Driver ab. Wenn sie komplett
+ausgeliefert ist, wird sie mittels procedure auf delivered gesetzt.
 */
+
+/*
+das gui speichert die Daten selbst, aber nur die reine Benutzereingabe. Die
+Arbeit muss dann ein Trigger machen. Und dann hab ich im GUI noch Listen mit
+existierenden Datensätzen. Aus denen kann sich der Benutzer einen aussuchen
+und eine StoredProcedure mit der ID dieses Datensatzes als Parameter aufrufen.
+*/
+
 CREATE PROCEDURE [usp_delivery_confirm] (@deliveryId int) AS
 
 	SET NOCOUNT ON 
@@ -376,6 +410,7 @@ CREATE PROCEDURE [usp_delivery_confirm] (@deliveryId int) AS
 
 	COMMIT
 GO
+
 
 -- End Procedures
 
@@ -397,10 +432,6 @@ GO
 
 -- End Views
 
--- Triggers
-
-
--- End Triggers
 
 ----------------
 -- End Database
@@ -740,10 +771,10 @@ GO
 -- Insert Suppliers
 INSERT INTO suppliers
 VALUES 
-	(N'Beer Drive',15,100,167),
-	(N'Speed Beer',15,100,167),
-	(N'Beer 2 Go',15,100,167),
-	(N'Beererer',15,100,167)
+	(N'Beer Drive',5,10,167),
+	(N'Speed Beer',10,50,167),
+	(N'Beer 2 Go',15,200,167),
+	(N'Beererer',20,500,167)
 ;
 GO
 
@@ -751,10 +782,18 @@ GO
 -- Insert Beer Suppliers
 INSERT INTO beerSuppliers
 VALUES 
-	(2,3,50),
-	(1,3,60),
+	(1,1,50),
+	(1,2,60),
+	(1,3,45),
+	(1,4,55),
+	(2,1,50),
+	(2,2,60),
+	(2,3,45),
+	(2,4,55),
+	(3,1,50),
+	(3,2,60),
 	(3,3,45),
-	(1,2,55)
+	(3,4,55)
 ;
 GO
 
