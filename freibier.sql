@@ -663,9 +663,19 @@ ORDER BY dbo.deliveries.deliveryDate ASC
 
 GO
 
-select * from deliveries
+IF OBJECT_ID ('view_storage_storageQuantity') IS NOT NULL
+	DROP VIEW view_storage_storageQuantity;
+GO
+CREATE VIEW view_storage_storageQuantity
+AS
+select name, amount from storage s join beerTypes b
+on s.FK_beerTypes = b.id
+union
+select name, amount from supplierStorage s join suppliers sup
+on s.FK_suppliers = sup.id
+join beerSuppliers b on b.FK_suppliers = sup.id
 
-select * from deliveryDriverCarriages
+GO
 -- End Views
 
 
