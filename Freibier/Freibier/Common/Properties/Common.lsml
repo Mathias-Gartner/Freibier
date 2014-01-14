@@ -24,1764 +24,12 @@
       </EntityContainerGroupProperty.Attributes>
     </EntityContainerGroupProperty>
     <EntityContainerGroupProperty
-      EntityContainer="freibierDB"
-      Name="freibierDB" />
-    <EntityContainerGroupProperty
       EntityContainer="ApplicationData"
       Name="ApplicationData" />
+    <EntityContainerGroupProperty
+      EntityContainer="freibierDB"
+      Name="freibierDB" />
   </EntityContainerGroup>
-  <EntityType
-    Name="beerRecipientsItem">
-    <EntityType.Methods>
-      <EntityMethod
-        Name="Delete">
-        <EntityMethod.Attributes>
-          <Generated />
-        </EntityMethod.Attributes>
-      </EntityMethod>
-    </EntityType.Methods>
-    <EntityType.Properties>
-      <KeyProperty
-        IsReadOnly="True"
-        Name="PK_beerRecipients"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Hidden />
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <EntityProperty
-        Name="name"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="50" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="address"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="100" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="phone"
-        PropertyType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="30" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="mail"
-        PropertyType="Microsoft.LightSwitch.Extensions:EmailAddress?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="30" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Association="FK_beerRecipients_countries"
-        FromEnd="beerRecipients"
-        Name="country"
-        ToEnd="countries" />
-      <NavigationProperty
-        Association="FK_deliveries_beerRecipients"
-        FromEnd="beerRecipients"
-        Name="deliveries"
-        ToEnd="deliveries" />
-    </EntityType.Properties>
-  </EntityType>
-  <EntityType
-    Name="beerSuppliersItem">
-    <EntityType.Methods>
-      <EntityMethod
-        Name="Delete">
-        <EntityMethod.Attributes>
-          <Generated />
-        </EntityMethod.Attributes>
-      </EntityMethod>
-    </EntityType.Methods>
-    <EntityType.Properties>
-      <KeyProperty
-        IsReadOnly="True"
-        Name="PK_beerSuppliers"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Hidden />
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <NavigationProperty
-        Association="FK_beerSuppliers_beerTypes"
-        FromEnd="beerSuppliers"
-        Name="beerType"
-        ToEnd="beerTypes" />
-      <NavigationProperty
-        Association="FK_beerSuppliers_suppliers"
-        FromEnd="beerSuppliers"
-        Name="supplier"
-        ToEnd="suppliers" />
-      <EntityProperty
-        Name="price"
-        PropertyType=":Decimal">
-        <EntityProperty.Attributes>
-          <Required />
-          <DecimalConstraint
-            Precision="19"
-            Scale="4" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Association="FK_orderedBeers_beerSuppliers"
-        FromEnd="beerSuppliers"
-        Name="orderedBeers"
-        ToEnd="orderedBeers" />
-    </EntityType.Properties>
-  </EntityType>
-  <EntityType
-    Name="beerTypesItem">
-    <EntityType.Methods>
-      <EntityMethod
-        Name="Delete">
-        <EntityMethod.Attributes>
-          <Generated />
-        </EntityMethod.Attributes>
-      </EntityMethod>
-    </EntityType.Methods>
-    <EntityType.Properties>
-      <KeyProperty
-        IsReadOnly="True"
-        Name="PK_beerTypes"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Hidden />
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <NavigationProperty
-        Association="FK_beerSuppliers_beerTypes"
-        FromEnd="beerTypes"
-        Name="beerSuppliers"
-        ToEnd="beerSuppliers" />
-      <NavigationProperty
-        Association="FK_deliveredBeers_beerTypes"
-        FromEnd="beerTypes"
-        Name="deliveredBeers"
-        ToEnd="deliveredBeers" />
-      <EntityProperty
-        Name="name"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="50" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-    </EntityType.Properties>
-  </EntityType>
-  <EntityType
-    Name="countriesItem">
-    <EntityType.Methods>
-      <EntityMethod
-        Name="Delete">
-        <EntityMethod.Attributes>
-          <Generated />
-        </EntityMethod.Attributes>
-      </EntityMethod>
-    </EntityType.Methods>
-    <EntityType.Properties>
-      <KeyProperty
-        IsReadOnly="True"
-        Name="PK_countries"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Hidden />
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <EntityProperty
-        Name="customs"
-        PropertyType=":Decimal">
-        <EntityProperty.Attributes>
-          <Required />
-          <DecimalConstraint
-            Precision="19"
-            Scale="4" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="distance"
-        PropertyType=":Int32">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Association="FK_beerRecipients_countries"
-        FromEnd="countries"
-        Name="beerRecipients"
-        ToEnd="beerRecipients" />
-      <NavigationProperty
-        Association="FK_suppliers_countries"
-        FromEnd="countries"
-        Name="suppliers"
-        ToEnd="suppliers" />
-      <EntityProperty
-        Name="name"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="60" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-    </EntityType.Properties>
-  </EntityType>
-  <EntityType
-    Name="deliveredBeersItem">
-    <EntityType.Methods>
-      <EntityMethod
-        Name="Delete">
-        <EntityMethod.Attributes>
-          <Generated />
-        </EntityMethod.Attributes>
-      </EntityMethod>
-    </EntityType.Methods>
-    <EntityType.Properties>
-      <KeyProperty
-        IsReadOnly="True"
-        Name="PK_deliveredBeers"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Hidden />
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <EntityProperty
-        Name="amount"
-        PropertyType=":Int32">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Association="FK_deliveredBeers_beerTypes"
-        FromEnd="deliveredBeers"
-        Name="beerType"
-        ToEnd="beerTypes" />
-      <NavigationProperty
-        Association="FK_deliveredBeers_deliveries"
-        FromEnd="deliveredBeers"
-        Name="delivery"
-        ToEnd="deliveries" />
-    </EntityType.Properties>
-  </EntityType>
-  <EntityType
-    Name="deliveriesItem">
-    <EntityType.Methods>
-      <EntityMethod
-        Name="Delete">
-        <EntityMethod.Attributes>
-          <Generated />
-        </EntityMethod.Attributes>
-      </EntityMethod>
-    </EntityType.Methods>
-    <EntityType.Properties>
-      <KeyProperty
-        IsReadOnly="True"
-        Name="PK_deliveries"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Hidden />
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <EntityProperty
-        Name="orderDate"
-        PropertyType=":Date">
-        <EntityProperty.Attributes>
-          <Required />
-          <DateTimeConstraint
-            Kind="Unspecified"
-            Precision="0"
-            PreserveSeconds="True" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="deliveryDate"
-        PropertyType=":Date">
-        <EntityProperty.Attributes>
-          <Required />
-          <DateTimeConstraint
-            Kind="Unspecified"
-            Precision="0"
-            PreserveSeconds="True" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="billingDate"
-        PropertyType=":Date?">
-        <EntityProperty.Attributes>
-          <DateTimeConstraint
-            Kind="Unspecified"
-            Precision="0"
-            PreserveSeconds="True" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="invoiceNumber"
-        PropertyType=":Int32?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Association="FK_deliveredBeers_deliveries"
-        FromEnd="deliveries"
-        Name="deliveredBeers"
-        ToEnd="deliveredBeers" />
-      <NavigationProperty
-        Association="FK_deliveries_beerRecipients"
-        FromEnd="deliveries"
-        Name="beerRecipient"
-        ToEnd="beerRecipients" />
-    </EntityType.Properties>
-  </EntityType>
-  <EntityType
-    Name="driversItem">
-    <EntityType.Methods>
-      <EntityMethod
-        Name="Delete">
-        <EntityMethod.Attributes>
-          <Generated />
-        </EntityMethod.Attributes>
-      </EntityMethod>
-    </EntityType.Methods>
-    <EntityType.Properties>
-      <KeyProperty
-        IsReadOnly="True"
-        Name="PK_drivers"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Hidden />
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <EntityProperty
-        Name="driver"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="50" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="truck"
-        PropertyType=":Int32">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-    </EntityType.Properties>
-  </EntityType>
-  <EntityType
-    Name="orderedBeersItem">
-    <EntityType.Methods>
-      <EntityMethod
-        Name="Delete">
-        <EntityMethod.Attributes>
-          <Generated />
-        </EntityMethod.Attributes>
-      </EntityMethod>
-    </EntityType.Methods>
-    <EntityType.Properties>
-      <KeyProperty
-        IsReadOnly="True"
-        Name="PK_orderedBeers"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Hidden />
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <EntityProperty
-        Name="amount"
-        PropertyType=":Int32">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="price"
-        PropertyType=":Decimal">
-        <EntityProperty.Attributes>
-          <Required />
-          <DecimalConstraint
-            Precision="19"
-            Scale="4" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Association="Order_orderedBeersItem1"
-        FromEnd="orderedBeers"
-        Name="Order"
-        ToEnd="Order" />
-      <NavigationProperty
-        Association="FK_orderedBeers_beerSuppliers"
-        FromEnd="orderedBeers"
-        Name="beerSupplier"
-        ToEnd="beerSuppliers" />
-    </EntityType.Properties>
-  </EntityType>
-  <EntityType
-    Name="Order">
-    <EntityType.Methods>
-      <EntityMethod
-        Name="Delete">
-        <EntityMethod.Attributes>
-          <Generated />
-        </EntityMethod.Attributes>
-      </EntityMethod>
-    </EntityType.Methods>
-    <EntityType.Properties>
-      <KeyProperty
-        IsReadOnly="True"
-        Name="PK_orders"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Hidden />
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <EntityProperty
-        Name="price"
-        PropertyType=":Decimal">
-        <EntityProperty.Attributes>
-          <Required />
-          <DecimalConstraint
-            Precision="19"
-            Scale="4" />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="received"
-        PropertyType=":Boolean">
-        <EntityProperty.Attributes>
-          <Required />
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Association="Order_orderedBeersItem1"
-        FromEnd="Order"
-        Name="orderedBeers"
-        ToEnd="orderedBeers" />
-      <NavigationProperty
-        Association="suppliersItem_Order1"
-        FromEnd="Order"
-        Name="supplier"
-        ToEnd="suppliers" />
-    </EntityType.Properties>
-  </EntityType>
-  <EntityType
-    Name="suppliersItem">
-    <EntityType.Methods>
-      <EntityMethod
-        Name="Delete">
-        <EntityMethod.Attributes>
-          <Generated />
-        </EntityMethod.Attributes>
-      </EntityMethod>
-    </EntityType.Methods>
-    <EntityType.Properties>
-      <KeyProperty
-        IsReadOnly="True"
-        Name="PK_suppliers"
-        PropertyType=":Int32">
-        <KeyProperty.Attributes>
-          <Hidden />
-          <Required />
-          <NotSearchable />
-        </KeyProperty.Attributes>
-      </KeyProperty>
-      <EntityProperty
-        Name="name"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-          <MaxLength
-            Value="50" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="address"
-        PropertyType=":String?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="100" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="phone"
-        PropertyType="Microsoft.LightSwitch.Extensions:PhoneNumber?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="30" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="mail"
-        PropertyType="Microsoft.LightSwitch.Extensions:EmailAddress?">
-        <EntityProperty.Attributes>
-          <MaxLength
-            Value="30" />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <NavigationProperty
-        Association="suppliersItem_Order1"
-        FromEnd="suppliers"
-        Name="orders"
-        ToEnd="Order" />
-      <NavigationProperty
-        Association="FK_suppliers_countries"
-        FromEnd="suppliers"
-        Name="country"
-        ToEnd="countries" />
-      <NavigationProperty
-        Association="FK_beerSuppliers_suppliers"
-        FromEnd="suppliers"
-        Name="beerSuppliers"
-        ToEnd="beerSuppliers" />
-      <EntityProperty
-        Name="volumeDiscountPercent"
-        PropertyType=":Int32?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-      <EntityProperty
-        Name="volumeDiscountRequiredQuantity"
-        PropertyType=":Int32?">
-        <EntityProperty.Attributes>
-          <NotSearchable />
-        </EntityProperty.Attributes>
-      </EntityProperty>
-    </EntityType.Properties>
-  </EntityType>
-  <Association
-    Name="FK_beerRecipients_countries">
-    <AssociationEnd
-      EntityType="countriesItem"
-      Multiplicity="One"
-      Name="countries">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Unset" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      EntityType="beerRecipientsItem"
-      Multiplicity="Many"
-      Name="beerRecipients" />
-  </Association>
-  <Association
-    Name="FK_beerSuppliers_beerTypes">
-    <AssociationEnd
-      EntityType="beerTypesItem"
-      Multiplicity="One"
-      Name="beerTypes">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Unset" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      EntityType="beerSuppliersItem"
-      Multiplicity="Many"
-      Name="beerSuppliers" />
-  </Association>
-  <Association
-    Name="FK_deliveredBeers_beerTypes">
-    <AssociationEnd
-      EntityType="beerTypesItem"
-      Multiplicity="One"
-      Name="beerTypes">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Unset" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      EntityType="deliveredBeersItem"
-      Multiplicity="Many"
-      Name="deliveredBeers" />
-  </Association>
-  <Association
-    Name="FK_deliveredBeers_deliveries">
-    <AssociationEnd
-      EntityType="deliveriesItem"
-      Multiplicity="One"
-      Name="deliveries">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Unset" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      EntityType="deliveredBeersItem"
-      Multiplicity="Many"
-      Name="deliveredBeers" />
-  </Association>
-  <Association
-    Name="FK_deliveries_beerRecipients">
-    <AssociationEnd
-      EntityType="beerRecipientsItem"
-      Multiplicity="One"
-      Name="beerRecipients">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Unset" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      EntityType="deliveriesItem"
-      Multiplicity="Many"
-      Name="deliveries" />
-  </Association>
-  <Association
-    Name="Order_orderedBeersItem1">
-    <AssociationEnd
-      EntityType="Order"
-      Multiplicity="One"
-      Name="Order">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Unset" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      EntityType="orderedBeersItem"
-      Multiplicity="Many"
-      Name="orderedBeers" />
-  </Association>
-  <Association
-    Name="suppliersItem_Order1">
-    <AssociationEnd
-      EntityType="suppliersItem"
-      Multiplicity="One"
-      Name="suppliers">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Unset" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      EntityType="Order"
-      Multiplicity="Many"
-      Name="Order" />
-  </Association>
-  <Association
-    Name="FK_suppliers_countries">
-    <AssociationEnd
-      EntityType="countriesItem"
-      Multiplicity="One"
-      Name="countries">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Unset" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      EntityType="suppliersItem"
-      Multiplicity="Many"
-      Name="suppliers" />
-  </Association>
-  <EntityContainer
-    Name="freibierDB">
-    <EntitySet
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="beerRecipientsItem"
-      Name="beerRecipients" />
-    <EntitySet
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="beerSuppliersItem"
-      Name="beerSuppliers" />
-    <EntitySet
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="beerTypesItem"
-      Name="beerTypes" />
-    <EntitySet
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="countriesItem"
-      Name="countries" />
-    <EntitySet
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="deliveredBeersItem"
-      Name="deliveredBeers" />
-    <EntitySet
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="deliveriesItem"
-      Name="deliveries" />
-    <EntitySet
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="driversItem"
-      Name="drivers" />
-    <EntitySet
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="orderedBeersItem"
-      Name="orderedBeers" />
-    <EntitySet
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="Order"
-      Name="orders" />
-    <EntitySet
-      CanDelete="True"
-      CanInsert="True"
-      CanUpdate="True"
-      EntityType="suppliersItem"
-      Name="suppliers" />
-    <AssociationSet
-      Association="FK_beerRecipients_countries"
-      Name="FK_beerRecipients_countries">
-      <AssociationSetEnd
-        EntitySet="countries"
-        Name="countries" />
-      <AssociationSetEnd
-        EntitySet="beerRecipients"
-        Name="beerRecipients" />
-    </AssociationSet>
-    <AssociationSet
-      Association="FK_beerSuppliers_beerTypes"
-      Name="FK_beerSuppliers_beerTypes">
-      <AssociationSetEnd
-        EntitySet="beerTypes"
-        Name="beerTypes" />
-      <AssociationSetEnd
-        EntitySet="beerSuppliers"
-        Name="beerSuppliers" />
-    </AssociationSet>
-    <AssociationSet
-      Association="FK_deliveredBeers_beerTypes"
-      Name="FK_deliveredBeers_beerTypes">
-      <AssociationSetEnd
-        EntitySet="beerTypes"
-        Name="beerTypes" />
-      <AssociationSetEnd
-        EntitySet="deliveredBeers"
-        Name="deliveredBeers" />
-    </AssociationSet>
-    <AssociationSet
-      Association="FK_deliveredBeers_deliveries"
-      Name="FK_deliveredBeers_deliveries">
-      <AssociationSetEnd
-        EntitySet="deliveries"
-        Name="deliveries" />
-      <AssociationSetEnd
-        EntitySet="deliveredBeers"
-        Name="deliveredBeers" />
-    </AssociationSet>
-    <AssociationSet
-      Association="FK_deliveries_beerRecipients"
-      Name="FK_deliveries_beerRecipients">
-      <AssociationSetEnd
-        EntitySet="beerRecipients"
-        Name="beerRecipients" />
-      <AssociationSetEnd
-        EntitySet="deliveries"
-        Name="deliveries" />
-    </AssociationSet>
-    <AssociationSet
-      Association="Order_orderedBeersItem1"
-      Name="FK_orderedBeers_orders">
-      <AssociationSetEnd
-        EntitySet="orders"
-        Name="Order" />
-      <AssociationSetEnd
-        EntitySet="orderedBeers"
-        Name="orderedBeers" />
-    </AssociationSet>
-    <AssociationSet
-      Association="suppliersItem_Order1"
-      Name="FK_orders_suppliers">
-      <AssociationSetEnd
-        EntitySet="suppliers"
-        Name="suppliers" />
-      <AssociationSetEnd
-        EntitySet="orders"
-        Name="Order" />
-    </AssociationSet>
-    <AssociationSet
-      Association="FK_suppliers_countries"
-      Name="FK_suppliers_countries">
-      <AssociationSetEnd
-        EntitySet="countries"
-        Name="countries" />
-      <AssociationSetEnd
-        EntitySet="suppliers"
-        Name="suppliers" />
-    </AssociationSet>
-    <SubmitOperation
-      Name="SaveChanges" />
-    <QueryOperation
-      Name="beerRecipients_Single"
-      ReturnType="beerRecipientsItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_beerRecipients" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_beerRecipients" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="beerRecipients" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_beerRecipients"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_beerRecipients-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="beerRecipients_SingleOrDefault"
-      ReturnType="beerRecipientsItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_beerRecipients" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_beerRecipients" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="beerRecipients" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_beerRecipients"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_beerRecipients-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="beerSuppliers_Single"
-      ReturnType="beerSuppliersItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_beerSuppliers" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_beerSuppliers" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="beerSuppliers" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_beerSuppliers"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_beerSuppliers-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="beerSuppliers_SingleOrDefault"
-      ReturnType="beerSuppliersItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_beerSuppliers" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_beerSuppliers" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="beerSuppliers" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_beerSuppliers"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_beerSuppliers-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="beerTypes_Single"
-      ReturnType="beerTypesItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_beerTypes" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_beerTypes" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="beerTypes" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_beerTypes"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_beerTypes-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="beerTypes_SingleOrDefault"
-      ReturnType="beerTypesItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_beerTypes" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_beerTypes" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="beerTypes" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_beerTypes"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_beerTypes-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="countries_Single"
-      ReturnType="countriesItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_countries" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_countries" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="countries" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_countries"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_countries-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="countries_SingleOrDefault"
-      ReturnType="countriesItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_countries" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_countries" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="countries" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_countries"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_countries-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="deliveredBeers_Single"
-      ReturnType="deliveredBeersItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_deliveredBeers" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_deliveredBeers" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="deliveredBeers" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_deliveredBeers"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_deliveredBeers-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="deliveredBeers_SingleOrDefault"
-      ReturnType="deliveredBeersItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_deliveredBeers" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_deliveredBeers" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="deliveredBeers" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_deliveredBeers"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_deliveredBeers-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="deliveries_Single"
-      ReturnType="deliveriesItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_deliveries" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_deliveries" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="deliveries" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_deliveries"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_deliveries-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="deliveries_SingleOrDefault"
-      ReturnType="deliveriesItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_deliveries" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_deliveries" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="deliveries" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_deliveries"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_deliveries-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="drivers_Single"
-      ReturnType="driversItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_drivers" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_drivers" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="drivers" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_drivers"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_drivers-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="drivers_SingleOrDefault"
-      ReturnType="driversItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_drivers" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_drivers" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="drivers" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_drivers"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_drivers-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="orderedBeers_Single"
-      ReturnType="orderedBeersItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_orderedBeers" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_orderedBeers" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="orderedBeers" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_orderedBeers"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_orderedBeers-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="orderedBeers_SingleOrDefault"
-      ReturnType="orderedBeersItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_orderedBeers" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_orderedBeers" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="orderedBeers" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_orderedBeers"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_orderedBeers-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="orders_Single"
-      ReturnType="Order">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_orders" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_orders" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="orders" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_orders"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_orders-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="orders_SingleOrDefault"
-      ReturnType="Order">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_orders" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_orders" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="orders" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_orders"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_orders-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="suppliers_Single"
-      ReturnType="suppliersItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_suppliers" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_suppliers" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="suppliers" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_suppliers"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_suppliers-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <QueryOperation
-      Name="suppliers_SingleOrDefault"
-      ReturnType="suppliersItem">
-      <QueryOperation.Attributes>
-        <Generated />
-        <Description
-          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
-      </QueryOperation.Attributes>
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="PK_suppliers" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="PK_suppliers" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="suppliers" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="PK_suppliers"
-        ParameterType=":Int32?">
-        <QueryOperationParameter.Attributes>
-          <Description
-            Value="Der Wert der PK_suppliers-Schlüsseleigenschaft der abzurufenden Entität." />
-        </QueryOperationParameter.Attributes>
-      </QueryOperationParameter>
-    </QueryOperation>
-    <AssociationSet
-      Association="FK_beerSuppliers_suppliers"
-      Name="FK_beerSuppliers_suppliers">
-      <AssociationSetEnd
-        EntitySet="suppliers"
-        Name="suppliers" />
-      <AssociationSetEnd
-        EntitySet="beerSuppliers"
-        Name="beerSuppliers" />
-    </AssociationSet>
-    <AssociationSet
-      Association="FK_orderedBeers_beerSuppliers"
-      Name="FK_orderedBeers_beerSuppliers">
-      <AssociationSetEnd
-        EntitySet="beerSuppliers"
-        Name="beerSuppliers" />
-      <AssociationSetEnd
-        EntitySet="orderedBeers"
-        Name="orderedBeers" />
-    </AssociationSet>
-    <QueryOperation
-      Name="beerSuppliersBySupplier"
-      ReturnType="beerSuppliersItem*">
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="supplier" />
-                <MemberExpression
-                  Member="PK_suppliers" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="supplier" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="beerSuppliers" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="supplier"
-        ParameterType=":Int32?" />
-    </QueryOperation>
-    <QueryOperation
-      Name="orderedBeersByOrder"
-      ReturnType="orderedBeersItem*">
-      <QueryOperation.FilterExpression>
-        <QueryFilterExpressionTree>
-          <BinaryExpression
-            NodeType="Equal">
-            <BinaryExpression.Left>
-              <ChainExpression>
-                <MemberExpression
-                  Member="Order" />
-                <MemberExpression
-                  Member="PK_orders" />
-              </ChainExpression>
-            </BinaryExpression.Left>
-            <BinaryExpression.Right>
-              <ParameterExpression
-                Parameter="order" />
-            </BinaryExpression.Right>
-          </BinaryExpression>
-        </QueryFilterExpressionTree>
-      </QueryOperation.FilterExpression>
-      <QueryOperation.Source>
-        <QuerySourceExpressionTree>
-          <MemberExpression
-            Member="orderedBeers" />
-        </QuerySourceExpressionTree>
-      </QueryOperation.Source>
-      <QueryOperationParameter
-        Name="order"
-        ParameterType=":Int32?" />
-    </QueryOperation>
-  </EntityContainer>
-  <Association
-    Name="FK_beerSuppliers_suppliers">
-    <AssociationEnd
-      EntityType="suppliersItem"
-      Multiplicity="One"
-      Name="suppliers">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Unset" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      EntityType="beerSuppliersItem"
-      Multiplicity="Many"
-      Name="beerSuppliers" />
-  </Association>
-  <Association
-    Name="FK_orderedBeers_beerSuppliers">
-    <AssociationEnd
-      EntityType="beerSuppliersItem"
-      Multiplicity="One"
-      Name="beerSuppliers">
-      <AssociationEnd.Attributes>
-        <DeleteRule
-          Action="Unset" />
-      </AssociationEnd.Attributes>
-    </AssociationEnd>
-    <AssociationEnd
-      EntityType="orderedBeersItem"
-      Multiplicity="Many"
-      Name="orderedBeers" />
-  </Association>
   <EntityContainer
     IsIntrinsic="True"
     Name="ApplicationData">
@@ -1792,9 +40,9 @@
       CanInsert="True"
       CanUpdate="True"
       EntityType="DeliveryConfirmOperation"
-      Name="OrderBuySuppliesOperations" />
+      Name="DeliveryConfirmOperations" />
     <QueryOperation
-      Name="OrderBuySuppliesOperations_Single"
+      Name="DeliveryConfirmOperations_Single"
       ReturnType="DeliveryConfirmOperation">
       <QueryOperation.Attributes>
         <Generated />
@@ -1821,7 +69,7 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="OrderBuySuppliesOperations" />
+            Member="DeliveryConfirmOperations" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -1834,7 +82,7 @@
       </QueryOperationParameter>
     </QueryOperation>
     <QueryOperation
-      Name="OrderBuySuppliesOperations_SingleOrDefault"
+      Name="DeliveryConfirmOperations_SingleOrDefault"
       ReturnType="DeliveryConfirmOperation">
       <QueryOperation.Attributes>
         <Generated />
@@ -1861,7 +109,265 @@
       <QueryOperation.Source>
         <QuerySourceExpressionTree>
           <MemberExpression
-            Member="OrderBuySuppliesOperations" />
+            Member="DeliveryConfirmOperations" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="OrderReceivedOperation"
+      Name="OrderReceivedOperations" />
+    <QueryOperation
+      Name="OrderReceivedOperations_Single"
+      ReturnType="OrderReceivedOperation">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="OrderReceivedOperations" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="OrderReceivedOperations_SingleOrDefault"
+      ReturnType="OrderReceivedOperation">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="OrderReceivedOperations" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="OrderGetFreightOperation"
+      Name="OrderGetFreightOperations" />
+    <QueryOperation
+      Name="OrderGetFreightOperations_Single"
+      ReturnType="OrderGetFreightOperation">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="OrderGetFreightOperations" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="OrderGetFreightOperations_SingleOrDefault"
+      ReturnType="OrderGetFreightOperation">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="OrderGetFreightOperations" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="DeliveryGetFreightOperation"
+      Name="DeliveryGetFreightOperations" />
+    <QueryOperation
+      Name="DeliveryGetFreightOperations_Single"
+      ReturnType="DeliveryGetFreightOperation">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="DeliveryGetFreightOperations" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="Id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der Id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="DeliveryGetFreightOperations_SingleOrDefault"
+      ReturnType="DeliveryGetFreightOperation">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="Id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="Id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="DeliveryGetFreightOperations" />
         </QuerySourceExpressionTree>
       </QueryOperation.Source>
       <QueryOperationParameter
@@ -1927,6 +433,2843 @@
             Value="255" />
         </EntityProperty.Attributes>
       </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="OrderReceivedOperation">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OrderId"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ExecutionError"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+          <Required />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ErrorMessage"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <Permission
+    Name="Office">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Office personell" />
+      <Description
+        Value="Enables all Screens." />
+    </Permission.Attributes>
+  </Permission>
+  <Permission
+    Name="Driver">
+    <Permission.Attributes>
+      <DisplayName
+        Value="Truck driver" />
+      <Description
+        Value="Limited to only the Get Freight and Confirm delivery Screens." />
+    </Permission.Attributes>
+  </Permission>
+  <EntityType
+    Name="beerRecipientsItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="30" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK__beerRecip__FK_co__20C1E124"
+        FromEnd="beerRecipients"
+        Name="countriesItem"
+        ToEnd="countries" />
+      <NavigationProperty
+        Association="FK__contactDe__FK_be__24927208"
+        FromEnd="beerRecipients"
+        Name="contactDetails"
+        ToEnd="contactDetails" />
+      <NavigationProperty
+        Association="FK__deliverie__FK_be__2C3393D0"
+        FromEnd="beerRecipients"
+        Name="deliveries"
+        ToEnd="deliveries" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="beerSuppliersItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="price"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK__beerSuppl__FK_be__1A14E395"
+        FromEnd="beerSuppliers"
+        Name="beerTypesItem"
+        ToEnd="beerTypes" />
+      <NavigationProperty
+        Association="FK__beerSuppl__FK_su__1920BF5C"
+        FromEnd="beerSuppliers"
+        Name="suppliersItem"
+        ToEnd="suppliers" />
+      <NavigationProperty
+        Association="FK__orderedBe__FK_be__34C8D9D1"
+        FromEnd="beerSuppliers"
+        Name="orderedBeers"
+        ToEnd="orderedBeers" />
+      <NavigationProperty
+        Association="FK__supplierS__FK_be__45F365D3"
+        FromEnd="beerSuppliers"
+        Name="supplierStorage"
+        ToEnd="supplierStorage" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="beerTypesItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="60" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK__beerSuppl__FK_be__1A14E395"
+        FromEnd="beerTypes"
+        Name="beerSuppliers"
+        ToEnd="beerSuppliers" />
+      <NavigationProperty
+        Association="FK__delivered__FK_be__3A81B327"
+        FromEnd="beerTypes"
+        Name="deliveredBeers"
+        ToEnd="deliveredBeers" />
+      <NavigationProperty
+        Association="FK__storage__FK_beer__1CF15040"
+        FromEnd="beerTypes"
+        Name="storage"
+        ToEnd="storage" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="contactDetailsItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="street"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="30" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="number"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ZIP"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="10" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="city"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="30" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="state"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="30" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="phone"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="email"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="30" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK__contactDe__FK_be__24927208"
+        FromEnd="contactDetails"
+        Name="beerRecipientsItem"
+        ToEnd="beerRecipients" />
+      <NavigationProperty
+        Association="FK__contactDe__FK_su__239E4DCF"
+        FromEnd="contactDetails"
+        Name="suppliersItem"
+        ToEnd="suppliers" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="countriesItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="60" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="customs"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="19"
+            Scale="4" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="distance"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK__beerRecip__FK_co__20C1E124"
+        FromEnd="countries"
+        Name="beerRecipients"
+        ToEnd="beerRecipients" />
+      <NavigationProperty
+        Association="FK__suppliers__FK_co__164452B1"
+        FromEnd="countries"
+        Name="suppliers"
+        ToEnd="suppliers" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="deliveredBeersItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="amount"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK__delivered__FK_be__3A81B327"
+        FromEnd="deliveredBeers"
+        Name="beerTypesItem"
+        ToEnd="beerTypes" />
+      <NavigationProperty
+        Association="FK__delivered__FK_de__398D8EEE"
+        FromEnd="deliveredBeers"
+        Name="deliveriesItem"
+        ToEnd="deliveries" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="deliveriesItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="orderDate"
+        PropertyType=":Date">
+        <EntityProperty.Attributes>
+          <Required />
+          <DateTimeConstraint
+            Kind="Unspecified"
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="deliveryDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Kind="Unspecified"
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="billingDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Kind="Unspecified"
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="invoiceNumber"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="delivered"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK__delivered__FK_de__398D8EEE"
+        FromEnd="deliveries"
+        Name="deliveredBeers"
+        ToEnd="deliveredBeers" />
+      <NavigationProperty
+        Association="FK__deliverie__FK_be__2C3393D0"
+        FromEnd="deliveries"
+        Name="beerRecipientsItem"
+        ToEnd="beerRecipients" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="driversItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="driver"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="truckCapacity"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="orderedBeersItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="amount"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="price"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="19"
+            Scale="4" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK__orderedBe__FK_be__34C8D9D1"
+        FromEnd="orderedBeers"
+        Name="beerSuppliersItem"
+        ToEnd="beerSuppliers" />
+      <NavigationProperty
+        Association="FK__orderedBe__FK_or__33D4B598"
+        FromEnd="orderedBeers"
+        Name="ordersItem"
+        ToEnd="orders" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="ordersItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="price"
+        PropertyType=":Decimal">
+        <EntityProperty.Attributes>
+          <Required />
+          <DecimalConstraint
+            Precision="19"
+            Scale="4" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="received"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK__orderedBe__FK_or__33D4B598"
+        FromEnd="orders"
+        Name="orderedBeers"
+        ToEnd="orderedBeers" />
+      <NavigationProperty
+        Association="FK__orders__FK_suppl__276EDEB3"
+        FromEnd="orders"
+        Name="suppliersItem"
+        ToEnd="suppliers" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="storageItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="amount"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK__storage__FK_beer__1CF15040"
+        FromEnd="storage"
+        Name="beerTypesItem"
+        ToEnd="beerTypes" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="suppliersItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="name"
+        PropertyType=":String">
+        <EntityProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="15" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="volumeDiscountPercent"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="volumeDiscountRequiredQuantity"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK__beerSuppl__FK_su__1920BF5C"
+        FromEnd="suppliers"
+        Name="beerSuppliers"
+        ToEnd="beerSuppliers" />
+      <NavigationProperty
+        Association="FK__contactDe__FK_su__239E4DCF"
+        FromEnd="suppliers"
+        Name="contactDetails"
+        ToEnd="contactDetails" />
+      <NavigationProperty
+        Association="FK__orders__FK_suppl__276EDEB3"
+        FromEnd="suppliers"
+        Name="orders"
+        ToEnd="orders" />
+      <NavigationProperty
+        Association="FK__suppliers__FK_co__164452B1"
+        FromEnd="suppliers"
+        Name="countriesItem"
+        ToEnd="countries" />
+      <NavigationProperty
+        Association="FK__supplierS__FK_su__44FF419A"
+        FromEnd="suppliers"
+        Name="supplierStorage"
+        ToEnd="supplierStorage" />
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="supplierStorageItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        IsReadOnly="True"
+        Name="id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Hidden />
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="amount"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <NavigationProperty
+        Association="FK__supplierS__FK_be__45F365D3"
+        FromEnd="supplierStorage"
+        Name="beerSuppliersItem"
+        ToEnd="beerSuppliers" />
+      <NavigationProperty
+        Association="FK__supplierS__FK_su__44FF419A"
+        FromEnd="supplierStorage"
+        Name="suppliersItem"
+        ToEnd="suppliers" />
+    </EntityType.Properties>
+  </EntityType>
+  <Association
+    Name="FK__beerRecip__FK_co__20C1E124">
+    <AssociationEnd
+      EntityType="countriesItem"
+      Multiplicity="One"
+      Name="countries">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="beerRecipientsItem"
+      Multiplicity="Many"
+      Name="beerRecipients" />
+  </Association>
+  <Association
+    Name="FK__beerSuppl__FK_be__1A14E395">
+    <AssociationEnd
+      EntityType="beerTypesItem"
+      Multiplicity="One"
+      Name="beerTypes">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="beerSuppliersItem"
+      Multiplicity="Many"
+      Name="beerSuppliers" />
+  </Association>
+  <Association
+    Name="FK__beerSuppl__FK_su__1920BF5C">
+    <AssociationEnd
+      EntityType="suppliersItem"
+      Multiplicity="One"
+      Name="suppliers">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="beerSuppliersItem"
+      Multiplicity="Many"
+      Name="beerSuppliers" />
+  </Association>
+  <Association
+    Name="FK__contactDe__FK_be__24927208">
+    <AssociationEnd
+      EntityType="beerRecipientsItem"
+      Name="beerRecipients">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="contactDetailsItem"
+      Multiplicity="Many"
+      Name="contactDetails" />
+  </Association>
+  <Association
+    Name="FK__contactDe__FK_su__239E4DCF">
+    <AssociationEnd
+      EntityType="suppliersItem"
+      Name="suppliers">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="contactDetailsItem"
+      Multiplicity="Many"
+      Name="contactDetails" />
+  </Association>
+  <Association
+    Name="FK__delivered__FK_be__3A81B327">
+    <AssociationEnd
+      EntityType="beerTypesItem"
+      Multiplicity="One"
+      Name="beerTypes">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="deliveredBeersItem"
+      Multiplicity="Many"
+      Name="deliveredBeers" />
+  </Association>
+  <Association
+    Name="FK__delivered__FK_de__398D8EEE">
+    <AssociationEnd
+      EntityType="deliveriesItem"
+      Multiplicity="One"
+      Name="deliveries">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="deliveredBeersItem"
+      Multiplicity="Many"
+      Name="deliveredBeers" />
+  </Association>
+  <Association
+    Name="FK__deliverie__FK_be__2C3393D0">
+    <AssociationEnd
+      EntityType="beerRecipientsItem"
+      Multiplicity="One"
+      Name="beerRecipients">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="deliveriesItem"
+      Multiplicity="Many"
+      Name="deliveries" />
+  </Association>
+  <Association
+    Name="FK__orderedBe__FK_be__34C8D9D1">
+    <AssociationEnd
+      EntityType="beerSuppliersItem"
+      Multiplicity="One"
+      Name="beerSuppliers">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="orderedBeersItem"
+      Multiplicity="Many"
+      Name="orderedBeers" />
+  </Association>
+  <Association
+    Name="FK__orderedBe__FK_or__33D4B598">
+    <AssociationEnd
+      EntityType="ordersItem"
+      Multiplicity="One"
+      Name="orders">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="orderedBeersItem"
+      Multiplicity="Many"
+      Name="orderedBeers" />
+  </Association>
+  <Association
+    Name="FK__orders__FK_suppl__276EDEB3">
+    <AssociationEnd
+      EntityType="suppliersItem"
+      Multiplicity="One"
+      Name="suppliers">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="ordersItem"
+      Multiplicity="Many"
+      Name="orders" />
+  </Association>
+  <Association
+    Name="FK__storage__FK_beer__1CF15040">
+    <AssociationEnd
+      EntityType="beerTypesItem"
+      Multiplicity="One"
+      Name="beerTypes">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="storageItem"
+      Multiplicity="Many"
+      Name="storage" />
+  </Association>
+  <Association
+    Name="FK__supplierS__FK_be__45F365D3">
+    <AssociationEnd
+      EntityType="beerSuppliersItem"
+      Multiplicity="One"
+      Name="beerSuppliers">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="supplierStorageItem"
+      Multiplicity="Many"
+      Name="supplierStorage" />
+  </Association>
+  <Association
+    Name="FK__suppliers__FK_co__164452B1">
+    <AssociationEnd
+      EntityType="countriesItem"
+      Multiplicity="One"
+      Name="countries">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="suppliersItem"
+      Multiplicity="Many"
+      Name="suppliers" />
+  </Association>
+  <Association
+    Name="FK__supplierS__FK_su__44FF419A">
+    <AssociationEnd
+      EntityType="suppliersItem"
+      Multiplicity="One"
+      Name="suppliers">
+      <AssociationEnd.Attributes>
+        <DeleteRule
+          Action="Unset" />
+      </AssociationEnd.Attributes>
+    </AssociationEnd>
+    <AssociationEnd
+      EntityType="supplierStorageItem"
+      Multiplicity="Many"
+      Name="supplierStorage" />
+  </Association>
+  <EntityContainer
+    Name="freibierDB">
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="beerRecipientsItem"
+      Name="beerRecipients" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="beerSuppliersItem"
+      Name="beerSuppliers" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="beerTypesItem"
+      Name="beerTypes" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="contactDetailsItem"
+      Name="contactDetails" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="countriesItem"
+      Name="countries" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="deliveredBeersItem"
+      Name="deliveredBeers" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="deliveriesItem"
+      Name="deliveries" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="driversItem"
+      Name="drivers" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="orderedBeersItem"
+      Name="orderedBeers" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="ordersItem"
+      Name="orders" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="storageItem"
+      Name="storage" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="suppliersItem"
+      Name="suppliers" />
+    <EntitySet
+      CanDelete="True"
+      CanInsert="True"
+      CanUpdate="True"
+      EntityType="supplierStorageItem"
+      Name="supplierStorage" />
+    <AssociationSet
+      Association="FK__beerRecip__FK_co__20C1E124"
+      Name="FK__beerRecip__FK_co__20C1E124">
+      <AssociationSetEnd
+        EntitySet="countries"
+        Name="countries" />
+      <AssociationSetEnd
+        EntitySet="beerRecipients"
+        Name="beerRecipients" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__beerSuppl__FK_be__1A14E395"
+      Name="FK__beerSuppl__FK_be__1A14E395">
+      <AssociationSetEnd
+        EntitySet="beerTypes"
+        Name="beerTypes" />
+      <AssociationSetEnd
+        EntitySet="beerSuppliers"
+        Name="beerSuppliers" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__beerSuppl__FK_su__1920BF5C"
+      Name="FK__beerSuppl__FK_su__1920BF5C">
+      <AssociationSetEnd
+        EntitySet="suppliers"
+        Name="suppliers" />
+      <AssociationSetEnd
+        EntitySet="beerSuppliers"
+        Name="beerSuppliers" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__contactDe__FK_be__24927208"
+      Name="FK__contactDe__FK_be__24927208">
+      <AssociationSetEnd
+        EntitySet="beerRecipients"
+        Name="beerRecipients" />
+      <AssociationSetEnd
+        EntitySet="contactDetails"
+        Name="contactDetails" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__contactDe__FK_su__239E4DCF"
+      Name="FK__contactDe__FK_su__239E4DCF">
+      <AssociationSetEnd
+        EntitySet="suppliers"
+        Name="suppliers" />
+      <AssociationSetEnd
+        EntitySet="contactDetails"
+        Name="contactDetails" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__delivered__FK_be__3A81B327"
+      Name="FK__delivered__FK_be__3A81B327">
+      <AssociationSetEnd
+        EntitySet="beerTypes"
+        Name="beerTypes" />
+      <AssociationSetEnd
+        EntitySet="deliveredBeers"
+        Name="deliveredBeers" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__delivered__FK_de__398D8EEE"
+      Name="FK__delivered__FK_de__398D8EEE">
+      <AssociationSetEnd
+        EntitySet="deliveries"
+        Name="deliveries" />
+      <AssociationSetEnd
+        EntitySet="deliveredBeers"
+        Name="deliveredBeers" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__deliverie__FK_be__2C3393D0"
+      Name="FK__deliverie__FK_be__2C3393D0">
+      <AssociationSetEnd
+        EntitySet="beerRecipients"
+        Name="beerRecipients" />
+      <AssociationSetEnd
+        EntitySet="deliveries"
+        Name="deliveries" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__orderedBe__FK_be__34C8D9D1"
+      Name="FK__orderedBe__FK_be__34C8D9D1">
+      <AssociationSetEnd
+        EntitySet="beerSuppliers"
+        Name="beerSuppliers" />
+      <AssociationSetEnd
+        EntitySet="orderedBeers"
+        Name="orderedBeers" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__orderedBe__FK_or__33D4B598"
+      Name="FK__orderedBe__FK_or__33D4B598">
+      <AssociationSetEnd
+        EntitySet="orders"
+        Name="orders" />
+      <AssociationSetEnd
+        EntitySet="orderedBeers"
+        Name="orderedBeers" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__orders__FK_suppl__276EDEB3"
+      Name="FK__orders__FK_suppl__276EDEB3">
+      <AssociationSetEnd
+        EntitySet="suppliers"
+        Name="suppliers" />
+      <AssociationSetEnd
+        EntitySet="orders"
+        Name="orders" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__storage__FK_beer__1CF15040"
+      Name="FK__storage__FK_beer__1CF15040">
+      <AssociationSetEnd
+        EntitySet="beerTypes"
+        Name="beerTypes" />
+      <AssociationSetEnd
+        EntitySet="storage"
+        Name="storage" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__supplierS__FK_be__45F365D3"
+      Name="FK__supplierS__FK_be__45F365D3">
+      <AssociationSetEnd
+        EntitySet="beerSuppliers"
+        Name="beerSuppliers" />
+      <AssociationSetEnd
+        EntitySet="supplierStorage"
+        Name="supplierStorage" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__suppliers__FK_co__164452B1"
+      Name="FK__suppliers__FK_co__164452B1">
+      <AssociationSetEnd
+        EntitySet="countries"
+        Name="countries" />
+      <AssociationSetEnd
+        EntitySet="suppliers"
+        Name="suppliers" />
+    </AssociationSet>
+    <AssociationSet
+      Association="FK__supplierS__FK_su__44FF419A"
+      Name="FK__supplierS__FK_su__44FF419A">
+      <AssociationSetEnd
+        EntitySet="suppliers"
+        Name="suppliers" />
+      <AssociationSetEnd
+        EntitySet="supplierStorage"
+        Name="supplierStorage" />
+    </AssociationSet>
+    <SubmitOperation
+      Name="SaveChanges" />
+    <QueryOperation
+      Name="beerRecipients_Single"
+      ReturnType="beerRecipientsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="beerRecipients" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="beerRecipients_SingleOrDefault"
+      ReturnType="beerRecipientsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="beerRecipients" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="beerSuppliers_Single"
+      ReturnType="beerSuppliersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="beerSuppliers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="beerSuppliers_SingleOrDefault"
+      ReturnType="beerSuppliersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="beerSuppliers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="beerTypes_Single"
+      ReturnType="beerTypesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="beerTypes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="beerTypes_SingleOrDefault"
+      ReturnType="beerTypesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="beerTypes" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="contactDetails_Single"
+      ReturnType="contactDetailsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="contactDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="contactDetails_SingleOrDefault"
+      ReturnType="contactDetailsItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="contactDetails" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="countries_Single"
+      ReturnType="countriesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="countries" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="countries_SingleOrDefault"
+      ReturnType="countriesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="countries" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="deliveredBeers_Single"
+      ReturnType="deliveredBeersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="deliveredBeers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="deliveredBeers_SingleOrDefault"
+      ReturnType="deliveredBeersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="deliveredBeers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="deliveries_Single"
+      ReturnType="deliveriesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="deliveries" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="deliveries_SingleOrDefault"
+      ReturnType="deliveriesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="deliveries" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="drivers_Single"
+      ReturnType="driversItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="drivers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="drivers_SingleOrDefault"
+      ReturnType="driversItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="drivers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="orderedBeers_Single"
+      ReturnType="orderedBeersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="orderedBeers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="orderedBeers_SingleOrDefault"
+      ReturnType="orderedBeersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="orderedBeers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="orders_Single"
+      ReturnType="ordersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="orders" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="orders_SingleOrDefault"
+      ReturnType="ordersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="orders" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="storage_Single"
+      ReturnType="storageItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="storage" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="storage_SingleOrDefault"
+      ReturnType="storageItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="storage" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="suppliers_Single"
+      ReturnType="suppliersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="suppliers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="suppliers_SingleOrDefault"
+      ReturnType="suppliersItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="suppliers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="supplierStorage_Single"
+      ReturnType="supplierStorageItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="supplierStorage" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="supplierStorage_SingleOrDefault"
+      ReturnType="supplierStorageItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="id" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="supplierStorage" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="id"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der id-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="orderedBeeryByOrder"
+      ReturnType="orderedBeersItem*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="ordersItem" />
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="orderId" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="orderedBeers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="orderId"
+        ParameterType=":Int32?" />
+    </QueryOperation>
+    <QueryOperation
+      Name="beerSuppliersBySupplier"
+      ReturnType="beerSuppliersItem*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="suppliersItem" />
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="supplierId" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="beerSuppliers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="supplierId"
+        ParameterType=":Int32?" />
+    </QueryOperation>
+    <QueryOperation
+      Name="deliveredBeersByDelivery"
+      ReturnType="deliveredBeersItem*">
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="Equal">
+            <BinaryExpression.Left>
+              <ChainExpression>
+                <MemberExpression
+                  Member="deliveriesItem" />
+                <MemberExpression
+                  Member="id" />
+              </ChainExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <ParameterExpression
+                Parameter="deliveryId" />
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="deliveredBeers" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="deliveryId"
+        ParameterType=":Int32?" />
+    </QueryOperation>
+    <EntitySet
+      EntityType="view_driver_nextDeliveriesItem"
+      Name="view_driver_nextDeliveries" />
+    <QueryOperation
+      Name="view_driver_nextDeliveries_Single"
+      ReturnType="view_driver_nextDeliveriesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="And">
+                <BinaryExpression.Left>
+                  <BinaryExpression
+                    NodeType="And">
+                    <BinaryExpression.Left>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="truckCapacity" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="truckCapacity" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="driver" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="driver" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="amount" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="amount" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="carriage" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="carriage" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="view_driver_nextDeliveries" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="carriage"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der carriage-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="amount"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der amount-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="driver"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der driver-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="truckCapacity"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der truckCapacity-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+    <QueryOperation
+      Name="view_driver_nextDeliveries_SingleOrDefault"
+      ReturnType="view_driver_nextDeliveriesItem">
+      <QueryOperation.Attributes>
+        <Generated />
+        <Description
+          Value="Gibt die Entität zurück, deren Identität durch die Parameter angegeben wird, oder NULL, wenn keine solche Entität vorhanden ist." />
+      </QueryOperation.Attributes>
+      <QueryOperation.FilterExpression>
+        <QueryFilterExpressionTree>
+          <BinaryExpression
+            NodeType="And">
+            <BinaryExpression.Left>
+              <BinaryExpression
+                NodeType="And">
+                <BinaryExpression.Left>
+                  <BinaryExpression
+                    NodeType="And">
+                    <BinaryExpression.Left>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="truckCapacity" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="truckCapacity" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <BinaryExpression
+                        NodeType="Equal">
+                        <BinaryExpression.Left>
+                          <ChainExpression>
+                            <MemberExpression
+                              Member="driver" />
+                          </ChainExpression>
+                        </BinaryExpression.Left>
+                        <BinaryExpression.Right>
+                          <ParameterExpression
+                            Parameter="driver" />
+                        </BinaryExpression.Right>
+                      </BinaryExpression>
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <BinaryExpression
+                    NodeType="Equal">
+                    <BinaryExpression.Left>
+                      <ChainExpression>
+                        <MemberExpression
+                          Member="amount" />
+                      </ChainExpression>
+                    </BinaryExpression.Left>
+                    <BinaryExpression.Right>
+                      <ParameterExpression
+                        Parameter="amount" />
+                    </BinaryExpression.Right>
+                  </BinaryExpression>
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Left>
+            <BinaryExpression.Right>
+              <BinaryExpression
+                NodeType="Equal">
+                <BinaryExpression.Left>
+                  <ChainExpression>
+                    <MemberExpression
+                      Member="carriage" />
+                  </ChainExpression>
+                </BinaryExpression.Left>
+                <BinaryExpression.Right>
+                  <ParameterExpression
+                    Parameter="carriage" />
+                </BinaryExpression.Right>
+              </BinaryExpression>
+            </BinaryExpression.Right>
+          </BinaryExpression>
+        </QueryFilterExpressionTree>
+      </QueryOperation.FilterExpression>
+      <QueryOperation.Source>
+        <QuerySourceExpressionTree>
+          <MemberExpression
+            Member="view_driver_nextDeliveries" />
+        </QuerySourceExpressionTree>
+      </QueryOperation.Source>
+      <QueryOperationParameter
+        Name="carriage"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der carriage-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="amount"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der amount-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="driver"
+        ParameterType=":String?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der driver-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+      <QueryOperationParameter
+        Name="truckCapacity"
+        ParameterType=":Int32?">
+        <QueryOperationParameter.Attributes>
+          <Description
+            Value="Der Wert der truckCapacity-Schlüsseleigenschaft der abzurufenden Entität." />
+        </QueryOperationParameter.Attributes>
+      </QueryOperationParameter>
+    </QueryOperation>
+  </EntityContainer>
+  <EntityType
+    Name="OrderGetFreightOperation">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="OrderId"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DriverId"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ExecutionError"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ErrorMessage"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="DeliveryGetFreightOperation">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <KeyProperty
+        Name="Id"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <EntityProperty
+        Name="RowVersion"
+        PropertyType=":RowVersion">
+        <EntityProperty.Attributes>
+          <UseForConcurrency />
+          <Generated />
+          <Hidden />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DeliveryId"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="DriverId"
+        PropertyType=":Int32">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ExecutionError"
+        PropertyType=":Boolean">
+        <EntityProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="ErrorMessage"
+        PropertyType=":String?">
+        <EntityProperty.Attributes>
+          <MaxLength
+            Value="255" />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+    </EntityType.Properties>
+  </EntityType>
+  <EntityType
+    Name="view_driver_nextDeliveriesItem">
+    <EntityType.Methods>
+      <EntityMethod
+        Name="Delete">
+        <EntityMethod.Attributes>
+          <Generated />
+        </EntityMethod.Attributes>
+      </EntityMethod>
+    </EntityType.Methods>
+    <EntityType.Properties>
+      <EntityProperty
+        Name="deliveryDate"
+        PropertyType=":Date?">
+        <EntityProperty.Attributes>
+          <DateTimeConstraint
+            Precision="0"
+            PreserveSeconds="True" />
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <EntityProperty
+        Name="invoiceNumber"
+        PropertyType=":Int32?">
+        <EntityProperty.Attributes>
+          <NotSearchable />
+        </EntityProperty.Attributes>
+      </EntityProperty>
+      <KeyProperty
+        Name="carriage"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="amount"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="driver"
+        PropertyType=":String">
+        <KeyProperty.Attributes>
+          <Required />
+          <MaxLength
+            Value="50" />
+        </KeyProperty.Attributes>
+      </KeyProperty>
+      <KeyProperty
+        Name="truckCapacity"
+        PropertyType=":Int32">
+        <KeyProperty.Attributes>
+          <Required />
+          <NotSearchable />
+        </KeyProperty.Attributes>
+      </KeyProperty>
     </EntityType.Properties>
   </EntityType>
 </ModelFragment>

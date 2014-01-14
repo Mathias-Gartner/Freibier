@@ -20,6 +20,14 @@ namespace LightSwitchApplication
         /// Bietet die Möglichkeit, die Sicherheit für die Anwendung zu verwalten.
         /// </summary>
         public const string SecurityAdministration = global::Microsoft.LightSwitch.Security.ApplicationPermissions.SecurityAdministration;
+        /// <summary>
+        /// Enables all Screens.
+        /// </summary>
+        public const string Office = "LightSwitchApplication:Office";
+        /// <summary>
+        /// Limited to only the Get Freight and Confirm delivery Screens.
+        /// </summary>
+        public const string Driver = "LightSwitchApplication:Driver";
 
         /// <summary>
         /// Ruft alle für die Anwendung definierten Berechtigungen ab. Hierzu zählen systemdefinierte und benutzerdefinierte Berechtigungen.

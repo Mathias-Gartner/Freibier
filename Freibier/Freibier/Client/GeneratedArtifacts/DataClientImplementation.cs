@@ -10,926 +10,6 @@
 namespace LightSwitchApplication.Implementation
 {
     
-    #region beerRecipientsItem
-    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class beerRecipientsItem :
-        global::LightSwitchApplication.beerRecipientsItem.DetailsClass.IImplementation
-    {
-        partial void OnFK_countriesChanged()
-        {
-            this.___OnPropertyChanged("FK_countries");
-            this.___OnPropertyChanged("country");
-        }
-        
-        partial void OnPK_beerRecipientsChanged()
-        {
-            this.___OnPropertyChanged("PK_beerRecipients");
-        }
-        
-        partial void OnnameChanged()
-        {
-            this.___OnPropertyChanged("name");
-        }
-        
-        partial void OnaddressChanged()
-        {
-            this.___OnPropertyChanged("address");
-        }
-        
-        partial void OnphoneChanged()
-        {
-            this.___OnPropertyChanged("phone");
-        }
-        
-        partial void OnmailChanged()
-        {
-            this.___OnPropertyChanged("mail");
-        }
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.beerRecipientsItem.DetailsClass.IImplementation.country
-        {
-            get
-            {
-                return this.country;
-            }
-            set
-            {
-                this.country = (global::LightSwitchApplication.Implementation.countriesItem)value;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.countriesItem> __country
-        {
-            get
-            {
-                if (this.___country == null)
-                {
-                    this.___country = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.countriesItem>(
-                        this,
-                        "country",
-                        new string[] { "FK_countries" },
-                        e => global::System.Object.Equals(e.PK_countries, this.FK_countries),
-                        () => this._country,
-                        e => this._country = e);
-                }
-                return this.___country;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.countriesItem> ___country;
-        
-        global::System.Collections.IEnumerable global::LightSwitchApplication.beerRecipientsItem.DetailsClass.IImplementation.deliveries
-        {
-            get
-            {
-                return this.deliveries;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveriesItem> __deliveries
-        {
-            get
-            {
-                if (this.___deliveries == null)
-                {
-                    this.___deliveries = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveriesItem>(
-                        this,
-                        "deliveries",
-                        () => this._deliveries,
-                        e => global::System.Object.Equals(e.FK_beerRecipients, this.PK_beerRecipients));
-                }
-                return this.___deliveries;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveriesItem> ___deliveries;
-        
-    }
-    #endregion
-    
-    #region beerSuppliersItem
-    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class beerSuppliersItem :
-        global::LightSwitchApplication.beerSuppliersItem.DetailsClass.IImplementation
-    {
-        partial void OnFK_beerTypesChanged()
-        {
-            this.___OnPropertyChanged("FK_beerTypes");
-            this.___OnPropertyChanged("beerType");
-        }
-        
-        partial void OnFK_suppliersChanged()
-        {
-            this.___OnPropertyChanged("FK_suppliers");
-            this.___OnPropertyChanged("supplier");
-        }
-        
-        partial void OnPK_beerSuppliersChanged()
-        {
-            this.___OnPropertyChanged("PK_beerSuppliers");
-        }
-        
-        partial void OnpriceChanged()
-        {
-            this.___OnPropertyChanged("price");
-        }
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.beerSuppliersItem.DetailsClass.IImplementation.beerType
-        {
-            get
-            {
-                return this.beerType;
-            }
-            set
-            {
-                this.beerType = (global::LightSwitchApplication.Implementation.beerTypesItem)value;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem> __beerType
-        {
-            get
-            {
-                if (this.___beerType == null)
-                {
-                    this.___beerType = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem>(
-                        this,
-                        "beerType",
-                        new string[] { "FK_beerTypes" },
-                        e => global::System.Object.Equals(e.PK_beerTypes, this.FK_beerTypes),
-                        () => this._beerType,
-                        e => this._beerType = e);
-                }
-                return this.___beerType;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem> ___beerType;
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.beerSuppliersItem.DetailsClass.IImplementation.supplier
-        {
-            get
-            {
-                return this.supplier;
-            }
-            set
-            {
-                this.supplier = (global::LightSwitchApplication.Implementation.suppliersItem)value;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem> __supplier
-        {
-            get
-            {
-                if (this.___supplier == null)
-                {
-                    this.___supplier = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem>(
-                        this,
-                        "supplier",
-                        new string[] { "FK_suppliers" },
-                        e => global::System.Object.Equals(e.PK_suppliers, this.FK_suppliers),
-                        () => this._supplier,
-                        e => this._supplier = e);
-                }
-                return this.___supplier;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem> ___supplier;
-        
-        global::System.Collections.IEnumerable global::LightSwitchApplication.beerSuppliersItem.DetailsClass.IImplementation.orderedBeers
-        {
-            get
-            {
-                return this.orderedBeers;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.orderedBeersItem> __orderedBeers
-        {
-            get
-            {
-                if (this.___orderedBeers == null)
-                {
-                    this.___orderedBeers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.orderedBeersItem>(
-                        this,
-                        "orderedBeers",
-                        () => this._orderedBeers,
-                        e => global::System.Object.Equals(e.FK_beerSuppliers, this.PK_beerSuppliers));
-                }
-                return this.___orderedBeers;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.orderedBeersItem> ___orderedBeers;
-        
-    }
-    #endregion
-    
-    #region beerTypesItem
-    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class beerTypesItem :
-        global::LightSwitchApplication.beerTypesItem.DetailsClass.IImplementation
-    {
-        partial void OnPK_beerTypesChanged()
-        {
-            this.___OnPropertyChanged("PK_beerTypes");
-        }
-        
-        partial void OnnameChanged()
-        {
-            this.___OnPropertyChanged("name");
-        }
-        
-        global::System.Collections.IEnumerable global::LightSwitchApplication.beerTypesItem.DetailsClass.IImplementation.beerSuppliers
-        {
-            get
-            {
-                return this.beerSuppliers;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerSuppliersItem> __beerSuppliers
-        {
-            get
-            {
-                if (this.___beerSuppliers == null)
-                {
-                    this.___beerSuppliers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerSuppliersItem>(
-                        this,
-                        "beerSuppliers",
-                        () => this._beerSuppliers,
-                        e => global::System.Object.Equals(e.FK_beerTypes, this.PK_beerTypes));
-                }
-                return this.___beerSuppliers;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerSuppliersItem> ___beerSuppliers;
-        
-        global::System.Collections.IEnumerable global::LightSwitchApplication.beerTypesItem.DetailsClass.IImplementation.deliveredBeers
-        {
-            get
-            {
-                return this.deliveredBeers;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveredBeersItem> __deliveredBeers
-        {
-            get
-            {
-                if (this.___deliveredBeers == null)
-                {
-                    this.___deliveredBeers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveredBeersItem>(
-                        this,
-                        "deliveredBeers",
-                        () => this._deliveredBeers,
-                        e => global::System.Object.Equals(e.FK_beerTypes, this.PK_beerTypes));
-                }
-                return this.___deliveredBeers;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveredBeersItem> ___deliveredBeers;
-        
-    }
-    #endregion
-    
-    #region countriesItem
-    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class countriesItem :
-        global::LightSwitchApplication.countriesItem.DetailsClass.IImplementation
-    {
-        partial void OnPK_countriesChanged()
-        {
-            this.___OnPropertyChanged("PK_countries");
-        }
-        
-        partial void OncustomsChanged()
-        {
-            this.___OnPropertyChanged("customs");
-        }
-        
-        partial void OndistanceChanged()
-        {
-            this.___OnPropertyChanged("distance");
-        }
-        
-        partial void OnnameChanged()
-        {
-            this.___OnPropertyChanged("name");
-        }
-        
-        global::System.Collections.IEnumerable global::LightSwitchApplication.countriesItem.DetailsClass.IImplementation.beerRecipients
-        {
-            get
-            {
-                return this.beerRecipients;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerRecipientsItem> __beerRecipients
-        {
-            get
-            {
-                if (this.___beerRecipients == null)
-                {
-                    this.___beerRecipients = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerRecipientsItem>(
-                        this,
-                        "beerRecipients",
-                        () => this._beerRecipients,
-                        e => global::System.Object.Equals(e.FK_countries, this.PK_countries));
-                }
-                return this.___beerRecipients;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerRecipientsItem> ___beerRecipients;
-        
-        global::System.Collections.IEnumerable global::LightSwitchApplication.countriesItem.DetailsClass.IImplementation.suppliers
-        {
-            get
-            {
-                return this.suppliers;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.suppliersItem> __suppliers
-        {
-            get
-            {
-                if (this.___suppliers == null)
-                {
-                    this.___suppliers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.suppliersItem>(
-                        this,
-                        "suppliers",
-                        () => this._suppliers,
-                        e => global::System.Object.Equals(e.FK_countries, this.PK_countries));
-                }
-                return this.___suppliers;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.suppliersItem> ___suppliers;
-        
-    }
-    #endregion
-    
-    #region deliveredBeersItem
-    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class deliveredBeersItem :
-        global::LightSwitchApplication.deliveredBeersItem.DetailsClass.IImplementation
-    {
-        partial void OnFK_beerTypesChanged()
-        {
-            this.___OnPropertyChanged("FK_beerTypes");
-            this.___OnPropertyChanged("beerType");
-        }
-        
-        partial void OnFK_deliveriesChanged()
-        {
-            this.___OnPropertyChanged("FK_deliveries");
-            this.___OnPropertyChanged("delivery");
-        }
-        
-        partial void OnPK_deliveredBeersChanged()
-        {
-            this.___OnPropertyChanged("PK_deliveredBeers");
-        }
-        
-        partial void OnamountChanged()
-        {
-            this.___OnPropertyChanged("amount");
-        }
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.deliveredBeersItem.DetailsClass.IImplementation.beerType
-        {
-            get
-            {
-                return this.beerType;
-            }
-            set
-            {
-                this.beerType = (global::LightSwitchApplication.Implementation.beerTypesItem)value;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem> __beerType
-        {
-            get
-            {
-                if (this.___beerType == null)
-                {
-                    this.___beerType = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem>(
-                        this,
-                        "beerType",
-                        new string[] { "FK_beerTypes" },
-                        e => global::System.Object.Equals(e.PK_beerTypes, this.FK_beerTypes),
-                        () => this._beerType,
-                        e => this._beerType = e);
-                }
-                return this.___beerType;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem> ___beerType;
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.deliveredBeersItem.DetailsClass.IImplementation.delivery
-        {
-            get
-            {
-                return this.delivery;
-            }
-            set
-            {
-                this.delivery = (global::LightSwitchApplication.Implementation.deliveriesItem)value;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.deliveriesItem> __delivery
-        {
-            get
-            {
-                if (this.___delivery == null)
-                {
-                    this.___delivery = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.deliveriesItem>(
-                        this,
-                        "delivery",
-                        new string[] { "FK_deliveries" },
-                        e => global::System.Object.Equals(e.PK_deliveries, this.FK_deliveries),
-                        () => this._delivery,
-                        e => this._delivery = e);
-                }
-                return this.___delivery;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.deliveriesItem> ___delivery;
-        
-    }
-    #endregion
-    
-    #region deliveriesItem
-    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class deliveriesItem :
-        global::LightSwitchApplication.deliveriesItem.DetailsClass.IImplementation
-    {
-        partial void OnFK_beerRecipientsChanged()
-        {
-            this.___OnPropertyChanged("FK_beerRecipients");
-            this.___OnPropertyChanged("beerRecipient");
-        }
-        
-        partial void OnPK_deliveriesChanged()
-        {
-            this.___OnPropertyChanged("PK_deliveries");
-        }
-        
-        partial void OnorderDateChanged()
-        {
-            this.___OnPropertyChanged("orderDate");
-        }
-        
-        partial void OndeliveryDateChanged()
-        {
-            this.___OnPropertyChanged("deliveryDate");
-        }
-        
-        partial void OnbillingDateChanged()
-        {
-            this.___OnPropertyChanged("billingDate");
-        }
-        
-        partial void OninvoiceNumberChanged()
-        {
-            this.___OnPropertyChanged("invoiceNumber");
-        }
-        
-        global::System.Collections.IEnumerable global::LightSwitchApplication.deliveriesItem.DetailsClass.IImplementation.deliveredBeers
-        {
-            get
-            {
-                return this.deliveredBeers;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveredBeersItem> __deliveredBeers
-        {
-            get
-            {
-                if (this.___deliveredBeers == null)
-                {
-                    this.___deliveredBeers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveredBeersItem>(
-                        this,
-                        "deliveredBeers",
-                        () => this._deliveredBeers,
-                        e => global::System.Object.Equals(e.FK_deliveries, this.PK_deliveries));
-                }
-                return this.___deliveredBeers;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveredBeersItem> ___deliveredBeers;
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.deliveriesItem.DetailsClass.IImplementation.beerRecipient
-        {
-            get
-            {
-                return this.beerRecipient;
-            }
-            set
-            {
-                this.beerRecipient = (global::LightSwitchApplication.Implementation.beerRecipientsItem)value;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerRecipientsItem> __beerRecipient
-        {
-            get
-            {
-                if (this.___beerRecipient == null)
-                {
-                    this.___beerRecipient = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerRecipientsItem>(
-                        this,
-                        "beerRecipient",
-                        new string[] { "FK_beerRecipients" },
-                        e => global::System.Object.Equals(e.PK_beerRecipients, this.FK_beerRecipients),
-                        () => this._beerRecipient,
-                        e => this._beerRecipient = e);
-                }
-                return this.___beerRecipient;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerRecipientsItem> ___beerRecipient;
-        
-    }
-    #endregion
-    
-    #region driversItem
-    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class driversItem :
-        global::LightSwitchApplication.driversItem.DetailsClass.IImplementation
-    {
-        partial void OnPK_driversChanged()
-        {
-            this.___OnPropertyChanged("PK_drivers");
-        }
-        
-        partial void OndriverChanged()
-        {
-            this.___OnPropertyChanged("driver");
-        }
-        
-        partial void OntruckChanged()
-        {
-            this.___OnPropertyChanged("truck");
-        }
-        
-    }
-    #endregion
-    
-    #region orderedBeersItem
-    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class orderedBeersItem :
-        global::LightSwitchApplication.orderedBeersItem.DetailsClass.IImplementation
-    {
-        partial void OnFK_ordersChanged()
-        {
-            this.___OnPropertyChanged("FK_orders");
-            this.___OnPropertyChanged("Order");
-        }
-        
-        partial void OnFK_beerSuppliersChanged()
-        {
-            this.___OnPropertyChanged("FK_beerSuppliers");
-            this.___OnPropertyChanged("beerSupplier");
-        }
-        
-        partial void OnPK_orderedBeersChanged()
-        {
-            this.___OnPropertyChanged("PK_orderedBeers");
-        }
-        
-        partial void OnamountChanged()
-        {
-            this.___OnPropertyChanged("amount");
-        }
-        
-        partial void OnpriceChanged()
-        {
-            this.___OnPropertyChanged("price");
-        }
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.orderedBeersItem.DetailsClass.IImplementation.Order
-        {
-            get
-            {
-                return this.Order;
-            }
-            set
-            {
-                this.Order = (global::LightSwitchApplication.Implementation.Order)value;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Order> __Order
-        {
-            get
-            {
-                if (this.___Order == null)
-                {
-                    this.___Order = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Order>(
-                        this,
-                        "Order",
-                        new string[] { "FK_orders" },
-                        e => global::System.Object.Equals(e.PK_orders, this.FK_orders),
-                        () => this._Order,
-                        e => this._Order = e);
-                }
-                return this.___Order;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.Order> ___Order;
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.orderedBeersItem.DetailsClass.IImplementation.beerSupplier
-        {
-            get
-            {
-                return this.beerSupplier;
-            }
-            set
-            {
-                this.beerSupplier = (global::LightSwitchApplication.Implementation.beerSuppliersItem)value;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerSuppliersItem> __beerSupplier
-        {
-            get
-            {
-                if (this.___beerSupplier == null)
-                {
-                    this.___beerSupplier = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerSuppliersItem>(
-                        this,
-                        "beerSupplier",
-                        new string[] { "FK_beerSuppliers" },
-                        e => global::System.Object.Equals(e.PK_beerSuppliers, this.FK_beerSuppliers),
-                        () => this._beerSupplier,
-                        e => this._beerSupplier = e);
-                }
-                return this.___beerSupplier;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerSuppliersItem> ___beerSupplier;
-        
-    }
-    #endregion
-    
-    #region Order
-    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class Order :
-        global::LightSwitchApplication.Order.DetailsClass.IImplementation
-    {
-        partial void OnFK_suppliersChanged()
-        {
-            this.___OnPropertyChanged("FK_suppliers");
-            this.___OnPropertyChanged("supplier");
-        }
-        
-        partial void OnPK_ordersChanged()
-        {
-            this.___OnPropertyChanged("PK_orders");
-        }
-        
-        partial void OnpriceChanged()
-        {
-            this.___OnPropertyChanged("price");
-        }
-        
-        partial void OnreceivedChanged()
-        {
-            this.___OnPropertyChanged("received");
-        }
-        
-        global::System.Collections.IEnumerable global::LightSwitchApplication.Order.DetailsClass.IImplementation.orderedBeers
-        {
-            get
-            {
-                return this.orderedBeers;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.orderedBeersItem> __orderedBeers
-        {
-            get
-            {
-                if (this.___orderedBeers == null)
-                {
-                    this.___orderedBeers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.orderedBeersItem>(
-                        this,
-                        "orderedBeers",
-                        () => this._orderedBeers,
-                        e => global::System.Object.Equals(e.FK_orders, this.PK_orders));
-                }
-                return this.___orderedBeers;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.orderedBeersItem> ___orderedBeers;
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.Order.DetailsClass.IImplementation.supplier
-        {
-            get
-            {
-                return this.supplier;
-            }
-            set
-            {
-                this.supplier = (global::LightSwitchApplication.Implementation.suppliersItem)value;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem> __supplier
-        {
-            get
-            {
-                if (this.___supplier == null)
-                {
-                    this.___supplier = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem>(
-                        this,
-                        "supplier",
-                        new string[] { "FK_suppliers" },
-                        e => global::System.Object.Equals(e.PK_suppliers, this.FK_suppliers),
-                        () => this._supplier,
-                        e => this._supplier = e);
-                }
-                return this.___supplier;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem> ___supplier;
-        
-    }
-    #endregion
-    
-    #region suppliersItem
-    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class suppliersItem :
-        global::LightSwitchApplication.suppliersItem.DetailsClass.IImplementation
-    {
-        partial void OnFK_countriesChanged()
-        {
-            this.___OnPropertyChanged("FK_countries");
-            this.___OnPropertyChanged("country");
-        }
-        
-        partial void OnPK_suppliersChanged()
-        {
-            this.___OnPropertyChanged("PK_suppliers");
-        }
-        
-        partial void OnnameChanged()
-        {
-            this.___OnPropertyChanged("name");
-        }
-        
-        partial void OnaddressChanged()
-        {
-            this.___OnPropertyChanged("address");
-        }
-        
-        partial void OnphoneChanged()
-        {
-            this.___OnPropertyChanged("phone");
-        }
-        
-        partial void OnmailChanged()
-        {
-            this.___OnPropertyChanged("mail");
-        }
-        
-        partial void OnvolumeDiscountPercentChanged()
-        {
-            this.___OnPropertyChanged("volumeDiscountPercent");
-        }
-        
-        partial void OnvolumeDiscountRequiredQuantityChanged()
-        {
-            this.___OnPropertyChanged("volumeDiscountRequiredQuantity");
-        }
-        
-        global::System.Collections.IEnumerable global::LightSwitchApplication.suppliersItem.DetailsClass.IImplementation.orders
-        {
-            get
-            {
-                return this.orders;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Order> __orders
-        {
-            get
-            {
-                if (this.___orders == null)
-                {
-                    this.___orders = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Order>(
-                        this,
-                        "orders",
-                        () => this._orders,
-                        e => global::System.Object.Equals(e.FK_suppliers, this.PK_suppliers));
-                }
-                return this.___orders;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.Order> ___orders;
-        
-        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.suppliersItem.DetailsClass.IImplementation.country
-        {
-            get
-            {
-                return this.country;
-            }
-            set
-            {
-                this.country = (global::LightSwitchApplication.Implementation.countriesItem)value;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.countriesItem> __country
-        {
-            get
-            {
-                if (this.___country == null)
-                {
-                    this.___country = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.countriesItem>(
-                        this,
-                        "country",
-                        new string[] { "FK_countries" },
-                        e => global::System.Object.Equals(e.PK_countries, this.FK_countries),
-                        () => this._country,
-                        e => this._country = e);
-                }
-                return this.___country;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.countriesItem> ___country;
-        
-        global::System.Collections.IEnumerable global::LightSwitchApplication.suppliersItem.DetailsClass.IImplementation.beerSuppliers
-        {
-            get
-            {
-                return this.beerSuppliers;
-            }
-        }
-        
-        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerSuppliersItem> __beerSuppliers
-        {
-            get
-            {
-                if (this.___beerSuppliers == null)
-                {
-                    this.___beerSuppliers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerSuppliersItem>(
-                        this,
-                        "beerSuppliers",
-                        () => this._beerSuppliers,
-                        e => global::System.Object.Equals(e.FK_suppliers, this.PK_suppliers));
-                }
-                return this.___beerSuppliers;
-            }
-        }
-        
-        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerSuppliersItem> ___beerSuppliers;
-        
-    }
-    #endregion
-    
     #region DeliveryConfirmOperation
     [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
@@ -965,6 +45,1494 @@ namespace LightSwitchApplication.Implementation
     }
     #endregion
     
+    #region OrderReceivedOperation
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class OrderReceivedOperation :
+        global::LightSwitchApplication.OrderReceivedOperation.DetailsClass.IImplementation
+    {
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnOrderIdChanged()
+        {
+            this.___OnPropertyChanged("OrderId");
+        }
+        
+        partial void OnExecutionErrorChanged()
+        {
+            this.___OnPropertyChanged("ExecutionError");
+        }
+        
+        partial void OnErrorMessageChanged()
+        {
+            this.___OnPropertyChanged("ErrorMessage");
+        }
+        
+    }
+    #endregion
+    
+    #region OrderGetFreightOperation
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class OrderGetFreightOperation :
+        global::LightSwitchApplication.OrderGetFreightOperation.DetailsClass.IImplementation
+    {
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnOrderIdChanged()
+        {
+            this.___OnPropertyChanged("OrderId");
+        }
+        
+        partial void OnDriverIdChanged()
+        {
+            this.___OnPropertyChanged("DriverId");
+        }
+        
+        partial void OnExecutionErrorChanged()
+        {
+            this.___OnPropertyChanged("ExecutionError");
+        }
+        
+        partial void OnErrorMessageChanged()
+        {
+            this.___OnPropertyChanged("ErrorMessage");
+        }
+        
+    }
+    #endregion
+    
+    #region DeliveryGetFreightOperation
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/ApplicationData.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class DeliveryGetFreightOperation :
+        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.IImplementation
+    {
+        partial void OnIdChanged()
+        {
+            this.___OnPropertyChanged("Id");
+        }
+        
+        partial void OnRowVersionChanged()
+        {
+            this.___OnPropertyChanged("RowVersion");
+        }
+        
+        partial void OnDeliveryIdChanged()
+        {
+            this.___OnPropertyChanged("DeliveryId");
+        }
+        
+        partial void OnDriverIdChanged()
+        {
+            this.___OnPropertyChanged("DriverId");
+        }
+        
+        partial void OnExecutionErrorChanged()
+        {
+            this.___OnPropertyChanged("ExecutionError");
+        }
+        
+        partial void OnErrorMessageChanged()
+        {
+            this.___OnPropertyChanged("ErrorMessage");
+        }
+        
+    }
+    #endregion
+    
+    #region beerRecipientsItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class beerRecipientsItem :
+        global::LightSwitchApplication.beerRecipientsItem.DetailsClass.IImplementation
+    {
+        partial void OnFK_countriesChanged()
+        {
+            this.___OnPropertyChanged("FK_countries");
+            this.___OnPropertyChanged("countriesItem");
+        }
+        
+        partial void OnidChanged()
+        {
+            this.___OnPropertyChanged("id");
+        }
+        
+        partial void OnnameChanged()
+        {
+            this.___OnPropertyChanged("name");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.beerRecipientsItem.DetailsClass.IImplementation.countriesItem
+        {
+            get
+            {
+                return this.countriesItem;
+            }
+            set
+            {
+                this.countriesItem = (global::LightSwitchApplication.Implementation.countriesItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.countriesItem> __countriesItem
+        {
+            get
+            {
+                if (this.___countriesItem == null)
+                {
+                    this.___countriesItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.countriesItem>(
+                        this,
+                        "countriesItem",
+                        new string[] { "FK_countries" },
+                        e => global::System.Object.Equals(e.id, this.FK_countries),
+                        () => this._countriesItem,
+                        e => this._countriesItem = e);
+                }
+                return this.___countriesItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.countriesItem> ___countriesItem;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.beerRecipientsItem.DetailsClass.IImplementation.contactDetails
+        {
+            get
+            {
+                return this.contactDetails;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.contactDetailsItem> __contactDetails
+        {
+            get
+            {
+                if (this.___contactDetails == null)
+                {
+                    this.___contactDetails = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.contactDetailsItem>(
+                        this,
+                        "contactDetails",
+                        () => this._contactDetails,
+                        e => global::System.Object.Equals(e.FK_beerRecipients, this.id));
+                }
+                return this.___contactDetails;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.contactDetailsItem> ___contactDetails;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.beerRecipientsItem.DetailsClass.IImplementation.deliveries
+        {
+            get
+            {
+                return this.deliveries;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveriesItem> __deliveries
+        {
+            get
+            {
+                if (this.___deliveries == null)
+                {
+                    this.___deliveries = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveriesItem>(
+                        this,
+                        "deliveries",
+                        () => this._deliveries,
+                        e => global::System.Object.Equals(e.FK_beerRecipients, this.id));
+                }
+                return this.___deliveries;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveriesItem> ___deliveries;
+        
+    }
+    #endregion
+    
+    #region beerSuppliersItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class beerSuppliersItem :
+        global::LightSwitchApplication.beerSuppliersItem.DetailsClass.IImplementation
+    {
+        partial void OnFK_beerTypesChanged()
+        {
+            this.___OnPropertyChanged("FK_beerTypes");
+            this.___OnPropertyChanged("beerTypesItem");
+        }
+        
+        partial void OnFK_suppliersChanged()
+        {
+            this.___OnPropertyChanged("FK_suppliers");
+            this.___OnPropertyChanged("suppliersItem");
+        }
+        
+        partial void OnidChanged()
+        {
+            this.___OnPropertyChanged("id");
+        }
+        
+        partial void OnpriceChanged()
+        {
+            this.___OnPropertyChanged("price");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.beerSuppliersItem.DetailsClass.IImplementation.beerTypesItem
+        {
+            get
+            {
+                return this.beerTypesItem;
+            }
+            set
+            {
+                this.beerTypesItem = (global::LightSwitchApplication.Implementation.beerTypesItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem> __beerTypesItem
+        {
+            get
+            {
+                if (this.___beerTypesItem == null)
+                {
+                    this.___beerTypesItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem>(
+                        this,
+                        "beerTypesItem",
+                        new string[] { "FK_beerTypes" },
+                        e => global::System.Object.Equals(e.id, this.FK_beerTypes),
+                        () => this._beerTypesItem,
+                        e => this._beerTypesItem = e);
+                }
+                return this.___beerTypesItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem> ___beerTypesItem;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.beerSuppliersItem.DetailsClass.IImplementation.suppliersItem
+        {
+            get
+            {
+                return this.suppliersItem;
+            }
+            set
+            {
+                this.suppliersItem = (global::LightSwitchApplication.Implementation.suppliersItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem> __suppliersItem
+        {
+            get
+            {
+                if (this.___suppliersItem == null)
+                {
+                    this.___suppliersItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem>(
+                        this,
+                        "suppliersItem",
+                        new string[] { "FK_suppliers" },
+                        e => global::System.Object.Equals(e.id, this.FK_suppliers),
+                        () => this._suppliersItem,
+                        e => this._suppliersItem = e);
+                }
+                return this.___suppliersItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem> ___suppliersItem;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.beerSuppliersItem.DetailsClass.IImplementation.orderedBeers
+        {
+            get
+            {
+                return this.orderedBeers;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.orderedBeersItem> __orderedBeers
+        {
+            get
+            {
+                if (this.___orderedBeers == null)
+                {
+                    this.___orderedBeers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.orderedBeersItem>(
+                        this,
+                        "orderedBeers",
+                        () => this._orderedBeers,
+                        e => global::System.Object.Equals(e.FK_beerSuppliers, this.id));
+                }
+                return this.___orderedBeers;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.orderedBeersItem> ___orderedBeers;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.beerSuppliersItem.DetailsClass.IImplementation.supplierStorage
+        {
+            get
+            {
+                return this.supplierStorage;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.supplierStorageItem> __supplierStorage
+        {
+            get
+            {
+                if (this.___supplierStorage == null)
+                {
+                    this.___supplierStorage = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.supplierStorageItem>(
+                        this,
+                        "supplierStorage",
+                        () => this._supplierStorage,
+                        e => global::System.Object.Equals(e.FK_beerSuppliers, this.id));
+                }
+                return this.___supplierStorage;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.supplierStorageItem> ___supplierStorage;
+        
+    }
+    #endregion
+    
+    #region beerTypesItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class beerTypesItem :
+        global::LightSwitchApplication.beerTypesItem.DetailsClass.IImplementation
+    {
+        partial void OnidChanged()
+        {
+            this.___OnPropertyChanged("id");
+        }
+        
+        partial void OnnameChanged()
+        {
+            this.___OnPropertyChanged("name");
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.beerTypesItem.DetailsClass.IImplementation.beerSuppliers
+        {
+            get
+            {
+                return this.beerSuppliers;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerSuppliersItem> __beerSuppliers
+        {
+            get
+            {
+                if (this.___beerSuppliers == null)
+                {
+                    this.___beerSuppliers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerSuppliersItem>(
+                        this,
+                        "beerSuppliers",
+                        () => this._beerSuppliers,
+                        e => global::System.Object.Equals(e.FK_beerTypes, this.id));
+                }
+                return this.___beerSuppliers;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerSuppliersItem> ___beerSuppliers;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.beerTypesItem.DetailsClass.IImplementation.deliveredBeers
+        {
+            get
+            {
+                return this.deliveredBeers;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveredBeersItem> __deliveredBeers
+        {
+            get
+            {
+                if (this.___deliveredBeers == null)
+                {
+                    this.___deliveredBeers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveredBeersItem>(
+                        this,
+                        "deliveredBeers",
+                        () => this._deliveredBeers,
+                        e => global::System.Object.Equals(e.FK_beerTypes, this.id));
+                }
+                return this.___deliveredBeers;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveredBeersItem> ___deliveredBeers;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.beerTypesItem.DetailsClass.IImplementation.storage
+        {
+            get
+            {
+                return this.storage;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.storageItem> __storage
+        {
+            get
+            {
+                if (this.___storage == null)
+                {
+                    this.___storage = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.storageItem>(
+                        this,
+                        "storage",
+                        () => this._storage,
+                        e => global::System.Object.Equals(e.FK_beerTypes, this.id));
+                }
+                return this.___storage;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.storageItem> ___storage;
+        
+    }
+    #endregion
+    
+    #region contactDetailsItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class contactDetailsItem :
+        global::LightSwitchApplication.contactDetailsItem.DetailsClass.IImplementation
+    {
+        partial void OnFK_beerRecipientsChanged()
+        {
+            this.___OnPropertyChanged("FK_beerRecipients");
+            this.___OnPropertyChanged("beerRecipientsItem");
+        }
+        
+        partial void OnFK_suppliersChanged()
+        {
+            this.___OnPropertyChanged("FK_suppliers");
+            this.___OnPropertyChanged("suppliersItem");
+        }
+        
+        partial void OnidChanged()
+        {
+            this.___OnPropertyChanged("id");
+        }
+        
+        partial void OnstreetChanged()
+        {
+            this.___OnPropertyChanged("street");
+        }
+        
+        partial void OnnumberChanged()
+        {
+            this.___OnPropertyChanged("number");
+        }
+        
+        partial void OnZIPChanged()
+        {
+            this.___OnPropertyChanged("ZIP");
+        }
+        
+        partial void OncityChanged()
+        {
+            this.___OnPropertyChanged("city");
+        }
+        
+        partial void OnstateChanged()
+        {
+            this.___OnPropertyChanged("state");
+        }
+        
+        partial void OnphoneChanged()
+        {
+            this.___OnPropertyChanged("phone");
+        }
+        
+        partial void OnemailChanged()
+        {
+            this.___OnPropertyChanged("email");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.contactDetailsItem.DetailsClass.IImplementation.beerRecipientsItem
+        {
+            get
+            {
+                return this.beerRecipientsItem;
+            }
+            set
+            {
+                this.beerRecipientsItem = (global::LightSwitchApplication.Implementation.beerRecipientsItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerRecipientsItem> __beerRecipientsItem
+        {
+            get
+            {
+                if (this.___beerRecipientsItem == null)
+                {
+                    this.___beerRecipientsItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerRecipientsItem>(
+                        this,
+                        "beerRecipientsItem",
+                        new string[] { "FK_beerRecipients" },
+                        e => global::System.Object.Equals(e.id, this.FK_beerRecipients),
+                        () => this._beerRecipientsItem,
+                        e => this._beerRecipientsItem = e);
+                }
+                return this.___beerRecipientsItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerRecipientsItem> ___beerRecipientsItem;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.contactDetailsItem.DetailsClass.IImplementation.suppliersItem
+        {
+            get
+            {
+                return this.suppliersItem;
+            }
+            set
+            {
+                this.suppliersItem = (global::LightSwitchApplication.Implementation.suppliersItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem> __suppliersItem
+        {
+            get
+            {
+                if (this.___suppliersItem == null)
+                {
+                    this.___suppliersItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem>(
+                        this,
+                        "suppliersItem",
+                        new string[] { "FK_suppliers" },
+                        e => global::System.Object.Equals(e.id, this.FK_suppliers),
+                        () => this._suppliersItem,
+                        e => this._suppliersItem = e);
+                }
+                return this.___suppliersItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem> ___suppliersItem;
+        
+    }
+    #endregion
+    
+    #region countriesItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class countriesItem :
+        global::LightSwitchApplication.countriesItem.DetailsClass.IImplementation
+    {
+        partial void OnidChanged()
+        {
+            this.___OnPropertyChanged("id");
+        }
+        
+        partial void OnnameChanged()
+        {
+            this.___OnPropertyChanged("name");
+        }
+        
+        partial void OncustomsChanged()
+        {
+            this.___OnPropertyChanged("customs");
+        }
+        
+        partial void OndistanceChanged()
+        {
+            this.___OnPropertyChanged("distance");
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.countriesItem.DetailsClass.IImplementation.beerRecipients
+        {
+            get
+            {
+                return this.beerRecipients;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerRecipientsItem> __beerRecipients
+        {
+            get
+            {
+                if (this.___beerRecipients == null)
+                {
+                    this.___beerRecipients = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerRecipientsItem>(
+                        this,
+                        "beerRecipients",
+                        () => this._beerRecipients,
+                        e => global::System.Object.Equals(e.FK_countries, this.id));
+                }
+                return this.___beerRecipients;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerRecipientsItem> ___beerRecipients;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.countriesItem.DetailsClass.IImplementation.suppliers
+        {
+            get
+            {
+                return this.suppliers;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.suppliersItem> __suppliers
+        {
+            get
+            {
+                if (this.___suppliers == null)
+                {
+                    this.___suppliers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.suppliersItem>(
+                        this,
+                        "suppliers",
+                        () => this._suppliers,
+                        e => global::System.Object.Equals(e.FK_countries, this.id));
+                }
+                return this.___suppliers;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.suppliersItem> ___suppliers;
+        
+    }
+    #endregion
+    
+    #region deliveredBeersItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class deliveredBeersItem :
+        global::LightSwitchApplication.deliveredBeersItem.DetailsClass.IImplementation
+    {
+        partial void OnFK_beerTypesChanged()
+        {
+            this.___OnPropertyChanged("FK_beerTypes");
+            this.___OnPropertyChanged("beerTypesItem");
+        }
+        
+        partial void OnFK_deliveriesChanged()
+        {
+            this.___OnPropertyChanged("FK_deliveries");
+            this.___OnPropertyChanged("deliveriesItem");
+        }
+        
+        partial void OnidChanged()
+        {
+            this.___OnPropertyChanged("id");
+        }
+        
+        partial void OnamountChanged()
+        {
+            this.___OnPropertyChanged("amount");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.deliveredBeersItem.DetailsClass.IImplementation.beerTypesItem
+        {
+            get
+            {
+                return this.beerTypesItem;
+            }
+            set
+            {
+                this.beerTypesItem = (global::LightSwitchApplication.Implementation.beerTypesItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem> __beerTypesItem
+        {
+            get
+            {
+                if (this.___beerTypesItem == null)
+                {
+                    this.___beerTypesItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem>(
+                        this,
+                        "beerTypesItem",
+                        new string[] { "FK_beerTypes" },
+                        e => global::System.Object.Equals(e.id, this.FK_beerTypes),
+                        () => this._beerTypesItem,
+                        e => this._beerTypesItem = e);
+                }
+                return this.___beerTypesItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem> ___beerTypesItem;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.deliveredBeersItem.DetailsClass.IImplementation.deliveriesItem
+        {
+            get
+            {
+                return this.deliveriesItem;
+            }
+            set
+            {
+                this.deliveriesItem = (global::LightSwitchApplication.Implementation.deliveriesItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.deliveriesItem> __deliveriesItem
+        {
+            get
+            {
+                if (this.___deliveriesItem == null)
+                {
+                    this.___deliveriesItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.deliveriesItem>(
+                        this,
+                        "deliveriesItem",
+                        new string[] { "FK_deliveries" },
+                        e => global::System.Object.Equals(e.id, this.FK_deliveries),
+                        () => this._deliveriesItem,
+                        e => this._deliveriesItem = e);
+                }
+                return this.___deliveriesItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.deliveriesItem> ___deliveriesItem;
+        
+    }
+    #endregion
+    
+    #region deliveriesItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class deliveriesItem :
+        global::LightSwitchApplication.deliveriesItem.DetailsClass.IImplementation
+    {
+        partial void OnFK_beerRecipientsChanged()
+        {
+            this.___OnPropertyChanged("FK_beerRecipients");
+            this.___OnPropertyChanged("beerRecipientsItem");
+        }
+        
+        partial void OnidChanged()
+        {
+            this.___OnPropertyChanged("id");
+        }
+        
+        partial void OnorderDateChanged()
+        {
+            this.___OnPropertyChanged("orderDate");
+        }
+        
+        partial void OndeliveryDateChanged()
+        {
+            this.___OnPropertyChanged("deliveryDate");
+        }
+        
+        partial void OnbillingDateChanged()
+        {
+            this.___OnPropertyChanged("billingDate");
+        }
+        
+        partial void OninvoiceNumberChanged()
+        {
+            this.___OnPropertyChanged("invoiceNumber");
+        }
+        
+        partial void OndeliveredChanged()
+        {
+            this.___OnPropertyChanged("delivered");
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.deliveriesItem.DetailsClass.IImplementation.deliveredBeers
+        {
+            get
+            {
+                return this.deliveredBeers;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveredBeersItem> __deliveredBeers
+        {
+            get
+            {
+                if (this.___deliveredBeers == null)
+                {
+                    this.___deliveredBeers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveredBeersItem>(
+                        this,
+                        "deliveredBeers",
+                        () => this._deliveredBeers,
+                        e => global::System.Object.Equals(e.FK_deliveries, this.id));
+                }
+                return this.___deliveredBeers;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.deliveredBeersItem> ___deliveredBeers;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.deliveriesItem.DetailsClass.IImplementation.beerRecipientsItem
+        {
+            get
+            {
+                return this.beerRecipientsItem;
+            }
+            set
+            {
+                this.beerRecipientsItem = (global::LightSwitchApplication.Implementation.beerRecipientsItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerRecipientsItem> __beerRecipientsItem
+        {
+            get
+            {
+                if (this.___beerRecipientsItem == null)
+                {
+                    this.___beerRecipientsItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerRecipientsItem>(
+                        this,
+                        "beerRecipientsItem",
+                        new string[] { "FK_beerRecipients" },
+                        e => global::System.Object.Equals(e.id, this.FK_beerRecipients),
+                        () => this._beerRecipientsItem,
+                        e => this._beerRecipientsItem = e);
+                }
+                return this.___beerRecipientsItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerRecipientsItem> ___beerRecipientsItem;
+        
+    }
+    #endregion
+    
+    #region driversItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class driversItem :
+        global::LightSwitchApplication.driversItem.DetailsClass.IImplementation
+    {
+        partial void OnidChanged()
+        {
+            this.___OnPropertyChanged("id");
+        }
+        
+        partial void OndriverChanged()
+        {
+            this.___OnPropertyChanged("driver");
+        }
+        
+        partial void OntruckCapacityChanged()
+        {
+            this.___OnPropertyChanged("truckCapacity");
+        }
+        
+    }
+    #endregion
+    
+    #region orderedBeersItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class orderedBeersItem :
+        global::LightSwitchApplication.orderedBeersItem.DetailsClass.IImplementation
+    {
+        partial void OnFK_beerSuppliersChanged()
+        {
+            this.___OnPropertyChanged("FK_beerSuppliers");
+            this.___OnPropertyChanged("beerSuppliersItem");
+        }
+        
+        partial void OnFK_ordersChanged()
+        {
+            this.___OnPropertyChanged("FK_orders");
+            this.___OnPropertyChanged("ordersItem");
+        }
+        
+        partial void OnidChanged()
+        {
+            this.___OnPropertyChanged("id");
+        }
+        
+        partial void OnamountChanged()
+        {
+            this.___OnPropertyChanged("amount");
+        }
+        
+        partial void OnpriceChanged()
+        {
+            this.___OnPropertyChanged("price");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.orderedBeersItem.DetailsClass.IImplementation.beerSuppliersItem
+        {
+            get
+            {
+                return this.beerSuppliersItem;
+            }
+            set
+            {
+                this.beerSuppliersItem = (global::LightSwitchApplication.Implementation.beerSuppliersItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerSuppliersItem> __beerSuppliersItem
+        {
+            get
+            {
+                if (this.___beerSuppliersItem == null)
+                {
+                    this.___beerSuppliersItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerSuppliersItem>(
+                        this,
+                        "beerSuppliersItem",
+                        new string[] { "FK_beerSuppliers" },
+                        e => global::System.Object.Equals(e.id, this.FK_beerSuppliers),
+                        () => this._beerSuppliersItem,
+                        e => this._beerSuppliersItem = e);
+                }
+                return this.___beerSuppliersItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerSuppliersItem> ___beerSuppliersItem;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.orderedBeersItem.DetailsClass.IImplementation.ordersItem
+        {
+            get
+            {
+                return this.ordersItem;
+            }
+            set
+            {
+                this.ordersItem = (global::LightSwitchApplication.Implementation.ordersItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.ordersItem> __ordersItem
+        {
+            get
+            {
+                if (this.___ordersItem == null)
+                {
+                    this.___ordersItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.ordersItem>(
+                        this,
+                        "ordersItem",
+                        new string[] { "FK_orders" },
+                        e => global::System.Object.Equals(e.id, this.FK_orders),
+                        () => this._ordersItem,
+                        e => this._ordersItem = e);
+                }
+                return this.___ordersItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.ordersItem> ___ordersItem;
+        
+    }
+    #endregion
+    
+    #region ordersItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class ordersItem :
+        global::LightSwitchApplication.ordersItem.DetailsClass.IImplementation
+    {
+        partial void OnFK_suppliersChanged()
+        {
+            this.___OnPropertyChanged("FK_suppliers");
+            this.___OnPropertyChanged("suppliersItem");
+        }
+        
+        partial void OnidChanged()
+        {
+            this.___OnPropertyChanged("id");
+        }
+        
+        partial void OnpriceChanged()
+        {
+            this.___OnPropertyChanged("price");
+        }
+        
+        partial void OnreceivedChanged()
+        {
+            this.___OnPropertyChanged("received");
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.ordersItem.DetailsClass.IImplementation.orderedBeers
+        {
+            get
+            {
+                return this.orderedBeers;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.orderedBeersItem> __orderedBeers
+        {
+            get
+            {
+                if (this.___orderedBeers == null)
+                {
+                    this.___orderedBeers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.orderedBeersItem>(
+                        this,
+                        "orderedBeers",
+                        () => this._orderedBeers,
+                        e => global::System.Object.Equals(e.FK_orders, this.id));
+                }
+                return this.___orderedBeers;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.orderedBeersItem> ___orderedBeers;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.ordersItem.DetailsClass.IImplementation.suppliersItem
+        {
+            get
+            {
+                return this.suppliersItem;
+            }
+            set
+            {
+                this.suppliersItem = (global::LightSwitchApplication.Implementation.suppliersItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem> __suppliersItem
+        {
+            get
+            {
+                if (this.___suppliersItem == null)
+                {
+                    this.___suppliersItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem>(
+                        this,
+                        "suppliersItem",
+                        new string[] { "FK_suppliers" },
+                        e => global::System.Object.Equals(e.id, this.FK_suppliers),
+                        () => this._suppliersItem,
+                        e => this._suppliersItem = e);
+                }
+                return this.___suppliersItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem> ___suppliersItem;
+        
+    }
+    #endregion
+    
+    #region storageItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class storageItem :
+        global::LightSwitchApplication.storageItem.DetailsClass.IImplementation
+    {
+        partial void OnFK_beerTypesChanged()
+        {
+            this.___OnPropertyChanged("FK_beerTypes");
+            this.___OnPropertyChanged("beerTypesItem");
+        }
+        
+        partial void OnidChanged()
+        {
+            this.___OnPropertyChanged("id");
+        }
+        
+        partial void OnamountChanged()
+        {
+            this.___OnPropertyChanged("amount");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.storageItem.DetailsClass.IImplementation.beerTypesItem
+        {
+            get
+            {
+                return this.beerTypesItem;
+            }
+            set
+            {
+                this.beerTypesItem = (global::LightSwitchApplication.Implementation.beerTypesItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem> __beerTypesItem
+        {
+            get
+            {
+                if (this.___beerTypesItem == null)
+                {
+                    this.___beerTypesItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem>(
+                        this,
+                        "beerTypesItem",
+                        new string[] { "FK_beerTypes" },
+                        e => global::System.Object.Equals(e.id, this.FK_beerTypes),
+                        () => this._beerTypesItem,
+                        e => this._beerTypesItem = e);
+                }
+                return this.___beerTypesItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerTypesItem> ___beerTypesItem;
+        
+    }
+    #endregion
+    
+    #region suppliersItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class suppliersItem :
+        global::LightSwitchApplication.suppliersItem.DetailsClass.IImplementation
+    {
+        partial void OnFK_countriesChanged()
+        {
+            this.___OnPropertyChanged("FK_countries");
+            this.___OnPropertyChanged("countriesItem");
+        }
+        
+        partial void OnidChanged()
+        {
+            this.___OnPropertyChanged("id");
+        }
+        
+        partial void OnnameChanged()
+        {
+            this.___OnPropertyChanged("name");
+        }
+        
+        partial void OnvolumeDiscountPercentChanged()
+        {
+            this.___OnPropertyChanged("volumeDiscountPercent");
+        }
+        
+        partial void OnvolumeDiscountRequiredQuantityChanged()
+        {
+            this.___OnPropertyChanged("volumeDiscountRequiredQuantity");
+        }
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.suppliersItem.DetailsClass.IImplementation.beerSuppliers
+        {
+            get
+            {
+                return this.beerSuppliers;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerSuppliersItem> __beerSuppliers
+        {
+            get
+            {
+                if (this.___beerSuppliers == null)
+                {
+                    this.___beerSuppliers = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerSuppliersItem>(
+                        this,
+                        "beerSuppliers",
+                        () => this._beerSuppliers,
+                        e => global::System.Object.Equals(e.FK_suppliers, this.id));
+                }
+                return this.___beerSuppliers;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.beerSuppliersItem> ___beerSuppliers;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.suppliersItem.DetailsClass.IImplementation.contactDetails
+        {
+            get
+            {
+                return this.contactDetails;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.contactDetailsItem> __contactDetails
+        {
+            get
+            {
+                if (this.___contactDetails == null)
+                {
+                    this.___contactDetails = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.contactDetailsItem>(
+                        this,
+                        "contactDetails",
+                        () => this._contactDetails,
+                        e => global::System.Object.Equals(e.FK_suppliers, this.id));
+                }
+                return this.___contactDetails;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.contactDetailsItem> ___contactDetails;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.suppliersItem.DetailsClass.IImplementation.orders
+        {
+            get
+            {
+                return this.orders;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.ordersItem> __orders
+        {
+            get
+            {
+                if (this.___orders == null)
+                {
+                    this.___orders = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.ordersItem>(
+                        this,
+                        "orders",
+                        () => this._orders,
+                        e => global::System.Object.Equals(e.FK_suppliers, this.id));
+                }
+                return this.___orders;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.ordersItem> ___orders;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.suppliersItem.DetailsClass.IImplementation.countriesItem
+        {
+            get
+            {
+                return this.countriesItem;
+            }
+            set
+            {
+                this.countriesItem = (global::LightSwitchApplication.Implementation.countriesItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.countriesItem> __countriesItem
+        {
+            get
+            {
+                if (this.___countriesItem == null)
+                {
+                    this.___countriesItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.countriesItem>(
+                        this,
+                        "countriesItem",
+                        new string[] { "FK_countries" },
+                        e => global::System.Object.Equals(e.id, this.FK_countries),
+                        () => this._countriesItem,
+                        e => this._countriesItem = e);
+                }
+                return this.___countriesItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.countriesItem> ___countriesItem;
+        
+        global::System.Collections.IEnumerable global::LightSwitchApplication.suppliersItem.DetailsClass.IImplementation.supplierStorage
+        {
+            get
+            {
+                return this.supplierStorage;
+            }
+        }
+        
+        internal global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.supplierStorageItem> __supplierStorage
+        {
+            get
+            {
+                if (this.___supplierStorage == null)
+                {
+                    this.___supplierStorage = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.supplierStorageItem>(
+                        this,
+                        "supplierStorage",
+                        () => this._supplierStorage,
+                        e => global::System.Object.Equals(e.FK_suppliers, this.id));
+                }
+                return this.___supplierStorage;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRefCollection<global::LightSwitchApplication.Implementation.supplierStorageItem> ___supplierStorage;
+        
+    }
+    #endregion
+    
+    #region supplierStorageItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class supplierStorageItem :
+        global::LightSwitchApplication.supplierStorageItem.DetailsClass.IImplementation
+    {
+        partial void OnFK_beerSuppliersChanged()
+        {
+            this.___OnPropertyChanged("FK_beerSuppliers");
+            this.___OnPropertyChanged("beerSuppliersItem");
+        }
+        
+        partial void OnFK_suppliersChanged()
+        {
+            this.___OnPropertyChanged("FK_suppliers");
+            this.___OnPropertyChanged("suppliersItem");
+        }
+        
+        partial void OnidChanged()
+        {
+            this.___OnPropertyChanged("id");
+        }
+        
+        partial void OnamountChanged()
+        {
+            this.___OnPropertyChanged("amount");
+        }
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.supplierStorageItem.DetailsClass.IImplementation.beerSuppliersItem
+        {
+            get
+            {
+                return this.beerSuppliersItem;
+            }
+            set
+            {
+                this.beerSuppliersItem = (global::LightSwitchApplication.Implementation.beerSuppliersItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerSuppliersItem> __beerSuppliersItem
+        {
+            get
+            {
+                if (this.___beerSuppliersItem == null)
+                {
+                    this.___beerSuppliersItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerSuppliersItem>(
+                        this,
+                        "beerSuppliersItem",
+                        new string[] { "FK_beerSuppliers" },
+                        e => global::System.Object.Equals(e.id, this.FK_beerSuppliers),
+                        () => this._beerSuppliersItem,
+                        e => this._beerSuppliersItem = e);
+                }
+                return this.___beerSuppliersItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.beerSuppliersItem> ___beerSuppliersItem;
+        
+        global::Microsoft.LightSwitch.Internal.IEntityImplementation global::LightSwitchApplication.supplierStorageItem.DetailsClass.IImplementation.suppliersItem
+        {
+            get
+            {
+                return this.suppliersItem;
+            }
+            set
+            {
+                this.suppliersItem = (global::LightSwitchApplication.Implementation.suppliersItem)value;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem> __suppliersItem
+        {
+            get
+            {
+                if (this.___suppliersItem == null)
+                {
+                    this.___suppliersItem = new global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem>(
+                        this,
+                        "suppliersItem",
+                        new string[] { "FK_suppliers" },
+                        e => global::System.Object.Equals(e.id, this.FK_suppliers),
+                        () => this._suppliersItem,
+                        e => this._suppliersItem = e);
+                }
+                return this.___suppliersItem;
+            }
+        }
+        
+        private global::Microsoft.LightSwitch.ClientGenerated.Implementation.EntityRef<global::LightSwitchApplication.Implementation.suppliersItem> ___suppliersItem;
+        
+    }
+    #endregion
+    
+    #region view_driver_nextDeliveriesItem
+    [global::System.Runtime.Serialization.DataContract(Namespace = "http://schemas.datacontract.org/2004/07/freibierDB.Implementation")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class view_driver_nextDeliveriesItem :
+        global::LightSwitchApplication.view_driver_nextDeliveriesItem.DetailsClass.IImplementation
+    {
+        partial void OndeliveryDateChanged()
+        {
+            this.___OnPropertyChanged("deliveryDate");
+        }
+        
+        partial void OninvoiceNumberChanged()
+        {
+            this.___OnPropertyChanged("invoiceNumber");
+        }
+        
+        partial void OncarriageChanged()
+        {
+            this.___OnPropertyChanged("carriage");
+        }
+        
+        partial void OnamountChanged()
+        {
+            this.___OnPropertyChanged("amount");
+        }
+        
+        partial void OndriverChanged()
+        {
+            this.___OnPropertyChanged("driver");
+        }
+        
+        partial void OntruckCapacityChanged()
+        {
+            this.___OnPropertyChanged("truckCapacity");
+        }
+        
+    }
+    #endregion
+    
+    #region ApplicationDataObjectContext
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    public partial class ApplicationDataObjectContext
+    {
+        protected override global::Microsoft.LightSwitch.Internal.IEntityImplementation CreateEntityImplementation<T>()
+        {
+            if (typeof(T) == typeof(global::LightSwitchApplication.DeliveryConfirmOperation))
+            {
+                return new global::LightSwitchApplication.Implementation.DeliveryConfirmOperation();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.OrderReceivedOperation))
+            {
+                return new global::LightSwitchApplication.Implementation.OrderReceivedOperation();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.OrderGetFreightOperation))
+            {
+                return new global::LightSwitchApplication.Implementation.OrderGetFreightOperation();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.DeliveryGetFreightOperation))
+            {
+                return new global::LightSwitchApplication.Implementation.DeliveryGetFreightOperation();
+            }
+            return null;
+        }
+    }
+    #endregion
+    
     #region freibierDBObjectContext
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -983,6 +1551,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(T) == typeof(global::LightSwitchApplication.beerTypesItem))
             {
                 return new global::LightSwitchApplication.Implementation.beerTypesItem();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.contactDetailsItem))
+            {
+                return new global::LightSwitchApplication.Implementation.contactDetailsItem();
             }
             if (typeof(T) == typeof(global::LightSwitchApplication.countriesItem))
             {
@@ -1004,29 +1576,25 @@ namespace LightSwitchApplication.Implementation
             {
                 return new global::LightSwitchApplication.Implementation.orderedBeersItem();
             }
-            if (typeof(T) == typeof(global::LightSwitchApplication.Order))
+            if (typeof(T) == typeof(global::LightSwitchApplication.ordersItem))
             {
-                return new global::LightSwitchApplication.Implementation.Order();
+                return new global::LightSwitchApplication.Implementation.ordersItem();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.storageItem))
+            {
+                return new global::LightSwitchApplication.Implementation.storageItem();
             }
             if (typeof(T) == typeof(global::LightSwitchApplication.suppliersItem))
             {
                 return new global::LightSwitchApplication.Implementation.suppliersItem();
             }
-            return null;
-        }
-    }
-    #endregion
-    
-    #region ApplicationDataObjectContext
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    public partial class ApplicationDataObjectContext
-    {
-        protected override global::Microsoft.LightSwitch.Internal.IEntityImplementation CreateEntityImplementation<T>()
-        {
-            if (typeof(T) == typeof(global::LightSwitchApplication.DeliveryConfirmOperation))
+            if (typeof(T) == typeof(global::LightSwitchApplication.supplierStorageItem))
             {
-                return new global::LightSwitchApplication.Implementation.DeliveryConfirmOperation();
+                return new global::LightSwitchApplication.Implementation.supplierStorageItem();
+            }
+            if (typeof(T) == typeof(global::LightSwitchApplication.view_driver_nextDeliveriesItem))
+            {
+                return new global::LightSwitchApplication.Implementation.view_driver_nextDeliveriesItem();
             }
             return null;
         }
@@ -1044,26 +1612,26 @@ namespace LightSwitchApplication.Implementation
     
         protected override global::Microsoft.LightSwitch.IDataService CreateDataService(global::System.Type dataServiceType)
         {
-            if (dataServiceType == typeof(global::LightSwitchApplication.freibierDB))
-            {
-                return new global::LightSwitchApplication.freibierDB();
-            }
             if (dataServiceType == typeof(global::LightSwitchApplication.ApplicationData))
             {
                 return new global::LightSwitchApplication.ApplicationData();
+            }
+            if (dataServiceType == typeof(global::LightSwitchApplication.freibierDB))
+            {
+                return new global::LightSwitchApplication.freibierDB();
             }
             return base.CreateDataService(dataServiceType);
         }
     
         protected override global::Microsoft.LightSwitch.Internal.IDataServiceImplementation CreateDataServiceImplementation<TDataService>(TDataService dataService)
         {
-            if (typeof(TDataService) == typeof(global::LightSwitchApplication.freibierDB))
-            {
-                return new global::LightSwitchApplication.Implementation.freibierDBObjectContext(global::Microsoft.LightSwitch.ClientGenerated.Implementation.DataServiceContext.CreateServiceUri("../freibierDB.svc"));
-            }
             if (typeof(TDataService) == typeof(global::LightSwitchApplication.ApplicationData))
             {
                 return new global::LightSwitchApplication.Implementation.ApplicationDataObjectContext(global::Microsoft.LightSwitch.ClientGenerated.Implementation.DataServiceContext.CreateServiceUri("../ApplicationData.svc"));
+            }
+            if (typeof(TDataService) == typeof(global::LightSwitchApplication.freibierDB))
+            {
+                return new global::LightSwitchApplication.Implementation.freibierDBObjectContext(global::Microsoft.LightSwitch.ClientGenerated.Implementation.DataServiceContext.CreateServiceUri("../freibierDB.svc"));
             }
             return base.CreateDataServiceImplementation(dataService);
         }
@@ -1079,6 +1647,22 @@ namespace LightSwitchApplication.Implementation
     {
         global::System.Type global::Microsoft.LightSwitch.Internal.ITypeMappingProvider.GetImplementationType(global::System.Type definitionType)
         {
+            if (typeof(global::LightSwitchApplication.DeliveryConfirmOperation) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.DeliveryConfirmOperation);
+            }
+            if (typeof(global::LightSwitchApplication.OrderReceivedOperation) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.OrderReceivedOperation);
+            }
+            if (typeof(global::LightSwitchApplication.OrderGetFreightOperation) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.OrderGetFreightOperation);
+            }
+            if (typeof(global::LightSwitchApplication.DeliveryGetFreightOperation) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.DeliveryGetFreightOperation);
+            }
             if (typeof(global::LightSwitchApplication.beerRecipientsItem) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.beerRecipientsItem);
@@ -1090,6 +1674,10 @@ namespace LightSwitchApplication.Implementation
             if (typeof(global::LightSwitchApplication.beerTypesItem) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.beerTypesItem);
+            }
+            if (typeof(global::LightSwitchApplication.contactDetailsItem) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.contactDetailsItem);
             }
             if (typeof(global::LightSwitchApplication.countriesItem) == definitionType)
             {
@@ -1111,17 +1699,25 @@ namespace LightSwitchApplication.Implementation
             {
                 return typeof(global::LightSwitchApplication.Implementation.orderedBeersItem);
             }
-            if (typeof(global::LightSwitchApplication.Order) == definitionType)
+            if (typeof(global::LightSwitchApplication.ordersItem) == definitionType)
             {
-                return typeof(global::LightSwitchApplication.Implementation.Order);
+                return typeof(global::LightSwitchApplication.Implementation.ordersItem);
+            }
+            if (typeof(global::LightSwitchApplication.storageItem) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.storageItem);
             }
             if (typeof(global::LightSwitchApplication.suppliersItem) == definitionType)
             {
                 return typeof(global::LightSwitchApplication.Implementation.suppliersItem);
             }
-            if (typeof(global::LightSwitchApplication.DeliveryConfirmOperation) == definitionType)
+            if (typeof(global::LightSwitchApplication.supplierStorageItem) == definitionType)
             {
-                return typeof(global::LightSwitchApplication.Implementation.DeliveryConfirmOperation);
+                return typeof(global::LightSwitchApplication.Implementation.supplierStorageItem);
+            }
+            if (typeof(global::LightSwitchApplication.view_driver_nextDeliveriesItem) == definitionType)
+            {
+                return typeof(global::LightSwitchApplication.Implementation.view_driver_nextDeliveriesItem);
             }
             return null;
         }

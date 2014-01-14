@@ -17,32 +17,32 @@ namespace LightSwitchApplication
     /// Keine modellierte Beschreibung verfügbar
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    public sealed partial class Order : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass>
+    public sealed partial class countriesItem : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass>
     {
         #region Constructors
     
         /// <summary>
-        /// Initialisiert eine neue Instanz der Entität Order.
+        /// Initialisiert eine neue Instanz der Entität countriesItem.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Order()
+        public countriesItem()
             : this(null)
         {
         }
     
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Order(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.Order> entitySet)
+        public countriesItem(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.countriesItem> entitySet)
             : base(entitySet)
         {
-            global::LightSwitchApplication.Order.DetailsClass.Initialize(this);
+            global::LightSwitchApplication.countriesItem.DetailsClass.Initialize(this);
         }
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Order_Created();
+        partial void countriesItem_Created();
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void Order_AllowSaveWithErrors(ref bool result);
+        partial void countriesItem_AllowSaveWithErrors(ref bool result);
     
         #endregion
     
@@ -83,115 +83,138 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int PK_orders
+        public int id
         {
             get
             {
-                return global::LightSwitchApplication.Order.DetailsClass.GetValue(this, global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.PK_orders);
+                return global::LightSwitchApplication.countriesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.id);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_orders_IsReadOnly(ref bool result);
+        partial void id_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_orders_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void id_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_orders_Changed();
+        partial void id_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public decimal price
+        public string name
         {
             get
             {
-                return global::LightSwitchApplication.Order.DetailsClass.GetValue(this, global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.price);
+                return global::LightSwitchApplication.countriesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.name);
             }
             set
             {
-                global::LightSwitchApplication.Order.DetailsClass.SetValue(this, global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.price, value);
+                global::LightSwitchApplication.countriesItem.DetailsClass.SetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.name, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void price_IsReadOnly(ref bool result);
+        partial void name_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void price_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void name_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void price_Changed();
+        partial void name_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public bool received
+        public decimal customs
         {
             get
             {
-                return global::LightSwitchApplication.Order.DetailsClass.GetValue(this, global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.received);
+                return global::LightSwitchApplication.countriesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.customs);
             }
             set
             {
-                global::LightSwitchApplication.Order.DetailsClass.SetValue(this, global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.received, value);
+                global::LightSwitchApplication.countriesItem.DetailsClass.SetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.customs, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void received_IsReadOnly(ref bool result);
+        partial void customs_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void received_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void customs_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void received_Changed();
+        partial void customs_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.orderedBeersItem> orderedBeers
+        public int distance
         {
             get
             {
-                return global::LightSwitchApplication.Order.DetailsClass.GetValue(this, global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.orderedBeers);
-            }
-        }
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.orderedBeersItem> orderedBeersQuery
-        {
-            get
-            {
-                return global::LightSwitchApplication.Order.DetailsClass.GetQuery(this, global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.orderedBeers);
-            }
-        }
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::LightSwitchApplication.suppliersItem supplier
-        {
-            get
-            {
-                return global::LightSwitchApplication.Order.DetailsClass.GetValue(this, global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.supplier);
+                return global::LightSwitchApplication.countriesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.distance);
             }
             set
             {
-                global::LightSwitchApplication.Order.DetailsClass.SetValue(this, global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.supplier, value);
+                global::LightSwitchApplication.countriesItem.DetailsClass.SetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.distance, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void supplier_IsReadOnly(ref bool result);
+        partial void distance_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void supplier_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void distance_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void supplier_Changed();
+        partial void distance_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.beerRecipientsItem> beerRecipients
+        {
+            get
+            {
+                return global::LightSwitchApplication.countriesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.beerRecipients);
+            }
+        }
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.beerRecipientsItem> beerRecipientsQuery
+        {
+            get
+            {
+                return global::LightSwitchApplication.countriesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.beerRecipients);
+            }
+        }
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.suppliersItem> suppliers
+        {
+            get
+            {
+                return global::LightSwitchApplication.countriesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.suppliers);
+            }
+        }
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.suppliersItem> suppliersQuery
+        {
+            get
+            {
+                return global::LightSwitchApplication.countriesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.suppliers);
+            }
+        }
 
         #endregion
     
@@ -202,37 +225,37 @@ namespace LightSwitchApplication
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public sealed class DetailsClass : global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<
-                global::LightSwitchApplication.Order,
-                global::LightSwitchApplication.Order.DetailsClass,
-                global::LightSwitchApplication.Order.DetailsClass.IImplementation,
-                global::LightSwitchApplication.Order.DetailsClass.PropertySet,
-                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass>,
-                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass>>
+                global::LightSwitchApplication.countriesItem,
+                global::LightSwitchApplication.countriesItem.DetailsClass,
+                global::LightSwitchApplication.countriesItem.DetailsClass.IImplementation,
+                global::LightSwitchApplication.countriesItem.DetailsClass.PropertySet,
+                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass>,
+                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass>>
         {
     
             static DetailsClass()
             {
-                var initializeEntry = global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.PK_orders;
+                var initializeEntry = global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.id;
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass>.Entry
-                __OrderEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass>.Entry(
-                    global::LightSwitchApplication.Order.DetailsClass.__Order_CreateNew,
-                    global::LightSwitchApplication.Order.DetailsClass.__Order_Created,
-                    global::LightSwitchApplication.Order.DetailsClass.__Order_AllowSaveWithErrors);
-            private static global::LightSwitchApplication.Order __Order_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.Order> es)
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass>.Entry
+                __countriesItemEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass>.Entry(
+                    global::LightSwitchApplication.countriesItem.DetailsClass.__countriesItem_CreateNew,
+                    global::LightSwitchApplication.countriesItem.DetailsClass.__countriesItem_Created,
+                    global::LightSwitchApplication.countriesItem.DetailsClass.__countriesItem_AllowSaveWithErrors);
+            private static global::LightSwitchApplication.countriesItem __countriesItem_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.countriesItem> es)
             {
-                return new global::LightSwitchApplication.Order(es);
+                return new global::LightSwitchApplication.countriesItem(es);
             }
-            private static void __Order_Created(global::LightSwitchApplication.Order e)
+            private static void __countriesItem_Created(global::LightSwitchApplication.countriesItem e)
             {
-                e.Order_Created();
+                e.countriesItem_Created();
             }
-            private static bool __Order_AllowSaveWithErrors(global::LightSwitchApplication.Order e)
+            private static bool __countriesItem_AllowSaveWithErrors(global::LightSwitchApplication.countriesItem e)
             {
                 bool result = false;
-                e.Order_AllowSaveWithErrors(ref result);
+                e.countriesItem_AllowSaveWithErrors(ref result);
                 return result;
             }
     
@@ -240,7 +263,7 @@ namespace LightSwitchApplication
             {
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass> Commands
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass> Commands
             {
                 get
                 {
@@ -248,7 +271,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass> Methods
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass> Methods
             {
                 get
                 {
@@ -256,7 +279,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::LightSwitchApplication.Order.DetailsClass.PropertySet Properties
+            public new global::LightSwitchApplication.countriesItem.DetailsClass.PropertySet Properties
             {
                 get
                 {
@@ -268,50 +291,58 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass>
+            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass>
             {
     
                 public PropertySet() : base()
                 {
                 }
     
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, int> PK_orders
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int> id
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.PK_orders) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, int>;
+                        return base.GetItem(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.id) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, decimal> price
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, string> name
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.price) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, decimal>;
+                        return base.GetItem(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.name) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, string>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, bool> received
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, decimal> customs
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.received) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, bool>;
+                        return base.GetItem(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.customs) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, decimal>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, global::LightSwitchApplication.orderedBeersItem> orderedBeers
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int> distance
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.orderedBeers) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, global::LightSwitchApplication.orderedBeersItem>;
+                        return base.GetItem(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.distance) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, global::LightSwitchApplication.suppliersItem> supplier
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.beerRecipientsItem> beerRecipients
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.supplier) as global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, global::LightSwitchApplication.suppliersItem>;
+                        return base.GetItem(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.beerRecipients) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.beerRecipientsItem>;
+                    }
+                }
+                
+                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.suppliersItem> suppliers
+                {
+                    get
+                    {
+                        return base.GetItem(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.suppliers) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.suppliersItem>;
                     }
                 }
                 
@@ -321,11 +352,12 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
             public interface IImplementation : global::Microsoft.LightSwitch.Internal.IEntityImplementation
             {
-                new int PK_orders { get; }
-                new decimal price { get; set; }
-                new bool received { get; set; }
-                new global::System.Collections.IEnumerable orderedBeers { get; }
-                new global::Microsoft.LightSwitch.Internal.IEntityImplementation supplier { get; set; }
+                new int id { get; }
+                new string name { get; set; }
+                new decimal customs { get; set; }
+                new int distance { get; set; }
+                new global::System.Collections.IEnumerable beerRecipients { get; }
+                new global::System.Collections.IEnumerable suppliers { get; }
             }
             #pragma warning restore 109
     
@@ -336,195 +368,208 @@ namespace LightSwitchApplication
             {
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, int>.Entry
-                    PK_orders = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, int>.Entry(
-                        "PK_orders",
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._PK_orders_Stub,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._PK_orders_ComputeIsReadOnly,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._PK_orders_Validate,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._PK_orders_GetImplementationValue,
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Entry
+                    id = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Entry(
+                        "id",
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._id_Stub,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._id_ComputeIsReadOnly,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._id_Validate,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._id_GetImplementationValue,
                         null,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._PK_orders_OnValueChanged);
-                private static void _PK_orders_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Order.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, int>.Data> c, global::LightSwitchApplication.Order.DetailsClass d, object sf)
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._id_OnValueChanged);
+                private static void _id_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.countriesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.countriesItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._PK_orders, sf);
+                    c(d, ref d._id, sf);
                 }
-                private static bool _PK_orders_ComputeIsReadOnly(global::LightSwitchApplication.Order e)
+                private static bool _id_ComputeIsReadOnly(global::LightSwitchApplication.countriesItem e)
                 {
                     bool result = false;
-                    e.PK_orders_IsReadOnly(ref result);
+                    e.id_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _PK_orders_Validate(global::LightSwitchApplication.Order e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _id_Validate(global::LightSwitchApplication.countriesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.PK_orders_Validate(r);
+                    e.id_Validate(r);
                 }
-                private static int _PK_orders_GetImplementationValue(global::LightSwitchApplication.Order.DetailsClass d)
+                private static int _id_GetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.PK_orders;
+                    return d.ImplementationEntity.id;
                 }
-                private static void _PK_orders_OnValueChanged(global::LightSwitchApplication.Order e)
+                private static void _id_OnValueChanged(global::LightSwitchApplication.countriesItem e)
                 {
-                    e.PK_orders_Changed();
+                    e.id_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, decimal>.Entry
-                    price = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, decimal>.Entry(
-                        "price",
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._price_Stub,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._price_ComputeIsReadOnly,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._price_Validate,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._price_GetImplementationValue,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._price_SetImplementationValue,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._price_OnValueChanged);
-                private static void _price_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Order.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.Order.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, string>.Entry
+                    name = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, string>.Entry(
+                        "name",
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._name_Stub,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._name_ComputeIsReadOnly,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._name_Validate,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._name_GetImplementationValue,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._name_SetImplementationValue,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._name_OnValueChanged);
+                private static void _name_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.countriesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.countriesItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._price, sf);
+                    c(d, ref d._name, sf);
                 }
-                private static bool _price_ComputeIsReadOnly(global::LightSwitchApplication.Order e)
+                private static bool _name_ComputeIsReadOnly(global::LightSwitchApplication.countriesItem e)
                 {
                     bool result = false;
-                    e.price_IsReadOnly(ref result);
+                    e.name_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _price_Validate(global::LightSwitchApplication.Order e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _name_Validate(global::LightSwitchApplication.countriesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.price_Validate(r);
+                    e.name_Validate(r);
                 }
-                private static decimal _price_GetImplementationValue(global::LightSwitchApplication.Order.DetailsClass d)
+                private static string _name_GetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.price;
+                    return d.ImplementationEntity.name;
                 }
-                private static void _price_SetImplementationValue(global::LightSwitchApplication.Order.DetailsClass d, decimal v)
+                private static void _name_SetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d, string v)
                 {
-                    d.ImplementationEntity.price = v;
+                    d.ImplementationEntity.name = v;
                 }
-                private static void _price_OnValueChanged(global::LightSwitchApplication.Order e)
+                private static void _name_OnValueChanged(global::LightSwitchApplication.countriesItem e)
                 {
-                    e.price_Changed();
+                    e.name_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, bool>.Entry
-                    received = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, bool>.Entry(
-                        "received",
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._received_Stub,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._received_ComputeIsReadOnly,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._received_Validate,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._received_GetImplementationValue,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._received_SetImplementationValue,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._received_OnValueChanged);
-                private static void _received_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Order.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, bool>.Data> c, global::LightSwitchApplication.Order.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, decimal>.Entry
+                    customs = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, decimal>.Entry(
+                        "customs",
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._customs_Stub,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._customs_ComputeIsReadOnly,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._customs_Validate,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._customs_GetImplementationValue,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._customs_SetImplementationValue,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._customs_OnValueChanged);
+                private static void _customs_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.countriesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.countriesItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._received, sf);
+                    c(d, ref d._customs, sf);
                 }
-                private static bool _received_ComputeIsReadOnly(global::LightSwitchApplication.Order e)
+                private static bool _customs_ComputeIsReadOnly(global::LightSwitchApplication.countriesItem e)
                 {
                     bool result = false;
-                    e.received_IsReadOnly(ref result);
+                    e.customs_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _received_Validate(global::LightSwitchApplication.Order e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _customs_Validate(global::LightSwitchApplication.countriesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.received_Validate(r);
+                    e.customs_Validate(r);
                 }
-                private static bool _received_GetImplementationValue(global::LightSwitchApplication.Order.DetailsClass d)
+                private static decimal _customs_GetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d)
                 {
-                    return d.ImplementationEntity.received;
+                    return d.ImplementationEntity.customs;
                 }
-                private static void _received_SetImplementationValue(global::LightSwitchApplication.Order.DetailsClass d, bool v)
+                private static void _customs_SetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d, decimal v)
                 {
-                    d.ImplementationEntity.received = v;
+                    d.ImplementationEntity.customs = v;
                 }
-                private static void _received_OnValueChanged(global::LightSwitchApplication.Order e)
+                private static void _customs_OnValueChanged(global::LightSwitchApplication.countriesItem e)
                 {
-                    e.received_Changed();
+                    e.customs_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, global::LightSwitchApplication.orderedBeersItem>.Entry
-                    orderedBeers = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, global::LightSwitchApplication.orderedBeersItem>.Entry(
-                        "orderedBeers",
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._orderedBeers_Stub,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._orderedBeers_GetReferencedEntities,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._orderedBeers_GetEntityCollection);
-                private static void _orderedBeers_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Order.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, global::LightSwitchApplication.orderedBeersItem>.Data> c, global::LightSwitchApplication.Order.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Entry
+                    distance = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Entry(
+                        "distance",
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._distance_Stub,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._distance_ComputeIsReadOnly,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._distance_Validate,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._distance_GetImplementationValue,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._distance_SetImplementationValue,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._distance_OnValueChanged);
+                private static void _distance_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.countriesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.countriesItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._orderedBeers, sf);
+                    c(d, ref d._distance, sf);
                 }
-                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.orderedBeersItem> _orderedBeers_GetReferencedEntities(global::LightSwitchApplication.Order.DetailsClass d)
+                private static bool _distance_ComputeIsReadOnly(global::LightSwitchApplication.countriesItem e)
                 {
-                    return d.GetReferencedEntities<global::LightSwitchApplication.orderedBeersItem, global::LightSwitchApplication.orderedBeersItem.DetailsClass>(global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.orderedBeers, ref d._orderedBeers);
+                    bool result = false;
+                    e.distance_IsReadOnly(ref result);
+                    return result;
                 }
-                private static global::System.Collections.IEnumerable _orderedBeers_GetEntityCollection(global::LightSwitchApplication.Order.DetailsClass d)
+                private static void _distance_Validate(global::LightSwitchApplication.countriesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    return d.ImplementationEntity.orderedBeers;
+                    e.distance_Validate(r);
+                }
+                private static int _distance_GetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d)
+                {
+                    return d.ImplementationEntity.distance;
+                }
+                private static void _distance_SetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d, int v)
+                {
+                    d.ImplementationEntity.distance = v;
+                }
+                private static void _distance_OnValueChanged(global::LightSwitchApplication.countriesItem e)
+                {
+                    e.distance_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, global::LightSwitchApplication.suppliersItem>.Entry
-                    supplier = new global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, global::LightSwitchApplication.suppliersItem>.Entry(
-                        "supplier",
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._supplier_Stub,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._supplier_ComputeIsReadOnly,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._supplier_Validate,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._supplier_GetCoreImplementationValue,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._supplier_GetImplementationValue,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._supplier_SetImplementationValue,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._supplier_Refresh,
-                        global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties._supplier_OnValueChanged);
-                private static void _supplier_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.Order.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, global::LightSwitchApplication.suppliersItem>.Data> c, global::LightSwitchApplication.Order.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.beerRecipientsItem>.Entry
+                    beerRecipients = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.beerRecipientsItem>.Entry(
+                        "beerRecipients",
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._beerRecipients_Stub,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._beerRecipients_GetReferencedEntities,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._beerRecipients_GetEntityCollection);
+                private static void _beerRecipients_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.countriesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.beerRecipientsItem>.Data> c, global::LightSwitchApplication.countriesItem.DetailsClass d, object sf)
                 {
-                    c(d, ref d._supplier, sf);
+                    c(d, ref d._beerRecipients, sf);
                 }
-                private static bool _supplier_ComputeIsReadOnly(global::LightSwitchApplication.Order e)
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.beerRecipientsItem> _beerRecipients_GetReferencedEntities(global::LightSwitchApplication.countriesItem.DetailsClass d)
                 {
-                    bool result = false;
-                    e.supplier_IsReadOnly(ref result);
-                    return result;
+                    return d.GetReferencedEntities<global::LightSwitchApplication.beerRecipientsItem, global::LightSwitchApplication.beerRecipientsItem.DetailsClass>(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.beerRecipients, ref d._beerRecipients);
                 }
-                private static void _supplier_Validate(global::LightSwitchApplication.Order e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static global::System.Collections.IEnumerable _beerRecipients_GetEntityCollection(global::LightSwitchApplication.countriesItem.DetailsClass d)
                 {
-                    e.supplier_Validate(r);
+                    return d.ImplementationEntity.beerRecipients;
                 }
-                private static global::Microsoft.LightSwitch.Internal.IEntityImplementation _supplier_GetCoreImplementationValue(global::LightSwitchApplication.Order.DetailsClass d)
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.suppliersItem>.Entry
+                    suppliers = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.suppliersItem>.Entry(
+                        "suppliers",
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._suppliers_Stub,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._suppliers_GetReferencedEntities,
+                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._suppliers_GetEntityCollection);
+                private static void _suppliers_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.countriesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.suppliersItem>.Data> c, global::LightSwitchApplication.countriesItem.DetailsClass d, object sf)
                 {
-                    return d.ImplementationEntity.supplier;
+                    c(d, ref d._suppliers, sf);
                 }
-                private static global::LightSwitchApplication.suppliersItem _supplier_GetImplementationValue(global::LightSwitchApplication.Order.DetailsClass d)
+                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.suppliersItem> _suppliers_GetReferencedEntities(global::LightSwitchApplication.countriesItem.DetailsClass d)
                 {
-                    return d.GetImplementationValue<global::LightSwitchApplication.suppliersItem, global::LightSwitchApplication.suppliersItem.DetailsClass>(global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.supplier, ref d._supplier);
+                    return d.GetReferencedEntities<global::LightSwitchApplication.suppliersItem, global::LightSwitchApplication.suppliersItem.DetailsClass>(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.suppliers, ref d._suppliers);
                 }
-                private static void _supplier_SetImplementationValue(global::LightSwitchApplication.Order.DetailsClass d, global::LightSwitchApplication.suppliersItem v)
+                private static global::System.Collections.IEnumerable _suppliers_GetEntityCollection(global::LightSwitchApplication.countriesItem.DetailsClass d)
                 {
-                    d.SetImplementationValue(global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.supplier, ref d._supplier, (i, ev) => i.supplier = ev, v);
-                }
-                private static void _supplier_Refresh(global::LightSwitchApplication.Order.DetailsClass d)
-                {
-                    d.RefreshNavigationProperty(global::LightSwitchApplication.Order.DetailsClass.PropertySetProperties.supplier, ref d._supplier);
-                }
-                private static void _supplier_OnValueChanged(global::LightSwitchApplication.Order e)
-                {
-                    e.supplier_Changed();
+                    return d.ImplementationEntity.suppliers;
                 }
     
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, int>.Data _PK_orders;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Data _id;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, decimal>.Data _price;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, string>.Data _name;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, bool>.Data _received;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, decimal>.Data _customs;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, global::LightSwitchApplication.orderedBeersItem>.Data _orderedBeers;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Data _distance;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityReferenceProperty<global::LightSwitchApplication.Order, global::LightSwitchApplication.Order.DetailsClass, global::LightSwitchApplication.suppliersItem>.Data _supplier;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.beerRecipientsItem>.Data _beerRecipients;
+            
+            [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.suppliersItem>.Data _suppliers;
             
         }
     

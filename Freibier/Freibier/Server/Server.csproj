@@ -163,7 +163,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserCode\ApplicationDataService.cs" />
-    <Compile Include="UserCode\freibierDBService.cs" />
   </ItemGroup>
   <ItemGroup>
     <LightSwitchModel Include="Properties\Service.lsml">

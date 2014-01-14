@@ -15,7 +15,7 @@ namespace LightSwitchApplication
     {
         partial void newOrder_InitializeDataWorkspace(global::System.Collections.Generic.List<global::Microsoft.LightSwitch.IDataService> saveChangesTo)
         {
-            this.orderProperty = new Order();
+            this.orderProperty = new ordersItem();
         }
 
         partial void newOrder_Saved()
@@ -31,10 +31,10 @@ namespace LightSwitchApplication
             // fix data before validation
             if (orderProperty.Details.EntityState != EntityState.Deleted && orderProperty.Details.EntityState != EntityState.Discarded)
             {
-                orderedBeers.Where(ob => ob.Order == null).All(ob =>
+                orderedBeers.Where(ob => ob.ordersItem == null).All(ob =>
                 {
                     if (ob.Details.EntityState != EntityState.Deleted && ob.Details.EntityState != EntityState.Discarded)
-                        ob.Order = orderProperty;
+                        ob.ordersItem = orderProperty;
 
                     return true;
                 });

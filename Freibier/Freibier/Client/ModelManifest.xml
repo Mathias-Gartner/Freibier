@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ModelDocumentManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Documents>
-    <Document FullPath="C:\Users\Administrator\Desktop\Sem3\Freibier\Freibier\Freibier\Client\Properties\Client.lsml" Checksum="1F252A4BA477517A7B7F9408FC157120E66D0C952278AAD4D79D18475045A3E7" />
-    <Document FullPath="C:\Users\Administrator\Desktop\Sem3\Freibier\Freibier\Freibier\Common\Properties\Common.lsml" Checksum="89E7117645B996B7A8B58FFDC0B567C9C9A05867832452C06EBB926F00CD4F92" />
+    <Document FullPath="C:\Users\Administrator\Desktop\Sem3\Freibier\Freibier\Freibier\Client\Properties\Client.lsml" Checksum="20BFBB901830B5D982D5586026F5820BE2734499D7D6DBFA6F2C72E9A4361D4F" />
+    <Document FullPath="C:\Users\Administrator\Desktop\Sem3\Freibier\Freibier\Freibier\Common\Properties\Common.lsml" Checksum="870B0E39C58724C109B2D5DD704C33F7659C20BA626AC1C8395C9F834A5A7704" />
   </Documents>
 </ModelDocumentManifest>

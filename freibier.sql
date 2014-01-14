@@ -16,7 +16,7 @@ CREATE DATABASE freibier
         FILENAME   = 'C:\Databases\freibier_dat.mdf',
         SIZE       = 100MB,
         MAXSIZE    = 10000MB,
-        FILEGROWTH = 10MB
+        FILEGROWTH = 10%
     )
         LOG ON
         (
@@ -24,7 +24,7 @@ CREATE DATABASE freibier
             FILENAME   = 'C:\Databases\freibier_log.ldf',
             SIZE       = 10MB,
             MAXSIZE    = 1000MB,
-            FILEGROWTH = 1MB
+            FILEGROWTH = 10%
         )
 ;
 GO
@@ -264,9 +264,9 @@ GO
 CREATE TABLE [dbo].[deliveries]
 (
 	[id]				[int] IDENTITY(1,1)	NOT NULL,
-	[FK_beerRecipients]	[int]				NULL		REFERENCES [dbo].[beerRecipients] ([id]),
-	[orderDate]			[date]				NOT NULL,
-	[deliveryDate]		[date]				NOT NULL,
+	[FK_beerRecipients]	[int]				NOT NULL	REFERENCES [dbo].[beerRecipients] ([id]),
+	[orderDate]			[date]				NOT NULL	DEFAULT getdate(),
+	[deliveryDate]		[date]				NULL,
 	[billingDate]		[date]				NULL,
 	[invoiceNumber]		[int]				NULL,
 	[delivered]			[bit]				NOT NULL	DEFAULT 0,
@@ -330,6 +330,7 @@ CREATE TABLE [dbo].[deliveryDriverCarriages]
 		CONSTRAINT [CLIX_PK_deliveryDriverCarriages_id] PRIMARY KEY CLUSTERED ([id]),
 )
 ;
+
 GO
 
 
@@ -351,7 +352,7 @@ CREATE TABLE [dbo].[supplierStorage]
 (
 	[id]				[int] IDENTITY(1,1)	NOT NULL,
 	[FK_suppliers]		[int]				NOT NULL	REFERENCES [dbo].[suppliers] ([id]),
-	[FK_beerSuppliers]	[int]				NULL		REFERENCES [dbo].[beerSuppliers] ([id]),
+	[FK_beerSuppliers]	[int]				NOT NULL	REFERENCES [dbo].[beerSuppliers] ([id]),
 	[amount]			[int]				NOT NULL,
 		CONSTRAINT [CLIX_PK_supplierStorage_id] PRIMARY KEY CLUSTERED ([id]),
 )
@@ -942,4 +943,6 @@ VALUES
 	(4,4,125,100)
 ;
 GO
+
 */
+

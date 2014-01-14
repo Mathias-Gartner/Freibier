@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.LightSwitch;
 namespace LightSwitchApplication
 {
-    public partial class beerSuppliersItem
+    public partial class beerSupplier
     {
         public override string ToString()
         {

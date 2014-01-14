@@ -17,32 +17,32 @@ namespace LightSwitchApplication
     /// Keine modellierte Beschreibung verfügbar
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-    public sealed partial class countriesItem : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass>
+    public sealed partial class DeliveryGetFreightOperation : global::Microsoft.LightSwitch.Framework.Base.EntityObject<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass>
     {
         #region Constructors
     
         /// <summary>
-        /// Initialisiert eine neue Instanz der Entität countriesItem.
+        /// Initialisiert eine neue Instanz der Entität DeliveryGetFreightOperation.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public countriesItem()
+        public DeliveryGetFreightOperation()
             : this(null)
         {
         }
     
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public countriesItem(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.countriesItem> entitySet)
+        public DeliveryGetFreightOperation(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.DeliveryGetFreightOperation> entitySet)
             : base(entitySet)
         {
-            global::LightSwitchApplication.countriesItem.DetailsClass.Initialize(this);
+            global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.Initialize(this);
         }
     
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void countriesItem_Created();
+        partial void DeliveryGetFreightOperation_Created();
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void countriesItem_AllowSaveWithErrors(ref bool result);
+        partial void DeliveryGetFreightOperation_AllowSaveWithErrors(ref bool result);
     
         #endregion
     
@@ -83,138 +83,145 @@ namespace LightSwitchApplication
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int PK_countries
+        public int Id
         {
             get
             {
-                return global::LightSwitchApplication.countriesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.PK_countries);
-            }
-        }
-        
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_countries_IsReadOnly(ref bool result);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_countries_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
-        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void PK_countries_Changed();
-
-        /// <summary>
-        /// Keine modellierte Beschreibung verfügbar
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public decimal customs
-        {
-            get
-            {
-                return global::LightSwitchApplication.countriesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.customs);
+                return global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.GetValue(this, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.Id);
             }
             set
             {
-                global::LightSwitchApplication.countriesItem.DetailsClass.SetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.customs, value);
+                global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.SetValue(this, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.Id, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void customs_IsReadOnly(ref bool result);
+        partial void Id_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void customs_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void Id_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void customs_Changed();
+        partial void Id_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public int distance
+        public byte[] RowVersion
         {
             get
             {
-                return global::LightSwitchApplication.countriesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.distance);
+                return global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.GetValue(this, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.RowVersion);
             }
             set
             {
-                global::LightSwitchApplication.countriesItem.DetailsClass.SetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.distance, value);
+                global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.SetValue(this, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.RowVersion, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void distance_IsReadOnly(ref bool result);
+        partial void RowVersion_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void distance_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void RowVersion_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void distance_Changed();
+        partial void RowVersion_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public string name
+        public int DeliveryId
         {
             get
             {
-                return global::LightSwitchApplication.countriesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.name);
+                return global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.GetValue(this, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.DeliveryId);
             }
             set
             {
-                global::LightSwitchApplication.countriesItem.DetailsClass.SetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.name, value);
+                global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.SetValue(this, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.DeliveryId, value);
             }
         }
         
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void name_IsReadOnly(ref bool result);
+        partial void DeliveryId_IsReadOnly(ref bool result);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void name_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        partial void DeliveryId_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        partial void name_Changed();
+        partial void DeliveryId_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.beerRecipientsItem> beerRecipients
+        public int DriverId
         {
             get
             {
-                return global::LightSwitchApplication.countriesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.beerRecipients);
+                return global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.GetValue(this, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.DriverId);
+            }
+            set
+            {
+                global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.SetValue(this, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.DriverId, value);
             }
         }
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.beerRecipientsItem> beerRecipientsQuery
-        {
-            get
-            {
-                return global::LightSwitchApplication.countriesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.beerRecipients);
-            }
-        }
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DriverId_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DriverId_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void DriverId_Changed();
 
         /// <summary>
         /// Keine modellierte Beschreibung verfügbar
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public global::Microsoft.LightSwitch.Framework.EntityCollection<global::LightSwitchApplication.suppliersItem> suppliers
+        public bool ExecutionError
         {
             get
             {
-                return global::LightSwitchApplication.countriesItem.DetailsClass.GetValue(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.suppliers);
+                return global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.GetValue(this, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.ExecutionError);
+            }
+            set
+            {
+                global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.SetValue(this, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.ExecutionError, value);
             }
         }
         
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ExecutionError_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ExecutionError_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ExecutionError_Changed();
+
+        /// <summary>
+        /// Keine modellierte Beschreibung verfügbar
+        /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public Microsoft.LightSwitch.IDataServiceQueryable<global::LightSwitchApplication.suppliersItem> suppliersQuery
+        public string ErrorMessage
         {
             get
             {
-                return global::LightSwitchApplication.countriesItem.DetailsClass.GetQuery(this, global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.suppliers);
+                return global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.GetValue(this, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.ErrorMessage);
+            }
+            set
+            {
+                global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.SetValue(this, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.ErrorMessage, value);
             }
         }
+        
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ErrorMessage_IsReadOnly(ref bool result);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ErrorMessage_Validate(global::Microsoft.LightSwitch.EntityValidationResultsBuilder results);
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Advanced)]
+        partial void ErrorMessage_Changed();
 
         #endregion
     
@@ -225,37 +232,37 @@ namespace LightSwitchApplication
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public sealed class DetailsClass : global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<
-                global::LightSwitchApplication.countriesItem,
-                global::LightSwitchApplication.countriesItem.DetailsClass,
-                global::LightSwitchApplication.countriesItem.DetailsClass.IImplementation,
-                global::LightSwitchApplication.countriesItem.DetailsClass.PropertySet,
-                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass>,
-                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass>>
+                global::LightSwitchApplication.DeliveryGetFreightOperation,
+                global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass,
+                global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.IImplementation,
+                global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySet,
+                global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass>,
+                global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass>>
         {
     
             static DetailsClass()
             {
-                var initializeEntry = global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.PK_countries;
+                var initializeEntry = global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.Id;
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass>.Entry
-                __countriesItemEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass>.Entry(
-                    global::LightSwitchApplication.countriesItem.DetailsClass.__countriesItem_CreateNew,
-                    global::LightSwitchApplication.countriesItem.DetailsClass.__countriesItem_Created,
-                    global::LightSwitchApplication.countriesItem.DetailsClass.__countriesItem_AllowSaveWithErrors);
-            private static global::LightSwitchApplication.countriesItem __countriesItem_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.countriesItem> es)
+            private static readonly global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass>.Entry
+                __DeliveryGetFreightOperationEntry = new global::Microsoft.LightSwitch.Details.Framework.Base.EntityDetails<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass>.Entry(
+                    global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.__DeliveryGetFreightOperation_CreateNew,
+                    global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.__DeliveryGetFreightOperation_Created,
+                    global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.__DeliveryGetFreightOperation_AllowSaveWithErrors);
+            private static global::LightSwitchApplication.DeliveryGetFreightOperation __DeliveryGetFreightOperation_CreateNew(global::Microsoft.LightSwitch.Framework.EntitySet<global::LightSwitchApplication.DeliveryGetFreightOperation> es)
             {
-                return new global::LightSwitchApplication.countriesItem(es);
+                return new global::LightSwitchApplication.DeliveryGetFreightOperation(es);
             }
-            private static void __countriesItem_Created(global::LightSwitchApplication.countriesItem e)
+            private static void __DeliveryGetFreightOperation_Created(global::LightSwitchApplication.DeliveryGetFreightOperation e)
             {
-                e.countriesItem_Created();
+                e.DeliveryGetFreightOperation_Created();
             }
-            private static bool __countriesItem_AllowSaveWithErrors(global::LightSwitchApplication.countriesItem e)
+            private static bool __DeliveryGetFreightOperation_AllowSaveWithErrors(global::LightSwitchApplication.DeliveryGetFreightOperation e)
             {
                 bool result = false;
-                e.countriesItem_AllowSaveWithErrors(ref result);
+                e.DeliveryGetFreightOperation_AllowSaveWithErrors(ref result);
                 return result;
             }
     
@@ -263,7 +270,7 @@ namespace LightSwitchApplication
             {
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass> Commands
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityCommandSet<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass> Commands
             {
                 get
                 {
@@ -271,7 +278,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass> Methods
+            public new global::Microsoft.LightSwitch.Details.Framework.EntityMethodSet<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass> Methods
             {
                 get
                 {
@@ -279,7 +286,7 @@ namespace LightSwitchApplication
                 }
             }
     
-            public new global::LightSwitchApplication.countriesItem.DetailsClass.PropertySet Properties
+            public new global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySet Properties
             {
                 get
                 {
@@ -291,58 +298,58 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.LightSwitch.BuildTasks.CodeGen", "11.0.0.0")]
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass>
+            public sealed class PropertySet : global::Microsoft.LightSwitch.Details.Framework.Base.EntityPropertySet<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass>
             {
     
                 public PropertySet() : base()
                 {
                 }
     
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int> PK_countries
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int> Id
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.PK_countries) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>;
+                        return base.GetItem(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.Id) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, decimal> customs
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, byte[]> RowVersion
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.customs) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, decimal>;
+                        return base.GetItem(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.RowVersion) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, byte[]>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int> distance
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int> DeliveryId
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.distance) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>;
+                        return base.GetItem(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.DeliveryId) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, string> name
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int> DriverId
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.name) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, string>;
+                        return base.GetItem(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.DriverId) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.beerRecipientsItem> beerRecipients
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, bool> ExecutionError
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.beerRecipients) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.beerRecipientsItem>;
+                        return base.GetItem(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.ExecutionError) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, bool>;
                     }
                 }
                 
-                public global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.suppliersItem> suppliers
+                public global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, string> ErrorMessage
                 {
                     get
                     {
-                        return base.GetItem(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.suppliers) as global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.suppliersItem>;
+                        return base.GetItem(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties.ErrorMessage) as global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, string>;
                     }
                 }
                 
@@ -352,12 +359,12 @@ namespace LightSwitchApplication
             [global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible")]
             public interface IImplementation : global::Microsoft.LightSwitch.Internal.IEntityImplementation
             {
-                new int PK_countries { get; }
-                new decimal customs { get; set; }
-                new int distance { get; set; }
-                new string name { get; set; }
-                new global::System.Collections.IEnumerable beerRecipients { get; }
-                new global::System.Collections.IEnumerable suppliers { get; }
+                new int Id { get; set; }
+                new byte[] RowVersion { get; set; }
+                new int DeliveryId { get; set; }
+                new int DriverId { get; set; }
+                new bool ExecutionError { get; set; }
+                new string ErrorMessage { get; set; }
             }
             #pragma warning restore 109
     
@@ -368,208 +375,246 @@ namespace LightSwitchApplication
             {
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Entry
-                    PK_countries = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Entry(
-                        "PK_countries",
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._PK_countries_Stub,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._PK_countries_ComputeIsReadOnly,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._PK_countries_Validate,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._PK_countries_GetImplementationValue,
-                        null,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._PK_countries_OnValueChanged);
-                private static void _PK_countries_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.countriesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.countriesItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>.Entry
+                    Id = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>.Entry(
+                        "Id",
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._Id_Stub,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._Id_ComputeIsReadOnly,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._Id_Validate,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._Id_GetImplementationValue,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._Id_SetImplementationValue,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._Id_OnValueChanged);
+                private static void _Id_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>.Data> c, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d, object sf)
                 {
-                    c(d, ref d._PK_countries, sf);
+                    c(d, ref d._Id, sf);
                 }
-                private static bool _PK_countries_ComputeIsReadOnly(global::LightSwitchApplication.countriesItem e)
+                private static bool _Id_ComputeIsReadOnly(global::LightSwitchApplication.DeliveryGetFreightOperation e)
                 {
                     bool result = false;
-                    e.PK_countries_IsReadOnly(ref result);
+                    e.Id_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _PK_countries_Validate(global::LightSwitchApplication.countriesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _Id_Validate(global::LightSwitchApplication.DeliveryGetFreightOperation e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.PK_countries_Validate(r);
+                    e.Id_Validate(r);
                 }
-                private static int _PK_countries_GetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d)
+                private static int _Id_GetImplementationValue(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d)
                 {
-                    return d.ImplementationEntity.PK_countries;
+                    return d.ImplementationEntity.Id;
                 }
-                private static void _PK_countries_OnValueChanged(global::LightSwitchApplication.countriesItem e)
+                private static void _Id_SetImplementationValue(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d, int v)
                 {
-                    e.PK_countries_Changed();
+                    d.ImplementationEntity.Id = v;
+                }
+                private static void _Id_OnValueChanged(global::LightSwitchApplication.DeliveryGetFreightOperation e)
+                {
+                    e.Id_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, decimal>.Entry
-                    customs = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, decimal>.Entry(
-                        "customs",
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._customs_Stub,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._customs_ComputeIsReadOnly,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._customs_Validate,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._customs_GetImplementationValue,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._customs_SetImplementationValue,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._customs_OnValueChanged);
-                private static void _customs_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.countriesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, decimal>.Data> c, global::LightSwitchApplication.countriesItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, byte[]>.Entry
+                    RowVersion = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, byte[]>.Entry(
+                        "RowVersion",
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._RowVersion_Stub,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._RowVersion_ComputeIsReadOnly,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._RowVersion_Validate,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._RowVersion_GetImplementationValue,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._RowVersion_SetImplementationValue,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._RowVersion_OnValueChanged);
+                private static void _RowVersion_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, byte[]>.Data> c, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d, object sf)
                 {
-                    c(d, ref d._customs, sf);
+                    c(d, ref d._RowVersion, sf);
                 }
-                private static bool _customs_ComputeIsReadOnly(global::LightSwitchApplication.countriesItem e)
+                private static bool _RowVersion_ComputeIsReadOnly(global::LightSwitchApplication.DeliveryGetFreightOperation e)
                 {
                     bool result = false;
-                    e.customs_IsReadOnly(ref result);
+                    e.RowVersion_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _customs_Validate(global::LightSwitchApplication.countriesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _RowVersion_Validate(global::LightSwitchApplication.DeliveryGetFreightOperation e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.customs_Validate(r);
+                    e.RowVersion_Validate(r);
                 }
-                private static decimal _customs_GetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d)
+                private static byte[] _RowVersion_GetImplementationValue(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d)
                 {
-                    return d.ImplementationEntity.customs;
+                    return d.ImplementationEntity.RowVersion;
                 }
-                private static void _customs_SetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d, decimal v)
+                private static void _RowVersion_SetImplementationValue(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d, byte[] v)
                 {
-                    d.ImplementationEntity.customs = v;
+                    d.ImplementationEntity.RowVersion = v;
                 }
-                private static void _customs_OnValueChanged(global::LightSwitchApplication.countriesItem e)
+                private static void _RowVersion_OnValueChanged(global::LightSwitchApplication.DeliveryGetFreightOperation e)
                 {
-                    e.customs_Changed();
+                    e.RowVersion_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Entry
-                    distance = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Entry(
-                        "distance",
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._distance_Stub,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._distance_ComputeIsReadOnly,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._distance_Validate,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._distance_GetImplementationValue,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._distance_SetImplementationValue,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._distance_OnValueChanged);
-                private static void _distance_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.countriesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Data> c, global::LightSwitchApplication.countriesItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>.Entry
+                    DeliveryId = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>.Entry(
+                        "DeliveryId",
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._DeliveryId_Stub,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._DeliveryId_ComputeIsReadOnly,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._DeliveryId_Validate,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._DeliveryId_GetImplementationValue,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._DeliveryId_SetImplementationValue,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._DeliveryId_OnValueChanged);
+                private static void _DeliveryId_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>.Data> c, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d, object sf)
                 {
-                    c(d, ref d._distance, sf);
+                    c(d, ref d._DeliveryId, sf);
                 }
-                private static bool _distance_ComputeIsReadOnly(global::LightSwitchApplication.countriesItem e)
+                private static bool _DeliveryId_ComputeIsReadOnly(global::LightSwitchApplication.DeliveryGetFreightOperation e)
                 {
                     bool result = false;
-                    e.distance_IsReadOnly(ref result);
+                    e.DeliveryId_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _distance_Validate(global::LightSwitchApplication.countriesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _DeliveryId_Validate(global::LightSwitchApplication.DeliveryGetFreightOperation e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.distance_Validate(r);
+                    e.DeliveryId_Validate(r);
                 }
-                private static int _distance_GetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d)
+                private static int _DeliveryId_GetImplementationValue(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d)
                 {
-                    return d.ImplementationEntity.distance;
+                    return d.ImplementationEntity.DeliveryId;
                 }
-                private static void _distance_SetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d, int v)
+                private static void _DeliveryId_SetImplementationValue(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d, int v)
                 {
-                    d.ImplementationEntity.distance = v;
+                    d.ImplementationEntity.DeliveryId = v;
                 }
-                private static void _distance_OnValueChanged(global::LightSwitchApplication.countriesItem e)
+                private static void _DeliveryId_OnValueChanged(global::LightSwitchApplication.DeliveryGetFreightOperation e)
                 {
-                    e.distance_Changed();
+                    e.DeliveryId_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, string>.Entry
-                    name = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, string>.Entry(
-                        "name",
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._name_Stub,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._name_ComputeIsReadOnly,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._name_Validate,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._name_GetImplementationValue,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._name_SetImplementationValue,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._name_OnValueChanged);
-                private static void _name_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.countriesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, string>.Data> c, global::LightSwitchApplication.countriesItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>.Entry
+                    DriverId = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>.Entry(
+                        "DriverId",
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._DriverId_Stub,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._DriverId_ComputeIsReadOnly,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._DriverId_Validate,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._DriverId_GetImplementationValue,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._DriverId_SetImplementationValue,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._DriverId_OnValueChanged);
+                private static void _DriverId_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>.Data> c, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d, object sf)
                 {
-                    c(d, ref d._name, sf);
+                    c(d, ref d._DriverId, sf);
                 }
-                private static bool _name_ComputeIsReadOnly(global::LightSwitchApplication.countriesItem e)
+                private static bool _DriverId_ComputeIsReadOnly(global::LightSwitchApplication.DeliveryGetFreightOperation e)
                 {
                     bool result = false;
-                    e.name_IsReadOnly(ref result);
+                    e.DriverId_IsReadOnly(ref result);
                     return result;
                 }
-                private static void _name_Validate(global::LightSwitchApplication.countriesItem e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                private static void _DriverId_Validate(global::LightSwitchApplication.DeliveryGetFreightOperation e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    e.name_Validate(r);
+                    e.DriverId_Validate(r);
                 }
-                private static string _name_GetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d)
+                private static int _DriverId_GetImplementationValue(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d)
                 {
-                    return d.ImplementationEntity.name;
+                    return d.ImplementationEntity.DriverId;
                 }
-                private static void _name_SetImplementationValue(global::LightSwitchApplication.countriesItem.DetailsClass d, string v)
+                private static void _DriverId_SetImplementationValue(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d, int v)
                 {
-                    d.ImplementationEntity.name = v;
+                    d.ImplementationEntity.DriverId = v;
                 }
-                private static void _name_OnValueChanged(global::LightSwitchApplication.countriesItem e)
+                private static void _DriverId_OnValueChanged(global::LightSwitchApplication.DeliveryGetFreightOperation e)
                 {
-                    e.name_Changed();
-                }
-    
-                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.beerRecipientsItem>.Entry
-                    beerRecipients = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.beerRecipientsItem>.Entry(
-                        "beerRecipients",
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._beerRecipients_Stub,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._beerRecipients_GetReferencedEntities,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._beerRecipients_GetEntityCollection);
-                private static void _beerRecipients_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.countriesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.beerRecipientsItem>.Data> c, global::LightSwitchApplication.countriesItem.DetailsClass d, object sf)
-                {
-                    c(d, ref d._beerRecipients, sf);
-                }
-                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.beerRecipientsItem> _beerRecipients_GetReferencedEntities(global::LightSwitchApplication.countriesItem.DetailsClass d)
-                {
-                    return d.GetReferencedEntities<global::LightSwitchApplication.beerRecipientsItem, global::LightSwitchApplication.beerRecipientsItem.DetailsClass>(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.beerRecipients, ref d._beerRecipients);
-                }
-                private static global::System.Collections.IEnumerable _beerRecipients_GetEntityCollection(global::LightSwitchApplication.countriesItem.DetailsClass d)
-                {
-                    return d.ImplementationEntity.beerRecipients;
+                    e.DriverId_Changed();
                 }
     
                 [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.suppliersItem>.Entry
-                    suppliers = new global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.suppliersItem>.Entry(
-                        "suppliers",
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._suppliers_Stub,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._suppliers_GetReferencedEntities,
-                        global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties._suppliers_GetEntityCollection);
-                private static void _suppliers_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.countriesItem.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.suppliersItem>.Data> c, global::LightSwitchApplication.countriesItem.DetailsClass d, object sf)
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, bool>.Entry
+                    ExecutionError = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, bool>.Entry(
+                        "ExecutionError",
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._ExecutionError_Stub,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._ExecutionError_ComputeIsReadOnly,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._ExecutionError_Validate,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._ExecutionError_GetImplementationValue,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._ExecutionError_SetImplementationValue,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._ExecutionError_OnValueChanged);
+                private static void _ExecutionError_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, bool>.Data> c, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d, object sf)
                 {
-                    c(d, ref d._suppliers, sf);
+                    c(d, ref d._ExecutionError, sf);
                 }
-                private static global::System.Collections.Generic.IEnumerable<global::LightSwitchApplication.suppliersItem> _suppliers_GetReferencedEntities(global::LightSwitchApplication.countriesItem.DetailsClass d)
+                private static bool _ExecutionError_ComputeIsReadOnly(global::LightSwitchApplication.DeliveryGetFreightOperation e)
                 {
-                    return d.GetReferencedEntities<global::LightSwitchApplication.suppliersItem, global::LightSwitchApplication.suppliersItem.DetailsClass>(global::LightSwitchApplication.countriesItem.DetailsClass.PropertySetProperties.suppliers, ref d._suppliers);
+                    bool result = false;
+                    e.ExecutionError_IsReadOnly(ref result);
+                    return result;
                 }
-                private static global::System.Collections.IEnumerable _suppliers_GetEntityCollection(global::LightSwitchApplication.countriesItem.DetailsClass d)
+                private static void _ExecutionError_Validate(global::LightSwitchApplication.DeliveryGetFreightOperation e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
                 {
-                    return d.ImplementationEntity.suppliers;
+                    e.ExecutionError_Validate(r);
+                }
+                private static bool _ExecutionError_GetImplementationValue(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d)
+                {
+                    return d.ImplementationEntity.ExecutionError;
+                }
+                private static void _ExecutionError_SetImplementationValue(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d, bool v)
+                {
+                    d.ImplementationEntity.ExecutionError = v;
+                }
+                private static void _ExecutionError_OnValueChanged(global::LightSwitchApplication.DeliveryGetFreightOperation e)
+                {
+                    e.ExecutionError_Changed();
+                }
+    
+                [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
+                public static readonly global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, string>.Entry
+                    ErrorMessage = new global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, string>.Entry(
+                        "ErrorMessage",
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._ErrorMessage_Stub,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._ErrorMessage_ComputeIsReadOnly,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._ErrorMessage_Validate,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._ErrorMessage_GetImplementationValue,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._ErrorMessage_SetImplementationValue,
+                        global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass.PropertySetProperties._ErrorMessage_OnValueChanged);
+                private static void _ErrorMessage_Stub(global::Microsoft.LightSwitch.Details.Framework.Base.DetailsCallback<global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, string>.Data> c, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d, object sf)
+                {
+                    c(d, ref d._ErrorMessage, sf);
+                }
+                private static bool _ErrorMessage_ComputeIsReadOnly(global::LightSwitchApplication.DeliveryGetFreightOperation e)
+                {
+                    bool result = false;
+                    e.ErrorMessage_IsReadOnly(ref result);
+                    return result;
+                }
+                private static void _ErrorMessage_Validate(global::LightSwitchApplication.DeliveryGetFreightOperation e, global::Microsoft.LightSwitch.EntityValidationResultsBuilder r)
+                {
+                    e.ErrorMessage_Validate(r);
+                }
+                private static string _ErrorMessage_GetImplementationValue(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d)
+                {
+                    return d.ImplementationEntity.ErrorMessage;
+                }
+                private static void _ErrorMessage_SetImplementationValue(global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass d, string v)
+                {
+                    d.ImplementationEntity.ErrorMessage = v;
+                }
+                private static void _ErrorMessage_OnValueChanged(global::LightSwitchApplication.DeliveryGetFreightOperation e)
+                {
+                    e.ErrorMessage_Changed();
                 }
     
             }
     
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Data _PK_countries;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>.Data _Id;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, decimal>.Data _customs;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, byte[]>.Data _RowVersion;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, int>.Data _distance;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>.Data _DeliveryId;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, string>.Data _name;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, int>.Data _DriverId;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.beerRecipientsItem>.Data _beerRecipients;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, bool>.Data _ExecutionError;
             
             [global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)]
-            private global::Microsoft.LightSwitch.Details.Framework.EntityCollectionProperty<global::LightSwitchApplication.countriesItem, global::LightSwitchApplication.countriesItem.DetailsClass, global::LightSwitchApplication.suppliersItem>.Data _suppliers;
+            private global::Microsoft.LightSwitch.Details.Framework.EntityStorageProperty<global::LightSwitchApplication.DeliveryGetFreightOperation, global::LightSwitchApplication.DeliveryGetFreightOperation.DetailsClass, string>.Data _ErrorMessage;
             
         }
     
