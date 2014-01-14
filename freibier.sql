@@ -483,13 +483,60 @@ BEGIN TRANSACTION SERIALIZABLE
 COMMIT
 GO
 
-/*
--- End Triggers
 
- INSERT INTO [dbo].[orderedBeers] ([amount]) VALUES (1)
+
+IF OBJECT_ID (' trig_order_orderBeer', 'TR') IS NOT NULL
+	DROP TRIGGER trig_order_orderBeer;
+GO
+
+CREATE TRIGGER trig_order_orderBeer
+ON [dbo].[orderedBeers] INSTEAD OF INSERT AS
+
+DECLARE @boxes INT, @amount INT, @beerSupplier INT, @supplier INT, @price INT
+
+	SELECT @price = 99
+	;
+
+	SELECT @beerSupplier = FK_beerSuppliers FROM inserted
+	;
+
+	SELECT @supplier = [FK_suppliers] FROM [dbo].[beerSuppliers]
+	WHERE [dbo].[beerSuppliers].id = @beerSupplier
+	;
+
+	SELECT @amount = [amount] FROM inserted
+	;
+
+	SELECT @boxes = supplierStorage.amount
+	FROM [dbo].[supplierStorage] INNER JOIN INSERTED I
+	ON [dbo].[supplierStorage].FK_beerSuppliers = @beerSupplier
+	;
+
+	IF (@boxes > @amount)
+	BEGIN
+		-- try/catch fehlt?
+		BEGIN TRANSACTION READ_COMMITED
+
+		INSERT INTO orders ([FK_suppliers], [price], [received])
+		VALUES (@beerSupplier, @price, 0)
+		;
+
+		INSERT INTO orderedBeers ([FK_orders], [FK_beerSuppliers], [amount], [price])
+		VALUES (@supplier, @beerSupplier, @amount, @price)
+		;
+
+		COMMIT
+	END
+
+GO
+/*
+INSERT INTO [dbo].[orderedBeers] ([FK_beerSuppliers], [amount]) VALUES (1, 1)
 ;
 GO
 */
+-- End Triggers
+
+
 -- Procedures
 /*
 office würde dann zuerst orders absetzen um das lager zu füllen. Dann erfasst
