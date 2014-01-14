@@ -382,10 +382,110 @@ BEGIN TRANSACTION READ_COMMITED
 
 COMMIT
 GO
+*/
+DROP TRIGGER trig_orderedBeers_updateOrderPrice;
+GO
 
+CREATE TRIGGER trig_orderedBeers_updateOrderPrice
+ON [dbo].[orderedBeers]
+AFTER INSERT, UPDATE, DELETE
+AS
+
+DECLARE @price MONEY
+
+BEGIN TRANSACTION SERIALIZABLE
+
+	SELECT @price = price from inserted
+
+	BEGIN TRY
+		UPDATE orders SET price = @price
+		WHERE orders.id = (select FK_orders from inserted)
+	END TRY
+	BEGIN CATCH
+		THROW 51000, 'Fehler: Order nicht vorhanden', 1;
+	END CATCH
+
+COMMIT
+GO
+
+DROP TRIGGER trig_orderedBeers_checkStorage;
+GO
+
+CREATE TRIGGER trig_orderedBeers_checkStorage
+ON [dbo].[orderedBeers]
+AFTER INSERT, UPDATE
+AS
+
+DECLARE @amount int
+DECLARE @amount_storage int
+
+BEGIN TRANSACTION SERIALIZABLE
+
+	SELECT @amount = amount from inserted
+	SELECT @amount_storage = amount from supplierStorage
+	WHERE supplierStorage.FK_suppliers = (select FK_suppliers from inserted i
+		JOIN beerSuppliers b ON i.FK_beerSuppliers = b.id)
+
+	IF @amount <= @amount_storage
+	BEGIN
+		UPDATE supplierStorage SET amount = (@amount_storage - @amount)
+		WHERE supplierStorage.FK_suppliers = (select FK_suppliers from inserted i
+		JOIN beerSuppliers b ON i.FK_beerSuppliers = b.id)
+	END
+	ELSE
+		THROW 51000, 'Fehler: Nicht genug vorhanden', 1;
+	
+COMMIT
+GO
+
+
+DROP TRIGGER trig_orderedBeers_checkStorage;
+GO
+
+CREATE TRIGGER trig_orderedBeers
+ON [dbo].[orderedBeers]
+AFTER INSERT, UPDATE
+AS
+
+DECLARE @amount int
+DECLARE @amount_storage int
+DECLARE @delivered bit
+
+BEGIN TRANSACTION SERIALIZABLE
+
+	SELECT @amount = amount from inserted
+	SELECT @amount_storage = amount from storage 
+	WHERE storage.FK_beerTypes = (select FK_beerTypes from inserted i
+		JOIN beerSuppliers b ON i.FK_beerSuppliers = b.id)
+	SELECT @delivered = delivered from inserted i
+		JOIN orders o ON i.FK_orders = o.id
+		JOIN orderDriverCarriages od ON od.FK_orders = o.id
+		JOIN drivers d ON od.FK_drivers = od.FK_drivers
+		JOIN deliveryDriverCarriages dd ON dd.FK_drivers = d.id
+		JOIN deliveries del ON dd.FK_deliveries = del.id
+
+
+	IF @amount <= @amount_storage
+	BEGIN
+		IF @delivered = 0
+		BEGIN
+		UPDATE storage SET amount = (@amount_storage - @amount)
+		WHERE storage.FK_beerTypes = (select FK_beerTypes from inserted i
+		JOIN beerSuppliers b ON i.FK_beerSuppliers = b.id)
+		END
+		ELSE
+			THROW 51000, 'Fehler: Schon verschickt', 1;
+	END
+	ELSE
+		THROW 51000, 'Fehler: Nicht genug vorhanden', 1;
+	
+COMMIT
+GO
+
+/*
 -- End Triggers
 
-INSERT INTO [dbo].[orderedBeers] ([amount]) VALUES (1)
+ INSERT INTO [dbo].[orderedBeers] ([amount]) VALUES (1)
 ;
 GO
 */
