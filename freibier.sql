@@ -360,7 +360,7 @@ GO
 -- End Tables
 
 
-
+/*
 -- Triggers
 DROP TRIGGER trig_order_orderBeer;
 GO
@@ -371,9 +371,9 @@ INSTEAD OF INSERT AS
 
 DECLARE @amount INT
 
-	SELECT @amount = storage.amount 
+	SELECT @amount = [amount]
 	FROM [dbo].[storage] S INNER JOIN INSERTED I
-	ON S.[FK_beerTypes] = I.[FK_beerTypes]
+	ON S.[FK_beerTypes] = 1
 	;
 BEGIN TRANSACTION READ_COMMITED
 
@@ -385,8 +385,10 @@ GO
 
 -- End Triggers
 
-INSERT INTO [dbo].[orderedBeers] ([FK_beerTypes]) VALUES (1);
-
+INSERT INTO [dbo].[orderedBeers] ([amount]) VALUES (1)
+;
+GO
+*/
 -- Procedures
 /*
 office würde dann zuerst orders absetzen um das lager zu füllen. Dann erfasst
@@ -820,17 +822,17 @@ VALUES
 GO
 
 
-/*
+
 -- Insert Deliveries
 INSERT INTO deliveries
 VALUES 
-	(9,'20140101','20140110','20140101',125,0),
-	(8,'20140101','20140127','20140101',125,0),
-	(10,'20140101','20140115','20140101',125,0),
-	(11,'20140101','20140123','20140101',125,0)
+	(1,'20140101','20140110','20140101',125,0),
+	(2,'20140101','20140127','20140101',125,0),
+	(3,'20140101','20140115','20140101',125,0),
+	(4,'20140101','20140123','20140101',125,0)
 ;
 GO
-
+/*
 -- Insert Delivery Driver Carriages
 INSERT INTO deliveryDriverCarriages
 VALUES 
