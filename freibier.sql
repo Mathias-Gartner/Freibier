@@ -1,4 +1,4 @@
--- Freibier Datenbank
+-- Freibier Datenbank test
 -- Create DB
 USE master;
 GO
